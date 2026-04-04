@@ -355,6 +355,19 @@
           "captured_at": "2026-04-04T10:40:00Z",
           "captured_by": "cadfan"
         }
+      },
+      {
+        "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "tier": "gold",
+        "note": "Cable Club HLE boot. All SRAM tests pass. Matches mGBA secondary hash pattern.",
+        "provenance": {
+          "emulator": "CableClub",
+          "version": "0.2.1",
+          "settings": "hle_bios, sram_auto_detect",
+          "capture_method": "accuracy_sweep_sha256",
+          "captured_at": "2026-04-04T19:00:00Z",
+          "captured_by": "cadfan"
+        }
       }
     ],
     "jsmolka-save-none": [
