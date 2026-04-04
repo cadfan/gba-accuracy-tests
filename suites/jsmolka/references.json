@@ -240,6 +240,118 @@
           "captured_by": "cadfan"
         }
       }
+    ],
+    "jsmolka-flash128": [
+      {
+        "hash": "f963011de3a8cab1b337b9aa0654fa93d52931574aab475958f33da936c6e72f",
+        "tier": "gold",
+        "note": "Real BIOS. All tests pass. 128KB Flash (Macronix MX29L010).",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios=real",
+          "capture_method": "window_screenshot_bgr555",
+          "rom_sha256": "9ac50e51d3ce4209dbdf85e472e70c067d5827e9af1bb3e707f6bd9059d5f0c6",
+          "captured_at": "2026-04-04T10:40:00Z",
+          "captured_by": "cadfan"
+        }
+      }
+    ],
+    "jsmolka-flash64": [
+      {
+        "hash": "f963011de3a8cab1b337b9aa0654fa93d52931574aab475958f33da936c6e72f",
+        "tier": "gold",
+        "note": "Real BIOS. All tests pass. 64KB Flash.",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios=real",
+          "capture_method": "window_screenshot_bgr555",
+          "rom_sha256": "7e2aa32e943aedde88bd750eadcdbf55152d3a1ec61385011b7f15cd85b07c02",
+          "captured_at": "2026-04-04T10:40:00Z",
+          "captured_by": "cadfan"
+        }
+      }
+    ],
+    "jsmolka-sram": [
+      {
+        "hash": "bbe3447212983b4aa054e8d792a4778b56732f668fb01f6a9e9f820b6a1bf887",
+        "tier": "gold",
+        "note": "Real BIOS. All tests pass. SRAM save type.",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios=real",
+          "capture_method": "window_screenshot_bgr555",
+          "rom_sha256": "a37ad99c31e3f805eb05a00e498b65bd78e6f43a0a139cd695bea1f88229af2c",
+          "captured_at": "2026-04-04T10:40:00Z",
+          "captured_by": "cadfan"
+        }
+      }
+    ],
+    "jsmolka-save-none": [
+      {
+        "hash": "bbe3447212983b4aa054e8d792a4778b56732f668fb01f6a9e9f820b6a1bf887",
+        "tier": "gold",
+        "note": "Real BIOS. All tests pass. No save type (ROM only).",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios=real",
+          "capture_method": "window_screenshot_bgr555",
+          "rom_sha256": "edb34ba6590d070c8a50cf0f3566b1e3cc679377b978224ff1b872d27f2b1630",
+          "captured_at": "2026-04-04T10:40:00Z",
+          "captured_by": "cadfan"
+        }
+      }
+    ],
+    "jsmolka-ppu-hello": [
+      {
+        "hash": "d60d58ea743e753e0b2fb43a2a10713236ab1a31049825d3b3fa423c8dd2f154",
+        "tier": "gold",
+        "note": "Real BIOS. 'Hello world!' text in BG mode 4.",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios=real",
+          "capture_method": "window_screenshot_bgr555",
+          "rom_sha256": "38aed48b67bc0f701e8aa222b0c3334bd306bd29888707bb7224d81f5576c264",
+          "captured_at": "2026-04-04T10:40:00Z",
+          "captured_by": "cadfan"
+        }
+      }
+    ],
+    "jsmolka-ppu-shades": [
+      {
+        "hash": "6207221a0feddceb6ac24c6c240c94672375a7fd1000b56223c32cead80b2ffc",
+        "tier": "gold",
+        "note": "Real BIOS. Blue palette gradient in BG mode 4.",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios=real",
+          "capture_method": "window_screenshot_bgr555",
+          "rom_sha256": "127ce348f17e4d5fd8a0821a7af757eda6109c66c9f7b8f7d1e0fa31831b407d",
+          "captured_at": "2026-04-04T10:40:00Z",
+          "captured_by": "cadfan"
+        }
+      }
+    ],
+    "jsmolka-ppu-stripes": [
+      {
+        "hash": "c4cab973146f8293db1c1a66ffe4942cf6f90f96668e33568da18d6b22d961c0",
+        "tier": "gold",
+        "note": "Real BIOS. Vertical stripe pattern in BG mode 4.",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios=real",
+          "capture_method": "window_screenshot_bgr555",
+          "rom_sha256": "80d6cc05b5f289b9a2392621fc245270f08e9f0d77fd33982120cef240f5a504",
+          "captured_at": "2026-04-04T10:40:00Z",
+          "captured_by": "cadfan"
+        }
+      }
     ]
   }
 }

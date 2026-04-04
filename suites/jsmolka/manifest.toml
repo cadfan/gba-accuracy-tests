@@ -2,7 +2,7 @@ schema_version = 1
 
 [suite]
 name = "jsmolka"
-description = "jsmolka/gba-tests: ARM, Thumb, BIOS, memory, and edge case CPU tests"
+description = "jsmolka/gba-tests: ARM, Thumb, BIOS, memory, save, PPU, and edge case CPU tests"
 source = "https://github.com/jsmolka/gba-tests"
 commit = "a7113b67e63f83a9b321696ddd7042ccfad6c881"
 
@@ -100,3 +100,108 @@ hint = "Undefined behavior and edge case tests. Open-bus-sensitive."
 type = "stable_frames"
 window = 10
 min_frames = 30
+
+[[tests]]
+id = "jsmolka-flash128"
+rom = "save/flash128.gba"
+rom_sha256 = "9ac50e51d3ce4209dbdf85e472e70c067d5827e9af1bb3e707f6bd9059d5f0c6"
+subsystem = "save"
+max_frames = 600
+timing_sensitive = false
+requires_bios = false
+hint = "128KB Flash (Macronix MX29L010) save type tests."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 30
+
+[[tests]]
+id = "jsmolka-flash64"
+rom = "save/flash64.gba"
+rom_sha256 = "7e2aa32e943aedde88bd750eadcdbf55152d3a1ec61385011b7f15cd85b07c02"
+subsystem = "save"
+max_frames = 600
+timing_sensitive = false
+requires_bios = false
+hint = "64KB Flash save type tests."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 30
+
+[[tests]]
+id = "jsmolka-sram"
+rom = "save/sram.gba"
+rom_sha256 = "a37ad99c31e3f805eb05a00e498b65bd78e6f43a0a139cd695bea1f88229af2c"
+subsystem = "save"
+max_frames = 600
+timing_sensitive = false
+requires_bios = false
+hint = "SRAM save type tests."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 30
+
+[[tests]]
+id = "jsmolka-save-none"
+rom = "save/none.gba"
+rom_sha256 = "edb34ba6590d070c8a50cf0f3566b1e3cc679377b978224ff1b872d27f2b1630"
+subsystem = "save"
+max_frames = 600
+timing_sensitive = false
+requires_bios = false
+hint = "No-save (ROM only) test."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 30
+
+[[tests]]
+id = "jsmolka-ppu-hello"
+rom = "ppu/hello.gba"
+rom_sha256 = "38aed48b67bc0f701e8aa222b0c3334bd306bd29888707bb7224d81f5576c264"
+subsystem = "ppu"
+max_frames = 300
+timing_sensitive = false
+requires_bios = false
+hint = "PPU test: 'Hello world!' text rendering in BG mode 4."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 10
+
+[[tests]]
+id = "jsmolka-ppu-shades"
+rom = "ppu/shades.gba"
+rom_sha256 = "127ce348f17e4d5fd8a0821a7af757eda6109c66c9f7b8f7d1e0fa31831b407d"
+subsystem = "ppu"
+max_frames = 300
+timing_sensitive = false
+requires_bios = false
+hint = "PPU test: Blue palette gradient (shades) in BG mode 4."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 10
+
+[[tests]]
+id = "jsmolka-ppu-stripes"
+rom = "ppu/stripes.gba"
+rom_sha256 = "80d6cc05b5f289b9a2392621fc245270f08e9f0d77fd33982120cef240f5a504"
+subsystem = "ppu"
+max_frames = 300
+timing_sensitive = false
+requires_bios = false
+hint = "PPU test: Vertical stripe pattern in BG mode 4."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 10
