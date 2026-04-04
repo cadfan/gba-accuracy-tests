@@ -1,0 +1,15 @@
+schema_version = 1
+
+[suite]
+name = "mgba-suite"
+description = "mgba-emu/suite: timing, DMA, timer, IO tests"
+source = "https://github.com/mgba-emu/suite"
+commit = "TO_BE_PINNED"
+
+# mgba-suite tests are timing-sensitive. Different emulators may produce
+# legitimately different framebuffers due to cycle-level timing differences.
+# References should be tagged per-emulator in references.json.
+
+# NOTE: mgba-suite ROMs are not yet integrated. This is a placeholder manifest
+# for V2 when individual suite ROMs are downloaded and tested.
+# The full suite.gba mega-ROM requires menu navigation via input injection.

@@ -1,0 +1,17 @@
+# Downloaded ROMs (not checked in)
+roms/
+*.gba
+*.sav
+
+# Test output and results
+test-output/
+results/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.venv/

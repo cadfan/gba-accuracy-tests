@@ -1,0 +1,30 @@
+schema_version = 1
+
+[suite]
+name = "armwrestler"
+description = "ARMWrestler: ARM instruction visual grid test"
+source = "https://github.com/destoer/armwrestler-gba-fixed"
+commit = "802e55ad61b421f4bbbc6f74f96aa4e5df4d630f"
+
+# Requires START press to begin tests. Visual grid: green = pass, red = fail.
+# NOTE: License for ARMWrestler is unclear/unstated in the original repo.
+
+[[tests]]
+id = "armwrestler"
+rom = "armwrestler-gba-fixed.gba"
+rom_sha256 = "9f08d807c03ef296d38ef73e9b827a3d8c77cead9ced44b07d64c10f5f7d0746"
+subsystem = "cpu-arm"
+max_frames = 120
+timing_sensitive = false
+requires_bios = false
+bios = "skip"
+hint = "ARM instruction visual grid. Green = pass, red = fail. Requires START button at frame 5."
+
+[tests.completion]
+type = "input_then_stable"
+window = 15
+min_frames = 30
+
+[[tests.input]]
+frame = 5
+keys = 8  # START button (bit 3)

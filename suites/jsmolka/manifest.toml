@@ -1,0 +1,102 @@
+schema_version = 1
+
+[suite]
+name = "jsmolka"
+description = "jsmolka/gba-tests: ARM, Thumb, BIOS, memory, and edge case CPU tests"
+source = "https://github.com/jsmolka/gba-tests"
+commit = "a7113b67e63f83a9b321696ddd7042ccfad6c881"
+
+# Each test uses BG mode 4. Pass = green screen ("All tests passed").
+# Fail = displays "Failed test NNN" with test number.
+# Reference hashes generated from mGBA 0.10 on Windows.
+# Note: mGBA is known-bad on ARM test 235 and Thumb test 230.
+
+[[tests]]
+id = "jsmolka-arm"
+rom = "arm/arm.gba"
+rom_sha256 = "77ee88662552bdc885c1080c0172ff119d54db791bd73b21808cf1ff1fe5b40e"
+subsystem = "cpu-arm"
+max_frames = 600
+timing_sensitive = false
+requires_bios = false
+hint = "ARM instruction set tests. Green screen = all pass. See jsmolka/arm/*.asm for test-number-to-instruction mapping."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 30
+
+[[tests]]
+id = "jsmolka-thumb"
+rom = "thumb/thumb.gba"
+rom_sha256 = "b5cb2291df4ab314b31c598acd9bff2ccfa0b38efff29daadfe97422ce369b67"
+subsystem = "cpu-thumb"
+max_frames = 600
+timing_sensitive = false
+requires_bios = false
+hint = "Thumb instruction set tests. See jsmolka/thumb/*.asm."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 30
+
+[[tests]]
+id = "jsmolka-bios"
+rom = "bios/bios.gba"
+rom_sha256 = "9d7b369fa1aa661ff03692b3d79c6f644b623d72983d0fc890e6d87a0409a3c9"
+subsystem = "bios"
+max_frames = 600
+timing_sensitive = false
+requires_bios = false
+hint = "BIOS HLE SWI calls. Results depend on BIOS implementation. Missing SWIs: ArcTan, BgAffineSet, ObjAffineSet, BitUnPack, RLUnComp, HuffUnComp."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 30
+
+[[tests]]
+id = "jsmolka-memory"
+rom = "memory/memory.gba"
+rom_sha256 = "21024fb6aae6343f5f0466dd54e3149de1fbeb23f78e7d85a015c983684d2f87"
+subsystem = "memory"
+max_frames = 600
+timing_sensitive = false
+requires_bios = false
+hint = "Memory map, mirroring, access widths, wait states."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 30
+
+[[tests]]
+id = "jsmolka-nes"
+rom = "nes/nes.gba"
+rom_sha256 = "d990df112763087d0415b3785c1b4d31c0237794a704d0446fc5f5e474a44f98"
+subsystem = "misc"
+max_frames = 600
+timing_sensitive = false
+requires_bios = false
+hint = "NES-related edge case tests."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 30
+
+[[tests]]
+id = "jsmolka-unsafe"
+rom = "unsafe/unsafe.gba"
+rom_sha256 = "bb727d59fa81915a5f5c609f4befb64872d3a3d830bc6ae0149e26410e648f85"
+subsystem = "misc"
+max_frames = 600
+timing_sensitive = false
+requires_bios = false
+hint = "Undefined behavior and edge case tests. Open-bus-sensitive."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 30
