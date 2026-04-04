@@ -8,48 +8,52 @@ commit = "802e55ad61b421f4bbbc6f74f96aa4e5df4d630f"
 
 # Menu has 6 items selected with DOWN, run with START.
 # GBA KEYINPUT bits: START=8 (bit 3), DOWN=128 (bit 7)
-# NOTE: License for ARMWrestler is unclear/unstated in the original repo.
+#
+# Input timing: ARMWrestler clears EWRAM during init (~30 frames).
+# Menu rendering takes ~10 more. Main loop iterates every ~5 frames.
+# Keys held 10 frames, 15-frame spacing between inputs for edge detect.
+# First input at frame 100 to ensure menu is fully ready.
 
 [[tests]]
 id = "armwrestler-arm-alu"
 rom = "armwrestler-gba-fixed.gba"
 rom_sha256 = "9f08d807c03ef296d38ef73e9b827a3d8c77cead9ced44b07d64c10f5f7d0746"
 subsystem = "cpu-arm"
-max_frames = 300
+max_frames = 500
 timing_sensitive = false
 requires_bios = false
-hint = "ARM ALU tests (ADC, AND, BIC, CMN, EOR, MOV, MVN, RSC, SBC, MLA, MUL, MULL, SMULL). Menu item 0 (default)."
+hint = "ARM ALU tests. Menu item 0 (default)."
 
 [tests.completion]
 type = "input_then_stable"
 window = 15
-min_frames = 30
+min_frames = 130
 
 [[tests.input]]
-frame = 5
-keys = 8  # START (selects default first menu item)
+frame = 100
+keys = 8  # START
 
 [[tests]]
 id = "armwrestler-arm-ldr-str"
 rom = "armwrestler-gba-fixed.gba"
 rom_sha256 = "9f08d807c03ef296d38ef73e9b827a3d8c77cead9ced44b07d64c10f5f7d0746"
 subsystem = "cpu-arm"
-max_frames = 300
+max_frames = 500
 timing_sensitive = false
 requires_bios = false
-hint = "ARM Load/Store tests (LDR variants). Menu item 1 (1 DOWN then START)."
+hint = "ARM Load/Store tests. Menu item 1."
 
 [tests.completion]
 type = "input_then_stable"
 window = 15
-min_frames = 30
+min_frames = 150
 
 [[tests.input]]
-frame = 5
+frame = 100
 keys = 128  # DOWN
 
 [[tests.input]]
-frame = 10
+frame = 120
 keys = 8   # START
 
 [[tests]]
@@ -57,26 +61,26 @@ id = "armwrestler-arm-ldm-stm"
 rom = "armwrestler-gba-fixed.gba"
 rom_sha256 = "9f08d807c03ef296d38ef73e9b827a3d8c77cead9ced44b07d64c10f5f7d0746"
 subsystem = "cpu-arm"
-max_frames = 300
+max_frames = 500
 timing_sensitive = false
 requires_bios = false
-hint = "ARM Block transfer tests (LDM/STM). Menu item 2 (2 DOWNs then START)."
+hint = "ARM Block transfer tests. Menu item 2."
 
 [tests.completion]
 type = "input_then_stable"
 window = 15
-min_frames = 30
+min_frames = 170
 
 [[tests.input]]
-frame = 5
+frame = 100
 keys = 128  # DOWN
 
 [[tests.input]]
-frame = 10
+frame = 120
 keys = 128  # DOWN
 
 [[tests.input]]
-frame = 15
+frame = 140
 keys = 8   # START
 
 [[tests]]
@@ -84,30 +88,30 @@ id = "armwrestler-thumb-alu"
 rom = "armwrestler-gba-fixed.gba"
 rom_sha256 = "9f08d807c03ef296d38ef73e9b827a3d8c77cead9ced44b07d64c10f5f7d0746"
 subsystem = "cpu-thumb"
-max_frames = 300
+max_frames = 500
 timing_sensitive = false
 requires_bios = false
-hint = "Thumb ALU tests (ADD, ADR, BIC, CMP, LSL, LSR, MVU, MUL, NEG, SUB, ROR). Menu item 3."
+hint = "Thumb ALU tests. Menu item 3."
 
 [tests.completion]
 type = "input_then_stable"
 window = 15
-min_frames = 30
+min_frames = 190
 
 [[tests.input]]
-frame = 5
+frame = 100
 keys = 128  # DOWN
 
 [[tests.input]]
-frame = 10
+frame = 120
 keys = 128  # DOWN
 
 [[tests.input]]
-frame = 15
+frame = 140
 keys = 128  # DOWN
 
 [[tests.input]]
-frame = 20
+frame = 160
 keys = 8   # START
 
 [[tests]]
@@ -115,34 +119,34 @@ id = "armwrestler-thumb-ldr-str"
 rom = "armwrestler-gba-fixed.gba"
 rom_sha256 = "9f08d807c03ef296d38ef73e9b827a3d8c77cead9ced44b07d64c10f5f7d0746"
 subsystem = "cpu-thumb"
-max_frames = 300
+max_frames = 500
 timing_sensitive = false
 requires_bios = false
-hint = "Thumb Load/Store tests (LDR, LDRB, LDRH, LDRSH, LDRSB). Menu item 4."
+hint = "Thumb Load/Store tests. Menu item 4."
 
 [tests.completion]
 type = "input_then_stable"
 window = 15
-min_frames = 30
+min_frames = 210
 
 [[tests.input]]
-frame = 5
+frame = 100
 keys = 128  # DOWN
 
 [[tests.input]]
-frame = 10
+frame = 120
 keys = 128  # DOWN
 
 [[tests.input]]
-frame = 15
+frame = 140
 keys = 128  # DOWN
 
 [[tests.input]]
-frame = 20
+frame = 160
 keys = 128  # DOWN
 
 [[tests.input]]
-frame = 25
+frame = 180
 keys = 8   # START
 
 [[tests]]
@@ -150,36 +154,36 @@ id = "armwrestler-thumb-ldm-stm"
 rom = "armwrestler-gba-fixed.gba"
 rom_sha256 = "9f08d807c03ef296d38ef73e9b827a3d8c77cead9ced44b07d64c10f5f7d0746"
 subsystem = "cpu-thumb"
-max_frames = 300
+max_frames = 500
 timing_sensitive = false
 requires_bios = false
-hint = "Thumb Block transfer tests (LDMIA, STMIA). Menu item 5."
+hint = "Thumb Block transfer tests. Menu item 5."
 
 [tests.completion]
 type = "input_then_stable"
 window = 15
-min_frames = 30
+min_frames = 230
 
 [[tests.input]]
-frame = 5
+frame = 100
 keys = 128  # DOWN
 
 [[tests.input]]
-frame = 10
+frame = 120
 keys = 128  # DOWN
 
 [[tests.input]]
-frame = 15
+frame = 140
 keys = 128  # DOWN
 
 [[tests.input]]
-frame = 20
+frame = 160
 keys = 128  # DOWN
 
 [[tests.input]]
-frame = 25
+frame = 180
 keys = 128  # DOWN
 
 [[tests.input]]
-frame = 30
+frame = 200
 keys = 8   # START

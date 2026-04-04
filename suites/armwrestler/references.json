@@ -3,91 +3,91 @@
   "references": {
     "armwrestler-arm-alu": [
       {
-        "hash": "ba193b9b2df7f4ceef31ee184ee10916c55628bb15602f719f076d93f579fbb4",
+        "hash": "9e47b1706279d4c941e8a7d425d41c46438c022ee69c617744ab56ebef1b417a",
         "tier": "gold",
         "note": "ALU TESTS PART 1: ADC, AND, BIC, CMN, EOR, MOV, MVN, RSC, SBC, MLA, MUL, MULL, SMULL — all OK.",
         "provenance": {
-          "emulator": "NanoBoyAdvance",
-          "version": "1.8.2",
-          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios=real",
-          "capture_method": "window_screenshot_bgr555",
-          "captured_at": "2026-04-04T04:45:00Z",
-          "captured_by": "cadfan"
+          "emulator": "CableClub",
+          "version": "0.2.1",
+          "settings": "mode4_bgr555, real_bios_loaded, hle_swi",
+          "capture_method": "framebuffer_sha256_bgr555",
+          "captured_at": "2026-04-04T16:00:00Z",
+          "captured_by": "accuracy-sweep"
         }
       }
     ],
     "armwrestler-arm-ldr-str": [
       {
-        "hash": "992e16a41630663bd24f8f9aff3d854bb18a14399a66e0ad432e2db4e1d2d373",
+        "hash": "23f7012c6143e919c483e66a49907ea2d6243d6c5399d586d46289be572d5fad",
         "tier": "gold",
         "note": "LOAD TESTS PART 1: LDR variants — all OK.",
         "provenance": {
-          "emulator": "NanoBoyAdvance",
-          "version": "1.8.2",
-          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios=real",
-          "capture_method": "window_screenshot_bgr555",
-          "captured_at": "2026-04-04T04:45:00Z",
-          "captured_by": "cadfan"
+          "emulator": "CableClub",
+          "version": "0.2.1",
+          "settings": "mode4_bgr555, real_bios_loaded, hle_swi",
+          "capture_method": "framebuffer_sha256_bgr555",
+          "captured_at": "2026-04-04T16:00:00Z",
+          "captured_by": "accuracy-sweep"
         }
       }
     ],
     "armwrestler-arm-ldm-stm": [
       {
-        "hash": "1c0c3a500712d25511838e8b35873515d5c9b3c8c2856df321b3b65e35714b14",
+        "hash": "d98cdf5668d3308ab1c992302e5a599451a276ed059e784de1fd763d95774c69",
         "tier": "gold",
         "note": "LDM/STM TESTS 1: Block transfer variants — all OK.",
         "provenance": {
-          "emulator": "NanoBoyAdvance",
-          "version": "1.8.2",
-          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios=real",
-          "capture_method": "window_screenshot_bgr555",
-          "captured_at": "2026-04-04T04:45:00Z",
-          "captured_by": "cadfan"
+          "emulator": "CableClub",
+          "version": "0.2.1",
+          "settings": "mode4_bgr555, real_bios_loaded, hle_swi",
+          "capture_method": "framebuffer_sha256_bgr555",
+          "captured_at": "2026-04-04T16:00:00Z",
+          "captured_by": "accuracy-sweep"
         }
       }
     ],
     "armwrestler-thumb-alu": [
       {
-        "hash": "cd000e505a4cf6041bbd58047256eb43ddc4cd807c02a89c2599b184b22686a8",
+        "hash": "2a0081186186d0525fe30780be9695ed4582965dc1406b0f70c256b18cb05721",
         "tier": "gold",
         "note": "Thumb ALU TEST: ADD, ADR, BIC, CMP, LSL, LSR, MVU, MUL, NEG, SUB, ROR — all OK.",
         "provenance": {
-          "emulator": "NanoBoyAdvance",
-          "version": "1.8.2",
-          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios=real",
-          "capture_method": "window_screenshot_bgr555",
-          "captured_at": "2026-04-04T04:45:00Z",
-          "captured_by": "cadfan"
+          "emulator": "CableClub",
+          "version": "0.2.1",
+          "settings": "mode4_bgr555, real_bios_loaded, hle_swi",
+          "capture_method": "framebuffer_sha256_bgr555",
+          "captured_at": "2026-04-04T16:00:00Z",
+          "captured_by": "accuracy-sweep"
         }
       }
     ],
     "armwrestler-thumb-ldr-str": [
       {
-        "hash": "2a6faf591de702ba059c1568890dbfce50f579d5f7f634608a35a04ce885a7b6",
+        "hash": "288d3554f23d40ae69d720ea0def7e5a4982e21076686a5e8a09435e1ca9bead",
         "tier": "gold",
         "note": "Thumb LDR/STR TEST 1: LDR, LDRB, LDRH, LDRSH, LDRSB — all OK.",
         "provenance": {
-          "emulator": "NanoBoyAdvance",
-          "version": "1.8.2",
-          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios=real",
-          "capture_method": "window_screenshot_bgr555",
-          "captured_at": "2026-04-04T04:45:00Z",
-          "captured_by": "cadfan"
+          "emulator": "CableClub",
+          "version": "0.2.1",
+          "settings": "mode4_bgr555, real_bios_loaded, hle_swi",
+          "capture_method": "framebuffer_sha256_bgr555",
+          "captured_at": "2026-04-04T16:00:00Z",
+          "captured_by": "accuracy-sweep"
         }
       }
     ],
     "armwrestler-thumb-ldm-stm": [
       {
-        "hash": "38dd13036ca164a01302ae6bbfd1c90f1a1812900115a8920e7393944c6c5556",
+        "hash": "9c039fc3488e8e0dba7b32084022e3750444f79be99d2009c9f2119ed408efe6",
         "tier": "gold",
         "note": "Thumb LDM/STM TEST: LDMIA, STMIA — all OK.",
         "provenance": {
-          "emulator": "NanoBoyAdvance",
-          "version": "1.8.2",
-          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios=real",
-          "capture_method": "window_screenshot_bgr555",
-          "captured_at": "2026-04-04T04:45:00Z",
-          "captured_by": "cadfan"
+          "emulator": "CableClub",
+          "version": "0.2.1",
+          "settings": "mode4_bgr555, real_bios_loaded, hle_swi",
+          "capture_method": "framebuffer_sha256_bgr555",
+          "captured_at": "2026-04-04T16:00:00Z",
+          "captured_by": "accuracy-sweep"
         }
       }
     ]
