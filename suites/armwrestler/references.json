@@ -1,6 +1,20 @@
 {
   "schema_version": 1,
   "references": {
-    "armwrestler": []
+    "armwrestler": [
+      {
+        "hash": "e6c7d07a53b89cabe3aedbeb65e0f07d58342c264b3186077d30a4168a1a1e96",
+        "tier": "gold",
+        "note": "ALU TESTS PART 1 results screen (all OK). ARMWrestler shows one page at a time.",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios_skip=true",
+          "capture_method": "window_screenshot_bgr555",
+          "captured_at": "2026-04-04T04:00:00Z",
+          "captured_by": "cadfan"
+        }
+      }
+    ]
   }
 }

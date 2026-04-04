@@ -3,14 +3,25 @@
   "references": {
     "jsmolka-arm": [
       {
+        "hash": "00d5f5998fa9681415cdfa13e1fa12a2afc847f2c82f3d2a9bda1a89e9c3e70e",
+        "tier": "gold",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios_skip=true",
+          "capture_method": "window_screenshot_bgr555",
+          "rom_sha256": "77ee88662552bdc885c1080c0172ff119d54db791bd73b21808cf1ff1fe5b40e",
+          "captured_at": "2026-04-04T04:00:00Z",
+          "captured_by": "cadfan"
+        }
+      },
+      {
         "hash": "a8635aace2fb84d870f5a72da1a3be1f67469d5f517cf4b1835c34c53e50fe6d",
         "tier": "secondary",
         "note": "mGBA is known-bad on jsmolka ARM test 235. This hash includes the failure.",
         "provenance": {
           "emulator": "mGBA",
           "version": "0.10",
-          "commit": null,
-          "bios": null,
           "rom_sha256": "77ee88662552bdc885c1080c0172ff119d54db791bd73b21808cf1ff1fe5b40e",
           "frame_count": 120,
           "captured_at": "2026-04-03T00:00:00Z",
@@ -20,14 +31,25 @@
     ],
     "jsmolka-thumb": [
       {
+        "hash": "189d74efff74ac64c20b2bb452243a4dd594c0376095e3807a0b031558641010",
+        "tier": "gold",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios_skip=true",
+          "capture_method": "window_screenshot_bgr555",
+          "rom_sha256": "b5cb2291df4ab314b31c598acd9bff2ccfa0b38efff29daadfe97422ce369b67",
+          "captured_at": "2026-04-04T04:00:00Z",
+          "captured_by": "cadfan"
+        }
+      },
+      {
         "hash": "7783dfe85db38db2cada7f49dd81ff3fbc2b2620dd288b6c499849876dc904a6",
         "tier": "secondary",
         "note": "mGBA is known-bad on jsmolka Thumb test 230. This hash includes the failure.",
         "provenance": {
           "emulator": "mGBA",
           "version": "0.10",
-          "commit": null,
-          "bios": null,
           "rom_sha256": "b5cb2291df4ab314b31c598acd9bff2ccfa0b38efff29daadfe97422ce369b67",
           "frame_count": 120,
           "captured_at": "2026-04-03T00:00:00Z",
@@ -37,14 +59,40 @@
     ],
     "jsmolka-bios": [
       {
+        "hash": "46dac7f185d63de037b646a4c0c13ab915b8f2e25e26fe1efe8f58adbbbfe1a5",
+        "tier": "gold",
+        "note": "Captured with real GBA BIOS (bios_skip=false). All tests pass.",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios_skip=false",
+          "capture_method": "window_screenshot_bgr555",
+          "rom_sha256": "9d7b369fa1aa661ff03692b3d79c6f644b623d72983d0fc890e6d87a0409a3c9",
+          "captured_at": "2026-04-04T04:00:00Z",
+          "captured_by": "cadfan"
+        }
+      },
+      {
+        "hash": "0b1735763d980730884bfa1ef1dc6fd3d9142339dc014aa6cd003c2b358aa26b",
+        "tier": "gold",
+        "note": "Captured with HLE BIOS (bios_skip=true). Fails test 001 due to HLE limitations.",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios_skip=true",
+          "capture_method": "window_screenshot_bgr555",
+          "rom_sha256": "9d7b369fa1aa661ff03692b3d79c6f644b623d72983d0fc890e6d87a0409a3c9",
+          "captured_at": "2026-04-04T04:00:00Z",
+          "captured_by": "cadfan"
+        }
+      },
+      {
         "hash": "5d7098c43253151951e2e7451c103eb0f1b95e73127d466058e146da37dfff72",
         "tier": "secondary",
         "note": "BIOS test results depend on HLE implementation. Multiple valid hashes expected.",
         "provenance": {
           "emulator": "mGBA",
           "version": "0.10",
-          "commit": null,
-          "bios": null,
           "rom_sha256": "9d7b369fa1aa661ff03692b3d79c6f644b623d72983d0fc890e6d87a0409a3c9",
           "frame_count": 120,
           "captured_at": "2026-04-03T00:00:00Z",
@@ -54,13 +102,24 @@
     ],
     "jsmolka-memory": [
       {
+        "hash": "00d5f5998fa9681415cdfa13e1fa12a2afc847f2c82f3d2a9bda1a89e9c3e70e",
+        "tier": "gold",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios_skip=true",
+          "capture_method": "window_screenshot_bgr555",
+          "rom_sha256": "21024fb6aae6343f5f0466dd54e3149de1fbeb23f78e7d85a015c983684d2f87",
+          "captured_at": "2026-04-04T04:00:00Z",
+          "captured_by": "cadfan"
+        }
+      },
+      {
         "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
         "tier": "secondary",
         "provenance": {
           "emulator": "mGBA",
           "version": "0.10",
-          "commit": null,
-          "bios": null,
           "rom_sha256": "21024fb6aae6343f5f0466dd54e3149de1fbeb23f78e7d85a015c983684d2f87",
           "frame_count": 120,
           "captured_at": "2026-04-03T00:00:00Z",
@@ -70,13 +129,24 @@
     ],
     "jsmolka-nes": [
       {
+        "hash": "00d5f5998fa9681415cdfa13e1fa12a2afc847f2c82f3d2a9bda1a89e9c3e70e",
+        "tier": "gold",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios_skip=true",
+          "capture_method": "window_screenshot_bgr555",
+          "rom_sha256": "d990df112763087d0415b3785c1b4d31c0237794a704d0446fc5f5e474a44f98",
+          "captured_at": "2026-04-04T04:00:00Z",
+          "captured_by": "cadfan"
+        }
+      },
+      {
         "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
         "tier": "secondary",
         "provenance": {
           "emulator": "mGBA",
           "version": "0.10",
-          "commit": null,
-          "bios": null,
           "rom_sha256": "d990df112763087d0415b3785c1b4d31c0237794a704d0446fc5f5e474a44f98",
           "frame_count": 120,
           "captured_at": "2026-04-03T00:00:00Z",
@@ -86,13 +156,24 @@
     ],
     "jsmolka-unsafe": [
       {
+        "hash": "00d5f5998fa9681415cdfa13e1fa12a2afc847f2c82f3d2a9bda1a89e9c3e70e",
+        "tier": "gold",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios_skip=true",
+          "capture_method": "window_screenshot_bgr555",
+          "rom_sha256": "bb727d59fa81915a5f5c609f4befb64872d3a3d830bc6ae0149e26410e648f85",
+          "captured_at": "2026-04-04T04:00:00Z",
+          "captured_by": "cadfan"
+        }
+      },
+      {
         "hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
         "tier": "secondary",
         "provenance": {
           "emulator": "mGBA",
           "version": "0.10",
-          "commit": null,
-          "bios": null,
           "rom_sha256": "bb727d59fa81915a5f5c609f4befb64872d3a3d830bc6ae0149e26410e648f85",
           "frame_count": 120,
           "captured_at": "2026-04-03T00:00:00Z",
