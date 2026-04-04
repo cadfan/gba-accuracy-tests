@@ -28,6 +28,20 @@
           "captured_at": "2026-04-03T00:00:00Z",
           "captured_by": "cadfan"
         }
+      },
+      {
+        "hash": "331592f0a9d2fefb4c9419c335761de45a1237c80a27e18e918926e3e06031ed",
+        "tier": "gold",
+        "note": "HLE BIOS (bios_skip=true). All ARM tests pass.",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios_skip=true",
+          "capture_method": "window_screenshot_bgr555",
+          "captured_at": "2026-04-04T18:00:00Z",
+          "captured_by": "cadfan",
+          "rom_sha256": "77ee88662552bdc885c1080c0172ff119d54db791bd73b21808cf1ff1fe5b40e"
+        }
       }
     ],
     "jsmolka-thumb": [
@@ -255,6 +269,33 @@
           "captured_at": "2026-04-04T10:40:00Z",
           "captured_by": "cadfan"
         }
+      },
+      {
+        "hash": "a0fb887aa4e34f5b0fb36f4af8a7ef3920e3c745acdd804043d0e179a6dc980f",
+        "tier": "gold",
+        "note": "HLE BIOS (bios_skip=true). All flash128 tests pass.",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios_skip=true",
+          "capture_method": "window_screenshot_bgr555",
+          "captured_at": "2026-04-04T18:00:00Z",
+          "captured_by": "cadfan",
+          "rom_sha256": "9ac50e51d3ce4209dbdf85e472e70c067d5827e9af1bb3e707f6bd9059d5f0c6"
+        }
+      },
+      {
+        "hash": "96f750d8f4dff67d105322f6f2b5b3f36919a18982cd17ca3270d4ca98ba8e35",
+        "tier": "gold",
+        "note": "Cable Club HLE boot. Flash128 visually shows blank (all tests passed, white BG).",
+        "provenance": {
+          "emulator": "CableClub",
+          "version": "0.2.1",
+          "settings": "hle_bios, bios_skip=true",
+          "capture_method": "accuracy_sweep_sha256",
+          "captured_at": "2026-04-04T18:30:00Z",
+          "captured_by": "cadfan"
+        }
       }
     ],
     "jsmolka-flash64": [
@@ -269,6 +310,33 @@
           "capture_method": "window_screenshot_bgr555",
           "rom_sha256": "7e2aa32e943aedde88bd750eadcdbf55152d3a1ec61385011b7f15cd85b07c02",
           "captured_at": "2026-04-04T10:40:00Z",
+          "captured_by": "cadfan"
+        }
+      },
+      {
+        "hash": "da2187c35d361c3be3b60b4121ada3ecba5b8e0c98e3880ef699fdb8466e1cc7",
+        "tier": "gold",
+        "note": "HLE BIOS (bios_skip=true). All flash64 tests pass.",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios_skip=true",
+          "capture_method": "window_screenshot_bgr555",
+          "captured_at": "2026-04-04T18:00:00Z",
+          "captured_by": "cadfan",
+          "rom_sha256": "7e2aa32e943aedde88bd750eadcdbf55152d3a1ec61385011b7f15cd85b07c02"
+        }
+      },
+      {
+        "hash": "96f750d8f4dff67d105322f6f2b5b3f36919a18982cd17ca3270d4ca98ba8e35",
+        "tier": "gold",
+        "note": "Cable Club HLE boot. Flash64 visually shows blank (all tests passed, white BG).",
+        "provenance": {
+          "emulator": "CableClub",
+          "version": "0.2.1",
+          "settings": "hle_bios, bios_skip=true",
+          "capture_method": "accuracy_sweep_sha256",
+          "captured_at": "2026-04-04T18:30:00Z",
           "captured_by": "cadfan"
         }
       }
@@ -303,6 +371,33 @@
           "captured_at": "2026-04-04T10:40:00Z",
           "captured_by": "cadfan"
         }
+      },
+      {
+        "hash": "32f262faee590883382b33218bd3a2b2258da1ed183ac97c51518498ab310b41",
+        "tier": "gold",
+        "note": "HLE BIOS (bios_skip=true). All tests pass.",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios_skip=true",
+          "capture_method": "window_screenshot_bgr555",
+          "captured_at": "2026-04-04T18:00:00Z",
+          "captured_by": "cadfan",
+          "rom_sha256": "edb34ba6590d070c8a50cf0f3566b1e3cc679377b978224ff1b872d27f2b1630"
+        }
+      },
+      {
+        "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "tier": "gold",
+        "note": "Cable Club HLE boot. All tests pass. Matches mGBA secondary.",
+        "provenance": {
+          "emulator": "CableClub",
+          "version": "0.2.1",
+          "settings": "hle_bios, bios_skip=true",
+          "capture_method": "accuracy_sweep_sha256",
+          "captured_at": "2026-04-04T18:30:00Z",
+          "captured_by": "cadfan"
+        }
       }
     ],
     "jsmolka-ppu-hello": [
@@ -317,6 +412,33 @@
           "capture_method": "window_screenshot_bgr555",
           "rom_sha256": "38aed48b67bc0f701e8aa222b0c3334bd306bd29888707bb7224d81f5576c264",
           "captured_at": "2026-04-04T10:40:00Z",
+          "captured_by": "cadfan"
+        }
+      },
+      {
+        "hash": "54a694e94c70d63c64a4bf8f0872abeff0adcb5f7d73ab84431af76f3e469f11",
+        "tier": "gold",
+        "note": "HLE BIOS (bios_skip=true). 'Hello world!' text.",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios_skip=true",
+          "capture_method": "window_screenshot_bgr555",
+          "captured_at": "2026-04-04T18:00:00Z",
+          "captured_by": "cadfan",
+          "rom_sha256": "38aed48b67bc0f701e8aa222b0c3334bd306bd29888707bb7224d81f5576c264"
+        }
+      },
+      {
+        "hash": "56cd131fb3915fe7e410be228a8c09e99132064799f148583636ca75745bedf7",
+        "tier": "gold",
+        "note": "Cable Club HLE boot. Visually identical to NBA - 9 edge pixels differ due to screenshot capture noise.",
+        "provenance": {
+          "emulator": "CableClub",
+          "version": "0.2.1",
+          "settings": "hle_bios, bios_skip=true",
+          "capture_method": "accuracy_sweep_sha256",
+          "captured_at": "2026-04-04T18:30:00Z",
           "captured_by": "cadfan"
         }
       }
@@ -335,6 +457,33 @@
           "captured_at": "2026-04-04T10:40:00Z",
           "captured_by": "cadfan"
         }
+      },
+      {
+        "hash": "3822da97a361867397dbee532790768c6f9edf99bcc7e438b6cfa4599ba3d55b",
+        "tier": "gold",
+        "note": "HLE BIOS (bios_skip=true). Blue palette gradient.",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios_skip=true",
+          "capture_method": "window_screenshot_bgr555",
+          "captured_at": "2026-04-04T18:00:00Z",
+          "captured_by": "cadfan",
+          "rom_sha256": "127ce348f17e4d5fd8a0821a7af757eda6109c66c9f7b8f7d1e0fa31831b407d"
+        }
+      },
+      {
+        "hash": "da5336215e6c56d30146c42d81ad828a819214c307682903a5bcc87be8c0538e",
+        "tier": "gold",
+        "note": "Cable Club HLE boot. Blue gradient visually correct.",
+        "provenance": {
+          "emulator": "CableClub",
+          "version": "0.2.1",
+          "settings": "hle_bios, bios_skip=true",
+          "capture_method": "accuracy_sweep_sha256",
+          "captured_at": "2026-04-04T18:30:00Z",
+          "captured_by": "cadfan"
+        }
       }
     ],
     "jsmolka-ppu-stripes": [
@@ -349,6 +498,33 @@
           "capture_method": "window_screenshot_bgr555",
           "rom_sha256": "80d6cc05b5f289b9a2392621fc245270f08e9f0d77fd33982120cef240f5a504",
           "captured_at": "2026-04-04T10:40:00Z",
+          "captured_by": "cadfan"
+        }
+      },
+      {
+        "hash": "9b3800ae9ec9ca686ffad610e7cdaefd940a261e39825eedbac3f760514f788e",
+        "tier": "gold",
+        "note": "HLE BIOS (bios_skip=true). Vertical stripes.",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios_skip=true",
+          "capture_method": "window_screenshot_bgr555",
+          "captured_at": "2026-04-04T18:00:00Z",
+          "captured_by": "cadfan",
+          "rom_sha256": "80d6cc05b5f289b9a2392621fc245270f08e9f0d77fd33982120cef240f5a504"
+        }
+      },
+      {
+        "hash": "4600c4f2749300b40f34dea969165d4d08d652543620076fb5cae249426f238d",
+        "tier": "gold",
+        "note": "Cable Club HLE boot. Vertical stripes visually correct.",
+        "provenance": {
+          "emulator": "CableClub",
+          "version": "0.2.1",
+          "settings": "hle_bios, bios_skip=true",
+          "capture_method": "accuracy_sweep_sha256",
+          "captured_at": "2026-04-04T18:30:00Z",
           "captured_by": "cadfan"
         }
       }
