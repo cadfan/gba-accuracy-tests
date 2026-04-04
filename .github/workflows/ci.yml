@@ -1,0 +1,87 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.11", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: pip install -e ".[dev]" 2>/dev/null || pip install tomli Pillow
+
+      - name: Validate manifests
+        run: |
+          python3 -c "
+          import sys
+          try:
+              import tomllib
+          except ImportError:
+              import tomli as tomllib
+
+          import pathlib
+          errors = 0
+          for manifest in sorted(pathlib.Path('suites').glob('*/manifest.toml')):
+              with open(manifest, 'rb') as f:
+                  data = tomllib.load(f)
+              suite = data.get('suite', {}).get('name', '???')
+              tests = data.get('tests', [])
+              print(f'{suite}: {len(tests)} tests')
+              if not tests:
+                  print(f'  WARNING: no tests in {manifest}')
+              for t in tests:
+                  if 'id' not in t:
+                      print(f'  ERROR: test missing id in {manifest}')
+                      errors += 1
+                  if 'completion' not in t:
+                      print(f'  ERROR: test {t.get(\"id\", \"?\")} missing completion in {manifest}')
+                      errors += 1
+          sys.exit(1 if errors else 0)
+          "
+
+      - name: Validate references
+        run: |
+          python3 -c "
+          import json, pathlib, sys
+          errors = 0
+          for refs_file in sorted(pathlib.Path('suites').glob('*/references.json')):
+              with open(refs_file) as f:
+                  data = json.load(f)
+              if 'schema_version' not in data:
+                  print(f'ERROR: {refs_file} missing schema_version')
+                  errors += 1
+              refs = data.get('references', {})
+              print(f'{refs_file.parent.name}: {len(refs)} reference entries')
+              for test_id, entries in refs.items():
+                  if not isinstance(entries, list):
+                      print(f'  ERROR: {test_id} references must be array')
+                      errors += 1
+                      continue
+                  for entry in entries:
+                      if 'hash' not in entry:
+                          print(f'  ERROR: {test_id} entry missing hash')
+                          errors += 1
+                      if 'provenance' not in entry:
+                          print(f'  ERROR: {test_id} entry missing provenance')
+                          errors += 1
+          sys.exit(1 if errors else 0)
+          "
+
+      - name: Check schema docs
+        run: |
+          test -f schema.md || (echo "ERROR: schema.md missing" && exit 1)
+          test -f CONTRIBUTING.md || (echo "ERROR: CONTRIBUTING.md missing" && exit 1)
+          echo "Documentation files present"
