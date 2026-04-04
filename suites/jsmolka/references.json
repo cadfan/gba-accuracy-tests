@@ -42,6 +42,19 @@
           "captured_by": "cadfan",
           "rom_sha256": "77ee88662552bdc885c1080c0172ff119d54db791bd73b21808cf1ff1fe5b40e"
         }
+      },
+      {
+        "hash": "96f750d8f4dff67d105322f6f2b5b3f36919a18982cd17ca3270d4ca98ba8e35",
+        "tier": "gold",
+        "note": "Cable Club with real BIOS data loaded (skip boot). All ARM tests pass. White-on-white rendering.",
+        "provenance": {
+          "emulator": "CableClub",
+          "version": "0.2.1",
+          "settings": "real_bios_data+hle_swi+skip_boot",
+          "capture_method": "accuracy_sweep_sha256",
+          "captured_at": "2026-04-04T20:00:00Z",
+          "captured_by": "cadfan"
+        }
       }
     ],
     "jsmolka-thumb": [
