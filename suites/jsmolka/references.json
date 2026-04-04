@@ -5,20 +5,21 @@
       {
         "hash": "00d5f5998fa9681415cdfa13e1fa12a2afc847f2c82f3d2a9bda1a89e9c3e70e",
         "tier": "gold",
+        "note": "Same hash with real BIOS and HLE (bios_skip). All tests pass.",
         "provenance": {
           "emulator": "NanoBoyAdvance",
           "version": "1.8.2",
-          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios_skip=true",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios=real",
           "capture_method": "window_screenshot_bgr555",
           "rom_sha256": "77ee88662552bdc885c1080c0172ff119d54db791bd73b21808cf1ff1fe5b40e",
-          "captured_at": "2026-04-04T04:00:00Z",
+          "captured_at": "2026-04-04T04:30:00Z",
           "captured_by": "cadfan"
         }
       },
       {
         "hash": "a8635aace2fb84d870f5a72da1a3be1f67469d5f517cf4b1835c34c53e50fe6d",
         "tier": "secondary",
-        "note": "mGBA is known-bad on jsmolka ARM test 235. This hash includes the failure.",
+        "note": "mGBA is known-bad on jsmolka ARM test 235.",
         "provenance": {
           "emulator": "mGBA",
           "version": "0.10",
@@ -31,8 +32,23 @@
     ],
     "jsmolka-thumb": [
       {
+        "hash": "510396487270a341248d95442f04a35dd25a4faecd9262c06c1bc0a464ad3db5",
+        "tier": "gold",
+        "note": "Real BIOS. All tests pass.",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios=real",
+          "capture_method": "window_screenshot_bgr555",
+          "rom_sha256": "b5cb2291df4ab314b31c598acd9bff2ccfa0b38efff29daadfe97422ce369b67",
+          "captured_at": "2026-04-04T04:30:00Z",
+          "captured_by": "cadfan"
+        }
+      },
+      {
         "hash": "189d74efff74ac64c20b2bb452243a4dd594c0376095e3807a0b031558641010",
         "tier": "gold",
+        "note": "HLE BIOS (bios_skip=true). All tests pass. Different hash due to boot state.",
         "provenance": {
           "emulator": "NanoBoyAdvance",
           "version": "1.8.2",
@@ -46,7 +62,7 @@
       {
         "hash": "7783dfe85db38db2cada7f49dd81ff3fbc2b2620dd288b6c499849876dc904a6",
         "tier": "secondary",
-        "note": "mGBA is known-bad on jsmolka Thumb test 230. This hash includes the failure.",
+        "note": "mGBA is known-bad on jsmolka Thumb test 230.",
         "provenance": {
           "emulator": "mGBA",
           "version": "0.10",
@@ -61,11 +77,11 @@
       {
         "hash": "46dac7f185d63de037b646a4c0c13ab915b8f2e25e26fe1efe8f58adbbbfe1a5",
         "tier": "gold",
-        "note": "Captured with real GBA BIOS (bios_skip=false). All tests pass.",
+        "note": "Real BIOS. All tests pass.",
         "provenance": {
           "emulator": "NanoBoyAdvance",
           "version": "1.8.2",
-          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios_skip=false",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios=real",
           "capture_method": "window_screenshot_bgr555",
           "rom_sha256": "9d7b369fa1aa661ff03692b3d79c6f644b623d72983d0fc890e6d87a0409a3c9",
           "captured_at": "2026-04-04T04:00:00Z",
@@ -75,7 +91,7 @@
       {
         "hash": "0b1735763d980730884bfa1ef1dc6fd3d9142339dc014aa6cd003c2b358aa26b",
         "tier": "gold",
-        "note": "Captured with HLE BIOS (bios_skip=true). Fails test 001 due to HLE limitations.",
+        "note": "HLE BIOS (bios_skip=true). Fails test 001 due to HLE limitations.",
         "provenance": {
           "emulator": "NanoBoyAdvance",
           "version": "1.8.2",
@@ -89,7 +105,6 @@
       {
         "hash": "5d7098c43253151951e2e7451c103eb0f1b95e73127d466058e146da37dfff72",
         "tier": "secondary",
-        "note": "BIOS test results depend on HLE implementation. Multiple valid hashes expected.",
         "provenance": {
           "emulator": "mGBA",
           "version": "0.10",
@@ -102,8 +117,23 @@
     ],
     "jsmolka-memory": [
       {
+        "hash": "266781c70147e8ee1346688acc397ea6854e2b390b6abe7d0abc5b3ae98fd6d9",
+        "tier": "gold",
+        "note": "Real BIOS. All tests pass.",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios=real",
+          "capture_method": "window_screenshot_bgr555",
+          "rom_sha256": "21024fb6aae6343f5f0466dd54e3149de1fbeb23f78e7d85a015c983684d2f87",
+          "captured_at": "2026-04-04T04:30:00Z",
+          "captured_by": "cadfan"
+        }
+      },
+      {
         "hash": "00d5f5998fa9681415cdfa13e1fa12a2afc847f2c82f3d2a9bda1a89e9c3e70e",
         "tier": "gold",
+        "note": "HLE BIOS (bios_skip=true). All tests pass. Different hash due to boot state.",
         "provenance": {
           "emulator": "NanoBoyAdvance",
           "version": "1.8.2",
@@ -129,8 +159,23 @@
     ],
     "jsmolka-nes": [
       {
+        "hash": "133bfa56521cbcce85fb7907fbb5de9c2a30e1a77b5bf5ca61b32f73cc68489a",
+        "tier": "gold",
+        "note": "Real BIOS. All tests pass.",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios=real",
+          "capture_method": "window_screenshot_bgr555",
+          "rom_sha256": "d990df112763087d0415b3785c1b4d31c0237794a704d0446fc5f5e474a44f98",
+          "captured_at": "2026-04-04T04:30:00Z",
+          "captured_by": "cadfan"
+        }
+      },
+      {
         "hash": "00d5f5998fa9681415cdfa13e1fa12a2afc847f2c82f3d2a9bda1a89e9c3e70e",
         "tier": "gold",
+        "note": "HLE BIOS (bios_skip=true). All tests pass.",
         "provenance": {
           "emulator": "NanoBoyAdvance",
           "version": "1.8.2",
@@ -156,8 +201,23 @@
     ],
     "jsmolka-unsafe": [
       {
+        "hash": "3b352de0005122363fe40a0421ef1ea3dd044a0e7861df8e509ab3cc43f49fb5",
+        "tier": "gold",
+        "note": "Real BIOS. All tests pass.",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios=real",
+          "capture_method": "window_screenshot_bgr555",
+          "rom_sha256": "bb727d59fa81915a5f5c609f4befb64872d3a3d830bc6ae0149e26410e648f85",
+          "captured_at": "2026-04-04T04:30:00Z",
+          "captured_by": "cadfan"
+        }
+      },
+      {
         "hash": "00d5f5998fa9681415cdfa13e1fa12a2afc847f2c82f3d2a9bda1a89e9c3e70e",
         "tier": "gold",
+        "note": "HLE BIOS (bios_skip=true). All tests pass.",
         "provenance": {
           "emulator": "NanoBoyAdvance",
           "version": "1.8.2",

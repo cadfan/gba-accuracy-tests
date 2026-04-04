@@ -1,17 +1,92 @@
 {
   "schema_version": 1,
   "references": {
-    "armwrestler": [
+    "armwrestler-arm-alu": [
       {
-        "hash": "e6c7d07a53b89cabe3aedbeb65e0f07d58342c264b3186077d30a4168a1a1e96",
+        "hash": "ba193b9b2df7f4ceef31ee184ee10916c55628bb15602f719f076d93f579fbb4",
         "tier": "gold",
-        "note": "ALU TESTS PART 1 results screen (all OK). ARMWrestler shows one page at a time.",
+        "note": "ALU TESTS PART 1: ADC, AND, BIC, CMN, EOR, MOV, MVN, RSC, SBC, MLA, MUL, MULL, SMULL — all OK.",
         "provenance": {
           "emulator": "NanoBoyAdvance",
           "version": "1.8.2",
-          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios_skip=true",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios=real",
           "capture_method": "window_screenshot_bgr555",
-          "captured_at": "2026-04-04T04:00:00Z",
+          "captured_at": "2026-04-04T04:45:00Z",
+          "captured_by": "cadfan"
+        }
+      }
+    ],
+    "armwrestler-arm-ldr-str": [
+      {
+        "hash": "992e16a41630663bd24f8f9aff3d854bb18a14399a66e0ad432e2db4e1d2d373",
+        "tier": "gold",
+        "note": "LOAD TESTS PART 1: LDR variants — all OK.",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios=real",
+          "capture_method": "window_screenshot_bgr555",
+          "captured_at": "2026-04-04T04:45:00Z",
+          "captured_by": "cadfan"
+        }
+      }
+    ],
+    "armwrestler-arm-ldm-stm": [
+      {
+        "hash": "1c0c3a500712d25511838e8b35873515d5c9b3c8c2856df321b3b65e35714b14",
+        "tier": "gold",
+        "note": "LDM/STM TESTS 1: Block transfer variants — all OK.",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios=real",
+          "capture_method": "window_screenshot_bgr555",
+          "captured_at": "2026-04-04T04:45:00Z",
+          "captured_by": "cadfan"
+        }
+      }
+    ],
+    "armwrestler-thumb-alu": [
+      {
+        "hash": "cd000e505a4cf6041bbd58047256eb43ddc4cd807c02a89c2599b184b22686a8",
+        "tier": "gold",
+        "note": "Thumb ALU TEST: ADD, ADR, BIC, CMP, LSL, LSR, MVU, MUL, NEG, SUB, ROR — all OK.",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios=real",
+          "capture_method": "window_screenshot_bgr555",
+          "captured_at": "2026-04-04T04:45:00Z",
+          "captured_by": "cadfan"
+        }
+      }
+    ],
+    "armwrestler-thumb-ldr-str": [
+      {
+        "hash": "2a6faf591de702ba059c1568890dbfce50f579d5f7f634608a35a04ce885a7b6",
+        "tier": "gold",
+        "note": "Thumb LDR/STR TEST 1: LDR, LDRB, LDRH, LDRSH, LDRSB — all OK.",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios=real",
+          "capture_method": "window_screenshot_bgr555",
+          "captured_at": "2026-04-04T04:45:00Z",
+          "captured_by": "cadfan"
+        }
+      }
+    ],
+    "armwrestler-thumb-ldm-stm": [
+      {
+        "hash": "38dd13036ca164a01302ae6bbfd1c90f1a1812900115a8920e7393944c6c5556",
+        "tier": "gold",
+        "note": "Thumb LDM/STM TEST: LDMIA, STMIA — all OK.",
+        "provenance": {
+          "emulator": "NanoBoyAdvance",
+          "version": "1.8.2",
+          "settings": "color_correction=none, lcd_ghosting=false, filter=nearest, bios=real",
+          "capture_method": "window_screenshot_bgr555",
+          "captured_at": "2026-04-04T04:45:00Z",
           "captured_by": "cadfan"
         }
       }
