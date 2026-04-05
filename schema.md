@@ -55,18 +55,20 @@ Each suite has a `suites/<name>/references.json`:
 
 ```json
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "references": {
     "test-id": [
       {
         "hash": "sha256-hex-64-chars",
         "tier": "gold",
+        "bios_mode": "official",
         "note": "optional note",
         "provenance": {
           "emulator": "NanoBoyAdvance",
           "version": "1.8.2",
           "commit": "abc123...",
-          "bios": null,
+          "bios_mode": "official",
+          "bios_sha256": "sha256-of-bios-file",
           "rom_sha256": "sha256-of-rom",
           "frame_count": 120,
           "captured_at": "2026-04-04T00:00:00Z",
@@ -78,24 +80,58 @@ Each suite has a `suites/<name>/references.json`:
 }
 ```
 
+### BIOS Modes
+
+Each reference is tagged with the BIOS mode used during capture:
+
+- **`official`**: Nintendo's official GBA BIOS (SHA256: `300c20df6731a33952ded8c436f7f186d25d3492860571b21d43c2e8b3c4deaf`)
+- **`hle`**: High-level emulation of BIOS functions (emulator-specific)
+- **`skip`**: BIOS skipped entirely, direct jump to ROM entry point
+- **`cleanroom`**: Open-source cleanroom BIOS implementation (e.g., Normatt's)
+
+**Comparison rule:** `compare.py` and the Rust harness only compare hashes within the same BIOS mode. A reference captured under `official` BIOS will NOT match a test run under `hle`, even if the hash is identical. This prevents false passes where different BIOS modes produce the same framebuffer by coincidence.
+
+**Migration from schema_version 1:** References without `bios_mode` are treated as `"hle"` (the historical default). Tools should auto-migrate on read.
+
 ### Reference Tiers
 
-- **gold**: Hardware-verified or from a 100%-passing emulator (e.g., NanoBoyAdvance)
-- **secondary**: From a trusted emulator with known limitations (e.g., mGBA)
+- **gold**: Hardware-verified or from a 100%-passing emulator for this suite
+- **secondary**: From a trusted emulator with known limitations
 - **candidate**: Unverified, submitted by community
 
-`compare.py` reports PASS if the actual hash matches ANY reference (any tier).
+### Oracle Selection
+
+Per-suite gold standard emulator, used when references disagree:
+
+1. Hardware-verified captures (if available)
+2. GBAHawk (highest overall pass rate)
+3. Mesen > NanoBoyAdvance > mGBA (tiebreaker order)
+
+**Contested:** Multiple oracle-tier emulators produce different hashes for the same test + BIOS mode. Indicates unknown hardware behavior.
+
+**Unverified:** No emulator passes the test under any BIOS mode.
 
 ### Provenance Fields
 
 - `emulator`: Name of the emulator that generated this reference
 - `version`: Emulator version string
 - `commit`: Git commit SHA of the emulator (for reproducibility)
-- `bios`: SHA256 of BIOS file used, or `null` for HLE/built-in
+- `bios_mode`: One of `official`, `hle`, `skip`, `cleanroom`
+- `bios_sha256`: SHA256 of BIOS file used, or `null` for HLE/skip
 - `rom_sha256`: SHA256 of the ROM binary (cross-checks manifest)
 - `frame_count`: Number of frames run before capture
 - `captured_at`: ISO 8601 timestamp
 - `captured_by`: Username or "generate_refs.py"
+
+### Reference Framebuffers
+
+Raw BGR555 framebuffers (.bin, 76800 bytes) are stored alongside references for diff image generation:
+
+```
+suites/<name>/refs/<emulator>-<bios_mode>-<test_id>.bin
+```
+
+These files enable diff triptych generation (Expected | Actual | Diff) on test failure.
 
 ## BGR555 Format
 
@@ -121,21 +157,28 @@ Output of `compare.py run`:
 
 ```json
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "runner": "mgba",
   "suite": "jsmolka",
+  "bios_mode": "official",
   "timestamp": "2026-04-04T12:00:00+00:00",
-  "summary": {"pass": 4, "fail": 2, "other": 0},
+  "summary": {"pass": 4, "fail": 2, "skip": 0, "error": 0},
   "results": [
     {
       "test_id": "jsmolka-arm",
       "status": "PASS",
+      "actual_hash": "abc123...",
+      "matched_reference": {
+        "hash": "abc123...",
+        "tier": "gold",
+        "emulator": "NanoBoyAdvance"
+      },
       "time_s": 1.2
     },
     {
       "test_id": "jsmolka-thumb",
       "status": "FAIL",
-      "actual_hash": "abc123...",
+      "actual_hash": "def789...",
       "expected_hashes": ["def456..."],
       "time_s": 0.9
     }
@@ -143,6 +186,20 @@ Output of `compare.py run`:
 }
 ```
 
+### Results Fields
+
+- `bios_mode`: The BIOS mode used for this run (determines which references to compare against)
+- `matched_reference`: On PASS, which specific reference was matched (tier + source emulator)
+- `actual_hash`: SHA256 of the captured framebuffer (always included)
+
 Status values: PASS, FAIL, CRASH, TIMEOUT, ERROR, SKIP.
 
 Exit codes: 0 = all pass, 1 = any fail/crash, 2 = error.
+
+### Test Annotations
+
+Tests may have annotations in the manifest that affect scoring:
+
+- `requires_hardware = true`: Test needs physical link cable. Excluded from default scoring.
+- `caveat = "string"`: Test has known issues (e.g., flash tests that fail on real hardware). Scored separately.
+- `unverified_subtests = N`: Only N of M subtests have emulator consensus. Score only consensus subtests.

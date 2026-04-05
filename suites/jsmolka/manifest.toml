@@ -111,6 +111,9 @@ timing_sensitive = false
 requires_bios = false
 hint = "128KB Flash (Macronix MX29L010) save type tests."
 
+[tests.annotations]
+caveat = "May fail on real development flash boards"
+
 [tests.completion]
 type = "stable_frames"
 window = 10
@@ -125,6 +128,9 @@ max_frames = 600
 timing_sensitive = false
 requires_bios = false
 hint = "64KB Flash save type tests."
+
+[tests.annotations]
+caveat = "May fail on real development flash boards"
 
 [tests.completion]
 type = "stable_frames"

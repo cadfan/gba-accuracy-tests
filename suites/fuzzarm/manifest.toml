@@ -1,0 +1,59 @@
+schema_version = 1
+
+[suite]
+name = "fuzzarm"
+description = "DenSinH/FuzzARM: 10,000 random instruction tests for ARM, Thumb, and mixed mode"
+source = "https://github.com/DenSinH/FuzzARM"
+commit = "a675329cd57da48e3e406216ba2d79dd7e09ee20"
+
+# Each ROM runs 10,000 randomized instruction tests and displays "End of testing"
+# when complete. These take significantly longer than jsmolka tests due to the
+# sheer number of randomized cases. max_frames=30000 as safety timeout.
+
+[[tests]]
+id = "fuzzarm-arm"
+rom = "ARM_Any.gba"
+rom_sha256 = ""
+subsystem = "cpu-arm"
+max_frames = 30000
+timing_sensitive = false
+requires_bios = false
+bios = "skip"
+hint = "10,000 random ARM instruction tests. Displays 'End of testing' when done. Long-running."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 2000
+
+[[tests]]
+id = "fuzzarm-thumb"
+rom = "THUMB_Any.gba"
+rom_sha256 = ""
+subsystem = "cpu-thumb"
+max_frames = 30000
+timing_sensitive = false
+requires_bios = false
+bios = "skip"
+hint = "10,000 random Thumb instruction tests. Displays 'End of testing' when done. Long-running."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 2000
+
+[[tests]]
+id = "fuzzarm-mixed"
+rom = "FuzzARM.gba"
+rom_sha256 = ""
+subsystem = "cpu-mixed"
+max_frames = 30000
+timing_sensitive = false
+requires_bios = false
+bios = "skip"
+hint = "10,000 random mixed ARM/Thumb instruction tests. Displays 'End of testing' when done. Long-running."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 2000

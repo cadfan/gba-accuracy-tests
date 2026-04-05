@@ -34,6 +34,10 @@ ROM_MANIFEST: dict[str, tuple[str, str, list[tuple[str, str]]]] = {
             ("memory/memory.gba", "21024fb6aae6343f5f0466dd54e3149de1fbeb23f78e7d85a015c983684d2f87"),
             ("nes/nes.gba", "d990df112763087d0415b3785c1b4d31c0237794a704d0446fc5f5e474a44f98"),
             ("unsafe/unsafe.gba", "bb727d59fa81915a5f5c609f4befb64872d3a3d830bc6ae0149e26410e648f85"),
+            ("save/none.gba", "edb34ba6590d070c8a50cf0f3566b1e3cc679377b978224ff1b872d27f2b1630"),
+            ("save/sram.gba", "a37ad99c31e3f805eb05a00e498b65bd78e6f43a0a139cd695bea1f88229af2c"),
+            ("save/flash64.gba", "7e2aa32e943aedde88bd750eadcdbf55152d3a1ec61385011b7f15cd85b07c02"),
+            ("save/flash128.gba", "9ac50e51d3ce4209dbdf85e472e70c067d5827e9af1bb3e707f6bd9059d5f0c6"),
         ],
     ),
     "armwrestler": (
@@ -47,9 +51,13 @@ ROM_MANIFEST: dict[str, tuple[str, str, list[tuple[str, str]]]] = {
         "DenSinH/FuzzARM",
         "a675329cd57da48e3e406216ba2d79dd7e09ee20",
         [
-            ("FuzzARM.gba", ""),  # SHA256 not yet verified
+            ("ARM_Any.gba", ""),    # SHA256 not yet verified - 10K random ARM tests
+            ("THUMB_Any.gba", ""),   # SHA256 not yet verified - 10K random Thumb tests
+            ("FuzzARM.gba", ""),     # SHA256 not yet verified - 10K random mixed tests
         ],
     ),
+    # NOTE: ags-aging (Nintendo AGS Aging Cartridge) is not listed here.
+    # The ROM is proprietary and must be manually placed at roms/ags-aging/ags-aging.gba.
 }
 
 
