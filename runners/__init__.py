@@ -17,11 +17,25 @@ class Runner(Protocol):
 
     name: str
 
-    def run_test(self, rom_path: Path, frames: int, output_path: Path) -> bool:
+    def run_test(
+        self,
+        rom_path: Path,
+        frames: int,
+        output_path: Path,
+        *,
+        inputs: list[dict] | None = None,
+        completion: dict | None = None,
+        bios_mode: str = "official",
+    ) -> bool:
         """Run ROM for N frames, save screenshot to output_path.
 
         Returns True if the emulator ran successfully (not whether the test passed).
         Output can be .png or .bin (raw BGR555 76800 bytes).
+
+        Keyword args:
+            inputs: list of {"frame": int, "keys": int} — keypad schedule
+            completion: manifest completion dict (may be None)
+            bios_mode: "official" (real BIOS) or "hle"/"skip" (emulator default)
         """
         ...
 

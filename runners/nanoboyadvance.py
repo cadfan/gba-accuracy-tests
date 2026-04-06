@@ -73,6 +73,7 @@ class NanoBoyAdvanceRunner:
         *,
         inputs: list[dict] | None = None,
         completion: dict | None = None,
+        bios_mode: str = "official",
     ) -> bool:
         del completion
         if self._exe is None or self._bios is None:
@@ -86,6 +87,11 @@ class NanoBoyAdvanceRunner:
             "--frames", str(frames),
             "--output", str(output_path),
         ]
+        # NBA has no true HLE BIOS. --skip-bios skips the boot animation and
+        # jumps straight to ROM entry; BIOS data is still loaded for SWI
+        # handler dispatch. This is the closest NBA analogue to "HLE mode".
+        if bios_mode in ("hle", "skip"):
+            cmd.append("--skip-bios")
         if inputs:
             cmd += ["--keys", ",".join(f"{int(i['frame'])}:{int(i['keys'])}" for i in inputs)]
 

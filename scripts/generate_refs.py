@@ -22,6 +22,38 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from compare import load_manifest, load_screenshot, hash_bgr555, SUITES_DIR, ROMS_DIR, OUTPUT_DIR
 from runners import get_runner
 
+# Matches cable_club's harness: presses are auto-released this many frames
+# after they fire, unless another explicit event sets the mask. Without this,
+# a "press DOWN at frame 100" entry holds DOWN forever and later navigation
+# events are ignored by edge-detecting menus.
+KEY_HOLD_FRAMES = 10
+
+# Real Nintendo GBA BIOS runs a ~3 second Nintendo logo animation before
+# handing control to the cart. Manifests are authored assuming HLE boot
+# (~1 frame). In official BIOS mode, shift the input schedule and max_frames
+# by this many frames so navigation events land on the menu instead of the
+# logo animation.
+OFFICIAL_BIOS_BOOT_OFFSET = 210
+
+
+def expand_input_script(raw_inputs: list[dict] | None) -> list[dict] | None:
+    """Insert release (keys=0) events KEY_HOLD_FRAMES after each press,
+    matching cable_club's input semantics. Skips the release if another
+    explicit event already lands on the release frame."""
+    if not raw_inputs:
+        return None
+    explicit_frames = {int(i["frame"]) for i in raw_inputs}
+    events: list[tuple[int, int]] = [(int(i["frame"]), int(i["keys"])) for i in raw_inputs]
+    for frame, keys in list(events):
+        if keys == 0:
+            continue
+        release = frame + KEY_HOLD_FRAMES
+        if release not in explicit_frames:
+            events.append((release, 0))
+            explicit_frames.add(release)
+    events.sort()
+    return [{"frame": f, "keys": k} for f, k in events]
+
 
 def generate_refs(args: argparse.Namespace) -> int:
     runner = get_runner(args.runner)
@@ -63,10 +95,26 @@ def generate_refs(args: argparse.Namespace) -> int:
             continue
 
         max_frames = test.get("max_frames", 600)
-        output_path = OUTPUT_DIR / f"ref-{test_id}.png"
+        output_path = OUTPUT_DIR / f"ref-{test_id}.bin"
+        test_inputs = expand_input_script(test.get("input", []))
+        test_completion = test.get("completion")
+
+        if bios_mode == "official" and test_inputs:
+            test_inputs = [
+                {"frame": i["frame"] + OFFICIAL_BIOS_BOOT_OFFSET, "keys": i["keys"]}
+                for i in test_inputs
+            ]
+            max_frames += OFFICIAL_BIOS_BOOT_OFFSET
 
         print(f"  [{test_id}] Running {max_frames} frames (bios={bios_mode})...")
-        success = runner.run_test(rom_path, max_frames, output_path)
+        success = runner.run_test(
+            rom_path,
+            max_frames,
+            output_path,
+            inputs=test_inputs,
+            completion=test_completion,
+            bios_mode=bios_mode,
+        )
         if not success:
             print(f"  [{test_id}] FAIL \u2014 runner did not produce output")
             continue

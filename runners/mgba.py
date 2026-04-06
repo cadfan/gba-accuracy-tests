@@ -94,16 +94,23 @@ class MgbaRunner:
         *,
         inputs: list[dict] | None = None,
         completion: dict | None = None,
+        bios_mode: str = "official",
     ) -> bool:
         del completion  # adaptive completion not yet wired through libretro host
         if self._dll is None:
             return False
         output_path.parent.mkdir(parents=True, exist_ok=True)
 
+        # HLE mode: don't copy BIOS into the libretro system dir so the
+        # mgba core falls back to its built-in HLE BIOS implementation.
+        # Official mode: pass the real BIOS path.
+        bios_for_session: Path | None = None
+        if bios_mode == "official" and self._bios is not None:
+            bios_for_session = Path(self._bios)
         try:
             session = LibretroSession(
                 self._dll,
-                bios_path=Path(self._bios) if self._bios else None,
+                bios_path=bios_for_session,
                 bios_filename="gba_bios.bin",
             )
             try:

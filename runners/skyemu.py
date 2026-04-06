@@ -91,9 +91,9 @@ def _wait_ready(port: int, timeout: float) -> bool:
     return False
 
 
-def _http_get(port: int, path: str) -> bytes:
+def _http_get(port: int, path: str, timeout: float = 120.0) -> bytes:
     url = f"http://127.0.0.1:{port}{path}"
-    with urllib.request.urlopen(url, timeout=10.0) as resp:
+    with urllib.request.urlopen(url, timeout=timeout) as resp:
         return resp.read()
 
 
@@ -145,8 +145,10 @@ class SkyEmuRunner:
         *,
         inputs: list[dict] | None = None,
         completion: dict | None = None,
+        bios_mode: str = "official",
     ) -> bool:
         del completion  # not used
+        del bios_mode  # SkyEmu's BIOS handling is not exposed via HTTP
         if self._exe is None:
             return False
         output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -181,13 +183,16 @@ class SkyEmuRunner:
                         current_mask = schedule[sched_idx][1]
                         sched_idx += 1
                         _http_get(port, "/input?" + _gba_mask_to_query(current_mask))
-                    # Step until next scheduled change or target.
+                    # Step until next scheduled change or target. Cap each
+                    # /step call at 1000 frames so long tests (e.g. fuzzarm
+                    # 30000f) don't blow past a single-request HTTP timeout.
                     if sched_idx < len(schedule):
                         next_change = schedule[sched_idx][0]
                         chunk = max(1, min(frames, next_change) - current_frame)
                     else:
                         chunk = frames - current_frame
-                    _http_get(port, f"/step?frames={chunk}")
+                    chunk = min(chunk, 1000)
+                    _http_get(port, f"/step?frames={chunk}", timeout=180.0)
                     current_frame += chunk
 
                 png_bytes = _http_get(port, "/screen")
