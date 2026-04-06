@@ -2,14 +2,559 @@ schema_version = 1
 
 [suite]
 name = "mgba-suite"
-description = "mgba-emu/suite: timing, DMA, timer, IO tests"
+description = "mgba-emu/suite: memory, IO, timing, DMA, shifter, carry, BIOS, video, and edge case tests"
 source = "https://github.com/mgba-emu/suite"
-commit = "TO_BE_PINNED"
+# ROM sourced from Asphaltian/sgba mirror — the upstream repo has no
+# pre-built release. sha256 = 2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6
+commit = "mirror:Asphaltian/sgba@main"
 
-# mgba-suite tests are timing-sensitive. Different emulators may produce
-# legitimately different framebuffers due to cycle-level timing differences.
-# References should be tagged per-emulator in references.json.
+# Menu has 14 items. Selection is via DOWN/UP, entry via A, back via B.
+# The suite runs all sub-tests of a category when A is pressed, then
+# displays a "passes / total" summary that's stable. Each sub-test entry
+# below drives down the correct number of times and presses A.
+#
+# Timing: bare-metal suite boots fast under HLE (~20 frames). With real
+# BIOS, add ~180 frames for the Nintendo logo animation. The input
+# schedule below is HLE-anchored; generate_refs shifts it by
+# OFFICIAL_BIOS_BOOT_OFFSET automatically.
+#
+# GBA KEYINPUT bits: A=1 (bit 0), DOWN=128 (bit 7), UP=64 (bit 6)
 
-# NOTE: mgba-suite ROMs are not yet integrated. This is a placeholder manifest
-# for V2 when individual suite ROMs are downloaded and tested.
-# The full suite.gba mega-ROM requires menu navigation via input injection.
+[[tests]]
+id = "mgba-suite-memory"
+rom = "suite.gba"
+rom_sha256 = "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6"
+subsystem = "memory"
+max_frames = 2400
+timing_sensitive = false
+requires_bios = false
+hint = "Memory test suite (menu item 0, default). Captures the pass/total summary."
+
+[tests.completion]
+type = "input_then_stable"
+window = 30
+min_frames = 400
+
+[[tests.input]]
+frame = 80
+keys = 1    # A — enter Memory
+
+[[tests]]
+id = "mgba-suite-io-read"
+rom = "suite.gba"
+rom_sha256 = "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6"
+subsystem = "io"
+max_frames = 2400
+timing_sensitive = false
+requires_bios = false
+hint = "IO register read test suite (menu item 1)."
+
+[tests.completion]
+type = "input_then_stable"
+window = 30
+min_frames = 400
+
+[[tests.input]]
+frame = 80
+keys = 128  # DOWN
+[[tests.input]]
+frame = 100
+keys = 1    # A
+
+[[tests]]
+id = "mgba-suite-timing"
+rom = "suite.gba"
+rom_sha256 = "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6"
+subsystem = "timing"
+max_frames = 2400
+timing_sensitive = true
+requires_bios = false
+hint = "Instruction timing tests (menu item 2)."
+
+[tests.completion]
+type = "input_then_stable"
+window = 30
+min_frames = 400
+
+[[tests.input]]
+frame = 80
+keys = 128
+[[tests.input]]
+frame = 100
+keys = 128
+[[tests.input]]
+frame = 120
+keys = 1
+
+[[tests]]
+id = "mgba-suite-timers"
+rom = "suite.gba"
+rom_sha256 = "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6"
+subsystem = "timing"
+max_frames = 2400
+timing_sensitive = true
+requires_bios = false
+hint = "Timer count-up tests (menu item 3)."
+
+[tests.completion]
+type = "input_then_stable"
+window = 30
+min_frames = 400
+
+[[tests.input]]
+frame = 80
+keys = 128
+[[tests.input]]
+frame = 100
+keys = 128
+[[tests.input]]
+frame = 120
+keys = 128
+[[tests.input]]
+frame = 140
+keys = 1
+
+[[tests]]
+id = "mgba-suite-timer-irq"
+rom = "suite.gba"
+rom_sha256 = "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6"
+subsystem = "timing"
+max_frames = 2400
+timing_sensitive = true
+requires_bios = false
+hint = "Timer IRQ tests (menu item 4)."
+
+[tests.completion]
+type = "input_then_stable"
+window = 30
+min_frames = 400
+
+[[tests.input]]
+frame = 80
+keys = 128
+[[tests.input]]
+frame = 100
+keys = 128
+[[tests.input]]
+frame = 120
+keys = 128
+[[tests.input]]
+frame = 140
+keys = 128
+[[tests.input]]
+frame = 160
+keys = 1
+
+[[tests]]
+id = "mgba-suite-shifter"
+rom = "suite.gba"
+rom_sha256 = "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6"
+subsystem = "cpu-arm"
+max_frames = 2400
+timing_sensitive = false
+requires_bios = false
+hint = "Barrel shifter tests (menu item 5)."
+
+[tests.completion]
+type = "input_then_stable"
+window = 30
+min_frames = 400
+
+[[tests.input]]
+frame = 80
+keys = 128
+[[tests.input]]
+frame = 100
+keys = 128
+[[tests.input]]
+frame = 120
+keys = 128
+[[tests.input]]
+frame = 140
+keys = 128
+[[tests.input]]
+frame = 160
+keys = 128
+[[tests.input]]
+frame = 180
+keys = 1
+
+[[tests]]
+id = "mgba-suite-carry"
+rom = "suite.gba"
+rom_sha256 = "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6"
+subsystem = "cpu-arm"
+max_frames = 2400
+timing_sensitive = false
+requires_bios = false
+hint = "Carry flag tests (menu item 6)."
+
+[tests.completion]
+type = "input_then_stable"
+window = 30
+min_frames = 400
+
+[[tests.input]]
+frame = 80
+keys = 128
+[[tests.input]]
+frame = 100
+keys = 128
+[[tests.input]]
+frame = 120
+keys = 128
+[[tests.input]]
+frame = 140
+keys = 128
+[[tests.input]]
+frame = 160
+keys = 128
+[[tests.input]]
+frame = 180
+keys = 128
+[[tests.input]]
+frame = 200
+keys = 1
+
+[[tests]]
+id = "mgba-suite-multiply-long"
+rom = "suite.gba"
+rom_sha256 = "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6"
+subsystem = "cpu-arm"
+max_frames = 2400
+timing_sensitive = false
+requires_bios = false
+hint = "Long multiply tests (menu item 7)."
+
+[tests.completion]
+type = "input_then_stable"
+window = 30
+min_frames = 400
+
+[[tests.input]]
+frame = 80
+keys = 128
+[[tests.input]]
+frame = 100
+keys = 128
+[[tests.input]]
+frame = 120
+keys = 128
+[[tests.input]]
+frame = 140
+keys = 128
+[[tests.input]]
+frame = 160
+keys = 128
+[[tests.input]]
+frame = 180
+keys = 128
+[[tests.input]]
+frame = 200
+keys = 128
+[[tests.input]]
+frame = 220
+keys = 1
+
+[[tests]]
+id = "mgba-suite-bios-math"
+rom = "suite.gba"
+rom_sha256 = "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6"
+subsystem = "bios"
+max_frames = 2400
+timing_sensitive = false
+requires_bios = false
+hint = "BIOS math SWI tests (menu item 8). Sensitive to BIOS mode."
+
+[tests.completion]
+type = "input_then_stable"
+window = 30
+min_frames = 400
+
+[[tests.input]]
+frame = 80
+keys = 128
+[[tests.input]]
+frame = 100
+keys = 128
+[[tests.input]]
+frame = 120
+keys = 128
+[[tests.input]]
+frame = 140
+keys = 128
+[[tests.input]]
+frame = 160
+keys = 128
+[[tests.input]]
+frame = 180
+keys = 128
+[[tests.input]]
+frame = 200
+keys = 128
+[[tests.input]]
+frame = 220
+keys = 128
+[[tests.input]]
+frame = 240
+keys = 1
+
+[[tests]]
+id = "mgba-suite-dma"
+rom = "suite.gba"
+rom_sha256 = "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6"
+subsystem = "dma"
+max_frames = 3600
+timing_sensitive = true
+requires_bios = false
+hint = "DMA tests (menu item 9). Slow — 15000+ cases."
+
+[tests.completion]
+type = "input_then_stable"
+window = 30
+min_frames = 600
+
+[[tests.input]]
+frame = 80
+keys = 128
+[[tests.input]]
+frame = 100
+keys = 128
+[[tests.input]]
+frame = 120
+keys = 128
+[[tests.input]]
+frame = 140
+keys = 128
+[[tests.input]]
+frame = 160
+keys = 128
+[[tests.input]]
+frame = 180
+keys = 128
+[[tests.input]]
+frame = 200
+keys = 128
+[[tests.input]]
+frame = 220
+keys = 128
+[[tests.input]]
+frame = 240
+keys = 128
+[[tests.input]]
+frame = 260
+keys = 1
+
+[[tests]]
+id = "mgba-suite-sio-read"
+rom = "suite.gba"
+rom_sha256 = "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6"
+subsystem = "sio"
+max_frames = 2400
+timing_sensitive = false
+requires_bios = false
+hint = "SIO register read tests (menu item 10)."
+
+[tests.completion]
+type = "input_then_stable"
+window = 30
+min_frames = 400
+
+[[tests.input]]
+frame = 80
+keys = 128
+[[tests.input]]
+frame = 100
+keys = 128
+[[tests.input]]
+frame = 120
+keys = 128
+[[tests.input]]
+frame = 140
+keys = 128
+[[tests.input]]
+frame = 160
+keys = 128
+[[tests.input]]
+frame = 180
+keys = 128
+[[tests.input]]
+frame = 200
+keys = 128
+[[tests.input]]
+frame = 220
+keys = 128
+[[tests.input]]
+frame = 240
+keys = 128
+[[tests.input]]
+frame = 260
+keys = 128
+[[tests.input]]
+frame = 280
+keys = 1
+
+[[tests]]
+id = "mgba-suite-sio-timing"
+rom = "suite.gba"
+rom_sha256 = "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6"
+subsystem = "sio"
+max_frames = 2400
+timing_sensitive = true
+requires_bios = false
+hint = "SIO timing tests (menu item 11)."
+
+[tests.completion]
+type = "input_then_stable"
+window = 30
+min_frames = 400
+
+[[tests.input]]
+frame = 80
+keys = 128
+[[tests.input]]
+frame = 100
+keys = 128
+[[tests.input]]
+frame = 120
+keys = 128
+[[tests.input]]
+frame = 140
+keys = 128
+[[tests.input]]
+frame = 160
+keys = 128
+[[tests.input]]
+frame = 180
+keys = 128
+[[tests.input]]
+frame = 200
+keys = 128
+[[tests.input]]
+frame = 220
+keys = 128
+[[tests.input]]
+frame = 240
+keys = 128
+[[tests.input]]
+frame = 260
+keys = 128
+[[tests.input]]
+frame = 280
+keys = 128
+[[tests.input]]
+frame = 300
+keys = 1
+
+[[tests]]
+id = "mgba-suite-misc-edge"
+rom = "suite.gba"
+rom_sha256 = "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6"
+subsystem = "misc"
+max_frames = 2400
+timing_sensitive = false
+requires_bios = false
+hint = "Miscellaneous edge case tests (menu item 12)."
+
+[tests.completion]
+type = "input_then_stable"
+window = 30
+min_frames = 400
+
+[[tests.input]]
+frame = 80
+keys = 128
+[[tests.input]]
+frame = 100
+keys = 128
+[[tests.input]]
+frame = 120
+keys = 128
+[[tests.input]]
+frame = 140
+keys = 128
+[[tests.input]]
+frame = 160
+keys = 128
+[[tests.input]]
+frame = 180
+keys = 128
+[[tests.input]]
+frame = 200
+keys = 128
+[[tests.input]]
+frame = 220
+keys = 128
+[[tests.input]]
+frame = 240
+keys = 128
+[[tests.input]]
+frame = 260
+keys = 128
+[[tests.input]]
+frame = 280
+keys = 128
+[[tests.input]]
+frame = 300
+keys = 128
+[[tests.input]]
+frame = 320
+keys = 1
+
+[[tests]]
+id = "mgba-suite-video"
+rom = "suite.gba"
+rom_sha256 = "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6"
+subsystem = "ppu"
+max_frames = 2400
+timing_sensitive = false
+requires_bios = false
+hint = "Video / PPU tests (menu item 13, last in list)."
+
+[tests.completion]
+type = "input_then_stable"
+window = 30
+min_frames = 400
+
+[[tests.input]]
+frame = 80
+keys = 128
+[[tests.input]]
+frame = 100
+keys = 128
+[[tests.input]]
+frame = 120
+keys = 128
+[[tests.input]]
+frame = 140
+keys = 128
+[[tests.input]]
+frame = 160
+keys = 128
+[[tests.input]]
+frame = 180
+keys = 128
+[[tests.input]]
+frame = 200
+keys = 128
+[[tests.input]]
+frame = 220
+keys = 128
+[[tests.input]]
+frame = 240
+keys = 128
+[[tests.input]]
+frame = 260
+keys = 128
+[[tests.input]]
+frame = 280
+keys = 128
+[[tests.input]]
+frame = 300
+keys = 128
+[[tests.input]]
+frame = 320
+keys = 128
+[[tests.input]]
+frame = 340
+keys = 1

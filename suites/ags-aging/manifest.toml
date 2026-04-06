@@ -2,12 +2,12 @@ schema_version = 1
 
 [suite]
 name = "ags-aging"
-description = "Nintendo AGS Aging Cartridge: official hardware validation tests (Memory, LCD, Timer, DMA, COM, Key Input, Interrupt)"
-source = "Nintendo official (not publicly available)"
+description = "Nintendo AGS Aging Cartridge v7.1: factory hardware validation tests (Memory, LCD, Timer, DMA, COM, Key Input, Interrupt)"
+source = "https://tcrf.net/AGS_Aging_Cartridge"
 
-# NOTE: This ROM cannot be auto-downloaded. You must manually place the AGS
-# Aging Cartridge ROM at roms/ags-aging/ags-aging.gba. The ROM requires the
-# official Nintendo GBA BIOS to run (set GBA_BIOS_PATH environment variable).
+# ROM: AGS Aging Cartridge (World) (v7.1) — sourced from TCRF.
+# sha256: 6968bd01df531b4ca4b9777a87c1913fb6ff3783ef378d04476d531be9b6765d
+# 8 MB ROM. Drop at roms/ags-aging/ags-aging.gba.
 #
 # Test sections in order:
 #   Memory (9 subtests), LCD (7), Timer (3), DMA (9),
@@ -15,17 +15,19 @@ source = "Nintendo official (not publicly available)"
 #
 # The ROM runs all tests sequentially. Each section displays pass/fail.
 # Captured at frame 2000 where all test sections have completed.
+# HLE BIOS captures may legitimately differ from official captures since
+# AGS exercises SWI handlers that not all HLE implementations provide.
 
 [[tests]]
 id = "ags-aging-full"
 rom = "ags-aging.gba"
-rom_sha256 = ""
+rom_sha256 = "6968bd01df531b4ca4b9777a87c1913fb6ff3783ef378d04476d531be9b6765d"
 subsystem = "system"
 max_frames = 3000
 timing_sensitive = false
 requires_bios = true
 bios = "official"
-hint = "Nintendo AGS Aging Cartridge. Requires official GBA BIOS (GBA_BIOS_PATH). ROM must be manually provided."
+hint = "Nintendo AGS Aging Cartridge v7.1. Exercises the full hardware suite."
 
 [tests.completion]
 type = "exact_frame"
