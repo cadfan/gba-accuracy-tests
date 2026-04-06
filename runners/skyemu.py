@@ -148,10 +148,38 @@ class SkyEmuRunner:
         bios_mode: str = "official",
     ) -> bool:
         del completion  # not used
-        del bios_mode  # SkyEmu's BIOS handling is not exposed via HTTP
         if self._exe is None:
             return False
         output_path.parent.mkdir(parents=True, exist_ok=True)
+
+        # SkyEmu BIOS behavior:
+        #   - "official": copy the real Nintendo BIOS next to the ROM as
+        #     gba_bios.bin. SkyEmu loads it via its standard path.
+        #   - "cleanroom" / "hle": SkyEmu's internal fallback BIOS IS
+        #     already the Cult-of-GBA replacement BIOS, so we ensure NO
+        #     sibling gba_bios.bin exists and let SkyEmu use it. These
+        #     two modes produce identical SkyEmu output by design (and
+        #     we document that; the divergence show up on the other
+        #     runners where HLE != cleanroom).
+        #   Note: SkyEmu validates any external BIOS file against the
+        #   canonical Nintendo hash and rejects non-matching blobs, so
+        #   we cannot "force" cleanroom by dropping the Cult-of-GBA
+        #   file next to the ROM — that triggers SkyEmu's reject path
+        #   and produces an error screen for every test. Using the
+        #   internal fallback is the correct answer.
+        rom_dir = rom_path.parent
+        sibling_bios = rom_dir / "gba_bios.bin"
+        stash_path = rom_dir / "gba_bios.bin.skyemu-stash"
+        if sibling_bios.exists():
+            sibling_bios.rename(stash_path)
+        try:
+            if bios_mode == "official":
+                real = os.environ.get("MGBA_BIOS_PATH") or os.environ.get("NBA_BIOS_PATH")
+                if real and Path(real).exists():
+                    sibling_bios.write_bytes(Path(real).read_bytes())
+            # "cleanroom" / "hle": sibling_bios stays absent.
+        except OSError:
+            pass
 
         port = _free_port()
         proc = subprocess.Popen(
@@ -215,6 +243,15 @@ class SkyEmuRunner:
             except subprocess.TimeoutExpired:
                 proc.kill()
             except Exception:
+                pass
+            # Restore the original ROM-sibling BIOS file (if any) so
+            # repeat runs don't inherit the bios_mode we just used.
+            try:
+                if sibling_bios.exists():
+                    sibling_bios.unlink()
+                if stash_path.exists():
+                    stash_path.rename(sibling_bios)
+            except OSError:
                 pass
 
 

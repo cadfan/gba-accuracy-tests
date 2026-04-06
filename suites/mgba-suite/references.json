@@ -14,7 +14,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:41:09.086441+00:00",
+          "captured_at": "2026-04-06T19:29:33.195897+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -30,7 +30,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:41:28.930558+00:00",
+          "captured_at": "2026-04-06T19:29:56.640902+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -46,7 +46,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:41:51.151287+00:00",
+          "captured_at": "2026-04-06T19:31:05.712443+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -62,12 +62,12 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:42:52.198689+00:00",
+          "captured_at": "2026-04-06T19:32:21.820236+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
-        "hash": "7bc011c8b7fc74f4e6814b58321e6fbb5e6e84a353ca75967431b4674b9ba2b1",
+        "hash": "e73b0427b3bda719f3d407708ae3333aac1e48e9ed3f3bd67869278cbddd1715",
         "tier": "secondary",
         "bios_mode": "official",
         "provenance": {
@@ -78,7 +78,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:43:47.476518+00:00",
+          "captured_at": "2026-04-06T19:34:30.551941+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -94,7 +94,55 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:44:36.983089+00:00",
+          "captured_at": "2026-04-06T19:35:13.099162+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "7bc011c8b7fc74f4e6814b58321e6fbb5e6e84a353ca75967431b4674b9ba2b1",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "mgba",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:30:19.442450+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "0981c458d603f71fff9786be300d2180de636a57c62802b82e179fd4028a349c",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "nanoboyadvance",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:33:27.256020+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "7bc011c8b7fc74f4e6814b58321e6fbb5e6e84a353ca75967431b4674b9ba2b1",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "skyemu",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:35:54.396505+00:00",
           "captured_by": "generate_refs.py"
         }
       }
@@ -112,7 +160,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:41:10.483590+00:00",
+          "captured_at": "2026-04-06T19:29:34.764842+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -128,7 +176,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:41:30.268756+00:00",
+          "captured_at": "2026-04-06T19:29:58.174997+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -144,7 +192,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:41:55.533482+00:00",
+          "captured_at": "2026-04-06T19:31:10.930503+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -160,7 +208,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:42:56.204431+00:00",
+          "captured_at": "2026-04-06T19:32:26.352422+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -176,7 +224,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:43:50.510105+00:00",
+          "captured_at": "2026-04-06T19:34:33.933767+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -192,7 +240,55 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:44:39.920916+00:00",
+          "captured_at": "2026-04-06T19:35:15.888049+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "c9f5db30edb2bb8785fc86f413d539d82b10668dd53b42bcca61a67f3ef0fadf",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "mgba",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:30:22.107820+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "ae70b34068d5727fd2979e103ea3d71615c08b928fc7f2b0a86fd6abcf7d8987",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "nanoboyadvance",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:33:31.943292+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "ae70b34068d5727fd2979e103ea3d71615c08b928fc7f2b0a86fd6abcf7d8987",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "skyemu",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:35:57.216584+00:00",
           "captured_by": "generate_refs.py"
         }
       }
@@ -210,7 +306,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:41:11.927784+00:00",
+          "captured_at": "2026-04-06T19:29:36.351721+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -226,7 +322,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:41:31.653836+00:00",
+          "captured_at": "2026-04-06T19:29:59.698964+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -242,7 +338,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:42:00.058538+00:00",
+          "captured_at": "2026-04-06T19:31:16.802358+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -258,12 +354,12 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:43:00.373017+00:00",
+          "captured_at": "2026-04-06T19:32:31.273060+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
-        "hash": "e76030322e8c53a3a7a0384165da579755aad0a19fff14141c48a4952dcc5a15",
+        "hash": "b610c3f7bfa9714fa5110e3b774f431a27eda1eed41c021dc4ef0461b4924ebd",
         "tier": "secondary",
         "bios_mode": "official",
         "provenance": {
@@ -274,7 +370,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:43:53.711914+00:00",
+          "captured_at": "2026-04-06T19:34:36.994801+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -290,7 +386,55 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:44:42.998132+00:00",
+          "captured_at": "2026-04-06T19:35:18.780980+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "db7ad6643e9e09131416fdfbe29c707c1e71aabee10689f1cb8e719f0d22553f",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "mgba",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:30:24.786913+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "e76030322e8c53a3a7a0384165da579755aad0a19fff14141c48a4952dcc5a15",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "nanoboyadvance",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:33:36.803119+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "e76030322e8c53a3a7a0384165da579755aad0a19fff14141c48a4952dcc5a15",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "skyemu",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:35:59.969464+00:00",
           "captured_by": "generate_refs.py"
         }
       }
@@ -308,7 +452,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:41:13.371962+00:00",
+          "captured_at": "2026-04-06T19:29:37.966208+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -324,7 +468,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:41:33.022161+00:00",
+          "captured_at": "2026-04-06T19:30:01.199047+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -340,7 +484,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:42:04.485988+00:00",
+          "captured_at": "2026-04-06T19:31:23.561404+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -356,12 +500,12 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:43:04.444253+00:00",
+          "captured_at": "2026-04-06T19:32:36.212980+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
-        "hash": "f765bd0c69b57b4024806460ad771cbb774a75560829af4e20b911f827059934",
+        "hash": "fac96d319c458f01eacc9a711ce368af935d07a039788abd15d00e8f7a958f50",
         "tier": "secondary",
         "bios_mode": "official",
         "provenance": {
@@ -372,7 +516,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:43:56.988854+00:00",
+          "captured_at": "2026-04-06T19:34:40.255097+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -388,7 +532,55 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:44:46.204254+00:00",
+          "captured_at": "2026-04-06T19:35:21.772904+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "de7e42494003225f62f2a1822dcce3311d37ad18b6483b03ed583854be8344c8",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "mgba",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:30:27.651137+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "82f953d06f1fa679615fa60708378cd549bd856f806e0abb04b1dce0c86e9f5a",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "nanoboyadvance",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:33:41.838117+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "38fe0cb0a65e0e17f4da1f039757332eff740b013b95773519928395cf49c8cc",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "skyemu",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:36:02.971354+00:00",
           "captured_by": "generate_refs.py"
         }
       }
@@ -406,7 +598,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:41:14.625120+00:00",
+          "captured_at": "2026-04-06T19:29:39.364961+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -422,7 +614,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:41:34.217613+00:00",
+          "captured_at": "2026-04-06T19:30:02.489944+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -438,7 +630,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:42:08.289643+00:00",
+          "captured_at": "2026-04-06T19:31:28.581915+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -454,7 +646,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:43:07.889912+00:00",
+          "captured_at": "2026-04-06T19:32:40.571649+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -470,7 +662,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:43:59.760252+00:00",
+          "captured_at": "2026-04-06T19:34:42.672622+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -486,7 +678,55 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:44:48.858321+00:00",
+          "captured_at": "2026-04-06T19:35:24.058789+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "33a6f56c1678943f21a501c163902c1c4ec84477b2b557710e28ee07ac80fc98",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "mgba",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:30:30.981901+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "0fe6b09bd7288eee146f2ef78a8d5cf2795c1fedf05a23b7ca04a473cf102d36",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "nanoboyadvance",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:33:45.753017+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "0fe6b09bd7288eee146f2ef78a8d5cf2795c1fedf05a23b7ca04a473cf102d36",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "skyemu",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:36:05.231385+00:00",
           "captured_by": "generate_refs.py"
         }
       }
@@ -504,7 +744,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:41:16.031231+00:00",
+          "captured_at": "2026-04-06T19:29:40.941388+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -520,7 +760,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:41:35.557185+00:00",
+          "captured_at": "2026-04-06T19:30:03.969036+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -536,7 +776,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:42:12.742504+00:00",
+          "captured_at": "2026-04-06T19:31:34.183360+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -552,7 +792,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:43:11.916714+00:00",
+          "captured_at": "2026-04-06T19:32:45.053775+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -568,7 +808,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:44:03.144841+00:00",
+          "captured_at": "2026-04-06T19:34:45.772590+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -584,7 +824,55 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:44:52.136776+00:00",
+          "captured_at": "2026-04-06T19:35:27.306738+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "1c476f5980b9e4d95d2ac0e72ea226efcc4b6d592d687d56aa88626e71563ea6",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "mgba",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:30:33.852755+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "1c476f5980b9e4d95d2ac0e72ea226efcc4b6d592d687d56aa88626e71563ea6",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "nanoboyadvance",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:33:50.603108+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "1c476f5980b9e4d95d2ac0e72ea226efcc4b6d592d687d56aa88626e71563ea6",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "skyemu",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:36:08.161347+00:00",
           "captured_by": "generate_refs.py"
         }
       }
@@ -602,7 +890,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:41:17.429472+00:00",
+          "captured_at": "2026-04-06T19:29:42.493766+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -618,7 +906,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:41:36.891812+00:00",
+          "captured_at": "2026-04-06T19:30:05.447012+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -634,7 +922,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:42:17.190698+00:00",
+          "captured_at": "2026-04-06T19:31:39.597390+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -650,7 +938,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:43:16.080386+00:00",
+          "captured_at": "2026-04-06T19:32:49.712741+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -666,7 +954,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:44:06.919560+00:00",
+          "captured_at": "2026-04-06T19:34:48.909664+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -682,7 +970,55 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:44:55.628405+00:00",
+          "captured_at": "2026-04-06T19:35:30.287450+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "0351e95a99538d9c44b4b5f3ad03b12f30cd75e5ec024c4c4f38e891df12da71",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "mgba",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:30:36.810416+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "0351e95a99538d9c44b4b5f3ad03b12f30cd75e5ec024c4c4f38e891df12da71",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "nanoboyadvance",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:33:55.313366+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "0351e95a99538d9c44b4b5f3ad03b12f30cd75e5ec024c4c4f38e891df12da71",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "skyemu",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:36:11.129246+00:00",
           "captured_by": "generate_refs.py"
         }
       }
@@ -700,7 +1036,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:41:18.812408+00:00",
+          "captured_at": "2026-04-06T19:29:44.222472+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -716,7 +1052,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:41:38.217718+00:00",
+          "captured_at": "2026-04-06T19:30:07.040732+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -732,7 +1068,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:42:21.503313+00:00",
+          "captured_at": "2026-04-06T19:31:44.845981+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -748,7 +1084,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:43:20.047857+00:00",
+          "captured_at": "2026-04-06T19:32:54.385810+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -764,7 +1100,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:44:10.628914+00:00",
+          "captured_at": "2026-04-06T19:34:51.904835+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -780,7 +1116,55 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:44:59.129024+00:00",
+          "captured_at": "2026-04-06T19:35:33.358853+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "2c25e333880f276ea3ab33d6c3e0685de81d55df995e32db04c974a8e2d60569",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "mgba",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:30:39.848879+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "4bf86c9d97958c27a0337e5f978b189dae3493f51b0c3cf2656802d2e15101df",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "nanoboyadvance",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:33:59.811628+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "2c25e333880f276ea3ab33d6c3e0685de81d55df995e32db04c974a8e2d60569",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "skyemu",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:36:14.142443+00:00",
           "captured_by": "generate_refs.py"
         }
       }
@@ -798,7 +1182,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:41:20.229186+00:00",
+          "captured_at": "2026-04-06T19:29:45.890799+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -814,7 +1198,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:41:39.575914+00:00",
+          "captured_at": "2026-04-06T19:30:08.643552+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -830,7 +1214,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:42:25.994309+00:00",
+          "captured_at": "2026-04-06T19:31:50.240188+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -846,12 +1230,12 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:43:24.188182+00:00",
+          "captured_at": "2026-04-06T19:32:59.245716+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
-        "hash": "62b5581165fc26c55faf7d238d63da1b98b4b1bd61b25b3598ed8c1f8ccf43d9",
+        "hash": "d773342efbb4dd027cff51f38323771658601735541b8e50ef6ea92ed1fa8e05",
         "tier": "secondary",
         "bios_mode": "official",
         "provenance": {
@@ -862,7 +1246,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:44:14.430637+00:00",
+          "captured_at": "2026-04-06T19:34:55.093614+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -878,7 +1262,55 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:45:02.915958+00:00",
+          "captured_at": "2026-04-06T19:35:36.670003+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "62b5581165fc26c55faf7d238d63da1b98b4b1bd61b25b3598ed8c1f8ccf43d9",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "mgba",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:30:42.690597+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "62b5581165fc26c55faf7d238d63da1b98b4b1bd61b25b3598ed8c1f8ccf43d9",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "nanoboyadvance",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:34:04.603110+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "62b5581165fc26c55faf7d238d63da1b98b4b1bd61b25b3598ed8c1f8ccf43d9",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "skyemu",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:36:17.280686+00:00",
           "captured_by": "generate_refs.py"
         }
       }
@@ -896,7 +1328,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 3810,
-          "captured_at": "2026-04-06T18:41:22.348581+00:00",
+          "captured_at": "2026-04-06T19:29:48.441395+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -912,7 +1344,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 3600,
-          "captured_at": "2026-04-06T18:41:41.635845+00:00",
+          "captured_at": "2026-04-06T19:30:10.922677+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -928,7 +1360,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 3810,
-          "captured_at": "2026-04-06T18:42:32.662361+00:00",
+          "captured_at": "2026-04-06T19:31:58.637369+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -944,7 +1376,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 3600,
-          "captured_at": "2026-04-06T18:43:30.537480+00:00",
+          "captured_at": "2026-04-06T19:33:07.191830+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -960,7 +1392,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 3810,
-          "captured_at": "2026-04-06T18:44:19.669548+00:00",
+          "captured_at": "2026-04-06T19:34:59.502343+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -976,7 +1408,55 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 3600,
-          "captured_at": "2026-04-06T18:45:07.908414+00:00",
+          "captured_at": "2026-04-06T19:35:41.082315+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "42dfdfc4a2d6fd1c33c88cd19071af6b15ffd837dba2f3ff623e56d5a976b196",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "mgba",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 3600,
+          "captured_at": "2026-04-06T19:30:46.831293+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "fd35a0edb23777aa618008a995cac13cd26c12ec036714bd7fca471f24b9095d",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "nanoboyadvance",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 3600,
+          "captured_at": "2026-04-06T19:34:12.081759+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "e0f4096bcc6788015189e43436e76fd8d6f4381b0aac307669b51105f06660f9",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "skyemu",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 3600,
+          "captured_at": "2026-04-06T19:36:22.136658+00:00",
           "captured_by": "generate_refs.py"
         }
       }
@@ -994,7 +1474,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:41:23.742128+00:00",
+          "captured_at": "2026-04-06T19:29:50.153209+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -1010,7 +1490,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:41:43.008588+00:00",
+          "captured_at": "2026-04-06T19:30:12.577179+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -1026,7 +1506,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:42:37.094428+00:00",
+          "captured_at": "2026-04-06T19:32:04.198158+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -1042,7 +1522,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:43:34.585339+00:00",
+          "captured_at": "2026-04-06T19:33:11.877183+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -1058,7 +1538,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:44:23.778862+00:00",
+          "captured_at": "2026-04-06T19:35:02.701815+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -1074,7 +1554,55 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:45:11.660039+00:00",
+          "captured_at": "2026-04-06T19:35:44.407099+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "15852669724f71f15cee089636fef775cd13bdadcf8b196afc91f03636a49ff6",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "mgba",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:30:49.782567+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "53e0f10ffd21ce74d3a8640aa9075d636247d5ffceeeadbf8bacfb4e2c969286",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "nanoboyadvance",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:34:16.961139+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "c253c2bf42317039b6726cd2a7ed34f335621ef77f36a8d5dc31e09d63cf1983",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "skyemu",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:36:25.243429+00:00",
           "captured_by": "generate_refs.py"
         }
       }
@@ -1092,7 +1620,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:41:24.984654+00:00",
+          "captured_at": "2026-04-06T19:29:51.813912+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -1108,7 +1636,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:41:44.184734+00:00",
+          "captured_at": "2026-04-06T19:30:14.043765+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -1124,7 +1652,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:42:40.883634+00:00",
+          "captured_at": "2026-04-06T19:32:08.687649+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -1140,7 +1668,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:43:37.995500+00:00",
+          "captured_at": "2026-04-06T19:33:15.653488+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -1156,7 +1684,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:44:27.153390+00:00",
+          "captured_at": "2026-04-06T19:35:05.342553+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -1172,7 +1700,55 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:45:15.029307+00:00",
+          "captured_at": "2026-04-06T19:35:46.852024+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "1db61b560136d778fbf6f658bdcb2051678d84befb87ff731a5e7f407762428e",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "mgba",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:30:53.178104+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "1db61b560136d778fbf6f658bdcb2051678d84befb87ff731a5e7f407762428e",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "nanoboyadvance",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:34:20.752825+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "26fe36011a6d9b21c8c8d6ea6c0e954e951df05adefa8829e71759bb16ba8dd4",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "skyemu",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:36:27.728761+00:00",
           "captured_by": "generate_refs.py"
         }
       }
@@ -1190,7 +1766,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:41:26.128092+00:00",
+          "captured_at": "2026-04-06T19:29:53.292125+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -1206,7 +1782,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:41:45.274045+00:00",
+          "captured_at": "2026-04-06T19:30:15.393195+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -1222,7 +1798,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:42:44.255588+00:00",
+          "captured_at": "2026-04-06T19:32:12.457539+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -1238,7 +1814,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:43:40.935277+00:00",
+          "captured_at": "2026-04-06T19:33:19.028702+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -1254,7 +1830,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:44:30.284059+00:00",
+          "captured_at": "2026-04-06T19:35:07.484510+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -1270,7 +1846,55 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:45:18.236419+00:00",
+          "captured_at": "2026-04-06T19:35:49.004874+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "267d201f77835bd329e6f6ad9d75961337a7aa00c4abed734c98ca9b0435b5c4",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "mgba",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:30:56.640162+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "3d830b0c658762ccc74450354445a60034efe44b55c69ca14272429a2805febb",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "nanoboyadvance",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:34:23.778764+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "05575b716160469509595d49a586eece188fe10c739fad9c37e4d71a9e679227",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "skyemu",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:36:30.048323+00:00",
           "captured_by": "generate_refs.py"
         }
       }
@@ -1288,7 +1912,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:41:27.329318+00:00",
+          "captured_at": "2026-04-06T19:29:54.748907+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -1304,7 +1928,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:41:46.420050+00:00",
+          "captured_at": "2026-04-06T19:30:16.749777+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -1320,7 +1944,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:42:47.833673+00:00",
+          "captured_at": "2026-04-06T19:32:16.622794+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -1336,7 +1960,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:43:44.188961+00:00",
+          "captured_at": "2026-04-06T19:33:22.506115+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -1352,7 +1976,7 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2610,
-          "captured_at": "2026-04-06T18:44:33.896918+00:00",
+          "captured_at": "2026-04-06T19:35:09.977752+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -1368,7 +1992,55 @@
           "bios_sha256": null,
           "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
           "frame_count": 2400,
-          "captured_at": "2026-04-06T18:45:21.569968+00:00",
+          "captured_at": "2026-04-06T19:35:51.324705+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "e1973b29b8c8368202cf5018dd1070eb7d314d27637de0f8b4892279746f34d0",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "mgba",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:30:59.809657+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "e1973b29b8c8368202cf5018dd1070eb7d314d27637de0f8b4892279746f34d0",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "nanoboyadvance",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:34:27.209424+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "e1973b29b8c8368202cf5018dd1070eb7d314d27637de0f8b4892279746f34d0",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "skyemu",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+          "frame_count": 2400,
+          "captured_at": "2026-04-06T19:36:32.448697+00:00",
           "captured_by": "generate_refs.py"
         }
       }

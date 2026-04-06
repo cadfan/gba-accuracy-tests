@@ -6,3 +6,10 @@
 *.dylib
 *.exe
 *.bin
+# ...except the Cult-of-GBA replacement BIOS (MIT licensed, safe to
+# distribute). See LICENSE.Cult-of-GBA-BIOS for attribution and
+# gba_bios_cleanroom.commit for the pinned upstream commit.
+!gba_bios_cleanroom.bin
+!gba_bios_cleanroom.sha256
+!gba_bios_cleanroom.commit
+!LICENSE.Cult-of-GBA-BIOS

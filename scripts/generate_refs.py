@@ -179,9 +179,12 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--runner", "-r", required=True, help="Runner name")
     parser.add_argument("--suite", "-s", required=True, help="Suite name")
     parser.add_argument("--test", "-t", help="Specific test ID")
-    parser.add_argument("--bios-mode", "-b", default="hle",
+    parser.add_argument("--bios-mode", "-b", default="cleanroom",
                         choices=["official", "hle", "skip", "cleanroom"],
-                        help="BIOS mode used for this run (default: hle)")
+                        help="BIOS mode. 'official'=user-provided Nintendo BIOS; "
+                             "'cleanroom'=Cult-of-GBA MIT-licensed replacement "
+                             "(shipped in runners/cores/); 'hle'=emulator built-in; "
+                             "'skip'=alias for hle. Default: cleanroom (runs out of box).")
     parser.add_argument("--tier", default="secondary",
                         choices=["gold", "secondary", "candidate"],
                         help="Reference tier (default: secondary)")

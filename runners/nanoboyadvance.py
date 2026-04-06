@@ -21,6 +21,7 @@ from pathlib import Path
 _HERE = Path(__file__).resolve().parent
 _DEFAULT = _HERE / "cores" / ("nba-headless.exe" if os.name == "nt" else "nba-headless")
 _SHA256_FILE = _HERE / "cores" / "nba_headless.sha256"
+_CLEANROOM_BIOS = _HERE / "cores" / "gba_bios_cleanroom.bin"
 
 
 def _find_nba() -> Path | None:
@@ -63,7 +64,11 @@ class NanoBoyAdvanceRunner:
             _verify_sha256(self._exe)
 
     def is_available(self) -> bool:
-        return self._exe is not None and self._bios is not None and Path(self._bios).exists()
+        if self._exe is None:
+            return False
+        has_real_bios = self._bios is not None and Path(self._bios).exists()
+        has_cleanroom = _CLEANROOM_BIOS.exists()
+        return has_real_bios or has_cleanroom
 
     def run_test(
         self,
@@ -76,20 +81,43 @@ class NanoBoyAdvanceRunner:
         bios_mode: str = "official",
     ) -> bool:
         del completion
-        if self._exe is None or self._bios is None:
+        if self._exe is None:
             return False
+
+        # Select BIOS file based on mode:
+        #   - "official": user-provided real Nintendo BIOS (NBA_BIOS_PATH /
+        #     MGBA_BIOS_PATH). Highest accuracy.
+        #   - "cleanroom": Cult-of-GBA MIT-licensed replacement BIOS.
+        #     Distributable. Behaves like a real 16KB BIOS blob.
+        #   - "hle"/"skip": real BIOS file is still loaded (NBA has no true
+        #     HLE BIOS), but --skip-bios tells the core to jump past the
+        #     boot animation. If no real BIOS is available, falls back to
+        #     cleanroom to keep the test runnable.
+        if bios_mode == "cleanroom":
+            bios_file: Path | None = _CLEANROOM_BIOS if _CLEANROOM_BIOS.exists() else None
+        elif bios_mode == "official":
+            bios_file = Path(self._bios) if self._bios else None
+        else:  # hle / skip
+            if self._bios:
+                bios_file = Path(self._bios)
+            elif _CLEANROOM_BIOS.exists():
+                bios_file = _CLEANROOM_BIOS
+            else:
+                bios_file = None
+
+        if bios_file is None or not bios_file.exists():
+            print(f"[nba runner] no BIOS available for mode={bios_mode}", file=sys.stderr)
+            return False
+
         output_path.parent.mkdir(parents=True, exist_ok=True)
 
         cmd = [
             str(self._exe),
             "--rom", str(rom_path),
-            "--bios", str(self._bios),
+            "--bios", str(bios_file),
             "--frames", str(frames),
             "--output", str(output_path),
         ]
-        # NBA has no true HLE BIOS. --skip-bios skips the boot animation and
-        # jumps straight to ROM entry; BIOS data is still loaded for SWI
-        # handler dispatch. This is the closest NBA analogue to "HLE mode".
         if bios_mode in ("hle", "skip"):
             cmd.append("--skip-bios")
         if inputs:

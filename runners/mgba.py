@@ -104,9 +104,18 @@ class MgbaRunner:
         # HLE mode: don't copy BIOS into the libretro system dir so the
         # mgba core falls back to its built-in HLE BIOS implementation.
         # Official mode: pass the real BIOS path.
+        # BIOS selection mirrors the nanoboyadvance runner:
+        #   - "official": real Nintendo BIOS from MGBA_BIOS_PATH
+        #   - "cleanroom": Cult-of-GBA MIT-licensed replacement BIOS
+        #     (shipped in runners/cores/gba_bios_cleanroom.bin)
+        #   - "hle": no BIOS file — mgba's libretro core falls back to
+        #     its built-in HLE BIOS implementation.
+        cleanroom_bios = Path(__file__).resolve().parent / "cores" / "gba_bios_cleanroom.bin"
         bios_for_session: Path | None = None
         if bios_mode == "official" and self._bios is not None:
             bios_for_session = Path(self._bios)
+        elif bios_mode == "cleanroom" and cleanroom_bios.exists():
+            bios_for_session = cleanroom_bios
         try:
             session = LibretroSession(
                 self._dll,
