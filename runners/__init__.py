@@ -37,11 +37,16 @@ def _load_runner_from_file(path: Path) -> Runner | None:
     """Load a runner from a Python file."""
     spec = importlib.util.spec_from_file_location(path.stem, path)
     if spec is None or spec.loader is None:
+        print(f"[runners] could not build import spec for {path}", file=sys.stderr)
         return None
     mod = importlib.util.module_from_spec(spec)
     try:
         spec.loader.exec_module(mod)
-    except Exception:
+    except Exception as e:
+        # Surface import failures — silently swallowing them used to
+        # produce confusing "runner not found" errors when the real
+        # cause was a missing dep or a syntax error.
+        print(f"[runners] failed to import {path.name}: {e!r}", file=sys.stderr)
         return None
     runner_cls = getattr(mod, "RUNNER", None)
     if runner_cls is None:

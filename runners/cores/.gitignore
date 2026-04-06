@@ -1,0 +1,6 @@
+# Pre-built libretro cores are not checked in (binary, large, license-sensitive).
+# Drop the DLL here yourself, or set <CORE>_LIBRETRO_PATH to point at it.
+# SHA256 of the canonical build is pinned in *.sha256 files alongside this.
+*.dll
+*.so
+*.dylib

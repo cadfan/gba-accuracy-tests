@@ -19,7 +19,15 @@ class CableClubRunner:
     def is_available(self) -> bool:
         return self._exe is not None
 
-    def run_test(self, rom_path: Path, frames: int, output_path: Path) -> bool:
+    def run_test(
+        self,
+        rom_path: Path,
+        frames: int,
+        output_path: Path,
+        *,
+        inputs: list[dict] | None = None,
+        completion: dict | None = None,
+    ) -> bool:
         if self._exe is None:
             return False
 
@@ -31,6 +39,11 @@ class CableClubRunner:
             "--frames", str(frames),
             "--screenshot", str(output_path),
         ]
+        if inputs:
+            # Forward as --keys frame:mask,frame:mask,...
+            keyspec = ",".join(f"{i['frame']}:{i['keys']}" for i in inputs)
+            cmd += ["--keys", keyspec]
+        # `completion` ignored — accuracy-sweep currently uses fixed frame count.
 
         try:
             result = subprocess.run(cmd, timeout=60, capture_output=True)

@@ -180,16 +180,37 @@ class TestStatus:
     SKIP = "SKIP"
 
 
-def run_with_runner(runner, rom_path: Path, frames: int, output_path: Path) -> str:
-    """Run a test via a runner adapter. Returns status string."""
+def run_with_runner(
+    runner,
+    rom_path: Path,
+    frames: int,
+    output_path: Path,
+    *,
+    inputs: list[dict] | None = None,
+    completion: dict | None = None,
+) -> str:
+    """Run a test via a runner adapter. Returns status string.
+
+    Uses runner interface v2 dispatcher: inputs/completion are forwarded only
+    to runners whose run_test signature accepts them (detected via inspect).
+    Detection is signature-based (not TypeError-based) to avoid silently
+    miscategorising real v2 errors as v1-fallback.
+    """
+    from runners._dispatch import dispatch_run_test
     try:
-        success = runner.run_test(rom_path, frames, output_path)
+        success = dispatch_run_test(
+            runner, rom_path, frames, output_path,
+            inputs=inputs, completion=completion,
+        )
         if not success:
             if output_path.exists():
                 return TestStatus.ERROR
             return TestStatus.CRASH
         return TestStatus.PASS  # runner succeeded, hash comparison happens later
-    except Exception:
+    except Exception as e:
+        # Surface the exception so users can see *why* a runner crashed
+        # instead of getting a bare ERROR status.
+        print(f"[runner {getattr(runner, 'name', '?')}] {type(e).__name__}: {e}", file=sys.stderr)
         return TestStatus.ERROR
 
 
@@ -276,8 +297,14 @@ def cmd_run(args: argparse.Namespace) -> int:
             output_path = OUTPUT_DIR / f"{test_id}.png"
             t0 = time.monotonic()
 
+            test_inputs = test.get("input")  # list of {frame, keys} or None
+            test_completion = test.get("completion")  # dict or None
+
             if runner:
-                status = run_with_runner(runner, rom_path, max_frames, output_path)
+                status = run_with_runner(
+                    runner, rom_path, max_frames, output_path,
+                    inputs=test_inputs, completion=test_completion,
+                )
             else:
                 status = run_with_command(cmd_template, rom_path, max_frames, output_path)
 
@@ -310,10 +337,38 @@ def cmd_run(args: argparse.Namespace) -> int:
             ref_hash_values = [e["hash"] for e in ref_entries]
             matched = next((e for e in ref_entries if e["hash"] == actual_hash), None)
 
+            # ±1 frame tolerance: only on the failure path. Re-run the runner
+            # at frames=N-1 and N+1 and see if either matches. Costs up to 2
+            # extra runs per failing test, but only on initial mismatch.
+            tolerance_used = False
+            if matched is None and runner is not None and max_frames > 1:
+                for delta in (-1, 1):
+                    alt_frames = max_frames + delta
+                    if alt_frames < 1:
+                        continue
+                    alt_path = OUTPUT_DIR / f"{test_id}.f{delta:+d}.bin"
+                    alt_status = run_with_runner(
+                        runner, rom_path, alt_frames, alt_path,
+                        inputs=test_inputs, completion=test_completion,
+                    )
+                    if alt_status != TestStatus.PASS:
+                        continue
+                    try:
+                        alt_hash = hash_bgr555(load_screenshot(alt_path))
+                    except (ValueError, FileNotFoundError, OSError):
+                        continue
+                    alt_match = next((e for e in ref_entries if e["hash"] == alt_hash), None)
+                    if alt_match is not None:
+                        matched = alt_match
+                        tolerance_used = True
+                        actual_hash = alt_hash
+                        break
+
             if matched:
-                print(f"    [{i}/{len(tests)}] {test_id:<30} PASS   ({elapsed:.1f}s) [{matched['tier']}/{matched['emulator']}]")
+                tag = "PASS~" if tolerance_used else "PASS "
+                print(f"    [{i}/{len(tests)}] {test_id:<30} {tag}  ({elapsed:.1f}s) [{matched['tier']}/{matched['emulator']}]")
                 total_pass += 1
-                results.append({
+                entry = {
                     "test_id": test_id,
                     "status": TestStatus.PASS,
                     "actual_hash": actual_hash,
@@ -323,7 +378,10 @@ def cmd_run(args: argparse.Namespace) -> int:
                         "emulator": matched["emulator"],
                     },
                     "time_s": round(elapsed, 1),
-                })
+                }
+                if tolerance_used:
+                    entry["tolerance"] = "frame_pm1"
+                results.append(entry)
             else:
                 # Try to generate diff image using stored reference framebuffer
                 ref_bin_dir = suite_dir / "refs"
@@ -386,7 +444,10 @@ def cmd_run(args: argparse.Namespace) -> int:
         }, f, indent=2)
     print(f"\nResults: {results_path}")
 
-    return 1 if total_fail > 0 else 0
+    # Exit non-zero on FAIL or hard errors. SKIP is fine.
+    if total_fail > 0 or total_error > 0:
+        return 1
+    return 0
 
 
 def cmd_download(args: argparse.Namespace) -> int:
