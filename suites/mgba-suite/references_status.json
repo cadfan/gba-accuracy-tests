@@ -1,0 +1,46 @@
+{
+  "tests": {
+    "mgba-suite-memory": {
+      "status": "gold"
+    },
+    "mgba-suite-io-read": {
+      "status": "gold"
+    },
+    "mgba-suite-timing": {
+      "status": "gold"
+    },
+    "mgba-suite-timers": {
+      "status": "unverified"
+    },
+    "mgba-suite-timer-irq": {
+      "status": "gold"
+    },
+    "mgba-suite-shifter": {
+      "status": "gold"
+    },
+    "mgba-suite-carry": {
+      "status": "gold"
+    },
+    "mgba-suite-multiply-long": {
+      "status": "gold"
+    },
+    "mgba-suite-bios-math": {
+      "status": "gold"
+    },
+    "mgba-suite-dma": {
+      "status": "unverified"
+    },
+    "mgba-suite-sio-read": {
+      "status": "unverified"
+    },
+    "mgba-suite-sio-timing": {
+      "status": "gold"
+    },
+    "mgba-suite-misc-edge": {
+      "status": "unverified"
+    },
+    "mgba-suite-video": {
+      "status": "gold"
+    }
+  }
+}

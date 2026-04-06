@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jsmolka — gba-accuracy-tests</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <h1>GBA ACCURACY TESTS</h1>
+  <p class="subtitle">jsmolka</p>
+  <nav class="crumbs"><a href="index.html">Overview</a> &nbsp;/&nbsp; jsmolka</nav>
+</header>
+<main>
+<h2>Suite: jsmolka</h2>
+<p>jsmolka/gba-tests: ARM, Thumb, BIOS, memory, save, PPU, and edge case CPU tests</p>
+<p class="muted">Source: <a href="https://github.com/jsmolka/gba-tests">https://github.com/jsmolka/gba-tests</a></p>
+<h3>BIOS mode: <code>official</code></h3>
+<table><thead><tr><th>Test</th><th>Status</th>
+<th>cable_club</th>
+<th>mgba</th>
+<th>nanoboyadvance</th>
+<th>skyemu</th>
+</tr></thead><tbody>
+<tr class="test-row">
+<td class="id">jsmolka-arm</td>
+<td><span class="badge unverified">unverified</span></td>
+<td><span class="hash " title="54b345fa6f2c34c118aab7ff9af3b3c844435542a6da90ff2f86b6ffa1ad4dde">54b345fa6f2c…</span></td>
+<td><span class="hash " title="96f750d8f4dff67d105322f6f2b5b3f36919a18982cd17ca3270d4ca98ba8e35">96f750d8f4df…</span></td>
+<td><span class="hash " title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash " title="ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721">ffdadfeaaf44…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-bios</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash " title="5d7098c43253151951e2e7451c103eb0f1b95e73127d466058e146da37dfff72">5d7098c43253…</span></td>
+<td><span class="hash " title="96f750d8f4dff67d105322f6f2b5b3f36919a18982cd17ca3270d4ca98ba8e35">96f750d8f4df…</span></td>
+<td><span class="hash " title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash " title="ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721">ffdadfeaaf44…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-flash128</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash " title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash " title="96f750d8f4dff67d105322f6f2b5b3f36919a18982cd17ca3270d4ca98ba8e35">96f750d8f4df…</span></td>
+<td><span class="hash " title="0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff">0d05936a8388…</span></td>
+<td><span class="hash " title="c3ad7d86ac2aca4b1baa1d5fbbbfc38648c734b1ae0f4ac1ef3ccd5b06dd310f">c3ad7d86ac2a…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-flash64</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash " title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash " title="96f750d8f4dff67d105322f6f2b5b3f36919a18982cd17ca3270d4ca98ba8e35">96f750d8f4df…</span></td>
+<td><span class="hash " title="0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff">0d05936a8388…</span></td>
+<td><span class="hash " title="ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721">ffdadfeaaf44…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-memory</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash match" title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash miss" title="96f750d8f4dff67d105322f6f2b5b3f36919a18982cd17ca3270d4ca98ba8e35">96f750d8f4df…</span></td>
+<td><span class="hash match" title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash miss" title="01b8fe022e4b63ba282ff0d03f996c071aed652dc3d35432f3fd436d997a421f">01b8fe022e4b…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-nes</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash match" title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash miss" title="96f750d8f4dff67d105322f6f2b5b3f36919a18982cd17ca3270d4ca98ba8e35">96f750d8f4df…</span></td>
+<td><span class="hash match" title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash miss" title="ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721">ffdadfeaaf44…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-ppu-hello</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash match" title="56cd131fb3915fe7e410be228a8c09e99132064799f148583636ca75745bedf7">56cd131fb391…</span></td>
+<td><span class="hash miss" title="96f750d8f4dff67d105322f6f2b5b3f36919a18982cd17ca3270d4ca98ba8e35">96f750d8f4df…</span></td>
+<td><span class="hash match" title="56cd131fb3915fe7e410be228a8c09e99132064799f148583636ca75745bedf7">56cd131fb391…</span></td>
+<td><span class="hash match" title="56cd131fb3915fe7e410be228a8c09e99132064799f148583636ca75745bedf7">56cd131fb391…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-ppu-shades</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash match" title="da5336215e6c56d30146c42d81ad828a819214c307682903a5bcc87be8c0538e">da5336215e6c…</span></td>
+<td><span class="hash miss" title="96f750d8f4dff67d105322f6f2b5b3f36919a18982cd17ca3270d4ca98ba8e35">96f750d8f4df…</span></td>
+<td><span class="hash match" title="da5336215e6c56d30146c42d81ad828a819214c307682903a5bcc87be8c0538e">da5336215e6c…</span></td>
+<td><span class="hash match" title="da5336215e6c56d30146c42d81ad828a819214c307682903a5bcc87be8c0538e">da5336215e6c…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-ppu-stripes</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash match" title="4600c4f2749300b40f34dea969165d4d08d652543620076fb5cae249426f238d">4600c4f27493…</span></td>
+<td><span class="hash miss" title="96f750d8f4dff67d105322f6f2b5b3f36919a18982cd17ca3270d4ca98ba8e35">96f750d8f4df…</span></td>
+<td><span class="hash match" title="4600c4f2749300b40f34dea969165d4d08d652543620076fb5cae249426f238d">4600c4f27493…</span></td>
+<td><span class="hash miss" title="64efed2f20163e200eb0200d62d736be338320cef3767d53f3b1584cf20c6c4f">64efed2f2016…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-save-none</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash match" title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash miss" title="96f750d8f4dff67d105322f6f2b5b3f36919a18982cd17ca3270d4ca98ba8e35">96f750d8f4df…</span></td>
+<td><span class="hash match" title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash miss" title="ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721">ffdadfeaaf44…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-sram</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash " title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash " title="96f750d8f4dff67d105322f6f2b5b3f36919a18982cd17ca3270d4ca98ba8e35">96f750d8f4df…</span></td>
+<td><span class="hash " title="0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff">0d05936a8388…</span></td>
+<td><span class="hash " title="ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721">ffdadfeaaf44…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-thumb</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash " title="7783dfe85db38db2cada7f49dd81ff3fbc2b2620dd288b6c499849876dc904a6">7783dfe85db3…</span></td>
+<td><span class="hash " title="96f750d8f4dff67d105322f6f2b5b3f36919a18982cd17ca3270d4ca98ba8e35">96f750d8f4df…</span></td>
+<td><span class="hash " title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash " title="ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721">ffdadfeaaf44…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-unsafe</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash " title="0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff">0d05936a8388…</span></td>
+<td><span class="hash " title="96f750d8f4dff67d105322f6f2b5b3f36919a18982cd17ca3270d4ca98ba8e35">96f750d8f4df…</span></td>
+<td><span class="hash " title="5d7098c43253151951e2e7451c103eb0f1b95e73127d466058e146da37dfff72">5d7098c43253…</span></td>
+<td><span class="hash " title="ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721">ffdadfeaaf44…</span></td>
+</tr>
+</tbody></table>
+<h3>BIOS mode: <code>hle</code></h3>
+<table><thead><tr><th>Test</th><th>Status</th>
+<th>cable_club</th>
+<th>mgba</th>
+<th>nanoboyadvance</th>
+<th>skyemu</th>
+</tr></thead><tbody>
+<tr class="test-row">
+<td class="id">jsmolka-arm</td>
+<td><span class="badge unverified">unverified</span></td>
+<td><span class="hash " title="54b345fa6f2c34c118aab7ff9af3b3c844435542a6da90ff2f86b6ffa1ad4dde">54b345fa6f2c…</span></td>
+<td><span class="hash " title="77efc115df0487dc31385de2bb2a8d78f99e688e30b22fcd4250f904d43a1a28">77efc115df04…</span></td>
+<td><span class="hash " title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash " title="ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721">ffdadfeaaf44…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-bios</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash match" title="5d7098c43253151951e2e7451c103eb0f1b95e73127d466058e146da37dfff72">5d7098c43253…</span></td>
+<td><span class="hash miss" title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash match" title="5d7098c43253151951e2e7451c103eb0f1b95e73127d466058e146da37dfff72">5d7098c43253…</span></td>
+<td><span class="hash miss" title="5699145dc02cadd10de6fe3d29e845187d38a96230760aae20dd40d48c1d4cfb">5699145dc02c…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-flash128</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash miss" title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash match" title="96f750d8f4dff67d105322f6f2b5b3f36919a18982cd17ca3270d4ca98ba8e35">96f750d8f4df…</span></td>
+<td><span class="hash miss" title="0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff">0d05936a8388…</span></td>
+<td><span class="hash miss" title="c3ad7d86ac2aca4b1baa1d5fbbbfc38648c734b1ae0f4ac1ef3ccd5b06dd310f">c3ad7d86ac2a…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-flash64</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash miss" title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash match" title="96f750d8f4dff67d105322f6f2b5b3f36919a18982cd17ca3270d4ca98ba8e35">96f750d8f4df…</span></td>
+<td><span class="hash miss" title="0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff">0d05936a8388…</span></td>
+<td><span class="hash miss" title="ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721">ffdadfeaaf44…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-memory</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash match" title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash match" title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash match" title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash miss" title="01b8fe022e4b63ba282ff0d03f996c071aed652dc3d35432f3fd436d997a421f">01b8fe022e4b…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-nes</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash match" title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash match" title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash match" title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash miss" title="ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721">ffdadfeaaf44…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-ppu-hello</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash match" title="56cd131fb3915fe7e410be228a8c09e99132064799f148583636ca75745bedf7">56cd131fb391…</span></td>
+<td><span class="hash match" title="56cd131fb3915fe7e410be228a8c09e99132064799f148583636ca75745bedf7">56cd131fb391…</span></td>
+<td><span class="hash match" title="56cd131fb3915fe7e410be228a8c09e99132064799f148583636ca75745bedf7">56cd131fb391…</span></td>
+<td><span class="hash match" title="56cd131fb3915fe7e410be228a8c09e99132064799f148583636ca75745bedf7">56cd131fb391…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-ppu-shades</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash match" title="da5336215e6c56d30146c42d81ad828a819214c307682903a5bcc87be8c0538e">da5336215e6c…</span></td>
+<td><span class="hash match" title="da5336215e6c56d30146c42d81ad828a819214c307682903a5bcc87be8c0538e">da5336215e6c…</span></td>
+<td><span class="hash match" title="da5336215e6c56d30146c42d81ad828a819214c307682903a5bcc87be8c0538e">da5336215e6c…</span></td>
+<td><span class="hash match" title="da5336215e6c56d30146c42d81ad828a819214c307682903a5bcc87be8c0538e">da5336215e6c…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-ppu-stripes</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash match" title="4600c4f2749300b40f34dea969165d4d08d652543620076fb5cae249426f238d">4600c4f27493…</span></td>
+<td><span class="hash match" title="4600c4f2749300b40f34dea969165d4d08d652543620076fb5cae249426f238d">4600c4f27493…</span></td>
+<td><span class="hash match" title="4600c4f2749300b40f34dea969165d4d08d652543620076fb5cae249426f238d">4600c4f27493…</span></td>
+<td><span class="hash miss" title="64efed2f20163e200eb0200d62d736be338320cef3767d53f3b1584cf20c6c4f">64efed2f2016…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-save-none</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash match" title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash match" title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash match" title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash miss" title="ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721">ffdadfeaaf44…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-sram</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash match" title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash match" title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash miss" title="0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff">0d05936a8388…</span></td>
+<td><span class="hash miss" title="ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721">ffdadfeaaf44…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-thumb</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash match" title="7783dfe85db38db2cada7f49dd81ff3fbc2b2620dd288b6c499849876dc904a6">7783dfe85db3…</span></td>
+<td><span class="hash match" title="7783dfe85db38db2cada7f49dd81ff3fbc2b2620dd288b6c499849876dc904a6">7783dfe85db3…</span></td>
+<td><span class="hash miss" title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash miss" title="ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721">ffdadfeaaf44…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-unsafe</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash match" title="0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff">0d05936a8388…</span></td>
+<td><span class="hash match" title="0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff">0d05936a8388…</span></td>
+<td><span class="hash miss" title="5d7098c43253151951e2e7451c103eb0f1b95e73127d466058e146da37dfff72">5d7098c43253…</span></td>
+<td><span class="hash miss" title="ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721">ffdadfeaaf44…</span></td>
+</tr>
+</tbody></table>
+<h3>BIOS mode: <code>cleanroom</code></h3>
+<table><thead><tr><th>Test</th><th>Status</th>
+<th>cable_club</th>
+<th>mgba</th>
+<th>nanoboyadvance</th>
+<th>skyemu</th>
+</tr></thead><tbody>
+<tr class="test-row">
+<td class="id">jsmolka-arm</td>
+<td><span class="badge unverified">unverified</span></td>
+<td><span class="hash " title="22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae">22de4108c65c…</span></td>
+<td><span class="hash " title="77efc115df0487dc31385de2bb2a8d78f99e688e30b22fcd4250f904d43a1a28">77efc115df04…</span></td>
+<td><span class="hash " title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash " title="ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721">ffdadfeaaf44…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-bios</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash miss" title="22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae">22de4108c65c…</span></td>
+<td><span class="hash match" title="5d7098c43253151951e2e7451c103eb0f1b95e73127d466058e146da37dfff72">5d7098c43253…</span></td>
+<td><span class="hash match" title="5d7098c43253151951e2e7451c103eb0f1b95e73127d466058e146da37dfff72">5d7098c43253…</span></td>
+<td><span class="hash miss" title="5699145dc02cadd10de6fe3d29e845187d38a96230760aae20dd40d48c1d4cfb">5699145dc02c…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-flash128</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash " title="22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae">22de4108c65c…</span></td>
+<td><span class="hash " title="96f750d8f4dff67d105322f6f2b5b3f36919a18982cd17ca3270d4ca98ba8e35">96f750d8f4df…</span></td>
+<td><span class="hash " title="0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff">0d05936a8388…</span></td>
+<td><span class="hash " title="c3ad7d86ac2aca4b1baa1d5fbbbfc38648c734b1ae0f4ac1ef3ccd5b06dd310f">c3ad7d86ac2a…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-flash64</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash " title="22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae">22de4108c65c…</span></td>
+<td><span class="hash " title="96f750d8f4dff67d105322f6f2b5b3f36919a18982cd17ca3270d4ca98ba8e35">96f750d8f4df…</span></td>
+<td><span class="hash " title="0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff">0d05936a8388…</span></td>
+<td><span class="hash " title="ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721">ffdadfeaaf44…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-memory</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash miss" title="22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae">22de4108c65c…</span></td>
+<td><span class="hash match" title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash match" title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash miss" title="01b8fe022e4b63ba282ff0d03f996c071aed652dc3d35432f3fd436d997a421f">01b8fe022e4b…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-nes</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash miss" title="22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae">22de4108c65c…</span></td>
+<td><span class="hash match" title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash match" title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash miss" title="ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721">ffdadfeaaf44…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-ppu-hello</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash miss" title="22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae">22de4108c65c…</span></td>
+<td><span class="hash match" title="56cd131fb3915fe7e410be228a8c09e99132064799f148583636ca75745bedf7">56cd131fb391…</span></td>
+<td><span class="hash match" title="56cd131fb3915fe7e410be228a8c09e99132064799f148583636ca75745bedf7">56cd131fb391…</span></td>
+<td><span class="hash match" title="56cd131fb3915fe7e410be228a8c09e99132064799f148583636ca75745bedf7">56cd131fb391…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-ppu-shades</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash miss" title="22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae">22de4108c65c…</span></td>
+<td><span class="hash match" title="da5336215e6c56d30146c42d81ad828a819214c307682903a5bcc87be8c0538e">da5336215e6c…</span></td>
+<td><span class="hash match" title="da5336215e6c56d30146c42d81ad828a819214c307682903a5bcc87be8c0538e">da5336215e6c…</span></td>
+<td><span class="hash match" title="da5336215e6c56d30146c42d81ad828a819214c307682903a5bcc87be8c0538e">da5336215e6c…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-ppu-stripes</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash miss" title="22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae">22de4108c65c…</span></td>
+<td><span class="hash match" title="4600c4f2749300b40f34dea969165d4d08d652543620076fb5cae249426f238d">4600c4f27493…</span></td>
+<td><span class="hash match" title="4600c4f2749300b40f34dea969165d4d08d652543620076fb5cae249426f238d">4600c4f27493…</span></td>
+<td><span class="hash miss" title="64efed2f20163e200eb0200d62d736be338320cef3767d53f3b1584cf20c6c4f">64efed2f2016…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-save-none</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash miss" title="22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae">22de4108c65c…</span></td>
+<td><span class="hash match" title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash match" title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash miss" title="ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721">ffdadfeaaf44…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-sram</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash " title="22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae">22de4108c65c…</span></td>
+<td><span class="hash " title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash " title="0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff">0d05936a8388…</span></td>
+<td><span class="hash " title="ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721">ffdadfeaaf44…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-thumb</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash " title="22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae">22de4108c65c…</span></td>
+<td><span class="hash " title="7783dfe85db38db2cada7f49dd81ff3fbc2b2620dd288b6c499849876dc904a6">7783dfe85db3…</span></td>
+<td><span class="hash " title="59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3">59ce42abae98…</span></td>
+<td><span class="hash " title="ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721">ffdadfeaaf44…</span></td>
+</tr>
+<tr class="test-row">
+<td class="id">jsmolka-unsafe</td>
+<td><span class="badge gold">gold</span></td>
+<td><span class="hash " title="22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae">22de4108c65c…</span></td>
+<td><span class="hash " title="0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff">0d05936a8388…</span></td>
+<td><span class="hash " title="5d7098c43253151951e2e7451c103eb0f1b95e73127d466058e146da37dfff72">5d7098c43253…</span></td>
+<td><span class="hash " title="ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721">ffdadfeaaf44…</span></td>
+</tr>
+</tbody></table>
+</main>
+<footer>
+  <span class="cable">━<span class="led">●</span>━━━━━━━━━━━━━━━━━━━━<span class="led">●</span>━</span><br>
+  Generated by build_dashboard.py · Cable Club gba-accuracy-tests
+</footer>
+</body>
+</html>

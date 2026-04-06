@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overview — gba-accuracy-tests</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <h1>GBA ACCURACY TESTS</h1>
+  <p class="subtitle">Overview</p>
+  
+</header>
+<main>
+<h2>Overview</h2>
+<div class="stat-grid">
+<div class="stat"><span class="num">5</span><span class="label">suites</span></div>
+<div class="stat"><span class="num">37</span><span class="label">tests</span></div>
+<div class="stat"><span class="num">4</span><span class="label">runners</span></div>
+<div class="stat"><span class="num">3</span><span class="label">BIOS modes</span></div>
+<div class="stat"><span class="num">489</span><span class="label">captures</span></div>
+<div class="stat"><span class="num">0</span><span class="label"><a href="contested.html">contested</a></span></div>
+<div class="stat"><span class="num">5</span><span class="label"><a href="unverified.html">unverified</a></span></div>
+</div>
+<h2>Agreement Matrix</h2>
+<p class="muted">Each cell shows passing / total under the cell's BIOS mode. Passing = runner's hash matches the cross-runner consensus (≥ 2 agree). Click a suite to drill into per-test details.</p>
+<h3>BIOS mode: <code>official</code></h3>
+<table class="matrix"><thead><tr><th>Suite</th>
+<th class="runner">cable_club</th>
+<th class="runner">mgba</th>
+<th class="runner">nanoboyadvance</th>
+<th class="runner">skyemu</th>
+</tr></thead><tbody>
+<tr><td><a href="suite-ags-aging.html">ags-aging</a></td>
+<td class="cell none-pass"><span class="frac">0/1</span><span class="pct">0%</span></td>
+<td class="cell all-pass"><span class="frac">1/1</span><span class="pct">100%</span></td>
+<td class="cell none-pass"><span class="frac">0/1</span><span class="pct">0%</span></td>
+<td class="cell all-pass"><span class="frac">1/1</span><span class="pct">100%</span></td>
+</tr>
+<tr><td><a href="suite-armwrestler.html">armwrestler</a></td>
+<td class="cell all-pass"><span class="frac">6/6</span><span class="pct">100%</span></td>
+<td class="cell all-pass"><span class="frac">6/6</span><span class="pct">100%</span></td>
+<td class="cell all-pass"><span class="frac">6/6</span><span class="pct">100%</span></td>
+<td class="cell all-pass"><span class="frac">6/6</span><span class="pct">100%</span></td>
+</tr>
+<tr><td><a href="suite-fuzzarm.html">fuzzarm</a></td>
+<td class="cell all-pass"><span class="frac">3/3</span><span class="pct">100%</span></td>
+<td class="cell all-pass"><span class="frac">3/3</span><span class="pct">100%</span></td>
+<td class="cell all-pass"><span class="frac">3/3</span><span class="pct">100%</span></td>
+<td class="cell all-pass"><span class="frac">3/3</span><span class="pct">100%</span></td>
+</tr>
+<tr><td><a href="suite-jsmolka.html">jsmolka</a></td>
+<td class="cell "><span class="frac">6/13</span><span class="pct">46%</span></td>
+<td class="cell none-pass"><span class="frac">0/13</span><span class="pct">0%</span></td>
+<td class="cell "><span class="frac">6/13</span><span class="pct">46%</span></td>
+<td class="cell "><span class="frac">2/13</span><span class="pct">15%</span></td>
+</tr>
+<tr><td><a href="suite-mgba-suite.html">mgba-suite</a></td>
+<td class="cell none-pass"><span class="frac">0/14</span><span class="pct">0%</span></td>
+<td class="cell "><span class="frac">5/14</span><span class="pct">36%</span></td>
+<td class="cell "><span class="frac">8/14</span><span class="pct">57%</span></td>
+<td class="cell "><span class="frac">8/14</span><span class="pct">57%</span></td>
+</tr>
+</tbody></table>
+<h3>BIOS mode: <code>hle</code></h3>
+<table class="matrix"><thead><tr><th>Suite</th>
+<th class="runner">cable_club</th>
+<th class="runner">mgba</th>
+<th class="runner">nanoboyadvance</th>
+<th class="runner">skyemu</th>
+</tr></thead><tbody>
+<tr><td><a href="suite-ags-aging.html">ags-aging</a></td>
+<td class="cell none-pass"><span class="frac">0/1</span><span class="pct">0%</span></td>
+<td class="cell none-pass"><span class="frac">0/1</span><span class="pct">0%</span></td>
+<td class="cell none-pass"><span class="frac">0/1</span><span class="pct">0%</span></td>
+<td class="cell none-pass"><span class="frac">0/1</span><span class="pct">0%</span></td>
+</tr>
+<tr><td><a href="suite-armwrestler.html">armwrestler</a></td>
+<td class="cell all-pass"><span class="frac">6/6</span><span class="pct">100%</span></td>
+<td class="cell all-pass"><span class="frac">6/6</span><span class="pct">100%</span></td>
+<td class="cell all-pass"><span class="frac">6/6</span><span class="pct">100%</span></td>
+<td class="cell all-pass"><span class="frac">6/6</span><span class="pct">100%</span></td>
+</tr>
+<tr><td><a href="suite-fuzzarm.html">fuzzarm</a></td>
+<td class="cell all-pass"><span class="frac">3/3</span><span class="pct">100%</span></td>
+<td class="cell all-pass"><span class="frac">3/3</span><span class="pct">100%</span></td>
+<td class="cell all-pass"><span class="frac">3/3</span><span class="pct">100%</span></td>
+<td class="cell all-pass"><span class="frac">3/3</span><span class="pct">100%</span></td>
+</tr>
+<tr><td><a href="suite-jsmolka.html">jsmolka</a></td>
+<td class="cell "><span class="frac">10/13</span><span class="pct">77%</span></td>
+<td class="cell "><span class="frac">11/13</span><span class="pct">85%</span></td>
+<td class="cell "><span class="frac">7/13</span><span class="pct">54%</span></td>
+<td class="cell "><span class="frac">2/13</span><span class="pct">15%</span></td>
+</tr>
+<tr><td><a href="suite-mgba-suite.html">mgba-suite</a></td>
+<td class="cell none-pass"><span class="frac">0/14</span><span class="pct">0%</span></td>
+<td class="cell "><span class="frac">6/14</span><span class="pct">43%</span></td>
+<td class="cell "><span class="frac">7/14</span><span class="pct">50%</span></td>
+<td class="cell "><span class="frac">6/14</span><span class="pct">43%</span></td>
+</tr>
+</tbody></table>
+<h3>BIOS mode: <code>cleanroom</code></h3>
+<table class="matrix"><thead><tr><th>Suite</th>
+<th class="runner">cable_club</th>
+<th class="runner">mgba</th>
+<th class="runner">nanoboyadvance</th>
+<th class="runner">skyemu</th>
+</tr></thead><tbody>
+<tr><td><a href="suite-ags-aging.html">ags-aging</a></td>
+<td class="cell none-pass"><span class="frac">0/1</span><span class="pct">0%</span></td>
+<td class="cell none-pass"><span class="frac">0/1</span><span class="pct">0%</span></td>
+<td class="cell none-pass"><span class="frac">0/1</span><span class="pct">0%</span></td>
+<td class="cell none-pass"><span class="frac">0/1</span><span class="pct">0%</span></td>
+</tr>
+<tr><td><a href="suite-armwrestler.html">armwrestler</a></td>
+<td class="cell none-pass"><span class="frac">0/6</span><span class="pct">0%</span></td>
+<td class="cell all-pass"><span class="frac">6/6</span><span class="pct">100%</span></td>
+<td class="cell all-pass"><span class="frac">6/6</span><span class="pct">100%</span></td>
+<td class="cell all-pass"><span class="frac">6/6</span><span class="pct">100%</span></td>
+</tr>
+<tr><td><a href="suite-fuzzarm.html">fuzzarm</a></td>
+<td class="cell none-pass"><span class="frac">0/3</span><span class="pct">0%</span></td>
+<td class="cell all-pass"><span class="frac">3/3</span><span class="pct">100%</span></td>
+<td class="cell all-pass"><span class="frac">3/3</span><span class="pct">100%</span></td>
+<td class="cell all-pass"><span class="frac">3/3</span><span class="pct">100%</span></td>
+</tr>
+<tr><td><a href="suite-jsmolka.html">jsmolka</a></td>
+<td class="cell none-pass"><span class="frac">0/13</span><span class="pct">0%</span></td>
+<td class="cell "><span class="frac">7/13</span><span class="pct">54%</span></td>
+<td class="cell "><span class="frac">7/13</span><span class="pct">54%</span></td>
+<td class="cell "><span class="frac">2/13</span><span class="pct">15%</span></td>
+</tr>
+<tr><td><a href="suite-mgba-suite.html">mgba-suite</a></td>
+<td class="cell none-pass"><span class="frac">0/14</span><span class="pct">0%</span></td>
+<td class="cell "><span class="frac">7/14</span><span class="pct">50%</span></td>
+<td class="cell "><span class="frac">8/14</span><span class="pct">57%</span></td>
+<td class="cell "><span class="frac">9/14</span><span class="pct">64%</span></td>
+</tr>
+</tbody></table>
+</main>
+<footer>
+  <span class="cable">━<span class="led">●</span>━━━━━━━━━━━━━━━━━━━━<span class="led">●</span>━</span><br>
+  Generated by build_dashboard.py · Cable Club gba-accuracy-tests
+</footer>
+</body>
+</html>

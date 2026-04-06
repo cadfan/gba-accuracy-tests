@@ -748,23 +748,45 @@ class LibretroSession:
         *,
         inputs: list[dict] | None = None,
         max_run_calls: int | None = None,
+        completion: dict | None = None,
     ) -> bytes:
-        """Run ROM until target_frames frames have been emitted.
+        """Run ROM until completion criterion is met or target_frames hits.
 
         Returns raw BGR555 LE bytes (76800).
 
         `inputs` is the manifest [[tests.input]] list — each entry
         {"frame": int, "keys": int (GBA mask)}. The mask becomes "held"
         from that frame onward until a later entry overrides it.
+
+        `completion` mirrors cable_club's completion modes. Supported here:
+            - {"type": "exact_frame", "frame": N}
+                Capture exactly at frame N (defaults to target_frames).
+            - {"type": "stable_frames", "window": W, "min_frames": F}
+                Hash the framebuffer each frame; capture once the hash has
+                been identical for W consecutive frames after frame F.
+            - {"type": "input_then_stable", "window": W, "min_frames": F}
+                Same as stable_frames but min_frames is bumped past the last
+                input event in the schedule.
+        Anything else (None, debug_string) falls back to "run target_frames
+        and capture the final frame".
         """
-        # Build a frame -> mask schedule. Mask persists from its frame
-        # onward until the next scheduled change.
+        import hashlib
+
         schedule: list[tuple[int, int]] = []
         if inputs:
             schedule = sorted(
                 [(int(i["frame"]), int(i["keys"])) for i in inputs],
                 key=lambda kv: kv[0],
             )
+
+        comp_type = (completion or {}).get("type")
+        comp_window = int((completion or {}).get("window", 10) or 10)
+        comp_min_frames = int((completion or {}).get("min_frames", 0) or 0)
+        if comp_type == "input_then_stable" and schedule:
+            comp_min_frames = max(comp_min_frames, schedule[-1][0] + 1)
+        comp_exact_frame = None
+        if comp_type == "exact_frame":
+            comp_exact_frame = int((completion or {}).get("frame", target_frames))
 
         cap = max_run_calls if max_run_calls is not None else target_frames * 5
 
@@ -779,29 +801,52 @@ class LibretroSession:
             current_mask = 0
             sched_idx = 0
             run_calls = 0
+            prev_hash = b""
+            stable_count = 0
+            captured: bytes | None = None
             while core.get_frame_count() < target_frames:
                 if run_calls >= cap:
                     raise LibretroError(
                         f"libretro core failed to emit {target_frames} frames "
                         f"after {cap} retro_run calls"
                     )
-                # Apply any scheduled key change for this frame index.
-                next_frame = core.get_frame_count()
-                while sched_idx < len(schedule) and schedule[sched_idx][0] <= next_frame:
+                cur_frame = core.get_frame_count()
+                while sched_idx < len(schedule) and schedule[sched_idx][0] <= cur_frame:
                     current_mask = schedule[sched_idx][1]
                     sched_idx += 1
                 core.set_joypad_state(current_mask)
                 core.run_one()
                 run_calls += 1
 
-            frame = core.get_last_frame_bgr555()
-            if frame is None:
+                if comp_exact_frame is not None and core.get_frame_count() >= comp_exact_frame:
+                    captured = core.get_last_frame_bgr555()
+                    break
+
+                if comp_type in ("stable_frames", "input_then_stable"):
+                    if core.get_frame_count() < comp_min_frames:
+                        continue
+                    fb = core.get_last_frame_bgr555()
+                    if fb is None:
+                        continue
+                    h = hashlib.sha256(fb).digest()
+                    if h == prev_hash:
+                        stable_count += 1
+                        if stable_count >= comp_window:
+                            captured = fb
+                            break
+                    else:
+                        stable_count = 0
+                        prev_hash = h
+
+            if captured is None:
+                captured = core.get_last_frame_bgr555()
+            if captured is None:
                 raise LibretroError("core emitted no framebuffer")
-            if len(frame) != GBA_FRAME_BYTES:
+            if len(captured) != GBA_FRAME_BYTES:
                 raise LibretroError(
-                    f"unexpected frame size {len(frame)}, expected {GBA_FRAME_BYTES}"
+                    f"unexpected frame size {len(captured)}, expected {GBA_FRAME_BYTES}"
                 )
-            return frame
+            return captured
         finally:
             core.close()
 

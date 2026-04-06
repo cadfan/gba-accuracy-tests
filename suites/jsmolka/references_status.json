@@ -1,0 +1,43 @@
+{
+  "tests": {
+    "jsmolka-arm": {
+      "status": "unverified"
+    },
+    "jsmolka-thumb": {
+      "status": "gold"
+    },
+    "jsmolka-bios": {
+      "status": "gold"
+    },
+    "jsmolka-memory": {
+      "status": "gold"
+    },
+    "jsmolka-nes": {
+      "status": "gold"
+    },
+    "jsmolka-unsafe": {
+      "status": "gold"
+    },
+    "jsmolka-flash128": {
+      "status": "gold"
+    },
+    "jsmolka-flash64": {
+      "status": "gold"
+    },
+    "jsmolka-sram": {
+      "status": "gold"
+    },
+    "jsmolka-save-none": {
+      "status": "gold"
+    },
+    "jsmolka-ppu-hello": {
+      "status": "gold"
+    },
+    "jsmolka-ppu-shades": {
+      "status": "gold"
+    },
+    "jsmolka-ppu-stripes": {
+      "status": "gold"
+    }
+  }
+}

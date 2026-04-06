@@ -1,0 +1,81 @@
+name: Reference sweep + dashboard
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+  workflow_dispatch:
+  schedule:
+    # Re-run on Mondays so we catch upstream emulator drift even when
+    # the submodule isn't being touched.
+    - cron: '7 6 * * 1'
+
+# Avoid stomping on a previous run if multiple commits land back-to-back.
+concurrency:
+  group: sweep-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  smoke:
+    name: Smoke test (PR + push)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Install runtime deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install pillow tomli
+      - name: Bootstrap test ROMs + cleanroom BIOS
+        run: |
+          python scripts/download_roms.py --suite jsmolka
+          python scripts/download_roms.py --bios-only
+      - name: Run jsmolka manifest validation
+        run: python -m unittest discover -s tests -v
+
+  full-sweep:
+    name: Full reference sweep (main only)
+    needs: smoke
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Install runtime deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install pillow tomli
+      - name: Bootstrap ROMs + BIOS
+        run: |
+          python scripts/download_roms.py
+      - name: Promote tiers from existing references
+        run: python scripts/promote_tiers.py
+      - name: Populate expected.toml
+        run: python scripts/populate_expected.py
+      - name: Build dashboard
+        run: python scripts/build_dashboard.py --output docs/dashboard
+      - name: Upload dashboard artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/dashboard
+
+  publish:
+    name: Publish to GitHub Pages
+    needs: full-sweep
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

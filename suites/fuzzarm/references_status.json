@@ -1,0 +1,13 @@
+{
+  "tests": {
+    "fuzzarm-mixed": {
+      "status": "gold"
+    },
+    "fuzzarm-arm": {
+      "status": "gold"
+    },
+    "fuzzarm-thumb": {
+      "status": "gold"
+    }
+  }
+}

@@ -4,7 +4,7 @@
     "fuzzarm-mixed": [
       {
         "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "hle",
         "provenance": {
           "emulator": "nanoboyadvance",
@@ -14,13 +14,13 @@
           "bios_sha256": null,
           "rom_sha256": "",
           "frame_count": 30000,
-          "captured_at": "2026-04-06T19:36:00.646168+00:00",
+          "captured_at": "2026-04-06T21:58:48.205176+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
         "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "official",
         "provenance": {
           "emulator": "mgba",
@@ -30,13 +30,13 @@
           "bios_sha256": null,
           "rom_sha256": "",
           "frame_count": 30000,
-          "captured_at": "2026-04-06T19:30:17.308935+00:00",
+          "captured_at": "2026-04-06T21:55:14.060361+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
         "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "hle",
         "provenance": {
           "emulator": "mgba",
@@ -46,13 +46,13 @@
           "bios_sha256": null,
           "rom_sha256": "",
           "frame_count": 30000,
-          "captured_at": "2026-04-06T19:31:08.866477+00:00",
+          "captured_at": "2026-04-06T21:55:17.779587+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
         "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "official",
         "provenance": {
           "emulator": "nanoboyadvance",
@@ -62,13 +62,13 @@
           "bios_sha256": null,
           "rom_sha256": "",
           "frame_count": 30000,
-          "captured_at": "2026-04-06T19:34:06.129614+00:00",
+          "captured_at": "2026-04-06T21:57:05.108681+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
         "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "official",
         "provenance": {
           "emulator": "skyemu",
@@ -78,13 +78,13 @@
           "bios_sha256": null,
           "rom_sha256": "",
           "frame_count": 30000,
-          "captured_at": "2026-04-06T19:38:46.323085+00:00",
+          "captured_at": "2026-04-06T22:01:22.122838+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
         "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "hle",
         "provenance": {
           "emulator": "skyemu",
@@ -94,13 +94,13 @@
           "bios_sha256": null,
           "rom_sha256": "",
           "frame_count": 30000,
-          "captured_at": "2026-04-06T19:39:41.737708+00:00",
+          "captured_at": "2026-04-06T22:02:15.221062+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
         "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "cleanroom",
         "provenance": {
           "emulator": "mgba",
@@ -110,13 +110,13 @@
           "bios_sha256": null,
           "rom_sha256": "",
           "frame_count": 30000,
-          "captured_at": "2026-04-06T19:31:57.607295+00:00",
+          "captured_at": "2026-04-06T21:55:21.538346+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
         "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "cleanroom",
         "provenance": {
           "emulator": "nanoboyadvance",
@@ -126,13 +126,13 @@
           "bios_sha256": null,
           "rom_sha256": "",
           "frame_count": 30000,
-          "captured_at": "2026-04-06T19:37:48.676664+00:00",
+          "captured_at": "2026-04-06T22:00:29.441719+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
         "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "cleanroom",
         "provenance": {
           "emulator": "skyemu",
@@ -142,7 +142,55 @@
           "bios_sha256": null,
           "rom_sha256": "",
           "frame_count": 30000,
-          "captured_at": "2026-04-06T19:40:36.816330+00:00",
+          "captured_at": "2026-04-06T22:03:08.045537+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
+        "tier": "gold",
+        "bios_mode": "official",
+        "provenance": {
+          "emulator": "cable_club",
+          "version": null,
+          "commit": null,
+          "bios_mode": "official",
+          "bios_sha256": null,
+          "rom_sha256": "",
+          "frame_count": 30000,
+          "captured_at": "2026-04-06T21:53:28.526975+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
+        "tier": "gold",
+        "bios_mode": "hle",
+        "provenance": {
+          "emulator": "cable_club",
+          "version": null,
+          "commit": null,
+          "bios_mode": "hle",
+          "bios_sha256": null,
+          "rom_sha256": "",
+          "frame_count": 30000,
+          "captured_at": "2026-04-06T21:54:34.846900+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "cable_club",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "",
+          "frame_count": 30000,
+          "captured_at": "2026-04-06T21:55:10.412383+00:00",
           "captured_by": "generate_refs.py"
         }
       }
@@ -150,7 +198,7 @@
     "fuzzarm-arm": [
       {
         "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "official",
         "provenance": {
           "emulator": "mgba",
@@ -160,13 +208,13 @@
           "bios_sha256": null,
           "rom_sha256": "",
           "frame_count": 30000,
-          "captured_at": "2026-04-06T19:29:46.456197+00:00",
+          "captured_at": "2026-04-06T21:55:11.818753+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
         "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "hle",
         "provenance": {
           "emulator": "mgba",
@@ -176,13 +224,13 @@
           "bios_sha256": null,
           "rom_sha256": "",
           "frame_count": 30000,
-          "captured_at": "2026-04-06T19:30:34.696584+00:00",
+          "captured_at": "2026-04-06T21:55:15.456086+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
         "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "official",
         "provenance": {
           "emulator": "nanoboyadvance",
@@ -192,13 +240,13 @@
           "bios_sha256": null,
           "rom_sha256": "",
           "frame_count": 30000,
-          "captured_at": "2026-04-06T19:32:41.251732+00:00",
+          "captured_at": "2026-04-06T21:55:56.187044+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
         "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "hle",
         "provenance": {
           "emulator": "nanoboyadvance",
@@ -208,13 +256,13 @@
           "bios_sha256": null,
           "rom_sha256": "",
           "frame_count": 30000,
-          "captured_at": "2026-04-06T19:34:48.032133+00:00",
+          "captured_at": "2026-04-06T21:57:39.617743+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
         "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "official",
         "provenance": {
           "emulator": "skyemu",
@@ -224,13 +272,13 @@
           "bios_sha256": null,
           "rom_sha256": "",
           "frame_count": 30000,
-          "captured_at": "2026-04-06T19:38:08.096511+00:00",
+          "captured_at": "2026-04-06T22:00:47.383239+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
         "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "hle",
         "provenance": {
           "emulator": "skyemu",
@@ -240,13 +288,13 @@
           "bios_sha256": null,
           "rom_sha256": "",
           "frame_count": 30000,
-          "captured_at": "2026-04-06T19:39:05.157173+00:00",
+          "captured_at": "2026-04-06T22:01:40.013721+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
         "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "cleanroom",
         "provenance": {
           "emulator": "mgba",
@@ -256,13 +304,13 @@
           "bios_sha256": null,
           "rom_sha256": "",
           "frame_count": 30000,
-          "captured_at": "2026-04-06T19:31:25.738588+00:00",
+          "captured_at": "2026-04-06T21:55:19.220893+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
         "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "cleanroom",
         "provenance": {
           "emulator": "nanoboyadvance",
@@ -272,13 +320,13 @@
           "bios_sha256": null,
           "rom_sha256": "",
           "frame_count": 30000,
-          "captured_at": "2026-04-06T19:36:37.019082+00:00",
+          "captured_at": "2026-04-06T21:59:22.327593+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
         "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "cleanroom",
         "provenance": {
           "emulator": "skyemu",
@@ -288,7 +336,55 @@
           "bios_sha256": null,
           "rom_sha256": "",
           "frame_count": 30000,
-          "captured_at": "2026-04-06T19:40:02.296813+00:00",
+          "captured_at": "2026-04-06T22:02:33.053158+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
+        "tier": "gold",
+        "bios_mode": "official",
+        "provenance": {
+          "emulator": "cable_club",
+          "version": null,
+          "commit": null,
+          "bios_mode": "official",
+          "bios_sha256": null,
+          "rom_sha256": "",
+          "frame_count": 30000,
+          "captured_at": "2026-04-06T21:52:42.824360+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
+        "tier": "gold",
+        "bios_mode": "hle",
+        "provenance": {
+          "emulator": "cable_club",
+          "version": null,
+          "commit": null,
+          "bios_mode": "hle",
+          "bios_sha256": null,
+          "rom_sha256": "",
+          "frame_count": 30000,
+          "captured_at": "2026-04-06T21:53:51.477380+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "cable_club",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "",
+          "frame_count": 30000,
+          "captured_at": "2026-04-06T21:54:46.732704+00:00",
           "captured_by": "generate_refs.py"
         }
       }
@@ -296,7 +392,7 @@
     "fuzzarm-thumb": [
       {
         "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "official",
         "provenance": {
           "emulator": "mgba",
@@ -306,13 +402,13 @@
           "bios_sha256": null,
           "rom_sha256": "",
           "frame_count": 30000,
-          "captured_at": "2026-04-06T19:30:01.849949+00:00",
+          "captured_at": "2026-04-06T21:55:12.930631+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
         "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "hle",
         "provenance": {
           "emulator": "mgba",
@@ -322,13 +418,13 @@
           "bios_sha256": null,
           "rom_sha256": "",
           "frame_count": 30000,
-          "captured_at": "2026-04-06T19:30:52.473745+00:00",
+          "captured_at": "2026-04-06T21:55:16.616977+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
         "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "official",
         "provenance": {
           "emulator": "nanoboyadvance",
@@ -338,13 +434,13 @@
           "bios_sha256": null,
           "rom_sha256": "",
           "frame_count": 30000,
-          "captured_at": "2026-04-06T19:33:24.038068+00:00",
+          "captured_at": "2026-04-06T21:56:30.775948+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
         "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "hle",
         "provenance": {
           "emulator": "nanoboyadvance",
@@ -354,13 +450,13 @@
           "bios_sha256": null,
           "rom_sha256": "",
           "frame_count": 30000,
-          "captured_at": "2026-04-06T19:35:24.818438+00:00",
+          "captured_at": "2026-04-06T21:58:13.824406+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
         "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "official",
         "provenance": {
           "emulator": "skyemu",
@@ -370,13 +466,13 @@
           "bios_sha256": null,
           "rom_sha256": "",
           "frame_count": 30000,
-          "captured_at": "2026-04-06T19:38:27.194946+00:00",
+          "captured_at": "2026-04-06T22:01:04.798951+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
         "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "hle",
         "provenance": {
           "emulator": "skyemu",
@@ -386,13 +482,13 @@
           "bios_sha256": null,
           "rom_sha256": "",
           "frame_count": 30000,
-          "captured_at": "2026-04-06T19:39:22.547017+00:00",
+          "captured_at": "2026-04-06T22:01:57.376309+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
         "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "cleanroom",
         "provenance": {
           "emulator": "mgba",
@@ -402,13 +498,13 @@
           "bios_sha256": null,
           "rom_sha256": "",
           "frame_count": 30000,
-          "captured_at": "2026-04-06T19:31:41.630800+00:00",
+          "captured_at": "2026-04-06T21:55:20.377747+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
         "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "cleanroom",
         "provenance": {
           "emulator": "nanoboyadvance",
@@ -418,13 +514,13 @@
           "bios_sha256": null,
           "rom_sha256": "",
           "frame_count": 30000,
-          "captured_at": "2026-04-06T19:37:12.149988+00:00",
+          "captured_at": "2026-04-06T21:59:55.886243+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
         "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "cleanroom",
         "provenance": {
           "emulator": "skyemu",
@@ -434,7 +530,55 @@
           "bios_sha256": null,
           "rom_sha256": "",
           "frame_count": 30000,
-          "captured_at": "2026-04-06T19:40:19.582483+00:00",
+          "captured_at": "2026-04-06T22:02:50.494555+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
+        "tier": "gold",
+        "bios_mode": "official",
+        "provenance": {
+          "emulator": "cable_club",
+          "version": null,
+          "commit": null,
+          "bios_mode": "official",
+          "bios_sha256": null,
+          "rom_sha256": "",
+          "frame_count": 30000,
+          "captured_at": "2026-04-06T21:53:05.792578+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
+        "tier": "gold",
+        "bios_mode": "hle",
+        "provenance": {
+          "emulator": "cable_club",
+          "version": null,
+          "commit": null,
+          "bios_mode": "hle",
+          "bios_sha256": null,
+          "rom_sha256": "",
+          "frame_count": 30000,
+          "captured_at": "2026-04-06T21:54:13.327357+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "cable_club",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "",
+          "frame_count": 30000,
+          "captured_at": "2026-04-06T21:54:58.531623+00:00",
           "captured_by": "generate_refs.py"
         }
       }

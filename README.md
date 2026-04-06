@@ -1,85 +1,166 @@
 # gba-accuracy-tests
 
-Automated accuracy testing for GBA emulators. Test ROM manifests, reference hashes, diff images.
+Cross-emulator accuracy benchmark for the Game Boy Advance.
+Test ROM manifests, reference hashes, runner adapters, diff images, and a
+static dashboard you can publish on GitHub Pages.
 
-Any GBA emulator (C, C++, Rust, Go) can use this to measure accuracy: run ROMs headlessly, produce screenshots, compare against references.
+If you're writing a GBA emulator (in any language), you can use this to
+measure where your emulator agrees with the field and where it diverges,
+and you can submit your own runner adapter so future runs include your
+emulator in the matrix.
 
-## Quick Start
+[![dashboard](docs/dashboard/badge.svg)](docs/dashboard/index.html)
+
+## Quick start
 
 ```bash
 git clone https://github.com/cadfan/gba-accuracy-tests
 cd gba-accuracy-tests
-pip install -e .                                     # or: pip install Pillow tomli
-python scripts/download_roms.py                      # Download test ROMs (~15 MB)
-python compare.py run --runner mgba --suite jsmolka  # Run and compare
+pip install pillow tomli            # tomli only needed on Python < 3.11
+python scripts/download_roms.py     # downloads test ROMs + cleanroom BIOS
+python scripts/sweep_all.py         # runs every available runner × suite × BIOS mode
+python scripts/promote_tiers.py     # marks consensus hashes gold
+python scripts/build_dashboard.py   # writes docs/dashboard/index.html
 ```
 
-## Adding Your Emulator
-
-**Option 1: Write a runner adapter (recommended)**
-
-Copy `runners/TEMPLATE.py` to `runners/my_emulator.py`. Implement `run_test()` and `is_available()`. Then:
+The default sweep runs whichever runners are installed locally. To run
+just one combination:
 
 ```bash
-python compare.py run --runner my-emulator --suite jsmolka
+python scripts/generate_refs.py --runner mgba --suite jsmolka --bios-mode cleanroom
+python compare.py run --runner mgba --suite jsmolka --bios-mode cleanroom
 ```
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide.
+`cleanroom` mode works out of the box because the
+[Cult-of-GBA replacement BIOS](https://github.com/Cult-of-GBA/BIOS)
+ships in this repo (MIT-licensed). For higher fidelity, drop a real
+Nintendo BIOS dump at `runners/cores/gba_bios.bin` and use
+`--bios-mode official`. See [BIOS.md](BIOS.md) for the full picture.
 
-**Option 2: CLI command template (for emulators with existing headless mode)**
+## What this is
 
-If your emulator already supports headless screenshots:
+A standardized way to:
 
-```bash
-python compare.py run --command my-emu --headless {rom} --frames {frames} --screenshot {output} --suite jsmolka
+- run a curated set of GBA test ROMs against multiple emulators
+- capture each run's framebuffer as raw BGR555 bytes (always 76800 bytes)
+- SHA256 each capture and compare across runners + BIOS modes
+- promote a consensus hash to "gold" when ≥ 2 runners agree
+- surface the disagreements in a static HTML dashboard
+- give every emulator author a citable scorecard
+
+The framework treats every emulator as a black box that takes a ROM and
+some inputs and produces a framebuffer. Each emulator gets a runner
+adapter (a tiny Python file) that knows how to drive *its* headless mode.
+
+## Active runners
+
+| Runner            | Emulator                                                       | How it works                                              | BIOS modes |
+|-------------------|----------------------------------------------------------------|-----------------------------------------------------------|------------|
+| `cable_club`      | [Cable Club](https://github.com/cadfan/cable-club)             | `cable-club-runner` Rust binary (built from this repo)    | all 3      |
+| `mgba`            | [mGBA](https://mgba.io/)                                       | `mgba_libretro.dll` driven by `runners/libretro_host.py`  | all 3      |
+| `nanoboyadvance`  | [NanoBoyAdvance](https://github.com/nba-emu/NanoBoyAdvance)    | `nba-headless` binary (built from cadfan's fork)          | all 3      |
+| `skyemu`          | [SkyEmu](https://github.com/skylersaleh/SkyEmu)                | SkyEmu's built-in HTTP server, `runners/skyemu.py` shim   | all 3      |
+
+Drop the appropriate emulator binary in `runners/cores/` (or set the
+matching env var) to enable a runner. Missing runners are skipped, not
+errors.
+
+## Test suites
+
+| Suite        | Tests | Source                                                                            | Notes                                                                                 |
+|--------------|------:|-----------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
+| jsmolka      |    13 | [jsmolka/gba-tests](https://github.com/jsmolka/gba-tests)                         | ARM, Thumb, BIOS, memory, save (sram/flash), NES, PPU edge cases                      |
+| armwrestler  |     6 | [destoer/armwrestler-gba-fixed](https://github.com/destoer/armwrestler-gba-fixed) | ARM/Thumb instruction tests with menu navigation (DOWN + START)                       |
+| fuzzarm      |     3 | [DenSinH/FuzzARM](https://github.com/DenSinH/FuzzARM)                             | 10,000-case randomized ARM/Thumb fuzz tests                                           |
+| mgba-suite   |    14 | [mgba-emu/suite](https://github.com/mgba-emu/suite)                               | Memory, IO, timing, DMA, BIOS math, video, etc. ROM via Asphaltian/sgba mirror.       |
+| ags-aging    |     1 | [TCRF: AGS Aging Cartridge v7.1](https://tcrf.net/AGS_Aging_Cartridge)            | Nintendo's factory hardware QA cartridge. The full sequential test pass.              |
+
+37 test cases total. `download_roms.py` will fetch them all in under 30
+seconds, with SHA256 verification on every file.
+
+## BIOS modes
+
+The full matrix runs each test under three different BIOS configurations:
+
+- **`official`** — user-provided real Nintendo BIOS (you drop the file in)
+- **`hle`** — emulator's own HLE implementation
+- **`cleanroom`** — Cult-of-GBA MIT-licensed replacement BIOS, ships in repo
+
+The dashboard renders one column per (runner, BIOS mode) pair so you can
+see at a glance where the divergences live. See [BIOS.md](BIOS.md) for
+the gory details of how each runner handles each mode.
+
+## Reference hashes
+
+References are stored as SHA256 hashes of raw BGR555 little-endian
+framebuffer bytes (240×160 u16, 76800 bytes total). Each reference
+includes provenance: emulator, version, commit, BIOS mode, ROM SHA256,
+frame count, capture timestamp.
+
+After a sweep, `scripts/promote_tiers.py` walks every test and:
+
+- if ≥ 2 runners produce the same hash for a (test, BIOS mode), promotes
+  every entry with that hash to **gold**
+- if 2+ distinct hashes each have ≥ 2 votes, marks the test **contested**
+- if no hash has ≥ 2 votes, marks the test **unverified**
+- otherwise leaves entries as **secondary**
+
+This is empirical tier assignment — the consensus is whatever the runners
+actually agree on, not a pre-declared "X is the gold-standard emulator"
+heuristic.
+
+See [schema.md](schema.md) for the full reference format spec.
+
+## Adding your emulator
+
+1. Copy `runners/TEMPLATE.py` to `runners/my_emulator.py`.
+2. Implement `run_test(rom_path, frames, output_path, *, inputs, completion, bios_mode)`. Output should be raw BGR555 LE bytes (76800).
+3. Implement `is_available()`.
+4. Run a smoke test: `python scripts/generate_refs.py --runner my_emulator --suite jsmolka --test jsmolka-arm`
+5. Submit a PR. The `sweep` GitHub Action will pick it up automatically.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full adapter spec.
+
+## How a test run works
+
+```
+              python scripts/generate_refs.py
+                          │
+                          ▼
+       ┌──────────────────────────────────────┐
+       │  load manifest.toml for the suite    │
+       │  for each test:                      │
+       │    expand input schedule             │
+       │    pick BIOS file based on mode      │
+       │    runner.run_test(...) → .bin       │
+       │    sha256 → references.json entry    │
+       └──────────────────────────────────────┘
+                          │
+                          ▼
+           scripts/promote_tiers.py
+                          │
+                          ▼
+       gold / contested / unverified marks
+                          │
+                          ▼
+           scripts/build_dashboard.py
+                          │
+                          ▼
+              docs/dashboard/index.html
 ```
 
-Placeholders `{rom}`, `{frames}`, `{output}` are substituted per test. Most emulators will need a runner adapter instead, since this convention is not universal.
-
-## Test Suites
-
-| Suite | Tests | Source | Notes |
-|-------|-------|--------|-------|
-| jsmolka | 6 | [jsmolka/gba-tests](https://github.com/jsmolka/gba-tests) | ARM, Thumb, BIOS, memory, edge cases |
-| armwrestler | 1 | [destoer/armwrestler-gba-fixed](https://github.com/destoer/armwrestler-gba-fixed) | ARM instruction visual grid. Requires START button. |
-| mgba-suite | 0 (v2) | [mgba-emu/suite](https://github.com/mgba-emu/suite) | Timing, DMA, timer. Placeholder for v2. |
-
-Download size: ~15 MB total.
-
-## Available Runners
-
-| Runner | Emulator | Status |
-|--------|----------|--------|
-| `mgba` | [mGBA](https://mgba.io/) | Requires mGBA + Lua scripting |
-| `cable-club` | [Cable Club](https://github.com/cadfan/cable-club) | Requires accuracy-sweep binary |
-
-## Reference Hashes
-
-References are stored as SHA256 hashes of raw BGR555 little-endian framebuffer bytes (240x160 u16 values, 76800 bytes total). Each reference includes full provenance: emulator name, version, commit, BIOS mode, ROM checksum, frame count, and capture timestamp.
-
-**V1 references** are from mGBA 0.10. mGBA is known-bad on jsmolka ARM test 235 and Thumb test 230. NanoBoyAdvance (gold standard, 100% jsmolka pass rate) references are planned for v2.
-
-See [schema.md](schema.md) for the full reference format specification.
-
-**Important for test runs:** Disable color correction in your emulator. Color correction LUTs change pixel values and produce different hashes.
-
-## Capture Point
-
-Framebuffers are captured at **VBlank start (scanline 160)**, immediately after the PPU finishes rendering all 160 visible scanlines. This is when the framebuffer is complete and stable.
-
-## How It Works
-
-1. `compare.py run` loads TOML manifests from `suites/*/manifest.toml`
-2. For each test: runner executes the ROM for N frames, saves a screenshot
-3. Screenshot is converted to BGR555 raw bytes and SHA256-hashed
-4. Hash is compared against all valid references in `suites/*/references.json`
-5. PASS if the hash matches any reference (gold or secondary tier)
-6. FAIL produces a diff triptych image (Expected | Actual | Diff)
-
-## BIOS Requirements
-
-Most test ROMs work with HLE (built-in) BIOS. The `jsmolka-bios` test depends on BIOS implementation details and may produce different hashes with different HLE implementations. The manifest `requires_bios` field indicates when a real BIOS is needed.
+Each runner is sandboxed: missing emulators don't fail the sweep, they're
+just absent from the matrix. Runners can be developed in isolation —
+add yours, run the smoke, and your column shows up.
 
 ## License
 
-MIT for tooling. Test ROM suites have their own licenses, see [ACKNOWLEDGEMENTS.md](ACKNOWLEDGEMENTS.md).
+`runners/cores/gba_bios_cleanroom.bin` is the Cult-of-GBA replacement
+BIOS, MIT-licensed by DenSinH and fleroviux — see
+`runners/cores/LICENSE.Cult-of-GBA-BIOS`.
+
+The rest of the project (runners, manifests, scripts, dashboard, this
+README) is MIT-licensed under the root `LICENSE` file.
+
+Test ROM suites are subject to their own upstream licenses. See
+[ACKNOWLEDGEMENTS.md](ACKNOWLEDGEMENTS.md) for credits.

@@ -96,7 +96,6 @@ class MgbaRunner:
         completion: dict | None = None,
         bios_mode: str = "official",
     ) -> bool:
-        del completion  # adaptive completion not yet wired through libretro host
         if self._dll is None:
             return False
         output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -127,6 +126,7 @@ class MgbaRunner:
                     rom_path,
                     target_frames=frames,
                     inputs=inputs,
+                    completion=completion,
                 )
             finally:
                 session.cleanup()

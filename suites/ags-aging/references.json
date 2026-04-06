@@ -4,7 +4,7 @@
     "ags-aging-full": [
       {
         "hash": "cac70be3cfa28ebac5515a72319f34a8ce61aba6ae825d65d8c8de85bc5e3673",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "official",
         "provenance": {
           "emulator": "mgba",
@@ -14,12 +14,12 @@
           "bios_sha256": null,
           "rom_sha256": "6968bd01df531b4ca4b9777a87c1913fb6ff3783ef378d04476d531be9b6765d",
           "frame_count": 3000,
-          "captured_at": "2026-04-06T19:29:33.843889+00:00",
+          "captured_at": "2026-04-06T21:52:31.872402+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
-        "hash": "cac70be3cfa28ebac5515a72319f34a8ce61aba6ae825d65d8c8de85bc5e3673",
+        "hash": "702bb8d97a84a53e146fff6c678155af713ea5cb14957a5508db64d7d3901303",
         "tier": "secondary",
         "bios_mode": "hle",
         "provenance": {
@@ -30,7 +30,7 @@
           "bios_sha256": null,
           "rom_sha256": "6968bd01df531b4ca4b9777a87c1913fb6ff3783ef378d04476d531be9b6765d",
           "frame_count": 3000,
-          "captured_at": "2026-04-06T19:29:36.485272+00:00",
+          "captured_at": "2026-04-06T21:52:33.678153+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -46,7 +46,7 @@
           "bios_sha256": null,
           "rom_sha256": "6968bd01df531b4ca4b9777a87c1913fb6ff3783ef378d04476d531be9b6765d",
           "frame_count": 3000,
-          "captured_at": "2026-04-06T19:29:47.640172+00:00",
+          "captured_at": "2026-04-06T21:52:44.044079+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -62,13 +62,13 @@
           "bios_sha256": null,
           "rom_sha256": "6968bd01df531b4ca4b9777a87c1913fb6ff3783ef378d04476d531be9b6765d",
           "frame_count": 3000,
-          "captured_at": "2026-04-06T19:29:57.508320+00:00",
+          "captured_at": "2026-04-06T21:52:52.664584+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
         "hash": "cac70be3cfa28ebac5515a72319f34a8ce61aba6ae825d65d8c8de85bc5e3673",
-        "tier": "secondary",
+        "tier": "gold",
         "bios_mode": "official",
         "provenance": {
           "emulator": "skyemu",
@@ -78,7 +78,7 @@
           "bios_sha256": null,
           "rom_sha256": "6968bd01df531b4ca4b9777a87c1913fb6ff3783ef378d04476d531be9b6765d",
           "frame_count": 3000,
-          "captured_at": "2026-04-06T19:30:11.619107+00:00",
+          "captured_at": "2026-04-06T21:53:06.076594+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -94,12 +94,12 @@
           "bios_sha256": null,
           "rom_sha256": "6968bd01df531b4ca4b9777a87c1913fb6ff3783ef378d04476d531be9b6765d",
           "frame_count": 3000,
-          "captured_at": "2026-04-06T19:30:17.347802+00:00",
+          "captured_at": "2026-04-06T21:53:11.197530+00:00",
           "captured_by": "generate_refs.py"
         }
       },
       {
-        "hash": "cac70be3cfa28ebac5515a72319f34a8ce61aba6ae825d65d8c8de85bc5e3673",
+        "hash": "702bb8d97a84a53e146fff6c678155af713ea5cb14957a5508db64d7d3901303",
         "tier": "secondary",
         "bios_mode": "cleanroom",
         "provenance": {
@@ -110,7 +110,7 @@
           "bios_sha256": null,
           "rom_sha256": "6968bd01df531b4ca4b9777a87c1913fb6ff3783ef378d04476d531be9b6765d",
           "frame_count": 3000,
-          "captured_at": "2026-04-06T19:29:39.060131+00:00",
+          "captured_at": "2026-04-06T21:52:35.534943+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -126,7 +126,7 @@
           "bios_sha256": null,
           "rom_sha256": "6968bd01df531b4ca4b9777a87c1913fb6ff3783ef378d04476d531be9b6765d",
           "frame_count": 3000,
-          "captured_at": "2026-04-06T19:30:06.119528+00:00",
+          "captured_at": "2026-04-06T21:53:01.013151+00:00",
           "captured_by": "generate_refs.py"
         }
       },
@@ -142,7 +142,55 @@
           "bios_sha256": null,
           "rom_sha256": "6968bd01df531b4ca4b9777a87c1913fb6ff3783ef378d04476d531be9b6765d",
           "frame_count": 3000,
-          "captured_at": "2026-04-06T19:30:23.779289+00:00",
+          "captured_at": "2026-04-06T21:53:16.528497+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "96f750d8f4dff67d105322f6f2b5b3f36919a18982cd17ca3270d4ca98ba8e35",
+        "tier": "secondary",
+        "bios_mode": "official",
+        "provenance": {
+          "emulator": "cable_club",
+          "version": null,
+          "commit": null,
+          "bios_mode": "official",
+          "bios_sha256": null,
+          "rom_sha256": "6968bd01df531b4ca4b9777a87c1913fb6ff3783ef378d04476d531be9b6765d",
+          "frame_count": 3000,
+          "captured_at": "2026-04-06T21:52:23.452357+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "e2cc2a1fa6131cf4d86faa3baf78851f35a36853e2467c257b3df9d89e85cce5",
+        "tier": "secondary",
+        "bios_mode": "hle",
+        "provenance": {
+          "emulator": "cable_club",
+          "version": null,
+          "commit": null,
+          "bios_mode": "hle",
+          "bios_sha256": null,
+          "rom_sha256": "6968bd01df531b4ca4b9777a87c1913fb6ff3783ef378d04476d531be9b6765d",
+          "frame_count": 3000,
+          "captured_at": "2026-04-06T21:52:28.605133+00:00",
+          "captured_by": "generate_refs.py"
+        }
+      },
+      {
+        "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+        "tier": "secondary",
+        "bios_mode": "cleanroom",
+        "provenance": {
+          "emulator": "cable_club",
+          "version": null,
+          "commit": null,
+          "bios_mode": "cleanroom",
+          "bios_sha256": null,
+          "rom_sha256": "6968bd01df531b4ca4b9777a87c1913fb6ff3783ef378d04476d531be9b6765d",
+          "frame_count": 3000,
+          "captured_at": "2026-04-06T21:52:30.151614+00:00",
           "captured_by": "generate_refs.py"
         }
       }

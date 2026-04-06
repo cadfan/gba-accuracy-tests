@@ -1,0 +1,22 @@
+{
+  "tests": {
+    "armwrestler-arm-alu": {
+      "status": "gold"
+    },
+    "armwrestler-arm-ldr-str": {
+      "status": "gold"
+    },
+    "armwrestler-arm-ldm-stm": {
+      "status": "gold"
+    },
+    "armwrestler-thumb-alu": {
+      "status": "gold"
+    },
+    "armwrestler-thumb-ldr-str": {
+      "status": "gold"
+    },
+    "armwrestler-thumb-ldm-stm": {
+      "status": "gold"
+    }
+  }
+}
