@@ -23,15 +23,15 @@
 <div class="stat"><span class="num">37</span><span class="label">tests</span></div>
 <div class="stat"><span class="num">4</span><span class="label">runners</span></div>
 <div class="stat"><span class="num">3</span><span class="label">BIOS modes</span></div>
-<div class="stat s-verified"><span class="num">75/111</span><span class="label">verified canonicals (68%)</span></div>
+<div class="stat s-verified"><span class="num">95/111</span><span class="label">verified canonicals (86%)</span></div>
 </div>
 <h2>Cell state breakdown</h2>
 <p class="muted">Counts every (suite, test, BIOS mode, runner) cell across the matrix. "pass" means the runner's hash matches the human-verified canonical pass hash for that (test, mode). "fail" is an annotated expected/known-wrong output. "bug" is a real defect worth investigating. "captured" is a runner output with no canonical pass hash to compare against yet. "unverified" has no human review.</p>
 <div class="stat-grid">
-<div class="stat s-pass"><span class="num">217</span><span class="label">pass</span></div>
-<div class="stat s-fail"><span class="num">53</span><span class="label">fail</span></div>
-<div class="stat s-bug"><span class="num">75</span><span class="label">bug</span></div>
-<div class="stat s-captured"><span class="num">99</span><span class="label">captured</span></div>
+<div class="stat s-pass"><span class="num">292</span><span class="label">pass</span></div>
+<div class="stat s-fail"><span class="num">51</span><span class="label">fail</span></div>
+<div class="stat s-bug"><span class="num">36</span><span class="label">bug</span></div>
+<div class="stat s-captured"><span class="num">65</span><span class="label">captured</span></div>
 <div class="stat s-unverified"><span class="num">0</span><span class="label">unverified</span></div>
 </div>
 <h2>Pass matrix per BIOS mode</h2>
@@ -63,16 +63,16 @@
 <td class="cell all-pass"><span class="frac">3/3</span><span class="pct">100%</span></td>
 </tr>
 <tr><td><a href="suite-jsmolka.html">jsmolka</a></td>
-<td class="cell partial"><span class="frac">9/13</span><span class="pct">69%</span></td>
+<td class="cell partial"><span class="frac">11/13</span><span class="pct">85%</span></td>
 <td class="cell partial"><span class="frac">8/13</span><span class="pct">62%</span></td>
 <td class="cell partial"><span class="frac">9/13</span><span class="pct">69%</span></td>
 <td class="cell partial"><span class="frac">8/13</span><span class="pct">62%</span></td>
 </tr>
 <tr><td><a href="suite-mgba-suite.html">mgba-suite</a></td>
-<td class="cell none-pass"><span class="frac">0/14</span><span class="pct">0%</span></td>
-<td class="cell partial"><span class="frac">3/14</span><span class="pct">21%</span></td>
-<td class="cell partial"><span class="frac">3/14</span><span class="pct">21%</span></td>
-<td class="cell partial"><span class="frac">3/14</span><span class="pct">21%</span></td>
+<td class="cell partial"><span class="frac">7/14</span><span class="pct">50%</span></td>
+<td class="cell partial"><span class="frac">5/14</span><span class="pct">36%</span></td>
+<td class="cell partial"><span class="frac">7/14</span><span class="pct">50%</span></td>
+<td class="cell partial"><span class="frac">9/14</span><span class="pct">64%</span></td>
 </tr>
 </tbody></table></div>
 <h3>BIOS mode <code>hle</code></h3>
@@ -101,16 +101,16 @@
 <td class="cell all-pass"><span class="frac">3/3</span><span class="pct">100%</span></td>
 </tr>
 <tr><td><a href="suite-jsmolka.html">jsmolka</a></td>
-<td class="cell partial"><span class="frac">9/13</span><span class="pct">69%</span></td>
+<td class="cell partial"><span class="frac">11/13</span><span class="pct">85%</span></td>
 <td class="cell partial"><span class="frac">8/13</span><span class="pct">62%</span></td>
 <td class="cell partial"><span class="frac">8/13</span><span class="pct">62%</span></td>
 <td class="cell partial"><span class="frac">7/13</span><span class="pct">54%</span></td>
 </tr>
 <tr><td><a href="suite-mgba-suite.html">mgba-suite</a></td>
-<td class="cell none-pass"><span class="frac">0/14</span><span class="pct">0%</span></td>
-<td class="cell partial"><span class="frac">3/14</span><span class="pct">21%</span></td>
-<td class="cell partial"><span class="frac">3/14</span><span class="pct">21%</span></td>
-<td class="cell partial"><span class="frac">3/14</span><span class="pct">21%</span></td>
+<td class="cell partial"><span class="frac">6/14</span><span class="pct">43%</span></td>
+<td class="cell partial"><span class="frac">5/14</span><span class="pct">36%</span></td>
+<td class="cell partial"><span class="frac">6/14</span><span class="pct">43%</span></td>
+<td class="cell partial"><span class="frac">7/14</span><span class="pct">50%</span></td>
 </tr>
 </tbody></table></div>
 <h3>BIOS mode <code>cleanroom</code></h3>
@@ -127,28 +127,28 @@
 <td class="cell none-pass"><span class="frac">0/1</span><span class="pct">0%</span></td>
 </tr>
 <tr><td><a href="suite-armwrestler.html">armwrestler</a></td>
-<td class="cell none-pass"><span class="frac">0/6</span><span class="pct">0%</span></td>
+<td class="cell all-pass"><span class="frac">6/6</span><span class="pct">100%</span></td>
 <td class="cell all-pass"><span class="frac">6/6</span><span class="pct">100%</span></td>
 <td class="cell all-pass"><span class="frac">6/6</span><span class="pct">100%</span></td>
 <td class="cell all-pass"><span class="frac">6/6</span><span class="pct">100%</span></td>
 </tr>
 <tr><td><a href="suite-fuzzarm.html">fuzzarm</a></td>
-<td class="cell none-pass"><span class="frac">0/3</span><span class="pct">0%</span></td>
+<td class="cell all-pass"><span class="frac">3/3</span><span class="pct">100%</span></td>
 <td class="cell all-pass"><span class="frac">3/3</span><span class="pct">100%</span></td>
 <td class="cell all-pass"><span class="frac">3/3</span><span class="pct">100%</span></td>
 <td class="cell all-pass"><span class="frac">3/3</span><span class="pct">100%</span></td>
 </tr>
 <tr><td><a href="suite-jsmolka.html">jsmolka</a></td>
-<td class="cell none-pass"><span class="frac">0/13</span><span class="pct">0%</span></td>
+<td class="cell partial"><span class="frac">9/13</span><span class="pct">69%</span></td>
 <td class="cell partial"><span class="frac">7/13</span><span class="pct">54%</span></td>
 <td class="cell partial"><span class="frac">8/13</span><span class="pct">62%</span></td>
 <td class="cell partial"><span class="frac">7/13</span><span class="pct">54%</span></td>
 </tr>
 <tr><td><a href="suite-mgba-suite.html">mgba-suite</a></td>
-<td class="cell none-pass"><span class="frac">0/14</span><span class="pct">0%</span></td>
-<td class="cell partial"><span class="frac">3/14</span><span class="pct">21%</span></td>
-<td class="cell partial"><span class="frac">3/14</span><span class="pct">21%</span></td>
-<td class="cell partial"><span class="frac">3/14</span><span class="pct">21%</span></td>
+<td class="cell partial"><span class="frac">5/14</span><span class="pct">36%</span></td>
+<td class="cell partial"><span class="frac">6/14</span><span class="pct">43%</span></td>
+<td class="cell partial"><span class="frac">7/14</span><span class="pct">50%</span></td>
+<td class="cell partial"><span class="frac">10/14</span><span class="pct">71%</span></td>
 </tr>
 </tbody></table></div>
 </main>
