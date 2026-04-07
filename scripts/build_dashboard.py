@@ -1,26 +1,28 @@
 #!/usr/bin/env python3
 """Static dashboard generator for gba-accuracy-tests.
 
-Reads every suite's references.json (and the optional references_status.json
-written by promote_tiers.py) and emits a self-contained static site at
-docs/dashboard/. The site is plain HTML + a single CSS file — no JS, no
-build tooling, no framework. GitHub Pages can serve it directly.
+Reads every suite's verified.json (the human-verified canonical-hash data
+source introduced by the 2026-04-07 verification arc) and emits a
+self-contained static site at docs/dashboard/. The site is plain HTML +
+a single CSS file -- no JS, no build tooling, no framework. GitHub Pages
+can serve it directly.
+
+Per-cell state is one of:
+    pass       runner hash matches the canonical_pass_hash for that mode
+    fail       runner hash differs and is annotated as expected/known wrong
+               (status == "fail")
+    bug        runner hash differs and is annotated as a real cable_club
+               (or other runner) bug worth investigating (status == "bug")
+    captured   runner produced output but no canonical pass hash exists
+               yet to compare against, OR runner status == "captured"
+    unverified runner status == "unverified" / no human review yet
+    -          runner has no entry for this (test, mode)
 
 Pages:
-    index.html              Overall matrix: suites × runners, plus header stats.
-    suite-<name>.html       Per-suite detail: every test, every runner, every
-                            BIOS mode, with hash, tier badge, agreement badge.
-    contested.html          List of all tests where 2+ runners disagree.
-    unverified.html         List of all tests where no runner has consensus.
-    diff/<test>.html        Diff triptych viewer (Expected vs Actual vs Δ),
-                            generated lazily on first build per test.
-    style.css               One stylesheet, Pokemon Center Nostalgia palette.
-    badge.svg               Top-line "X/Y passing" badge for the README.
-
-Usage:
-    python scripts/build_dashboard.py
-    python scripts/build_dashboard.py --output docs/dashboard
-    python scripts/build_dashboard.py --no-triptychs   # skip diff PNGs
+    index.html              Overall matrix: suites x runners, plus header stats
+    suite-<name>.html       Per-suite detail per BIOS mode
+    style.css               One stylesheet
+    badge.svg               Top-line passing badge
 """
 from __future__ import annotations
 
@@ -35,11 +37,6 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 SUITES_DIR = REPO_ROOT / "suites"
 DEFAULT_OUTPUT = REPO_ROOT / "docs" / "dashboard"
 
-# --- Slate-blue dark dashboard, Datadog/Grafana-inspired ----------------
-# Synthesized from /design-shotgun feedback: dark theme (variants B/D)
-# with the layout discipline and clear text of the light variants
-# (A/C/E). Sans-serif body, monospace only for hashes/numbers, three
-# stacked matrix tables clearly laid out, generous reading sizes.
 CSS = r"""@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
@@ -78,7 +75,6 @@ a { color: var(--cyan); text-decoration: none; transition: color .15s; }
 a:hover { color: #5be8ff; text-decoration: underline; }
 code { font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 0.92em; color: var(--cyan); }
 
-/* ----- header ----- */
 header.site {
   background: linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%);
   border-bottom: 1px solid var(--border);
@@ -121,7 +117,6 @@ main {
   margin: 0 auto;
 }
 
-/* ----- section headings ----- */
 h2 {
   font-family: 'Inter', sans-serif;
   font-size: 20px;
@@ -166,7 +161,6 @@ h3 code {
 }
 .muted { color: var(--text-mute); }
 
-/* ----- stat tiles ----- */
 .stat-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -188,12 +182,12 @@ h3 code {
   height: 3px;
   background: var(--cyan);
 }
-.stat:nth-child(2)::before { background: var(--purple); }
-.stat:nth-child(3)::before { background: var(--green); }
-.stat:nth-child(4)::before { background: var(--amber); }
-.stat:nth-child(5)::before { background: var(--cyan); }
-.stat:nth-child(6)::before { background: var(--coral); }
-.stat:nth-child(7)::before { background: var(--slate); }
+.stat.s-pass::before     { background: var(--green); }
+.stat.s-fail::before     { background: var(--amber); }
+.stat.s-bug::before      { background: var(--coral); }
+.stat.s-captured::before { background: var(--purple); }
+.stat.s-unverified::before { background: var(--slate); }
+.stat.s-verified::before { background: var(--green); }
 .stat .num {
   font-family: 'Inter', sans-serif;
   font-size: 32px;
@@ -211,10 +205,7 @@ h3 code {
   letter-spacing: 0.08em;
   font-weight: 500;
 }
-.stat .label a { color: var(--text-mute); }
-.stat .label a:hover { color: var(--cyan); }
 
-/* ----- tables ----- */
 .table-wrap {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -252,14 +243,9 @@ tbody tr:nth-child(even) { background: var(--surface-2); }
 tbody tr:last-child { border-bottom: none; }
 tbody tr:hover td { background: rgba(0, 212, 255, 0.06); }
 tbody td { color: var(--text); }
-tbody td.id, tbody td.muted-cell {
-  color: var(--text-mute);
-}
+tbody td.id, tbody td.muted-cell { color: var(--text-mute); }
 
-/* ----- agreement matrix ----- */
-.matrix th.runner {
-  text-align: center;
-}
+.matrix th.runner { text-align: center; }
 .matrix th.runner .dot {
   display: inline-block;
   width: 8px;
@@ -289,23 +275,19 @@ tbody td.id, tbody td.muted-cell {
   color: var(--text-dim);
   font-weight: 400;
 }
-.matrix td.cell.all-pass { background: rgba(74, 222, 128, 0.08); }
+.matrix td.cell.all-pass { background: rgba(74, 222, 128, 0.10); }
 .matrix td.cell.all-pass .frac { color: var(--green); }
-.matrix td.cell.none-pass { background: rgba(248, 113, 113, 0.06); }
+.matrix td.cell.none-pass { background: rgba(248, 113, 113, 0.08); }
 .matrix td.cell.none-pass .frac { color: var(--coral); }
 .matrix td.cell.partial .frac { color: var(--amber); }
 
-/* ----- hash columns ----- */
 .hash {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
   font-size: 13px;
   color: var(--text-dim);
   font-variant-numeric: tabular-nums;
 }
-.hash.match { color: var(--green); }
-.hash.miss  { color: var(--coral); }
 
-/* ----- status badges ----- */
 .badge {
   display: inline-block;
   padding: 4px 10px;
@@ -317,13 +299,20 @@ tbody td.id, tbody td.muted-cell {
   letter-spacing: 0.06em;
   border: 1px solid transparent;
 }
-.badge.gold        { background: rgba(74, 222, 128, 0.12); color: var(--green);  border-color: rgba(74, 222, 128, 0.3); }
-.badge.secondary   { background: rgba(157, 110, 255, 0.12); color: var(--purple); border-color: rgba(157, 110, 255, 0.3); }
-.badge.candidate   { background: rgba(100, 116, 139, 0.18); color: var(--text-mute); border-color: rgba(100, 116, 139, 0.4); }
-.badge.contested   { background: rgba(248, 113, 113, 0.14); color: var(--coral);  border-color: rgba(248, 113, 113, 0.35); }
-.badge.unverified  { background: rgba(251, 191, 36, 0.12); color: var(--amber);   border-color: rgba(251, 191, 36, 0.3); }
+.badge.pass       { background: rgba(74, 222, 128, 0.14); color: var(--green);    border-color: rgba(74, 222, 128, 0.35); }
+.badge.fail       { background: rgba(251, 191, 36, 0.14); color: var(--amber);    border-color: rgba(251, 191, 36, 0.35); }
+.badge.bug        { background: rgba(248, 113, 113, 0.16); color: var(--coral);   border-color: rgba(248, 113, 113, 0.4); }
+.badge.captured   { background: rgba(157, 110, 255, 0.14); color: var(--purple);  border-color: rgba(157, 110, 255, 0.35); }
+.badge.unverified { background: rgba(100, 116, 139, 0.18); color: var(--text-mute); border-color: rgba(100, 116, 139, 0.4); }
+.badge.none       { background: transparent; color: var(--text-dim); border-color: var(--border); }
 
-/* ----- test-row table (per-suite detail page) ----- */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 8px 0 24px;
+}
+
 .test-row td.id {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
   font-size: 13px;
@@ -331,7 +320,6 @@ tbody td.id, tbody td.muted-cell {
   white-space: nowrap;
 }
 
-/* ----- footer ----- */
 footer {
   margin-top: 80px;
   padding: 28px 40px;
@@ -347,41 +335,23 @@ footer a:hover { color: var(--cyan); }
 DEFAULT_RUNNERS = ["cable_club", "mgba", "nanoboyadvance", "skyemu"]
 DEFAULT_MODES = ["official", "hle", "cleanroom"]
 
-# Map historical / pretty-name runner identifiers to the canonical lowercased
-# form so cleanups across schema versions don't double-report runners.
-RUNNER_ALIASES = {
-    "CableClub": "cable_club",
-    "cable-club": "cable_club",
-    "Cable Club": "cable_club",
-    "mGBA": "mgba",
-    "MGBA": "mgba",
-    "NanoBoyAdvance": "nanoboyadvance",
-    "nba": "nanoboyadvance",
-    "SkyEmu": "skyemu",
-    "Skyemu": "skyemu",
-}
+# Per-cell normalized states.
+STATE_PASS = "pass"
+STATE_FAIL = "fail"
+STATE_BUG = "bug"
+STATE_CAPTURED = "captured"
+STATE_UNVERIFIED = "unverified"
+STATE_NONE = "none"
+
+ALL_STATES = [STATE_PASS, STATE_FAIL, STATE_BUG, STATE_CAPTURED, STATE_UNVERIFIED]
 
 
-def _bios_mode_of(entry: dict) -> str:
-    return entry.get("bios_mode") or entry.get("provenance", {}).get("bios_mode") or "hle"
-
-
-def _emulator_of(entry: dict) -> str:
-    raw = entry.get("provenance", {}).get("emulator") or "unknown"
-    return RUNNER_ALIASES.get(raw, raw)
-
-
-def load_suite(suite_dir: Path) -> dict:
-    refs_path = suite_dir / "references.json"
-    if not refs_path.exists():
-        return {}
-    with open(refs_path) as f:
-        refs = json.load(f)
-    status_path = suite_dir / "references_status.json"
-    status = {}
-    if status_path.exists():
-        with open(status_path) as f:
-            status = json.load(f).get("tests", {})
+def load_suite(suite_dir: Path) -> dict | None:
+    verified_path = suite_dir / "verified.json"
+    if not verified_path.exists():
+        return None
+    with open(verified_path, encoding="utf-8") as f:
+        data = json.load(f)
     manifest_path = suite_dir / "manifest.toml"
     suite_meta = {}
     if manifest_path.exists():
@@ -394,62 +364,107 @@ def load_suite(suite_dir: Path) -> dict:
     return {
         "name": suite_dir.name,
         "meta": suite_meta,
-        "references": refs.get("references", {}),
-        "status": status,
+        "tests": data.get("tests", {}),
     }
+
+
+def cell_state(test_mode: dict, runner: str) -> tuple[str, str]:
+    """Return (state, hash) for one runner under one (test, mode)."""
+    runners = test_mode.get("runners", {}) or {}
+    entry = runners.get(runner)
+    if entry is None:
+        return STATE_NONE, ""
+    h = entry.get("hash", "") or ""
+    raw_status = (entry.get("status") or "").lower()
+    canonical = (test_mode.get("canonical_pass_hash") or "").strip()
+
+    # Hash equality with canonical wins regardless of recorded status.
+    if canonical and h and h == canonical:
+        return STATE_PASS, h
+    if raw_status == "pass":
+        # Status says pass but no canonical to compare against.
+        return STATE_PASS, h
+    if raw_status == "fail":
+        return STATE_FAIL, h
+    if raw_status == "bug":
+        return STATE_BUG, h
+    if raw_status == "captured":
+        return STATE_CAPTURED, h
+    if raw_status == "unverified":
+        return STATE_UNVERIFIED, h
+    # Unknown / missing status: if we have a hash but no canonical, it's
+    # captured-but-not-yet-verified.
+    if h and not canonical:
+        return STATE_CAPTURED, h
+    if h and canonical:
+        # Hash differs from canonical and no annotation -> treat as captured/unverified.
+        return STATE_UNVERIFIED, h
+    return STATE_UNVERIFIED, h
 
 
 def collect_runner_set(suites: list[dict]) -> list[str]:
     seen: set[str] = set()
     for s in suites:
-        for entries in s["references"].values():
-            for e in entries:
-                seen.add(_emulator_of(e))
-    # Stable order: known runners first, then any extras alphabetically.
+        for modes in s["tests"].values():
+            for tm in modes.values():
+                for r in (tm.get("runners") or {}).keys():
+                    seen.add(r)
     ordered = [r for r in DEFAULT_RUNNERS if r in seen]
     extras = sorted(seen - set(DEFAULT_RUNNERS))
     return ordered + extras
 
 
-def matrix_cell(suite: dict, runner: str, mode: str) -> tuple[int, int]:
-    """Return (passing, total) for one (suite, runner, mode) cell.
+def matrix_cell_counts(suite: dict, runner: str, mode: str) -> tuple[int, int, Counter]:
+    """Return (passing, total, state_counter) for a (suite, runner, mode) cell.
 
-    "Passing" means the runner's hash matches the gold consensus hash for
-    that test+mode. If no gold consensus exists yet (no promotion), we treat
-    "passing" as "matches the modal hash" (>= 2 votes).
+    Total counts every test for which the runner produced an entry under the
+    given mode. Passing counts only STATE_PASS.
     """
-    passing = 0
+    counter: Counter = Counter()
     total = 0
-    for test_id, entries in suite["references"].items():
-        # Find the runner's entry under this mode.
-        runner_entry = None
-        all_under_mode: list[dict] = []
-        for e in entries:
-            if _bios_mode_of(e) != mode:
-                continue
-            all_under_mode.append(e)
-            if _emulator_of(e) == runner:
-                runner_entry = e
-        if runner_entry is None:
+    passing = 0
+    for _test_id, modes in suite["tests"].items():
+        tm = modes.get(mode)
+        if not tm:
+            continue
+        state, _h = cell_state(tm, runner)
+        if state == STATE_NONE:
             continue
         total += 1
-        # Determine consensus hash.
-        counter = Counter(e["hash"] for e in all_under_mode if e.get("hash"))
-        if not counter:
-            continue
-        modal_hash, top_count = counter.most_common(1)[0]
-        consensus = None
-        if top_count >= 2:
-            modal_hashes = [h for h, c in counter.items() if c == top_count]
-            if len(modal_hashes) == 1:
-                consensus = modal_hash
-        if consensus and runner_entry.get("hash") == consensus:
+        counter[state] += 1
+        if state == STATE_PASS:
             passing += 1
-        elif consensus is None:
-            # No consensus available — count as passing if it's the only entry.
-            if len(all_under_mode) == 1:
-                passing += 1
-    return passing, total
+    return passing, total, counter
+
+
+def overall_state_counts(suites: list[dict], runners: list[str]) -> dict[str, int]:
+    """Tally cell states across every (suite, test, mode, runner)."""
+    out: Counter = Counter()
+    for s in suites:
+        for _test_id, modes in s["tests"].items():
+            for _mode, tm in modes.items():
+                for r in runners:
+                    state, _h = cell_state(tm, r)
+                    if state == STATE_NONE:
+                        continue
+                    out[state] += 1
+    return dict(out)
+
+
+def verification_coverage(suites: list[dict]) -> tuple[int, int]:
+    """Return (verified_canonicals, total_test_modes).
+
+    A (test, mode) is "verified" iff it has a non-empty canonical_pass_hash.
+    """
+    total = 0
+    verified = 0
+    for s in suites:
+        for _test_id, modes in s["tests"].items():
+            for _mode, tm in modes.items():
+                total += 1
+                if (tm.get("canonical_pass_hash") or "").strip():
+                    verified += 1
+    return verified, total
 
 
 def page_html(title: str, body: str, breadcrumbs: list[tuple[str, str]] | None = None) -> str:
@@ -467,14 +482,14 @@ def page_html(title: str, body: str, breadcrumbs: list[tuple[str, str]] | None =
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{html.escape(title)} — gba-accuracy-tests</title>
+<title>{html.escape(title)} - gba-accuracy-tests</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="site">
   <div class="row">
     <div>
-      <h1>GBA Accuracy Tests <span class="accent">·</span></h1>
+      <h1>GBA Accuracy Tests <span class="accent">.</span></h1>
       <p class="subtitle">{html.escape(title)}</p>
     </div>
   </div>
@@ -484,46 +499,64 @@ def page_html(title: str, body: str, breadcrumbs: list[tuple[str, str]] | None =
 {body}
 </main>
 <footer>
-  Generated by <code>build_dashboard.py</code> · Cable Club <code>gba-accuracy-tests</code>
+  Generated by <code>build_dashboard.py</code> . Cable Club <code>gba-accuracy-tests</code> . Data source: <code>verified.json</code>
 </footer>
 </body>
 </html>
 """
 
 
+def legend_html() -> str:
+    items = [
+        ("pass", "pass"),
+        ("fail", "fail (expected/known wrong)"),
+        ("bug", "bug (real defect)"),
+        ("captured", "captured (no canonical yet)"),
+        ("unverified", "unverified"),
+    ]
+    parts = [f'<span class="badge {cls}">{html.escape(label)}</span>' for cls, label in items]
+    return '<div class="legend">' + "".join(parts) + '</div>'
+
+
 def build_index(suites: list[dict], runners: list[str]) -> str:
-    total_tests = sum(len(s["references"]) for s in suites)
+    total_tests = sum(len(s["tests"]) for s in suites)
     total_runners = len(runners)
     total_modes = len(DEFAULT_MODES)
-    captures = sum(
-        len(entries) for s in suites for entries in s["references"].values()
-    )
-    contested = sum(
-        1 for s in suites for st in s["status"].values() if st.get("status") == "contested"
-    )
-    unverified = sum(
-        1 for s in suites for st in s["status"].values() if st.get("status") == "unverified"
-    )
-    body = [
+
+    state_counts = overall_state_counts(suites, runners)
+    verified, total_test_modes = verification_coverage(suites)
+    verified_pct = f"{(verified / total_test_modes * 100):.0f}%" if total_test_modes else "-"
+
+    body: list[str] = [
         '<h2>Overview</h2>',
         '<div class="stat-grid">',
         f'<div class="stat"><span class="num">{len(suites)}</span><span class="label">suites</span></div>',
         f'<div class="stat"><span class="num">{total_tests}</span><span class="label">tests</span></div>',
         f'<div class="stat"><span class="num">{total_runners}</span><span class="label">runners</span></div>',
         f'<div class="stat"><span class="num">{total_modes}</span><span class="label">BIOS modes</span></div>',
-        f'<div class="stat"><span class="num">{captures}</span><span class="label">captures</span></div>',
-        f'<div class="stat"><span class="num">{contested}</span><span class="label"><a href="contested.html">contested</a></span></div>',
-        f'<div class="stat"><span class="num">{unverified}</span><span class="label"><a href="unverified.html">unverified</a></span></div>',
+        f'<div class="stat s-verified"><span class="num">{verified}/{total_test_modes}</span>'
+        f'<span class="label">verified canonicals ({verified_pct})</span></div>',
         '</div>',
+        '<h2>Cell state breakdown</h2>',
+        '<p class="muted">Counts every (suite, test, BIOS mode, runner) cell across the matrix. '
+        '"pass" means the runner\'s hash matches the human-verified canonical pass hash for that '
+        '(test, mode). "fail" is an annotated expected/known-wrong output. "bug" is a real defect '
+        'worth investigating. "captured" is a runner output with no canonical pass hash to compare '
+        'against yet. "unverified" has no human review.</p>',
+        '<div class="stat-grid">',
+        f'<div class="stat s-pass"><span class="num">{state_counts.get(STATE_PASS, 0)}</span><span class="label">pass</span></div>',
+        f'<div class="stat s-fail"><span class="num">{state_counts.get(STATE_FAIL, 0)}</span><span class="label">fail</span></div>',
+        f'<div class="stat s-bug"><span class="num">{state_counts.get(STATE_BUG, 0)}</span><span class="label">bug</span></div>',
+        f'<div class="stat s-captured"><span class="num">{state_counts.get(STATE_CAPTURED, 0)}</span><span class="label">captured</span></div>',
+        f'<div class="stat s-unverified"><span class="num">{state_counts.get(STATE_UNVERIFIED, 0)}</span><span class="label">unverified</span></div>',
+        '</div>',
+        '<h2>Pass matrix per BIOS mode</h2>',
+        '<p class="muted">Each cell shows <strong>X/Y pass</strong>: how many of this runner\'s '
+        'captures under this BIOS mode match the human-verified canonical pass hash. Click a suite '
+        'for per-test detail.</p>',
+        legend_html(),
     ]
 
-    body.append('<h2>Cross-runner agreement matrix</h2>')
-    body.append('<p class="muted">Each cell shows <strong>X/Y agree</strong>: how many of the runner\'s '
-                'captures match the cross-runner consensus hash for that test under that BIOS mode. '
-                '"Consensus" means ≥ 2 runners produced the same hash. This is a stricter metric than '
-                '<code>cable_club</code>\'s own <code>accuracy_sweep</code> regression check, which counts '
-                'a test as passing if its hash matches <em>any</em> previously-recorded hash for the test '
-                '(including the runner\'s own historical capture). Click a suite for per-test detail.</p>')
     for mode in DEFAULT_MODES:
         body.append(f'<h3>BIOS mode <code>{mode}</code></h3>')
         body.append('<div class="table-wrap"><table class="matrix"><thead><tr><th>Suite</th>')
@@ -534,8 +567,7 @@ def build_index(suites: list[dict], runners: list[str]) -> str:
         for s in suites:
             body.append(f'<tr><td><a href="suite-{html.escape(s["name"])}.html">{html.escape(s["name"])}</a></td>')
             for r in runners:
-                p, t = matrix_cell(s, r, mode)
-                cls = ""
+                p, t, _ = matrix_cell_counts(s, r, mode)
                 if t == 0:
                     cls = ""
                 elif p == t:
@@ -544,7 +576,7 @@ def build_index(suites: list[dict], runners: list[str]) -> str:
                     cls = "none-pass"
                 else:
                     cls = "partial"
-                pct = f"{(p / t * 100):.0f}%" if t > 0 else "—"
+                pct = f"{(p / t * 100):.0f}%" if t > 0 else "-"
                 body.append(
                     f'<td class="cell {cls}"><span class="frac">{p}/{t}</span>'
                     f'<span class="pct">{pct}</span></td>'
@@ -552,7 +584,7 @@ def build_index(suites: list[dict], runners: list[str]) -> str:
             body.append('</tr>')
         body.append('</tbody></table></div>')
 
-    return page_html("Cross-emulator agreement matrix", "\n".join(body))
+    return page_html("Verified-canonical pass matrix", "\n".join(body))
 
 
 def build_suite_page(suite: dict, runners: list[str]) -> str:
@@ -563,49 +595,43 @@ def build_suite_page(suite: dict, runners: list[str]) -> str:
     src = suite["meta"].get("source")
     if src:
         body.append(f'<p class="muted">Source: <a href="{html.escape(src)}">{html.escape(src)}</a></p>')
+    body.append(legend_html())
 
     for mode in DEFAULT_MODES:
         body.append(f'<h3>BIOS mode <code>{mode}</code></h3>')
-        body.append('<div class="table-wrap"><table><thead><tr><th>Test</th><th>Status</th>')
+        body.append('<div class="table-wrap"><table><thead><tr><th>Test</th><th>Canonical</th>')
         for r in runners:
             slug = r.replace(" ", "_")
             body.append(f'<th class="runner r-{slug}"><span class="dot"></span>{html.escape(r)}</th>')
         body.append('</tr></thead><tbody>')
 
-        for test_id in sorted(suite["references"].keys()):
-            entries = suite["references"][test_id]
-            mode_entries = [e for e in entries if _bios_mode_of(e) == mode]
-            if not mode_entries:
+        for test_id in sorted(suite["tests"].keys()):
+            modes = suite["tests"][test_id]
+            tm = modes.get(mode)
+            if not tm:
                 continue
-            counter = Counter(e["hash"] for e in mode_entries if e.get("hash"))
-            modal_hash = counter.most_common(1)[0][0] if counter else None
-            top_count = counter.most_common(1)[0][1] if counter else 0
-            consensus = modal_hash if top_count >= 2 and sum(1 for c in counter.values() if c == top_count) == 1 else None
-
-            status_data = suite["status"].get(test_id, {})
-            status = status_data.get("status", "secondary")
-            badge_cls = {
-                "gold": "gold",
-                "contested": "contested",
-                "unverified": "unverified",
-                "secondary": "secondary",
-            }.get(status, "secondary")
+            canonical = (tm.get("canonical_pass_hash") or "").strip()
+            canon_short = (canonical[:12] + "...") if canonical else ""
+            canon_badge = (
+                f'<span class="hash" title="{canonical}">{canon_short}</span>'
+                if canonical
+                else '<span class="badge unverified">none</span>'
+            )
 
             body.append('<tr class="test-row">')
             body.append(f'<td class="id">{html.escape(test_id)}</td>')
-            body.append(f'<td><span class="badge {badge_cls}">{html.escape(status)}</span></td>')
-            by_runner = {_emulator_of(e): e for e in mode_entries}
+            body.append(f'<td>{canon_badge}</td>')
             for r in runners:
-                e = by_runner.get(r)
-                if e is None:
-                    body.append('<td><span class="hash">—</span></td>')
+                state, h = cell_state(tm, r)
+                if state == STATE_NONE:
+                    body.append('<td><span class="badge none">-</span></td>')
                     continue
-                h = e.get("hash", "")
-                cls = "match" if consensus and h == consensus else "miss"
-                if not consensus:
-                    cls = ""
-                short = (h[:12] + "…") if h else ""
-                body.append(f'<td><span class="hash {cls}" title="{h}">{short}</span></td>')
+                short = (h[:12] + "...") if h else ""
+                title_attr = h or state
+                body.append(
+                    f'<td><span class="badge {state}" title="{title_attr}">{state}</span>'
+                    f'<div class="hash" title="{h}">{short}</div></td>'
+                )
             body.append('</tr>')
         body.append('</tbody></table></div>')
 
@@ -613,45 +639,6 @@ def build_suite_page(suite: dict, runners: list[str]) -> str:
         suite["name"],
         "\n".join(body),
         breadcrumbs=[("Overview", "index.html"), (suite["name"], "")],
-    )
-
-
-def build_filter_page(suites: list[dict], runners: list[str], status_kind: str, title: str) -> str:
-    body = [f'<h2>{html.escape(title)} tests</h2>']
-    body.append(f'<p class="muted">Tests where the cross-runner agreement check returned "{status_kind}".</p>')
-    body.append('<div class="table-wrap"><table><thead><tr><th>Suite</th><th>Test</th>')
-    for r in runners:
-        slug = r.replace(" ", "_")
-        body.append(f'<th class="runner r-{slug}"><span class="dot"></span>{html.escape(r)}</th>')
-    body.append('</tr></thead><tbody>')
-
-    for s in suites:
-        for test_id, st in s["status"].items():
-            if st.get("status") != status_kind:
-                continue
-            entries = s["references"].get(test_id, [])
-            # Use the cleanroom mode entries (most-shared baseline) for the table; fall back to hle.
-            mode_entries = [e for e in entries if _bios_mode_of(e) == "cleanroom"]
-            if not mode_entries:
-                mode_entries = [e for e in entries if _bios_mode_of(e) == "hle"]
-            by_runner = {_emulator_of(e): e for e in mode_entries}
-            body.append('<tr>')
-            body.append(f'<td><a href="suite-{html.escape(s["name"])}.html">{html.escape(s["name"])}</a></td>')
-            body.append(f'<td class="hash">{html.escape(test_id)}</td>')
-            for r in runners:
-                e = by_runner.get(r)
-                if e is None:
-                    body.append('<td><span class="hash">—</span></td>')
-                    continue
-                h = e.get("hash", "")
-                short = (h[:12] + "…") if h else ""
-                body.append(f'<td><span class="hash" title="{h}">{short}</span></td>')
-            body.append('</tr>')
-    body.append('</tbody></table></div>')
-    return page_html(
-        f"{title} tests",
-        "\n".join(body),
-        breadcrumbs=[("Overview", "index.html"), (title, "")],
     )
 
 
@@ -680,57 +667,46 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Build the static dashboard")
     parser.add_argument("--output", "-o", default=str(DEFAULT_OUTPUT))
     parser.add_argument("--no-triptychs", action="store_true",
-                        help="Skip diff triptych PNG generation")
+                        help="(deprecated, ignored) skip diff triptych PNG generation")
     args = parser.parse_args(argv)
 
     out = Path(args.output).resolve()
     out.mkdir(parents=True, exist_ok=True)
 
-    suite_dirs = sorted(p for p in SUITES_DIR.iterdir() if p.is_dir() and (p / "references.json").exists())
-    suites = [load_suite(d) for d in suite_dirs]
-    suites = [s for s in suites if s and s["references"]]
+    suite_dirs = sorted(p for p in SUITES_DIR.iterdir() if p.is_dir() and (p / "verified.json").exists())
+    suites = [s for s in (load_suite(d) for d in suite_dirs) if s and s["tests"]]
     if not suites:
-        print("No suites with references.json found.", file=sys.stderr)
+        print("No suites with verified.json found.", file=sys.stderr)
         return 1
 
     runners = collect_runner_set(suites)
     print(f"[dashboard] {len(suites)} suites, {len(runners)} runners detected: {runners}")
 
     (out / "style.css").write_text(CSS, encoding="utf-8")
-
     (out / "index.html").write_text(build_index(suites, runners), encoding="utf-8")
-    print(f"[dashboard] wrote index.html")
+    print("[dashboard] wrote index.html")
 
     for s in suites:
         page = build_suite_page(s, runners)
         (out / f"suite-{s['name']}.html").write_text(page, encoding="utf-8")
         print(f"[dashboard] wrote suite-{s['name']}.html")
 
-    (out / "contested.html").write_text(
-        build_filter_page(suites, runners, "contested", "Contested"), encoding="utf-8"
-    )
-    (out / "unverified.html").write_text(
-        build_filter_page(suites, runners, "unverified", "Unverified"), encoding="utf-8"
-    )
-
-    # Top-line passing badge: count cleanroom-mode consensus passes across all tests.
-    total_tests = 0
-    passing_tests = 0
+    # Top-line passing badge: count cleanroom-mode pass cells across cable_club.
+    passing = 0
+    total = 0
     for s in suites:
-        for entries in s["references"].values():
-            mode_entries = [e for e in entries if _bios_mode_of(e) == "cleanroom"]
-            if not mode_entries:
+        for _tid, modes in s["tests"].items():
+            tm = modes.get("cleanroom")
+            if not tm:
                 continue
-            total_tests += 1
-            counter = Counter(e["hash"] for e in mode_entries if e.get("hash"))
-            if not counter:
+            state, _h = cell_state(tm, "cable_club")
+            if state == STATE_NONE:
                 continue
-            _top, top_count = counter.most_common(1)[0]
-            if top_count >= 2 and sum(1 for c in counter.values() if c == top_count) == 1:
-                passing_tests += 1
-    (out / "badge.svg").write_text(build_badge_svg(passing_tests, total_tests), encoding="utf-8")
-
-    print(f"[dashboard] wrote badge.svg ({passing_tests}/{total_tests})")
+            total += 1
+            if state == STATE_PASS:
+                passing += 1
+    (out / "badge.svg").write_text(build_badge_svg(passing, total), encoding="utf-8")
+    print(f"[dashboard] wrote badge.svg ({passing}/{total} cable_club cleanroom pass)")
     print(f"[dashboard] output: {out}")
     return 0
 

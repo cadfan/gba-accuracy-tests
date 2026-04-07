@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>fuzzarm — gba-accuracy-tests</title>
+<title>fuzzarm - gba-accuracy-tests</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="site">
   <div class="row">
     <div>
-      <h1>GBA Accuracy Tests <span class="accent">·</span></h1>
+      <h1>GBA Accuracy Tests <span class="accent">.</span></h1>
       <p class="subtitle">fuzzarm</p>
     </div>
   </div>
@@ -20,8 +20,9 @@
 <h2>Suite: fuzzarm</h2>
 <p>DenSinH/FuzzARM: 10,000 random instruction tests for ARM, Thumb, and mixed mode</p>
 <p class="muted">Source: <a href="https://github.com/DenSinH/FuzzARM">https://github.com/DenSinH/FuzzARM</a></p>
+<div class="legend"><span class="badge pass">pass</span><span class="badge fail">fail (expected/known wrong)</span><span class="badge bug">bug (real defect)</span><span class="badge captured">captured (no canonical yet)</span><span class="badge unverified">unverified</span></div>
 <h3>BIOS mode <code>official</code></h3>
-<div class="table-wrap"><table><thead><tr><th>Test</th><th>Status</th>
+<div class="table-wrap"><table><thead><tr><th>Test</th><th>Canonical</th>
 <th class="runner r-cable_club"><span class="dot"></span>cable_club</th>
 <th class="runner r-mgba"><span class="dot"></span>mgba</th>
 <th class="runner r-nanoboyadvance"><span class="dot"></span>nanoboyadvance</th>
@@ -29,31 +30,31 @@
 </tr></thead><tbody>
 <tr class="test-row">
 <td class="id">fuzzarm-arm</td>
-<td><span class="badge gold">gold</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
+<td><span class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</span></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
 </tr>
 <tr class="test-row">
 <td class="id">fuzzarm-mixed</td>
-<td><span class="badge gold">gold</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
+<td><span class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</span></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
 </tr>
 <tr class="test-row">
 <td class="id">fuzzarm-thumb</td>
-<td><span class="badge gold">gold</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
+<td><span class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</span></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
 </tr>
 </tbody></table></div>
 <h3>BIOS mode <code>hle</code></h3>
-<div class="table-wrap"><table><thead><tr><th>Test</th><th>Status</th>
+<div class="table-wrap"><table><thead><tr><th>Test</th><th>Canonical</th>
 <th class="runner r-cable_club"><span class="dot"></span>cable_club</th>
 <th class="runner r-mgba"><span class="dot"></span>mgba</th>
 <th class="runner r-nanoboyadvance"><span class="dot"></span>nanoboyadvance</th>
@@ -61,31 +62,31 @@
 </tr></thead><tbody>
 <tr class="test-row">
 <td class="id">fuzzarm-arm</td>
-<td><span class="badge gold">gold</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
+<td><span class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</span></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
 </tr>
 <tr class="test-row">
 <td class="id">fuzzarm-mixed</td>
-<td><span class="badge gold">gold</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
+<td><span class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</span></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
 </tr>
 <tr class="test-row">
 <td class="id">fuzzarm-thumb</td>
-<td><span class="badge gold">gold</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
+<td><span class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</span></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
 </tr>
 </tbody></table></div>
 <h3>BIOS mode <code>cleanroom</code></h3>
-<div class="table-wrap"><table><thead><tr><th>Test</th><th>Status</th>
+<div class="table-wrap"><table><thead><tr><th>Test</th><th>Canonical</th>
 <th class="runner r-cable_club"><span class="dot"></span>cable_club</th>
 <th class="runner r-mgba"><span class="dot"></span>mgba</th>
 <th class="runner r-nanoboyadvance"><span class="dot"></span>nanoboyadvance</th>
@@ -93,32 +94,32 @@
 </tr></thead><tbody>
 <tr class="test-row">
 <td class="id">fuzzarm-arm</td>
-<td><span class="badge gold">gold</span></td>
-<td><span class="hash miss" title="22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae">22de4108c65c…</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
+<td><span class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</span></td>
+<td><span class="badge bug" title="22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae">bug</span><div class="hash" title="22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae">22de4108c65c...</div></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
 </tr>
 <tr class="test-row">
 <td class="id">fuzzarm-mixed</td>
-<td><span class="badge gold">gold</span></td>
-<td><span class="hash miss" title="22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae">22de4108c65c…</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
+<td><span class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</span></td>
+<td><span class="badge bug" title="22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae">bug</span><div class="hash" title="22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae">22de4108c65c...</div></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
 </tr>
 <tr class="test-row">
 <td class="id">fuzzarm-thumb</td>
-<td><span class="badge gold">gold</span></td>
-<td><span class="hash miss" title="22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae">22de4108c65c…</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
-<td><span class="hash match" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba…</span></td>
+<td><span class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</span></td>
+<td><span class="badge bug" title="22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae">bug</span><div class="hash" title="22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae">22de4108c65c...</div></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
+<td><span class="badge pass" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">pass</span><div class="hash" title="f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194">f4c0fe5cebba...</div></td>
 </tr>
 </tbody></table></div>
 </main>
 <footer>
-  Generated by <code>build_dashboard.py</code> · Cable Club <code>gba-accuracy-tests</code>
+  Generated by <code>build_dashboard.py</code> . Cable Club <code>gba-accuracy-tests</code> . Data source: <code>verified.json</code>
 </footer>
 </body>
 </html>
