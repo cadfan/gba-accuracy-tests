@@ -100,13 +100,13 @@
         "canonical_pass_notes": "'End of testing' screen captured. CAVEAT: this confirms the test LOOP completed without the runner crashing or hanging, but does NOT tell us the actual pass/fail counts of the 10,000 randomized instruction tests. FuzzARM writes test results to the mGBA debug log channel (address 0x04FFF780), not the framebuffer. Wiring up debug log capture to the runner adapters is a follow-up workstream. For now, 4-way agreement on this hash means 'all four runners can execute 30000 frames of fuzzarm without crashing'.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
             "screenshot": "verified/fuzzarm-arm-cleanroom-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:04:45.746810+00:00",
             "frames": 30000,
-            "notes": "Cable Club cleanroom mode is BROKEN \u2014 bit-identical 22de4108... hash (stuck on Cult-of-GBA boot screen, cart never executes). See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+            "notes": "2026-04-07 post-fix recapture"
           },
           "mgba": {
             "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
@@ -237,13 +237,13 @@
         "canonical_pass_notes": "'End of testing' screen captured. CAVEAT: this confirms the test LOOP completed without the runner crashing or hanging, but does NOT tell us the actual pass/fail counts of the 10,000 randomized instruction tests. FuzzARM writes test results to the mGBA debug log channel (address 0x04FFF780), not the framebuffer. Wiring up debug log capture to the runner adapters is a follow-up workstream. For now, 4-way agreement on this hash means 'all four runners can execute 30000 frames of fuzzarm without crashing'.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
             "screenshot": "verified/fuzzarm-thumb-cleanroom-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:04:45.746810+00:00",
             "frames": 30000,
-            "notes": "Cable Club cleanroom mode is BROKEN \u2014 bit-identical 22de4108... hash (stuck on Cult-of-GBA boot screen, cart never executes). See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+            "notes": "2026-04-07 post-fix recapture"
           },
           "mgba": {
             "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
@@ -374,13 +374,13 @@
         "canonical_pass_notes": "'End of testing' screen captured. CAVEAT: this confirms the test LOOP completed without the runner crashing or hanging, but does NOT tell us the actual pass/fail counts of the 10,000 randomized instruction tests. FuzzARM writes test results to the mGBA debug log channel (address 0x04FFF780), not the framebuffer. Wiring up debug log capture to the runner adapters is a follow-up workstream. For now, 4-way agreement on this hash means 'all four runners can execute 30000 frames of fuzzarm without crashing'.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
             "screenshot": "verified/fuzzarm-mixed-cleanroom-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:04:45.746810+00:00",
             "frames": 30000,
-            "notes": "Cable Club cleanroom mode is BROKEN \u2014 bit-identical 22de4108... hash (stuck on Cult-of-GBA boot screen, cart never executes). See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+            "notes": "2026-04-07 post-fix recapture"
           },
           "mgba": {
             "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",

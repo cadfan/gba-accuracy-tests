@@ -37,13 +37,13 @@
             "notes": "Expected/known failure. Displays 'Failed test 522' on its in-test failure screen. mgba has a real bug at jsmolka instruction-test #522 in HLE BIOS mode. The hash should remain stable across mgba runs; a change in this hash is a regression to investigate."
           },
           "cable_club": {
-            "hash": "54b345fa6f2c34c118aab7ff9af3b3c844435542a6da90ff2f86b6ffa1ad4dde",
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
             "screenshot": "verified/jsmolka-arm-hle-cable_club.png",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-06T23:25:19.822855+00:00",
             "frames": 1200,
-            "notes": "Real bug. Cable Club produces a visually corrupted framebuffer for this test, NOT the test ROM's normal failure path (which would be 'Failed test NNN' on an otherwise-clean screen). The framebuffer is stable from at least frame 600, so this is a deterministic broken state, not mid-execution. Worth investigating: why does cable_club's HLE mode produce garbage rendering on jsmolka-arm specifically? See verified/jsmolka-arm-hle-cable_club.png."
+            "notes": "2026-04-07 post-fix recapture"
           }
         }
       },
@@ -55,13 +55,13 @@
         "canonical_pass_notes": "All tests passed. NBA + skyemu agree under official BIOS.",
         "runners": {
           "cable_club": {
-            "hash": "54b345fa6f2c34c118aab7ff9af3b3c844435542a6da90ff2f86b6ffa1ad4dde",
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
             "screenshot": "verified/jsmolka-arm-official-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-06T23:45:50.940867+00:00",
             "frames": 1200,
-            "notes": "Bit-identical broken output to HLE - cable_club text-render bug is NOT BIOS-mode dependent. See .agents/handoff/20260407-jsmolka-arm-cable_club-text-render-bug.md"
+            "notes": "2026-04-07 post-fix recapture"
           },
           "mgba": {
             "hash": "77efc115df0487dc31385de2bb2a8d78f99e688e30b22fcd4250f904d43a1a28",
@@ -100,13 +100,13 @@
         "canonical_pass_notes": "All tests passed. NBA + skyemu agree under cleanroom.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
             "screenshot": "verified/jsmolka-arm-cleanroom-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-06T23:49:32.875917+00:00",
             "frames": 1200,
-            "notes": "Cable Club cleanroom mode is BROKEN \u2014 produces the Cult-of-GBA BIOS boot screen for every test (bit-identical hash 22de4108c65c9681... across all 13 jsmolka tests). The cart ROM is never executed. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+            "notes": "2026-04-07 post-fix recapture"
           },
           "mgba": {
             "hash": "77efc115df0487dc31385de2bb2a8d78f99e688e30b22fcd4250f904d43a1a28",
@@ -237,13 +237,13 @@
         "canonical_pass_notes": "All tests passed. NBA + skyemu agree.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "7783dfe85db38db2cada7f49dd81ff3fbc2b2620dd288b6c499849876dc904a6",
             "screenshot": "verified/jsmolka-thumb-cleanroom-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-06T23:49:32.875917+00:00",
             "frames": 1200,
-            "notes": "Cable Club cleanroom mode is BROKEN \u2014 produces the Cult-of-GBA BIOS boot screen for every test (bit-identical hash 22de4108c65c9681... across all 13 jsmolka tests). The cart ROM is never executed. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+            "notes": "2026-04-07 post-fix recapture"
           },
           "mgba": {
             "hash": "7783dfe85db38db2cada7f49dd81ff3fbc2b2620dd288b6c499849876dc904a6",
@@ -511,13 +511,13 @@
         "canonical_pass_notes": "All tests passed. mgba+NBA+skyemu 3-way consensus pass under cleanroom. cable_club bug.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
             "screenshot": "verified/jsmolka-memory-cleanroom-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-06T23:49:32.875917+00:00",
             "frames": 1200,
-            "notes": "Cable Club cleanroom mode is BROKEN \u2014 produces the Cult-of-GBA BIOS boot screen for every test (bit-identical hash 22de4108c65c9681... across all 13 jsmolka tests). The cart ROM is never executed. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+            "notes": "2026-04-07 post-fix recapture"
           },
           "mgba": {
             "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
@@ -648,13 +648,13 @@
         "canonical_pass_notes": "All tests passed. 3-way consensus.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
             "screenshot": "verified/jsmolka-nes-cleanroom-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-06T23:49:32.875917+00:00",
             "frames": 1200,
-            "notes": "Cable Club cleanroom mode is BROKEN \u2014 produces the Cult-of-GBA BIOS boot screen for every test (bit-identical hash 22de4108c65c9681... across all 13 jsmolka tests). The cart ROM is never executed. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+            "notes": "2026-04-07 post-fix recapture"
           },
           "mgba": {
             "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
@@ -785,13 +785,13 @@
         "canonical_pass_notes": "Same as HLE/official. SkyEmu lone passer.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
             "screenshot": "verified/jsmolka-unsafe-cleanroom-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-06T23:49:32.875917+00:00",
             "frames": 1200,
-            "notes": "Cable Club cleanroom mode is BROKEN \u2014 produces the Cult-of-GBA BIOS boot screen for every test (bit-identical hash 22de4108c65c9681... across all 13 jsmolka tests). The cart ROM is never executed. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+            "notes": "2026-04-07 post-fix recapture"
           },
           "mgba": {
             "hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
@@ -922,13 +922,13 @@
         "canonical_pass_notes": "NO PASSING RUNNER under cleanroom. cable_club (the lone passer under HLE/official) is in its broken cleanroom state. mgba/NBA/skyemu each fail differently.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
             "screenshot": "verified/jsmolka-flash128-cleanroom-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-06T23:49:32.875917+00:00",
             "frames": 600,
-            "notes": "Cable Club cleanroom mode is BROKEN \u2014 produces the Cult-of-GBA BIOS boot screen for every test (bit-identical hash 22de4108c65c9681... across all 13 jsmolka tests). The cart ROM is never executed. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+            "notes": "2026-04-07 post-fix recapture"
           },
           "mgba": {
             "hash": "2e54969546f3cf0974f1eed275dc35583e2d234e4d68663e8058919b31208dd5",
@@ -1059,13 +1059,13 @@
         "canonical_pass_notes": "Same as flash128 cleanroom.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
             "screenshot": "verified/jsmolka-flash64-cleanroom-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-06T23:49:32.875917+00:00",
             "frames": 600,
-            "notes": "Cable Club cleanroom mode is BROKEN \u2014 produces the Cult-of-GBA BIOS boot screen for every test (bit-identical hash 22de4108c65c9681... across all 13 jsmolka tests). The cart ROM is never executed. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+            "notes": "2026-04-07 post-fix recapture"
           },
           "mgba": {
             "hash": "2e54969546f3cf0974f1eed275dc35583e2d234e4d68663e8058919b31208dd5",
@@ -1196,13 +1196,13 @@
         "canonical_pass_notes": "Lone passer is mgba (cable_club is broken under cleanroom; under HLE/official cable_club joins mgba).",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
             "screenshot": "verified/jsmolka-sram-cleanroom-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-06T23:49:32.875917+00:00",
             "frames": 600,
-            "notes": "Cable Club cleanroom mode is BROKEN \u2014 produces the Cult-of-GBA BIOS boot screen for every test (bit-identical hash 22de4108c65c9681... across all 13 jsmolka tests). The cart ROM is never executed. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+            "notes": "2026-04-07 post-fix recapture"
           },
           "mgba": {
             "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
@@ -1333,13 +1333,13 @@
         "canonical_pass_notes": "mgba+NBA pass; cable_club is broken; skyemu fails.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
             "screenshot": "verified/jsmolka-save-none-cleanroom-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-06T23:49:32.875917+00:00",
             "frames": 600,
-            "notes": "Cable Club cleanroom mode is BROKEN \u2014 produces the Cult-of-GBA BIOS boot screen for every test (bit-identical hash 22de4108c65c9681... across all 13 jsmolka tests). The cart ROM is never executed. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+            "notes": "2026-04-07 post-fix recapture"
           },
           "mgba": {
             "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
@@ -1470,13 +1470,13 @@
         "canonical_pass_notes": "Hello world! 3-way pixel-identical consensus.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "56cd131fb3915fe7e410be228a8c09e99132064799f148583636ca75745bedf7",
             "screenshot": "verified/jsmolka-ppu-hello-cleanroom-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-06T23:49:32.875917+00:00",
             "frames": 300,
-            "notes": "Cable Club cleanroom mode is BROKEN \u2014 produces the Cult-of-GBA BIOS boot screen for every test (bit-identical hash 22de4108c65c9681... across all 13 jsmolka tests). The cart ROM is never executed. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+            "notes": "2026-04-07 post-fix recapture"
           },
           "mgba": {
             "hash": "56cd131fb3915fe7e410be228a8c09e99132064799f148583636ca75745bedf7",
@@ -1607,13 +1607,13 @@
         "canonical_pass_notes": "Blue gradient. 3-way pixel-identical consensus.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "da5336215e6c56d30146c42d81ad828a819214c307682903a5bcc87be8c0538e",
             "screenshot": "verified/jsmolka-ppu-shades-cleanroom-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-06T23:49:32.875917+00:00",
             "frames": 300,
-            "notes": "Cable Club cleanroom mode is BROKEN \u2014 produces the Cult-of-GBA BIOS boot screen for every test (bit-identical hash 22de4108c65c9681... across all 13 jsmolka tests). The cart ROM is never executed. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+            "notes": "2026-04-07 post-fix recapture"
           },
           "mgba": {
             "hash": "da5336215e6c56d30146c42d81ad828a819214c307682903a5bcc87be8c0538e",
@@ -1744,13 +1744,13 @@
         "canonical_pass_notes": "Vertical stripe pattern. mgba+NBA bit-identical pass; skyemu near-pass; cable_club broken.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "4600c4f2749300b40f34dea969165d4d08d652543620076fb5cae249426f238d",
             "screenshot": "verified/jsmolka-ppu-stripes-cleanroom-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-06T23:49:32.875917+00:00",
             "frames": 300,
-            "notes": "Cable Club cleanroom mode is BROKEN \u2014 produces the Cult-of-GBA BIOS boot screen for every test (bit-identical hash 22de4108c65c9681... across all 13 jsmolka tests). The cart ROM is never executed. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+            "notes": "2026-04-07 post-fix recapture"
           },
           "mgba": {
             "hash": "4600c4f2749300b40f34dea969165d4d08d652543620076fb5cae249426f238d",

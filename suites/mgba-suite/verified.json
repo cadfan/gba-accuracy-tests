@@ -10,13 +10,13 @@
         "canonical_pass_notes": "Memory tests sub-suite captured under hle BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "24df00214b612dfff71f9182bcf1c7410942dc159048b38300327f3197940590",
             "screenshot": "verified/mgba-suite-memory-hle-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "e73b0427b3bda719f3d407708ae3333aac1e48e9ed3f3bd67869278cbddd1715",
@@ -48,20 +48,20 @@
         }
       },
       "official": {
-        "canonical_pass_hash": null,
+        "canonical_pass_hash": "24df00214b612dfff71f9182bcf1c7410942dc159048b38300327f3197940590",
         "canonical_pass_screenshot": null,
         "canonical_pass_verified_by": "chris",
         "canonical_pass_verified_at": "2026-04-07T01:17:42.848633+00:00",
         "canonical_pass_notes": "Memory tests sub-suite captured under official BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "24df00214b612dfff71f9182bcf1c7410942dc159048b38300327f3197940590",
             "screenshot": "verified/mgba-suite-memory-official-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2610,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "24df00214b612dfff71f9182bcf1c7410942dc159048b38300327f3197940590",
@@ -93,20 +93,20 @@
         }
       },
       "cleanroom": {
-        "canonical_pass_hash": null,
+        "canonical_pass_hash": "7bc011c8b7fc74f4e6814b58321e6fbb5e6e84a353ca75967431b4674b9ba2b1",
         "canonical_pass_screenshot": null,
         "canonical_pass_verified_by": "chris",
         "canonical_pass_verified_at": "2026-04-07T01:17:42.848633+00:00",
         "canonical_pass_notes": "Memory tests sub-suite captured under cleanroom BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "24df00214b612dfff71f9182bcf1c7410942dc159048b38300327f3197940590",
             "screenshot": "verified/mgba-suite-memory-cleanroom-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Cable Club cleanroom mode is BROKEN - bit-identical 22de4108... (stuck on Cult-of-GBA boot screen). See task #10."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "7bc011c8b7fc74f4e6814b58321e6fbb5e6e84a353ca75967431b4674b9ba2b1",
@@ -140,20 +140,20 @@
     },
     "mgba-suite-io-read": {
       "hle": {
-        "canonical_pass_hash": null,
+        "canonical_pass_hash": "ae70b34068d5727fd2979e103ea3d71615c08b928fc7f2b0a86fd6abcf7d8987",
         "canonical_pass_screenshot": null,
         "canonical_pass_verified_by": "chris",
         "canonical_pass_verified_at": "2026-04-07T01:17:42.848633+00:00",
         "canonical_pass_notes": "IO read tests sub-suite captured under hle BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "88ae4b8928f949682c67ee291db39675a14ec749ce39696e61f2171565d5f4ea",
             "screenshot": "verified/mgba-suite-io-read-hle-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "c9f5db30edb2bb8785fc86f413d539d82b10668dd53b42bcca61a67f3ef0fadf",
@@ -185,20 +185,20 @@
         }
       },
       "official": {
-        "canonical_pass_hash": null,
+        "canonical_pass_hash": "ae70b34068d5727fd2979e103ea3d71615c08b928fc7f2b0a86fd6abcf7d8987",
         "canonical_pass_screenshot": null,
         "canonical_pass_verified_by": "chris",
         "canonical_pass_verified_at": "2026-04-07T01:17:42.848633+00:00",
         "canonical_pass_notes": "IO read tests sub-suite captured under official BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "88ae4b8928f949682c67ee291db39675a14ec749ce39696e61f2171565d5f4ea",
             "screenshot": "verified/mgba-suite-io-read-official-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2610,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "c9f5db30edb2bb8785fc86f413d539d82b10668dd53b42bcca61a67f3ef0fadf",
@@ -230,20 +230,20 @@
         }
       },
       "cleanroom": {
-        "canonical_pass_hash": null,
+        "canonical_pass_hash": "ae70b34068d5727fd2979e103ea3d71615c08b928fc7f2b0a86fd6abcf7d8987",
         "canonical_pass_screenshot": null,
         "canonical_pass_verified_by": "chris",
         "canonical_pass_verified_at": "2026-04-07T01:17:42.848633+00:00",
         "canonical_pass_notes": "IO read tests sub-suite captured under cleanroom BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "88ae4b8928f949682c67ee291db39675a14ec749ce39696e61f2171565d5f4ea",
             "screenshot": "verified/mgba-suite-io-read-cleanroom-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Cable Club cleanroom mode is BROKEN - bit-identical 22de4108... (stuck on Cult-of-GBA boot screen). See task #10."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "c9f5db30edb2bb8785fc86f413d539d82b10668dd53b42bcca61a67f3ef0fadf",
@@ -284,13 +284,13 @@
         "canonical_pass_notes": "Instruction timing tests sub-suite captured under hle BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "26f1247d710b441c03f71f95852d4e068ba5b36dba3ce5dcb1b1b096b2b3471b",
             "screenshot": "verified/mgba-suite-timing-hle-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "e6842009ec4cb53f3e431f4fb0f9b867b9b6b104b3df35dd76e87015b5866e8a",
@@ -322,20 +322,20 @@
         }
       },
       "official": {
-        "canonical_pass_hash": null,
+        "canonical_pass_hash": "b610c3f7bfa9714fa5110e3b774f431a27eda1eed41c021dc4ef0461b4924ebd",
         "canonical_pass_screenshot": null,
         "canonical_pass_verified_by": "chris",
         "canonical_pass_verified_at": "2026-04-07T01:17:42.848633+00:00",
         "canonical_pass_notes": "Instruction timing tests sub-suite captured under official BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "26f1247d710b441c03f71f95852d4e068ba5b36dba3ce5dcb1b1b096b2b3471b",
             "screenshot": "verified/mgba-suite-timing-official-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2610,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "6cb5c96c1ba9bcd156cb2a440785141527d2b9faefd0ac2fe9cf861d0d45d76d",
@@ -367,20 +367,20 @@
         }
       },
       "cleanroom": {
-        "canonical_pass_hash": null,
+        "canonical_pass_hash": "e76030322e8c53a3a7a0384165da579755aad0a19fff14141c48a4952dcc5a15",
         "canonical_pass_screenshot": null,
         "canonical_pass_verified_by": "chris",
         "canonical_pass_verified_at": "2026-04-07T01:17:42.848633+00:00",
         "canonical_pass_notes": "Instruction timing tests sub-suite captured under cleanroom BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "26f1247d710b441c03f71f95852d4e068ba5b36dba3ce5dcb1b1b096b2b3471b",
             "screenshot": "verified/mgba-suite-timing-cleanroom-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Cable Club cleanroom mode is BROKEN - bit-identical 22de4108... (stuck on Cult-of-GBA boot screen). See task #10."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "db7ad6643e9e09131416fdfbe29c707c1e71aabee10689f1cb8e719f0d22553f",
@@ -421,13 +421,13 @@
         "canonical_pass_notes": "Timer count-up tests sub-suite captured under hle BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "9c9036f78d14611853e8495cfb353888f3eaeee0e3a8eb56bf3387da187ea390",
             "screenshot": "verified/mgba-suite-timers-hle-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "937610b89d602a7465b8345ad189c6abb6b2b8592b5b630ee60e4dc1d6de893d",
@@ -466,13 +466,13 @@
         "canonical_pass_notes": "Timer count-up tests sub-suite captured under official BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "9c9036f78d14611853e8495cfb353888f3eaeee0e3a8eb56bf3387da187ea390",
             "screenshot": "verified/mgba-suite-timers-official-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2610,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "042267e10d15a68bc4945fd9b7360c3b85eb8f49cc0fae71b20efd40da2e3942",
@@ -511,13 +511,13 @@
         "canonical_pass_notes": "Timer count-up tests sub-suite captured under cleanroom BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "9c9036f78d14611853e8495cfb353888f3eaeee0e3a8eb56bf3387da187ea390",
             "screenshot": "verified/mgba-suite-timers-cleanroom-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Cable Club cleanroom mode is BROKEN - bit-identical 22de4108... (stuck on Cult-of-GBA boot screen). See task #10."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "de7e42494003225f62f2a1822dcce3311d37ad18b6483b03ed583854be8344c8",
@@ -551,20 +551,20 @@
     },
     "mgba-suite-timer-irq": {
       "hle": {
-        "canonical_pass_hash": null,
+        "canonical_pass_hash": "0fe6b09bd7288eee146f2ef78a8d5cf2795c1fedf05a23b7ca04a473cf102d36",
         "canonical_pass_screenshot": null,
         "canonical_pass_verified_by": "chris",
         "canonical_pass_verified_at": "2026-04-07T01:17:42.848633+00:00",
         "canonical_pass_notes": "Timer IRQ tests sub-suite captured under hle BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "cf2de92c2a338f12ea7296b3563f53c04db11c9843aa29998196eb164b74487e",
             "screenshot": "verified/mgba-suite-timer-irq-hle-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "33a6f56c1678943f21a501c163902c1c4ec84477b2b557710e28ee07ac80fc98",
@@ -596,20 +596,20 @@
         }
       },
       "official": {
-        "canonical_pass_hash": null,
+        "canonical_pass_hash": "0fe6b09bd7288eee146f2ef78a8d5cf2795c1fedf05a23b7ca04a473cf102d36",
         "canonical_pass_screenshot": null,
         "canonical_pass_verified_by": "chris",
         "canonical_pass_verified_at": "2026-04-07T01:17:42.848633+00:00",
         "canonical_pass_notes": "Timer IRQ tests sub-suite captured under official BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "cf2de92c2a338f12ea7296b3563f53c04db11c9843aa29998196eb164b74487e",
             "screenshot": "verified/mgba-suite-timer-irq-official-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2610,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "33a6f56c1678943f21a501c163902c1c4ec84477b2b557710e28ee07ac80fc98",
@@ -641,20 +641,20 @@
         }
       },
       "cleanroom": {
-        "canonical_pass_hash": null,
+        "canonical_pass_hash": "0fe6b09bd7288eee146f2ef78a8d5cf2795c1fedf05a23b7ca04a473cf102d36",
         "canonical_pass_screenshot": null,
         "canonical_pass_verified_by": "chris",
         "canonical_pass_verified_at": "2026-04-07T01:17:42.848633+00:00",
         "canonical_pass_notes": "Timer IRQ tests sub-suite captured under cleanroom BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "cf2de92c2a338f12ea7296b3563f53c04db11c9843aa29998196eb164b74487e",
             "screenshot": "verified/mgba-suite-timer-irq-cleanroom-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Cable Club cleanroom mode is BROKEN - bit-identical 22de4108... (stuck on Cult-of-GBA boot screen). See task #10."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "33a6f56c1678943f21a501c163902c1c4ec84477b2b557710e28ee07ac80fc98",
@@ -695,13 +695,13 @@
         "canonical_pass_notes": "Shifter (barrel shifter) tests sub-suite. 3-way pixel-identical agreement across mgba, NBA, and skyemu - strong cross-runner consensus that this is the test ROM's canonical pass image. cable_club is in its mgba-suite menu-navigation stuck state and didn't reach the test.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "1c476f5980b9e4d95d2ac0e72ea226efcc4b6d592d687d56aa88626e71563ea6",
             "screenshot": "verified/mgba-suite-shifter-hle-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "1c476f5980b9e4d95d2ac0e72ea226efcc4b6d592d687d56aa88626e71563ea6",
@@ -740,13 +740,13 @@
         "canonical_pass_notes": "Shifter (barrel shifter) tests sub-suite. 3-way pixel-identical agreement across mgba, NBA, and skyemu - strong cross-runner consensus that this is the test ROM's canonical pass image. cable_club is in its mgba-suite menu-navigation stuck state and didn't reach the test.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "1c476f5980b9e4d95d2ac0e72ea226efcc4b6d592d687d56aa88626e71563ea6",
             "screenshot": "verified/mgba-suite-shifter-official-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2610,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "1c476f5980b9e4d95d2ac0e72ea226efcc4b6d592d687d56aa88626e71563ea6",
@@ -785,13 +785,13 @@
         "canonical_pass_notes": "Shifter (barrel shifter) tests sub-suite. 3-way pixel-identical agreement across mgba, NBA, and skyemu - strong cross-runner consensus that this is the test ROM's canonical pass image. cable_club is in its mgba-suite menu-navigation stuck state and didn't reach the test.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "1c476f5980b9e4d95d2ac0e72ea226efcc4b6d592d687d56aa88626e71563ea6",
             "screenshot": "verified/mgba-suite-shifter-cleanroom-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Cable Club cleanroom mode is BROKEN - bit-identical 22de4108... (stuck on Cult-of-GBA boot screen). See task #10."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "1c476f5980b9e4d95d2ac0e72ea226efcc4b6d592d687d56aa88626e71563ea6",
@@ -832,13 +832,13 @@
         "canonical_pass_notes": "Carry flag tests sub-suite. 3-way pixel-identical agreement across mgba, NBA, and skyemu - strong cross-runner consensus that this is the test ROM's canonical pass image. cable_club is in its mgba-suite menu-navigation stuck state and didn't reach the test.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "0351e95a99538d9c44b4b5f3ad03b12f30cd75e5ec024c4c4f38e891df12da71",
             "screenshot": "verified/mgba-suite-carry-hle-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "0351e95a99538d9c44b4b5f3ad03b12f30cd75e5ec024c4c4f38e891df12da71",
@@ -877,13 +877,13 @@
         "canonical_pass_notes": "Carry flag tests sub-suite. 3-way pixel-identical agreement across mgba, NBA, and skyemu - strong cross-runner consensus that this is the test ROM's canonical pass image. cable_club is in its mgba-suite menu-navigation stuck state and didn't reach the test.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "0351e95a99538d9c44b4b5f3ad03b12f30cd75e5ec024c4c4f38e891df12da71",
             "screenshot": "verified/mgba-suite-carry-official-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2610,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "0351e95a99538d9c44b4b5f3ad03b12f30cd75e5ec024c4c4f38e891df12da71",
@@ -922,13 +922,13 @@
         "canonical_pass_notes": "Carry flag tests sub-suite. 3-way pixel-identical agreement across mgba, NBA, and skyemu - strong cross-runner consensus that this is the test ROM's canonical pass image. cable_club is in its mgba-suite menu-navigation stuck state and didn't reach the test.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "0351e95a99538d9c44b4b5f3ad03b12f30cd75e5ec024c4c4f38e891df12da71",
             "screenshot": "verified/mgba-suite-carry-cleanroom-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Cable Club cleanroom mode is BROKEN - bit-identical 22de4108... (stuck on Cult-of-GBA boot screen). See task #10."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "0351e95a99538d9c44b4b5f3ad03b12f30cd75e5ec024c4c4f38e891df12da71",
@@ -962,20 +962,20 @@
     },
     "mgba-suite-multiply-long": {
       "hle": {
-        "canonical_pass_hash": null,
+        "canonical_pass_hash": "2c25e333880f276ea3ab33d6c3e0685de81d55df995e32db04c974a8e2d60569",
         "canonical_pass_screenshot": null,
         "canonical_pass_verified_by": "chris",
         "canonical_pass_verified_at": "2026-04-07T01:17:42.848633+00:00",
         "canonical_pass_notes": "Long multiply tests sub-suite captured under hle BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "2c25e333880f276ea3ab33d6c3e0685de81d55df995e32db04c974a8e2d60569",
             "screenshot": "verified/mgba-suite-multiply-long-hle-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "2c25e333880f276ea3ab33d6c3e0685de81d55df995e32db04c974a8e2d60569",
@@ -1007,20 +1007,20 @@
         }
       },
       "official": {
-        "canonical_pass_hash": null,
+        "canonical_pass_hash": "2c25e333880f276ea3ab33d6c3e0685de81d55df995e32db04c974a8e2d60569",
         "canonical_pass_screenshot": null,
         "canonical_pass_verified_by": "chris",
         "canonical_pass_verified_at": "2026-04-07T01:17:42.848633+00:00",
         "canonical_pass_notes": "Long multiply tests sub-suite captured under official BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "2c25e333880f276ea3ab33d6c3e0685de81d55df995e32db04c974a8e2d60569",
             "screenshot": "verified/mgba-suite-multiply-long-official-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2610,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "2c25e333880f276ea3ab33d6c3e0685de81d55df995e32db04c974a8e2d60569",
@@ -1052,20 +1052,20 @@
         }
       },
       "cleanroom": {
-        "canonical_pass_hash": null,
+        "canonical_pass_hash": "2c25e333880f276ea3ab33d6c3e0685de81d55df995e32db04c974a8e2d60569",
         "canonical_pass_screenshot": null,
         "canonical_pass_verified_by": "chris",
         "canonical_pass_verified_at": "2026-04-07T01:17:42.848633+00:00",
         "canonical_pass_notes": "Long multiply tests sub-suite captured under cleanroom BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "2c25e333880f276ea3ab33d6c3e0685de81d55df995e32db04c974a8e2d60569",
             "screenshot": "verified/mgba-suite-multiply-long-cleanroom-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Cable Club cleanroom mode is BROKEN - bit-identical 22de4108... (stuck on Cult-of-GBA boot screen). See task #10."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "2c25e333880f276ea3ab33d6c3e0685de81d55df995e32db04c974a8e2d60569",
@@ -1099,20 +1099,20 @@
     },
     "mgba-suite-bios-math": {
       "hle": {
-        "canonical_pass_hash": null,
+        "canonical_pass_hash": "d773342efbb4dd027cff51f38323771658601735541b8e50ef6ea92ed1fa8e05",
         "canonical_pass_screenshot": null,
-        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_by": "auto-consensus 2026-04-07",
         "canonical_pass_verified_at": "2026-04-07T01:17:42.848633+00:00",
-        "canonical_pass_notes": "BIOS math SWI tests sub-suite captured under hle BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
+        "canonical_pass_notes": "Promoted from 3-runner consensus. Confirmed visually as the bios-math 615/615 results page.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "d773342efbb4dd027cff51f38323771658601735541b8e50ef6ea92ed1fa8e05",
             "screenshot": "verified/mgba-suite-bios-math-hle-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Now matches NBA+mgba consensus after commit 74eba82 (HLE ArcTan/ArcTan2 + Div edge cases) and 83d29e4 (BIOS open-bus latch)."
           },
           "mgba": {
             "hash": "d773342efbb4dd027cff51f38323771658601735541b8e50ef6ea92ed1fa8e05",
@@ -1144,20 +1144,20 @@
         }
       },
       "official": {
-        "canonical_pass_hash": null,
+        "canonical_pass_hash": "d773342efbb4dd027cff51f38323771658601735541b8e50ef6ea92ed1fa8e05",
         "canonical_pass_screenshot": null,
-        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_by": "auto-consensus 2026-04-07",
         "canonical_pass_verified_at": "2026-04-07T01:17:42.848633+00:00",
-        "canonical_pass_notes": "BIOS math SWI tests sub-suite captured under official BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
+        "canonical_pass_notes": "Promoted from 3-runner consensus. Confirmed visually as the bios-math 615/615 results page.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "d773342efbb4dd027cff51f38323771658601735541b8e50ef6ea92ed1fa8e05",
             "screenshot": "verified/mgba-suite-bios-math-official-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2610,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Now matches NBA+mgba consensus after commit 74eba82 (HLE ArcTan/ArcTan2 + Div edge cases) and 83d29e4 (BIOS open-bus latch)."
           },
           "mgba": {
             "hash": "c6583e0c4a0ce7747ccef67047a1ceff0e8235f870893e32ece3a23e1b6c25d9",
@@ -1189,20 +1189,20 @@
         }
       },
       "cleanroom": {
-        "canonical_pass_hash": null,
+        "canonical_pass_hash": "62b5581165fc26c55faf7d238d63da1b98b4b1bd61b25b3598ed8c1f8ccf43d9",
         "canonical_pass_screenshot": null,
-        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_by": "auto-consensus 2026-04-07",
         "canonical_pass_verified_at": "2026-04-07T01:17:42.848633+00:00",
-        "canonical_pass_notes": "BIOS math SWI tests sub-suite captured under cleanroom BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
+        "canonical_pass_notes": "Promoted from 3-runner consensus. Confirmed visually as the bios-math 615/615 results page.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "d773342efbb4dd027cff51f38323771658601735541b8e50ef6ea92ed1fa8e05",
             "screenshot": "verified/mgba-suite-bios-math-cleanroom-cable_club.bmp",
-            "status": "bug",
+            "status": "captured",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Cable Club cleanroom mode is BROKEN - bit-identical 22de4108... (stuck on Cult-of-GBA boot screen). See task #10."
+            "notes": "Now matches NBA+mgba consensus after commit 74eba82 (HLE ArcTan/ArcTan2 + Div edge cases) and 83d29e4 (BIOS open-bus latch)."
           },
           "mgba": {
             "hash": "62b5581165fc26c55faf7d238d63da1b98b4b1bd61b25b3598ed8c1f8ccf43d9",
@@ -1243,13 +1243,13 @@
         "canonical_pass_notes": "DMA tests sub-suite captured under hle BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "c487bd99017e380812a9e3c97f31244923f7107621fc62ef90a0eee73127a7fb",
             "screenshot": "verified/mgba-suite-dma-hle-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 3600,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "42dfdfc4a2d6fd1c33c88cd19071af6b15ffd837dba2f3ff623e56d5a976b196",
@@ -1288,13 +1288,13 @@
         "canonical_pass_notes": "DMA tests sub-suite captured under official BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "c487bd99017e380812a9e3c97f31244923f7107621fc62ef90a0eee73127a7fb",
             "screenshot": "verified/mgba-suite-dma-official-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 3810,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "b5ecfe603f354223eac5c749adbcaa14dadb12cd1c01e9246a35a8ba332926bf",
@@ -1333,13 +1333,13 @@
         "canonical_pass_notes": "DMA tests sub-suite captured under cleanroom BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "c487bd99017e380812a9e3c97f31244923f7107621fc62ef90a0eee73127a7fb",
             "screenshot": "verified/mgba-suite-dma-cleanroom-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 3600,
-            "notes": "Cable Club cleanroom mode is BROKEN - bit-identical 22de4108... (stuck on Cult-of-GBA boot screen). See task #10."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "42dfdfc4a2d6fd1c33c88cd19071af6b15ffd837dba2f3ff623e56d5a976b196",
@@ -1380,13 +1380,13 @@
         "canonical_pass_notes": "SIO read tests sub-suite captured under hle BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "3808dc5fec95495bc7cea90571b38063cc8a000f54a541708ba4f5c62a7df94e",
             "screenshot": "verified/mgba-suite-sio-read-hle-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "15852669724f71f15cee089636fef775cd13bdadcf8b196afc91f03636a49ff6",
@@ -1425,13 +1425,13 @@
         "canonical_pass_notes": "SIO read tests sub-suite captured under official BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "3808dc5fec95495bc7cea90571b38063cc8a000f54a541708ba4f5c62a7df94e",
             "screenshot": "verified/mgba-suite-sio-read-official-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2610,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "15852669724f71f15cee089636fef775cd13bdadcf8b196afc91f03636a49ff6",
@@ -1470,13 +1470,13 @@
         "canonical_pass_notes": "SIO read tests sub-suite captured under cleanroom BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "3808dc5fec95495bc7cea90571b38063cc8a000f54a541708ba4f5c62a7df94e",
             "screenshot": "verified/mgba-suite-sio-read-cleanroom-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Cable Club cleanroom mode is BROKEN - bit-identical 22de4108... (stuck on Cult-of-GBA boot screen). See task #10."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "15852669724f71f15cee089636fef775cd13bdadcf8b196afc91f03636a49ff6",
@@ -1510,20 +1510,20 @@
     },
     "mgba-suite-sio-timing": {
       "hle": {
-        "canonical_pass_hash": null,
+        "canonical_pass_hash": "26fe36011a6d9b21c8c8d6ea6c0e954e951df05adefa8829e71759bb16ba8dd4",
         "canonical_pass_screenshot": null,
         "canonical_pass_verified_by": "chris",
         "canonical_pass_verified_at": "2026-04-07T01:17:42.848633+00:00",
         "canonical_pass_notes": "SIO timing tests sub-suite captured under hle BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "26fe36011a6d9b21c8c8d6ea6c0e954e951df05adefa8829e71759bb16ba8dd4",
             "screenshot": "verified/mgba-suite-sio-timing-hle-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "1db61b560136d778fbf6f658bdcb2051678d84befb87ff731a5e7f407762428e",
@@ -1555,20 +1555,20 @@
         }
       },
       "official": {
-        "canonical_pass_hash": null,
+        "canonical_pass_hash": "26fe36011a6d9b21c8c8d6ea6c0e954e951df05adefa8829e71759bb16ba8dd4",
         "canonical_pass_screenshot": null,
         "canonical_pass_verified_by": "chris",
         "canonical_pass_verified_at": "2026-04-07T01:17:42.848633+00:00",
         "canonical_pass_notes": "SIO timing tests sub-suite captured under official BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "26fe36011a6d9b21c8c8d6ea6c0e954e951df05adefa8829e71759bb16ba8dd4",
             "screenshot": "verified/mgba-suite-sio-timing-official-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2610,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "1db61b560136d778fbf6f658bdcb2051678d84befb87ff731a5e7f407762428e",
@@ -1600,20 +1600,20 @@
         }
       },
       "cleanroom": {
-        "canonical_pass_hash": null,
+        "canonical_pass_hash": "26fe36011a6d9b21c8c8d6ea6c0e954e951df05adefa8829e71759bb16ba8dd4",
         "canonical_pass_screenshot": null,
         "canonical_pass_verified_by": "chris",
         "canonical_pass_verified_at": "2026-04-07T01:17:42.848633+00:00",
         "canonical_pass_notes": "SIO timing tests sub-suite captured under cleanroom BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "26fe36011a6d9b21c8c8d6ea6c0e954e951df05adefa8829e71759bb16ba8dd4",
             "screenshot": "verified/mgba-suite-sio-timing-cleanroom-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Cable Club cleanroom mode is BROKEN - bit-identical 22de4108... (stuck on Cult-of-GBA boot screen). See task #10."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "1db61b560136d778fbf6f658bdcb2051678d84befb87ff731a5e7f407762428e",
@@ -1654,13 +1654,13 @@
         "canonical_pass_notes": "Miscellaneous edge case tests sub-suite captured under hle BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "edcc4f0899361409087126589090547d84ae7483ebac226bc3cc670813b95bf3",
             "screenshot": "verified/mgba-suite-misc-edge-hle-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "5e875b3dad3160cf308f16bc2ace375d316fdfdf1249bb9a27363010f6031057",
@@ -1699,13 +1699,13 @@
         "canonical_pass_notes": "Miscellaneous edge case tests sub-suite captured under official BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "edcc4f0899361409087126589090547d84ae7483ebac226bc3cc670813b95bf3",
             "screenshot": "verified/mgba-suite-misc-edge-official-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2610,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "2b82f2b5b3981482a5e08896fb597b346859df2e7fd88661fed0a4fb57eca6a0",
@@ -1744,13 +1744,13 @@
         "canonical_pass_notes": "Miscellaneous edge case tests sub-suite captured under cleanroom BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "edcc4f0899361409087126589090547d84ae7483ebac226bc3cc670813b95bf3",
             "screenshot": "verified/mgba-suite-misc-edge-cleanroom-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Cable Club cleanroom mode is BROKEN - bit-identical 22de4108... (stuck on Cult-of-GBA boot screen). See task #10."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "267d201f77835bd329e6f6ad9d75961337a7aa00c4abed734c98ca9b0435b5c4",
@@ -1791,13 +1791,13 @@
         "canonical_pass_notes": "Video tests sub-suite. 3-way pixel-identical agreement across mgba, NBA, and skyemu - strong cross-runner consensus that this is the test ROM's canonical pass image. cable_club is in its mgba-suite menu-navigation stuck state and didn't reach the test.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "e1973b29b8c8368202cf5018dd1070eb7d314d27637de0f8b4892279746f34d0",
             "screenshot": "verified/mgba-suite-video-hle-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "e1973b29b8c8368202cf5018dd1070eb7d314d27637de0f8b4892279746f34d0",
@@ -1836,13 +1836,13 @@
         "canonical_pass_notes": "Video tests sub-suite. 3-way pixel-identical agreement across mgba, NBA, and skyemu - strong cross-runner consensus that this is the test ROM's canonical pass image. cable_club is in its mgba-suite menu-navigation stuck state and didn't reach the test.",
         "runners": {
           "cable_club": {
-            "hash": "a1ea197638764dca10dc9fa70fb5b86423ab040132ebd0c49a1acde75c7316d8",
+            "hash": "e1973b29b8c8368202cf5018dd1070eb7d314d27637de0f8b4892279746f34d0",
             "screenshot": "verified/mgba-suite-video-official-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2610,
-            "notes": "Cable Club input handling fails to navigate mgba-suite menu - all 14 captures show bit-identical 'a1ea1976' hash because cable_club is stuck on the main menu's 'Memory tests' top item without ever entering any sub-suite. cable_club's input WORKS on armwrestler menu navigation, so this is mgba-suite-specific (likely menu render timing vs first input frame, or DPad up/down vs the input pattern this menu expects). Sixth real cable_club bug found by verification arc."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "e1973b29b8c8368202cf5018dd1070eb7d314d27637de0f8b4892279746f34d0",
@@ -1881,13 +1881,13 @@
         "canonical_pass_notes": "Video tests sub-suite. 3-way pixel-identical agreement across mgba, NBA, and skyemu - strong cross-runner consensus that this is the test ROM's canonical pass image. cable_club is in its mgba-suite menu-navigation stuck state and didn't reach the test.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "e1973b29b8c8368202cf5018dd1070eb7d314d27637de0f8b4892279746f34d0",
             "screenshot": "verified/mgba-suite-video-cleanroom-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Cable Club cleanroom mode is BROKEN - bit-identical 22de4108... (stuck on Cult-of-GBA boot screen). See task #10."
+            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
           },
           "mgba": {
             "hash": "e1973b29b8c8368202cf5018dd1070eb7d314d27637de0f8b4892279746f34d0",

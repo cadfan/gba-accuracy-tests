@@ -10,13 +10,13 @@
         "canonical_pass_notes": "AGS Aging Cartridge results page showing MEMORY/LCD/TIMER/DMA/KEY INPUT/INTERRUPT all PASS, COM N/A. NBA is the LONE PASSER across all 4 runners - mgba and skyemu are stuck on AGS save-loader checksum screen, cable_club is stuck even earlier. The verification arc surfaced this as a major divergence and demonstrates why consensus-based scoring is wrong: mgba+skyemu agreement on the loader-error screen would have been recorded as 'gold' under the old scheme, masking the fact that they don't actually run the test suite at all.",
         "runners": {
           "cable_club": {
-            "hash": "e2cc2a1fa6131cf4d86faa3baf78851f35a36853e2467c257b3df9d89e85cce5",
+            "hash": "4769bc8ad8a6d462e800fe7331e894b8ea5e2319a1f5a61389c0e6bab16029b1",
             "screenshot": "verified/ags-aging-full-hle-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:08:32.591391+00:00",
             "frames": 3000,
-            "notes": "Cable Club fails to run AGS - captures pure black screen. cable_club never reaches the AGS title or save-loader. Third real cable_club bug found by verification arc. See task #12."
+            "notes": "2026-04-07 post-fix recapture"
           },
           "mgba": {
             "hash": "cac70be3cfa28ebac5515a72319f34a8ce61aba6ae825d65d8c8de85bc5e3673",
@@ -55,13 +55,13 @@
         "canonical_pass_notes": "AGS Aging Cartridge results page showing MEMORY/LCD/TIMER/DMA/KEY INPUT/INTERRUPT all PASS, COM N/A. NBA is the LONE PASSER across all 4 runners - mgba and skyemu are stuck on AGS save-loader checksum screen, cable_club is stuck even earlier. The verification arc surfaced this as a major divergence and demonstrates why consensus-based scoring is wrong: mgba+skyemu agreement on the loader-error screen would have been recorded as 'gold' under the old scheme, masking the fact that they don't actually run the test suite at all.",
         "runners": {
           "cable_club": {
-            "hash": "96f750d8f4dff67d105322f6f2b5b3f36919a18982cd17ca3270d4ca98ba8e35",
+            "hash": "4769bc8ad8a6d462e800fe7331e894b8ea5e2319a1f5a61389c0e6bab16029b1",
             "screenshot": "verified/ags-aging-full-official-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:08:32.591391+00:00",
             "frames": 3000,
-            "notes": "Cable Club captures pure white screen under official BIOS (different broken state from HLE pure-black, but still not running AGS). Same root cause: cable_club doesn't get past the AGS bootloader."
+            "notes": "2026-04-07 post-fix recapture"
           },
           "mgba": {
             "hash": "cac70be3cfa28ebac5515a72319f34a8ce61aba6ae825d65d8c8de85bc5e3673",
@@ -100,13 +100,13 @@
         "canonical_pass_notes": "AGS Aging Cartridge results page showing MEMORY/LCD/TIMER/DMA/KEY INPUT/INTERRUPT all PASS, COM N/A. NBA is the LONE PASSER across all 4 runners - mgba and skyemu are stuck on AGS save-loader checksum screen, cable_club is stuck even earlier. The verification arc surfaced this as a major divergence and demonstrates why consensus-based scoring is wrong: mgba+skyemu agreement on the loader-error screen would have been recorded as 'gold' under the old scheme, masking the fact that they don't actually run the test suite at all.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "4769bc8ad8a6d462e800fe7331e894b8ea5e2319a1f5a61389c0e6bab16029b1",
             "screenshot": "verified/ags-aging-full-cleanroom-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:08:32.591391+00:00",
             "frames": 3000,
-            "notes": "Cable Club cleanroom mode is broken - bit-identical 22de4108... hash to all other cleanroom captures. Stuck on Cult-of-GBA boot screen. See task #10."
+            "notes": "2026-04-07 post-fix recapture"
           },
           "mgba": {
             "hash": "cac70be3cfa28ebac5515a72319f34a8ce61aba6ae825d65d8c8de85bc5e3673",
