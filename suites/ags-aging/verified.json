@@ -3,11 +3,11 @@
   "tests": {
     "ags-aging-full": {
       "hle": {
-        "canonical_pass_hash": "28f46991896a85c80d9aba2205421a27fb52f9edab28af42697f866e5d04ecbb",
+        "canonical_pass_hash": "cac70be3cfa28ebac5515a72319f34a8ce61aba6ae825d65d8c8de85bc5e3673",
         "canonical_pass_screenshot": "verified/ags-aging-full-hle-nba.bmp",
-        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_by": "auto-consensus-2 2026-04-07",
         "canonical_pass_verified_at": "2026-04-07T01:08:32.591391+00:00",
-        "canonical_pass_notes": "AGS Aging Cartridge results page showing MEMORY/LCD/TIMER/DMA/KEY INPUT/INTERRUPT all PASS, COM N/A. NBA is the LONE PASSER across all 4 runners - mgba and skyemu are stuck on AGS save-loader checksum screen, cable_club is stuck even earlier. The verification arc surfaced this as a major divergence and demonstrates why consensus-based scoring is wrong: mgba+skyemu agreement on the loader-error screen would have been recorded as 'gold' under the old scheme, masking the fact that they don't actually run the test suite at all.",
+        "canonical_pass_notes": "Re-promoted from 2-runner consensus; previous canonical was 28f46991896a85c8.",
         "runners": {
           "cable_club": {
             "hash": "4769bc8ad8a6d462e800fe7331e894b8ea5e2319a1f5a61389c0e6bab16029b1",
@@ -48,11 +48,11 @@
         }
       },
       "official": {
-        "canonical_pass_hash": "5912c0bd89f9b06e34af60326d09332fde0bdbadedb3382022cff2836d0666f4",
+        "canonical_pass_hash": "cac70be3cfa28ebac5515a72319f34a8ce61aba6ae825d65d8c8de85bc5e3673",
         "canonical_pass_screenshot": "verified/ags-aging-full-official-nba.bmp",
-        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_by": "auto-consensus-2 2026-04-07",
         "canonical_pass_verified_at": "2026-04-07T01:08:32.591391+00:00",
-        "canonical_pass_notes": "AGS Aging Cartridge results page showing MEMORY/LCD/TIMER/DMA/KEY INPUT/INTERRUPT all PASS, COM N/A. NBA is the LONE PASSER across all 4 runners - mgba and skyemu are stuck on AGS save-loader checksum screen, cable_club is stuck even earlier. The verification arc surfaced this as a major divergence and demonstrates why consensus-based scoring is wrong: mgba+skyemu agreement on the loader-error screen would have been recorded as 'gold' under the old scheme, masking the fact that they don't actually run the test suite at all.",
+        "canonical_pass_notes": "Re-promoted from 2-runner consensus; previous canonical was 5912c0bd89f9b06e.",
         "runners": {
           "cable_club": {
             "hash": "4769bc8ad8a6d462e800fe7331e894b8ea5e2319a1f5a61389c0e6bab16029b1",
@@ -93,11 +93,11 @@
         }
       },
       "cleanroom": {
-        "canonical_pass_hash": "28f46991896a85c80d9aba2205421a27fb52f9edab28af42697f866e5d04ecbb",
+        "canonical_pass_hash": "cac70be3cfa28ebac5515a72319f34a8ce61aba6ae825d65d8c8de85bc5e3673",
         "canonical_pass_screenshot": "verified/ags-aging-full-cleanroom-nba.bmp",
-        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_by": "auto-consensus-2 2026-04-07",
         "canonical_pass_verified_at": "2026-04-07T01:08:32.591391+00:00",
-        "canonical_pass_notes": "AGS Aging Cartridge results page showing MEMORY/LCD/TIMER/DMA/KEY INPUT/INTERRUPT all PASS, COM N/A. NBA is the LONE PASSER across all 4 runners - mgba and skyemu are stuck on AGS save-loader checksum screen, cable_club is stuck even earlier. The verification arc surfaced this as a major divergence and demonstrates why consensus-based scoring is wrong: mgba+skyemu agreement on the loader-error screen would have been recorded as 'gold' under the old scheme, masking the fact that they don't actually run the test suite at all.",
+        "canonical_pass_notes": "Re-promoted from 2-runner consensus; previous canonical was 28f46991896a85c8.",
         "runners": {
           "cable_club": {
             "hash": "4769bc8ad8a6d462e800fe7331e894b8ea5e2319a1f5a61389c0e6bab16029b1",

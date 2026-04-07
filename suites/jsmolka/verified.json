@@ -185,16 +185,16 @@
         }
       },
       "official": {
-        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_hash": "7783dfe85db38db2cada7f49dd81ff3fbc2b2620dd288b6c499849876dc904a6",
         "canonical_pass_screenshot": "verified/jsmolka-thumb-official-nba.bmp",
-        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_by": "auto-consensus-2 2026-04-07",
         "canonical_pass_verified_at": "2026-04-06T23:45:50.940867+00:00",
-        "canonical_pass_notes": "Same as HLE.",
+        "canonical_pass_notes": "Re-promoted from 2-runner consensus; previous canonical was 59ce42abae9825c2.",
         "runners": {
           "cable_club": {
             "hash": "7783dfe85db38db2cada7f49dd81ff3fbc2b2620dd288b6c499849876dc904a6",
             "screenshot": "verified/jsmolka-thumb-official-cable_club.bmp",
-            "status": "fail",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-06T23:45:50.940867+00:00",
             "frames": 1200,
@@ -230,16 +230,16 @@
         }
       },
       "cleanroom": {
-        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_hash": "7783dfe85db38db2cada7f49dd81ff3fbc2b2620dd288b6c499849876dc904a6",
         "canonical_pass_screenshot": "verified/jsmolka-thumb-cleanroom-nba.bmp",
-        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_by": "auto-consensus-2 2026-04-07",
         "canonical_pass_verified_at": "2026-04-06T23:49:32.875917+00:00",
-        "canonical_pass_notes": "All tests passed. NBA + skyemu agree.",
+        "canonical_pass_notes": "Re-promoted from 2-runner consensus; previous canonical was 59ce42abae9825c2.",
         "runners": {
           "cable_club": {
             "hash": "7783dfe85db38db2cada7f49dd81ff3fbc2b2620dd288b6c499849876dc904a6",
             "screenshot": "verified/jsmolka-thumb-cleanroom-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-06T23:49:32.875917+00:00",
             "frames": 1200,
@@ -367,16 +367,16 @@
         }
       },
       "cleanroom": {
-        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_hash": "5d7098c43253151951e2e7451c103eb0f1b95e73127d466058e146da37dfff72",
         "canonical_pass_screenshot": "verified/jsmolka-bios-cleanroom-cable_club.bmp",
-        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_by": "auto-consensus-2 2026-04-07",
         "canonical_pass_verified_at": "2026-04-07T00:00:00.000000+00:00",
-        "canonical_pass_notes": "Cable Club is the lone passing runner under cleanroom. mgba, NBA, and skyemu all fail with 'Failed test 001' because the Cult-of-GBA cleanroom BIOS bytes lack whatever SWI handler jsmolka BIOS test 001 expects. Cable Club bypasses the issue by treating real-BIOS modes as HLE skip-boot with the BIOS bytes only used for read-protection latches.",
+        "canonical_pass_notes": "Re-promoted from 3-runner consensus; previous canonical was 59ce42abae9825c2.",
         "runners": {
           "cable_club": {
             "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
             "screenshot": "verified/jsmolka-bios-cleanroom-cable_club.bmp",
-            "status": "pass",
+            "status": "captured",
             "verified_by": "chris",
             "verified_at": "2026-04-07T00:00:00.000000+00:00",
             "frames": 1200,
@@ -688,11 +688,11 @@
     },
     "jsmolka-unsafe": {
       "hle": {
-        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
         "canonical_pass_screenshot": "verified/jsmolka-unsafe-hle-skyemu.bmp",
-        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_by": "auto-consensus-2 2026-04-07",
         "canonical_pass_verified_at": "2026-04-06T23:35:55.739372+00:00",
-        "canonical_pass_notes": "'All tests passed'. SkyEmu is the LONE passer of jsmolka-unsafe under HLE BIOS. The other three runners (cable_club, mgba, NBA) all fail at different points in the test. 'unsafe' tests cover undefined hardware behaviors, so divergent results are expected \u2014 but skyemu being the only one that matches jsmolka's expected output is a real cross-emulator finding. Worth noting that this is a lone-passer (1/4), not a consensus pass \u2014 the canonical_pass_hash is single-runner-verified and could be revised if a second runner ever lands on the same hash.",
+        "canonical_pass_notes": "Re-promoted from 2-runner consensus; previous canonical was 59ce42abae9825c2.",
         "runners": {
           "skyemu": {
             "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
@@ -706,7 +706,7 @@
           "cable_club": {
             "hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
             "screenshot": "verified/jsmolka-unsafe-hle-cable_club.bmp",
-            "status": "fail",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-06T23:35:55.739372+00:00",
             "frames": 1200,
@@ -733,16 +733,16 @@
         }
       },
       "official": {
-        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
         "canonical_pass_screenshot": "verified/jsmolka-unsafe-official-skyemu.bmp",
-        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_by": "auto-consensus-2 2026-04-07",
         "canonical_pass_verified_at": "2026-04-06T23:45:50.940867+00:00",
-        "canonical_pass_notes": "Same as HLE. SkyEmu lone passer.",
+        "canonical_pass_notes": "Re-promoted from 2-runner consensus; previous canonical was 59ce42abae9825c2.",
         "runners": {
           "cable_club": {
             "hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
             "screenshot": "verified/jsmolka-unsafe-official-cable_club.bmp",
-            "status": "fail",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-06T23:45:50.940867+00:00",
             "frames": 1200,
@@ -778,16 +778,16 @@
         }
       },
       "cleanroom": {
-        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
         "canonical_pass_screenshot": "verified/jsmolka-unsafe-cleanroom-skyemu.bmp",
-        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_by": "auto-consensus-2 2026-04-07",
         "canonical_pass_verified_at": "2026-04-06T23:49:32.875917+00:00",
-        "canonical_pass_notes": "Same as HLE/official. SkyEmu lone passer.",
+        "canonical_pass_notes": "Re-promoted from 2-runner consensus; previous canonical was 59ce42abae9825c2.",
         "runners": {
           "cable_club": {
             "hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
             "screenshot": "verified/jsmolka-unsafe-cleanroom-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
             "verified_at": "2026-04-06T23:49:32.875917+00:00",
             "frames": 1200,
