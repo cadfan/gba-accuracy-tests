@@ -423,11 +423,11 @@ def matrix_cell_counts(suite: dict, runner: str, mode: str) -> tuple[int, int, C
     counter: Counter = Counter()
     total = 0
     passing = 0
-    for _test_id, modes in suite["tests"].items():
+    for modes in suite["tests"].values():
         tm = modes.get(mode)
         if not tm:
             continue
-        state, _h = cell_state(tm, runner)
+        state, _ = cell_state(tm, runner)
         if state == STATE_NONE:
             continue
         total += 1
@@ -441,10 +441,10 @@ def overall_state_counts(suites: list[dict], runners: list[str]) -> dict[str, in
     """Tally cell states across every (suite, test, mode, runner)."""
     out: Counter = Counter()
     for s in suites:
-        for _test_id, modes in s["tests"].items():
-            for _mode, tm in modes.items():
+        for modes in s["tests"].values():
+            for tm in modes.values():
                 for r in runners:
-                    state, _h = cell_state(tm, r)
+                    state, _ = cell_state(tm, r)
                     if state == STATE_NONE:
                         continue
                     out[state] += 1
@@ -459,8 +459,8 @@ def verification_coverage(suites: list[dict]) -> tuple[int, int]:
     total = 0
     verified = 0
     for s in suites:
-        for _test_id, modes in s["tests"].items():
-            for _mode, tm in modes.items():
+        for modes in s["tests"].values():
+            for tm in modes.values():
                 total += 1
                 if (tm.get("canonical_pass_hash") or "").strip():
                     verified += 1
@@ -695,11 +695,11 @@ def main(argv: list[str] | None = None) -> int:
     passing = 0
     total = 0
     for s in suites:
-        for _tid, modes in s["tests"].items():
+        for modes in s["tests"].values():
             tm = modes.get("cleanroom")
             if not tm:
                 continue
-            state, _h = cell_state(tm, "cable_club")
+            state, _ = cell_state(tm, "cable_club")
             if state == STATE_NONE:
                 continue
             total += 1
