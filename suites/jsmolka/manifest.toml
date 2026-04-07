@@ -9,7 +9,11 @@ commit = "a7113b67e63f83a9b321696ddd7042ccfad6c881"
 # Each test uses BG mode 4. Pass = green screen ("All tests passed").
 # Fail = displays "Failed test NNN" with test number.
 # Reference hashes generated from mGBA 0.10 on Windows.
-# Note: mGBA is known-bad on ARM test 235 and Thumb test 230.
+# Known-bad runners (verified by human inspection — see verified.json):
+#   - mGBA HLE jsmolka-arm: fails at test 522 (the manifest previously said
+#     test 235; test numbering changed in an upstream jsmolka commit)
+#   - cable_club HLE jsmolka-arm: produces a visually-corrupted frame (real
+#     bug, not the test ROM's normal failure path; see verified.json notes)
 
 [[tests]]
 id = "jsmolka-arm"

@@ -1,0 +1,1786 @@
+{
+  "schema_version": 2,
+  "tests": {
+    "jsmolka-arm": {
+      "hle": {
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-arm-hle-nba.png",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:25:19.822855+00:00",
+        "canonical_pass_notes": "White background, black text reading 'All tests passed'. Confirmed visually 2026-04-07 from NBA + SkyEmu cross-agreement (both produce the same hash and the same image). Two independent emulators converging on the all-pass output is strong evidence this is the test ROM's canonical pass state.",
+        "runners": {
+          "nanoboyadvance": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-arm-hle-nba.png",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:25:19.822855+00:00",
+            "frames": 1200,
+            "notes": "Matches canonical pass hash. Cross-confirmed by SkyEmu which produced an identical hash."
+          },
+          "skyemu": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-arm-hle-skyemu.png",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:25:19.822855+00:00",
+            "frames": 1200,
+            "notes": "Matches canonical pass hash. Cross-confirmed by NBA which produced an identical hash."
+          },
+          "mgba": {
+            "hash": "77efc115df0487dc31385de2bb2a8d78f99e688e30b22fcd4250f904d43a1a28",
+            "screenshot": "verified/jsmolka-arm-hle-mgba.png",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:25:19.822855+00:00",
+            "frames": 1200,
+            "notes": "Expected/known failure. Displays 'Failed test 522' on its in-test failure screen. mgba has a real bug at jsmolka instruction-test #522 in HLE BIOS mode. The hash should remain stable across mgba runs; a change in this hash is a regression to investigate."
+          },
+          "cable_club": {
+            "hash": "54b345fa6f2c34c118aab7ff9af3b3c844435542a6da90ff2f86b6ffa1ad4dde",
+            "screenshot": "verified/jsmolka-arm-hle-cable_club.png",
+            "status": "bug",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:25:19.822855+00:00",
+            "frames": 1200,
+            "notes": "Real bug. Cable Club produces a visually corrupted framebuffer for this test, NOT the test ROM's normal failure path (which would be 'Failed test NNN' on an otherwise-clean screen). The framebuffer is stable from at least frame 600, so this is a deterministic broken state, not mid-execution. Worth investigating: why does cable_club's HLE mode produce garbage rendering on jsmolka-arm specifically? See verified/jsmolka-arm-hle-cable_club.png."
+          }
+        }
+      },
+      "official": {
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-arm-official-nba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:45:50.940867+00:00",
+        "canonical_pass_notes": "All tests passed. NBA + skyemu agree under official BIOS.",
+        "runners": {
+          "cable_club": {
+            "hash": "54b345fa6f2c34c118aab7ff9af3b3c844435542a6da90ff2f86b6ffa1ad4dde",
+            "screenshot": "verified/jsmolka-arm-official-cable_club.bmp",
+            "status": "bug",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 1200,
+            "notes": "Bit-identical broken output to HLE - cable_club text-render bug is NOT BIOS-mode dependent. See .agents/handoff/20260407-jsmolka-arm-cable_club-text-render-bug.md"
+          },
+          "mgba": {
+            "hash": "77efc115df0487dc31385de2bb2a8d78f99e688e30b22fcd4250f904d43a1a28",
+            "screenshot": "verified/jsmolka-arm-official-mgba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 1200,
+            "notes": "Same hash as HLE - mgba renders Failed test 522 under both modes."
+          },
+          "nanoboyadvance": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-arm-official-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 1200,
+            "notes": "Matches canonical pass."
+          },
+          "skyemu": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-arm-official-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 1200,
+            "notes": "Matches canonical pass."
+          }
+        }
+      },
+      "cleanroom": {
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-arm-cleanroom-nba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:49:32.875917+00:00",
+        "canonical_pass_notes": "All tests passed. NBA + skyemu agree under cleanroom.",
+        "runners": {
+          "cable_club": {
+            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "screenshot": "verified/jsmolka-arm-cleanroom-cable_club.bmp",
+            "status": "bug",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 1200,
+            "notes": "Cable Club cleanroom mode is BROKEN \u2014 produces the Cult-of-GBA BIOS boot screen for every test (bit-identical hash 22de4108c65c9681... across all 13 jsmolka tests). The cart ROM is never executed. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+          },
+          "mgba": {
+            "hash": "77efc115df0487dc31385de2bb2a8d78f99e688e30b22fcd4250f904d43a1a28",
+            "screenshot": "verified/jsmolka-arm-cleanroom-mgba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 1200,
+            "notes": "Same Failed test 522 hash as HLE/official."
+          },
+          "nanoboyadvance": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-arm-cleanroom-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 1200,
+            "notes": "Matches canonical pass."
+          },
+          "skyemu": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-arm-cleanroom-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 1200,
+            "notes": "Matches canonical pass."
+          }
+        }
+      }
+    },
+    "jsmolka-thumb": {
+      "hle": {
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-thumb-hle-nba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:33:10.733815+00:00",
+        "canonical_pass_notes": "White background, black text 'All tests passed'. Pixel-identical to the jsmolka-arm canonical pass hash because the same render template is used. Cross-confirmed by NBA + SkyEmu agreement.",
+        "runners": {
+          "nanoboyadvance": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-thumb-hle-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:33:10.733815+00:00",
+            "frames": 1200,
+            "notes": "Matches canonical pass."
+          },
+          "skyemu": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-thumb-hle-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:33:10.733815+00:00",
+            "frames": 1200,
+            "notes": "Matches canonical pass."
+          },
+          "mgba": {
+            "hash": "7783dfe85db38db2cada7f49dd81ff3fbc2b2620dd288b6c499849876dc904a6",
+            "screenshot": "verified/jsmolka-thumb-hle-mgba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:33:10.733815+00:00",
+            "frames": 1200,
+            "notes": "Documented mgba HLE bug at jsmolka Thumb instruction-test #230. Renders 'Failed test 230' correctly. Hash is identical to cable_club's \u2014 both emulators reach the same broken state on the same instruction."
+          },
+          "cable_club": {
+            "hash": "7783dfe85db38db2cada7f49dd81ff3fbc2b2620dd288b6c499849876dc904a6",
+            "screenshot": "verified/jsmolka-thumb-hle-cable_club.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:33:10.733815+00:00",
+            "frames": 1200,
+            "notes": "Cable Club fails Thumb instruction-test #230 with the same bug as mgba \u2014 bit-identical hash. This is a known-cross-emulator failure (both implementations share the same incorrect behavior on this Thumb encoding). IMPORTANT: cable_club's text rendering WORKS CORRECTLY on this test ('Failed test 230' is fully legible), which means the rendering bug observed on jsmolka-arm is specific to that ROM's code path, not a generic cable_club PPU bug. Bug investigation should focus on what jsmolka-arm does differently."
+          }
+        }
+      },
+      "official": {
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-thumb-official-nba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:45:50.940867+00:00",
+        "canonical_pass_notes": "Same as HLE.",
+        "runners": {
+          "cable_club": {
+            "hash": "7783dfe85db38db2cada7f49dd81ff3fbc2b2620dd288b6c499849876dc904a6",
+            "screenshot": "verified/jsmolka-thumb-official-cable_club.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 1200,
+            "notes": "Identical to HLE."
+          },
+          "mgba": {
+            "hash": "7783dfe85db38db2cada7f49dd81ff3fbc2b2620dd288b6c499849876dc904a6",
+            "screenshot": "verified/jsmolka-thumb-official-mgba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 1200,
+            "notes": "Identical to HLE - bit-identical to cable_club."
+          },
+          "nanoboyadvance": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-thumb-official-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 1200,
+            "notes": "Matches canonical pass."
+          },
+          "skyemu": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-thumb-official-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 1200,
+            "notes": "Matches canonical pass."
+          }
+        }
+      },
+      "cleanroom": {
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-thumb-cleanroom-nba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:49:32.875917+00:00",
+        "canonical_pass_notes": "All tests passed. NBA + skyemu agree.",
+        "runners": {
+          "cable_club": {
+            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "screenshot": "verified/jsmolka-thumb-cleanroom-cable_club.bmp",
+            "status": "bug",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 1200,
+            "notes": "Cable Club cleanroom mode is BROKEN \u2014 produces the Cult-of-GBA BIOS boot screen for every test (bit-identical hash 22de4108c65c9681... across all 13 jsmolka tests). The cart ROM is never executed. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+          },
+          "mgba": {
+            "hash": "7783dfe85db38db2cada7f49dd81ff3fbc2b2620dd288b6c499849876dc904a6",
+            "screenshot": "verified/jsmolka-thumb-cleanroom-mgba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 1200,
+            "notes": "Failed test 230 \u2014 same as HLE/official."
+          },
+          "nanoboyadvance": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-thumb-cleanroom-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 1200,
+            "notes": "Matches canonical pass."
+          },
+          "skyemu": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-thumb-cleanroom-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 1200,
+            "notes": "Matches canonical pass."
+          }
+        }
+      }
+    },
+    "jsmolka-bios": {
+      "hle": {
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-bios-hle-mgba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:34:26.036714+00:00",
+        "canonical_pass_notes": "'All tests passed'. Only mgba's HLE BIOS is complete enough to pass all jsmolka BIOS tests under HLE mode. NBA, SkyEmu, and cable_club all fail at BIOS test 001 \u2014 an SWI handler that the other 3 emulators have not fully implemented in HLE.",
+        "runners": {
+          "mgba": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-bios-hle-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:34:26.036714+00:00",
+            "frames": 1200,
+            "notes": "mgba's HLE BIOS is the most complete in the field. Passes all jsmolka BIOS tests."
+          },
+          "nanoboyadvance": {
+            "hash": "5d7098c43253151951e2e7451c103eb0f1b95e73127d466058e146da37dfff72",
+            "screenshot": "verified/jsmolka-bios-hle-nba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:34:26.036714+00:00",
+            "frames": 1200,
+            "notes": "Fails at BIOS test 001. NBA has no true HLE BIOS \u2014 it uses real BIOS data with --skip-bios for boot. The test it fails is whatever SWI handler is exercised first."
+          },
+          "skyemu": {
+            "hash": "5d7098c43253151951e2e7451c103eb0f1b95e73127d466058e146da37dfff72",
+            "screenshot": "verified/jsmolka-bios-hle-skyemu.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:34:26.036714+00:00",
+            "frames": 1200,
+            "notes": "Fails at BIOS test 001 \u2014 bit-identical hash to NBA and cable_club. SkyEmu's HLE fallback BIOS is the Cult-of-GBA replacement, which fails this specific SWI."
+          },
+          "cable_club": {
+            "hash": "5d7098c43253151951e2e7451c103eb0f1b95e73127d466058e146da37dfff72",
+            "screenshot": "verified/jsmolka-bios-hle-cable_club.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:34:26.036714+00:00",
+            "frames": 1200,
+            "notes": "Fails at BIOS test 001 \u2014 bit-identical hash to NBA and SkyEmu. cable_club's HLE BIOS implementation is missing whatever SWI handler is exercised by jsmolka BIOS test 001. THIS IS A REAL, ACTIONABLE BUG \u2014 3 emulators converging on the same failure suggests the missing SWI is genuinely broken in cable_club's HLE BIOS path. Also cross-confirms that cable_club's text rendering works correctly on this test ('Failed test 001' is fully legible)."
+          }
+        }
+      },
+      "official": {
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-bios-official-mgba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:45:50.940867+00:00",
+        "canonical_pass_notes": "All tests passed. NBA and skyemu now pass under official BIOS (joining mgba) - they're using the real Nintendo BIOS instead of their HLE/Cult-of-GBA fallbacks. cable_club is the LONE FAILURE under official mode - cable_club's BIOS execution path has a bug that does NOT depend on which BIOS bytes are loaded. See .agents/handoff/20260407-jsmolka-bios-cable_club-swi-dispatch-bug.md.",
+        "runners": {
+          "cable_club": {
+            "hash": "5d7098c43253151951e2e7451c103eb0f1b95e73127d466058e146da37dfff72",
+            "screenshot": "verified/jsmolka-bios-official-cable_club.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 1200,
+            "notes": "Lone failure under official BIOS. Identical hash to HLE. cable_club's SWI dispatch (or related CPU path) is broken in a way that doesn't depend on which BIOS bytes are loaded."
+          },
+          "mgba": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-bios-official-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 1200,
+            "notes": "Matches canonical pass."
+          },
+          "nanoboyadvance": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-bios-official-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 1200,
+            "notes": "Now passes under official BIOS (was fail under HLE)."
+          },
+          "skyemu": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-bios-official-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 1200,
+            "notes": "Now passes under official BIOS (was fail under HLE)."
+          }
+        }
+      },
+      "cleanroom": {
+        "canonical_pass_hash": null,
+        "canonical_pass_screenshot": null,
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:49:32.875917+00:00",
+        "canonical_pass_notes": "NO PASSING RUNNER under cleanroom. mgba, NBA, and skyemu all fail with 'Failed test 001' (bit-identical hashes). The Cult-of-GBA BIOS lacks whatever SWI handler jsmolka BIOS test 001 exercises \u2014 same missing SWI as NBA's HLE BIOS fallback. cable_club is in its broken cleanroom state and never reached the test.",
+        "runners": {
+          "cable_club": {
+            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "screenshot": "verified/jsmolka-bios-cleanroom-cable_club.bmp",
+            "status": "bug",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 1200,
+            "notes": "Cable Club cleanroom mode is BROKEN \u2014 produces the Cult-of-GBA BIOS boot screen for every test (bit-identical hash 22de4108c65c9681... across all 13 jsmolka tests). The cart ROM is never executed. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+          },
+          "mgba": {
+            "hash": "5d7098c43253151951e2e7451c103eb0f1b95e73127d466058e146da37dfff72",
+            "screenshot": "verified/jsmolka-bios-cleanroom-mgba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 1200,
+            "notes": "Failed test 001 \u2014 under cleanroom, mgba uses Cult-of-GBA's BIOS bytes which lacks the SWI handler test 001 needs."
+          },
+          "nanoboyadvance": {
+            "hash": "5d7098c43253151951e2e7451c103eb0f1b95e73127d466058e146da37dfff72",
+            "screenshot": "verified/jsmolka-bios-cleanroom-nba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 1200,
+            "notes": "Failed test 001 \u2014 same hash as mgba and skyemu cleanroom."
+          },
+          "skyemu": {
+            "hash": "5d7098c43253151951e2e7451c103eb0f1b95e73127d466058e146da37dfff72",
+            "screenshot": "verified/jsmolka-bios-cleanroom-skyemu.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 1200,
+            "notes": "Failed test 001 \u2014 same hash. SkyEmu's internal fallback IS Cult-of-GBA so this matches its HLE result."
+          }
+        }
+      }
+    },
+    "jsmolka-memory": {
+      "hle": {
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-memory-hle-nba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:35:55.739372+00:00",
+        "canonical_pass_notes": "All four runners (cable_club, mgba, NBA, skyemu) hit the canonical 'All tests passed' image. 4-way consensus pass for jsmolka-memory under HLE BIOS \u2014 strong cross-emulator agreement that all four implementations correctly handle the memory map / mirroring / access widths covered by this test.",
+        "runners": {
+          "cable_club": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-memory-hle-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:35:55.739372+00:00",
+            "frames": 1200,
+            "notes": "Matches canonical 'All tests passed' image."
+          },
+          "mgba": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-memory-hle-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:35:55.739372+00:00",
+            "frames": 1200,
+            "notes": "Matches canonical 'All tests passed' image."
+          },
+          "nanoboyadvance": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-memory-hle-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:35:55.739372+00:00",
+            "frames": 1200,
+            "notes": "Matches canonical 'All tests passed' image."
+          },
+          "skyemu": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-memory-hle-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:35:55.739372+00:00",
+            "frames": 1200,
+            "notes": "Matches canonical 'All tests passed' image."
+          }
+        }
+      },
+      "official": {
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-memory-official-nba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:45:50.940867+00:00",
+        "canonical_pass_notes": "Same as HLE. 4-way consensus pass.",
+        "runners": {
+          "cable_club": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-memory-official-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 1200,
+            "notes": "4-way consensus pass under official BIOS."
+          },
+          "mgba": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-memory-official-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 1200,
+            "notes": "4-way consensus pass under official BIOS."
+          },
+          "nanoboyadvance": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-memory-official-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 1200,
+            "notes": "4-way consensus pass under official BIOS."
+          },
+          "skyemu": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-memory-official-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 1200,
+            "notes": "4-way consensus pass under official BIOS."
+          }
+        }
+      },
+      "cleanroom": {
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-memory-cleanroom-mgba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:49:32.875917+00:00",
+        "canonical_pass_notes": "All tests passed. mgba+NBA+skyemu 3-way consensus pass under cleanroom. cable_club bug.",
+        "runners": {
+          "cable_club": {
+            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "screenshot": "verified/jsmolka-memory-cleanroom-cable_club.bmp",
+            "status": "bug",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 1200,
+            "notes": "Cable Club cleanroom mode is BROKEN \u2014 produces the Cult-of-GBA BIOS boot screen for every test (bit-identical hash 22de4108c65c9681... across all 13 jsmolka tests). The cart ROM is never executed. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+          },
+          "mgba": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-memory-cleanroom-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 1200,
+            "notes": "3-way pass with NBA and skyemu."
+          },
+          "nanoboyadvance": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-memory-cleanroom-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 1200,
+            "notes": "3-way pass with mgba and skyemu."
+          },
+          "skyemu": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-memory-cleanroom-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 1200,
+            "notes": "3-way pass with mgba and NBA."
+          }
+        }
+      }
+    },
+    "jsmolka-nes": {
+      "hle": {
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-nes-hle-nba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:35:55.739372+00:00",
+        "canonical_pass_notes": "All four runners hit the canonical pass image. 4-way consensus pass.",
+        "runners": {
+          "cable_club": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-nes-hle-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:35:55.739372+00:00",
+            "frames": 1200,
+            "notes": "Matches canonical 'All tests passed' image."
+          },
+          "mgba": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-nes-hle-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:35:55.739372+00:00",
+            "frames": 1200,
+            "notes": "Matches canonical 'All tests passed' image."
+          },
+          "nanoboyadvance": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-nes-hle-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:35:55.739372+00:00",
+            "frames": 1200,
+            "notes": "Matches canonical 'All tests passed' image."
+          },
+          "skyemu": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-nes-hle-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:35:55.739372+00:00",
+            "frames": 1200,
+            "notes": "Matches canonical 'All tests passed' image."
+          }
+        }
+      },
+      "official": {
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-nes-official-nba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:45:50.940867+00:00",
+        "canonical_pass_notes": "Same as HLE. 4-way consensus pass.",
+        "runners": {
+          "cable_club": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-nes-official-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 1200,
+            "notes": "4-way consensus pass under official BIOS."
+          },
+          "mgba": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-nes-official-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 1200,
+            "notes": "4-way consensus pass under official BIOS."
+          },
+          "nanoboyadvance": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-nes-official-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 1200,
+            "notes": "4-way consensus pass under official BIOS."
+          },
+          "skyemu": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-nes-official-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 1200,
+            "notes": "4-way consensus pass under official BIOS."
+          }
+        }
+      },
+      "cleanroom": {
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-nes-cleanroom-mgba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:49:32.875917+00:00",
+        "canonical_pass_notes": "All tests passed. 3-way consensus.",
+        "runners": {
+          "cable_club": {
+            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "screenshot": "verified/jsmolka-nes-cleanroom-cable_club.bmp",
+            "status": "bug",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 1200,
+            "notes": "Cable Club cleanroom mode is BROKEN \u2014 produces the Cult-of-GBA BIOS boot screen for every test (bit-identical hash 22de4108c65c9681... across all 13 jsmolka tests). The cart ROM is never executed. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+          },
+          "mgba": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-nes-cleanroom-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 1200,
+            "notes": "3-way pass with NBA and skyemu."
+          },
+          "nanoboyadvance": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-nes-cleanroom-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 1200,
+            "notes": "3-way pass with mgba and skyemu."
+          },
+          "skyemu": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-nes-cleanroom-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 1200,
+            "notes": "3-way pass with mgba and NBA."
+          }
+        }
+      }
+    },
+    "jsmolka-unsafe": {
+      "hle": {
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-unsafe-hle-skyemu.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:35:55.739372+00:00",
+        "canonical_pass_notes": "'All tests passed'. SkyEmu is the LONE passer of jsmolka-unsafe under HLE BIOS. The other three runners (cable_club, mgba, NBA) all fail at different points in the test. 'unsafe' tests cover undefined hardware behaviors, so divergent results are expected \u2014 but skyemu being the only one that matches jsmolka's expected output is a real cross-emulator finding. Worth noting that this is a lone-passer (1/4), not a consensus pass \u2014 the canonical_pass_hash is single-runner-verified and could be revised if a second runner ever lands on the same hash.",
+        "runners": {
+          "skyemu": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-unsafe-hle-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:35:55.739372+00:00",
+            "frames": 1200,
+            "notes": "Lone passer. SkyEmu's UB handling matches jsmolka's expected output."
+          },
+          "cable_club": {
+            "hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
+            "screenshot": "verified/jsmolka-unsafe-hle-cable_club.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:35:55.739372+00:00",
+            "frames": 1200,
+            "notes": "Fails at test 002. Bit-identical hash to mgba \u2014 both implementations converge on the same incorrect UB result."
+          },
+          "mgba": {
+            "hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
+            "screenshot": "verified/jsmolka-unsafe-hle-mgba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:35:55.739372+00:00",
+            "frames": 1200,
+            "notes": "Fails at test 002. Bit-identical hash to cable_club."
+          },
+          "nanoboyadvance": {
+            "hash": "5d7098c43253151951e2e7451c103eb0f1b95e73127d466058e146da37dfff72",
+            "screenshot": "verified/jsmolka-unsafe-hle-nba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:35:55.739372+00:00",
+            "frames": 1200,
+            "notes": "Fails at test 001 \u2014 earlier failure than cable_club/mgba. NBA's UB handling diverges from both the lone-passer (skyemu) and the cable_club+mgba pair."
+          }
+        }
+      },
+      "official": {
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-unsafe-official-skyemu.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:45:50.940867+00:00",
+        "canonical_pass_notes": "Same as HLE. SkyEmu lone passer.",
+        "runners": {
+          "cable_club": {
+            "hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
+            "screenshot": "verified/jsmolka-unsafe-official-cable_club.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 1200,
+            "notes": "Same as HLE - fails test 002."
+          },
+          "mgba": {
+            "hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
+            "screenshot": "verified/jsmolka-unsafe-official-mgba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 1200,
+            "notes": "Same as HLE - bit-identical to cable_club."
+          },
+          "nanoboyadvance": {
+            "hash": "5d7098c43253151951e2e7451c103eb0f1b95e73127d466058e146da37dfff72",
+            "screenshot": "verified/jsmolka-unsafe-official-nba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 1200,
+            "notes": "Same as HLE - fails test 001."
+          },
+          "skyemu": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-unsafe-official-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 1200,
+            "notes": "Lone passer."
+          }
+        }
+      },
+      "cleanroom": {
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-unsafe-cleanroom-skyemu.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:49:32.875917+00:00",
+        "canonical_pass_notes": "Same as HLE/official. SkyEmu lone passer.",
+        "runners": {
+          "cable_club": {
+            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "screenshot": "verified/jsmolka-unsafe-cleanroom-cable_club.bmp",
+            "status": "bug",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 1200,
+            "notes": "Cable Club cleanroom mode is BROKEN \u2014 produces the Cult-of-GBA BIOS boot screen for every test (bit-identical hash 22de4108c65c9681... across all 13 jsmolka tests). The cart ROM is never executed. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+          },
+          "mgba": {
+            "hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
+            "screenshot": "verified/jsmolka-unsafe-cleanroom-mgba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 1200,
+            "notes": "Same as HLE \u2014 fails test 002."
+          },
+          "nanoboyadvance": {
+            "hash": "5d7098c43253151951e2e7451c103eb0f1b95e73127d466058e146da37dfff72",
+            "screenshot": "verified/jsmolka-unsafe-cleanroom-nba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 1200,
+            "notes": "Same as HLE \u2014 fails test 001."
+          },
+          "skyemu": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-unsafe-cleanroom-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 1200,
+            "notes": "Lone passer."
+          }
+        }
+      }
+    },
+    "jsmolka-flash128": {
+      "hle": {
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-flash128-hle-cable_club.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:38:34.908961+00:00",
+        "canonical_pass_notes": "All tests passed. cable_club is the LONE PASSER on jsmolka-flash128 under HLE. Cable Club flash emulation is the most-tested in the field (FireRed saves work end-to-end), and this test exposes corner cases the other three runners do not handle. mgba, NBA, and skyemu each fail at different points.",
+        "runners": {
+          "cable_club": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-flash128-hle-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 600,
+            "notes": "Lone passer. Test ROM expected output for the 128 KB Macronix flash chip path."
+          },
+          "mgba": {
+            "hash": "2e54969546f3cf0974f1eed275dc35583e2d234e4d68663e8058919b31208dd5",
+            "screenshot": "verified/jsmolka-flash128-hle-mgba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 600,
+            "notes": "Different failure than NBA and skyemu."
+          },
+          "nanoboyadvance": {
+            "hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
+            "screenshot": "verified/jsmolka-flash128-hle-nba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 600,
+            "notes": "Different failure than mgba and skyemu."
+          },
+          "skyemu": {
+            "hash": "c3ad7d86ac2aca4b1baa1d5fbbbfc38648c734b1ae0f4ac1ef3ccd5b06dd310f",
+            "screenshot": "verified/jsmolka-flash128-hle-skyemu.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 600,
+            "notes": "Different failure than mgba and NBA. Three-way divergence among failing runners."
+          }
+        }
+      },
+      "official": {
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-flash128-official-cable_club.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:45:50.940867+00:00",
+        "canonical_pass_notes": "Same as HLE. cable_club lone passer.",
+        "runners": {
+          "cable_club": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-flash128-official-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 600,
+            "notes": "Lone passer."
+          },
+          "mgba": {
+            "hash": "2e54969546f3cf0974f1eed275dc35583e2d234e4d68663e8058919b31208dd5",
+            "screenshot": "verified/jsmolka-flash128-official-mgba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 600,
+            "notes": "Same hash as HLE."
+          },
+          "nanoboyadvance": {
+            "hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
+            "screenshot": "verified/jsmolka-flash128-official-nba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 600,
+            "notes": "Same hash as HLE."
+          },
+          "skyemu": {
+            "hash": "c3ad7d86ac2aca4b1baa1d5fbbbfc38648c734b1ae0f4ac1ef3ccd5b06dd310f",
+            "screenshot": "verified/jsmolka-flash128-official-skyemu.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 600,
+            "notes": "Same hash as HLE."
+          }
+        }
+      },
+      "cleanroom": {
+        "canonical_pass_hash": null,
+        "canonical_pass_screenshot": null,
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:49:32.875917+00:00",
+        "canonical_pass_notes": "NO PASSING RUNNER under cleanroom. cable_club (the lone passer under HLE/official) is in its broken cleanroom state. mgba/NBA/skyemu each fail differently.",
+        "runners": {
+          "cable_club": {
+            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "screenshot": "verified/jsmolka-flash128-cleanroom-cable_club.bmp",
+            "status": "bug",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 600,
+            "notes": "Cable Club cleanroom mode is BROKEN \u2014 produces the Cult-of-GBA BIOS boot screen for every test (bit-identical hash 22de4108c65c9681... across all 13 jsmolka tests). The cart ROM is never executed. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+          },
+          "mgba": {
+            "hash": "2e54969546f3cf0974f1eed275dc35583e2d234e4d68663e8058919b31208dd5",
+            "screenshot": "verified/jsmolka-flash128-cleanroom-mgba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 600,
+            "notes": "Same as HLE/official."
+          },
+          "nanoboyadvance": {
+            "hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
+            "screenshot": "verified/jsmolka-flash128-cleanroom-nba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 600,
+            "notes": "Same as HLE/official."
+          },
+          "skyemu": {
+            "hash": "c3ad7d86ac2aca4b1baa1d5fbbbfc38648c734b1ae0f4ac1ef3ccd5b06dd310f",
+            "screenshot": "verified/jsmolka-flash128-cleanroom-skyemu.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 600,
+            "notes": "Same as HLE/official."
+          }
+        }
+      }
+    },
+    "jsmolka-flash64": {
+      "hle": {
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-flash64-hle-cable_club.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:38:34.908961+00:00",
+        "canonical_pass_notes": "All tests passed. cable_club lone passer; same architectural reason as flash128 - Cable Club flash chip emulation is more accurate than the field on jsmolka corner cases.",
+        "runners": {
+          "cable_club": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-flash64-hle-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 600,
+            "notes": "Lone passer. Same hash and image as cable_club flash128 result."
+          },
+          "mgba": {
+            "hash": "2e54969546f3cf0974f1eed275dc35583e2d234e4d68663e8058919b31208dd5",
+            "screenshot": "verified/jsmolka-flash64-hle-mgba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 600,
+            "notes": "Same hash as mgba flash128 failure - mgba fails both flash sizes the same way."
+          },
+          "nanoboyadvance": {
+            "hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
+            "screenshot": "verified/jsmolka-flash64-hle-nba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 600,
+            "notes": "Same hash as NBA flash128 failure - NBA fails both sizes identically."
+          },
+          "skyemu": {
+            "hash": "ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721",
+            "screenshot": "verified/jsmolka-flash64-hle-skyemu.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 600,
+            "notes": "Different hash from flash128 - skyemu flash64 vs flash128 failures diverge."
+          }
+        }
+      },
+      "official": {
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-flash64-official-cable_club.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:45:50.940867+00:00",
+        "canonical_pass_notes": "Same as HLE. cable_club lone passer.",
+        "runners": {
+          "cable_club": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-flash64-official-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 600,
+            "notes": "Lone passer."
+          },
+          "mgba": {
+            "hash": "2e54969546f3cf0974f1eed275dc35583e2d234e4d68663e8058919b31208dd5",
+            "screenshot": "verified/jsmolka-flash64-official-mgba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 600,
+            "notes": "Same hash as HLE."
+          },
+          "nanoboyadvance": {
+            "hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
+            "screenshot": "verified/jsmolka-flash64-official-nba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 600,
+            "notes": "Same hash as HLE."
+          },
+          "skyemu": {
+            "hash": "ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721",
+            "screenshot": "verified/jsmolka-flash64-official-skyemu.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 600,
+            "notes": "Same hash as HLE."
+          }
+        }
+      },
+      "cleanroom": {
+        "canonical_pass_hash": null,
+        "canonical_pass_screenshot": null,
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:49:32.875917+00:00",
+        "canonical_pass_notes": "Same as flash128 cleanroom.",
+        "runners": {
+          "cable_club": {
+            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "screenshot": "verified/jsmolka-flash64-cleanroom-cable_club.bmp",
+            "status": "bug",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 600,
+            "notes": "Cable Club cleanroom mode is BROKEN \u2014 produces the Cult-of-GBA BIOS boot screen for every test (bit-identical hash 22de4108c65c9681... across all 13 jsmolka tests). The cart ROM is never executed. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+          },
+          "mgba": {
+            "hash": "2e54969546f3cf0974f1eed275dc35583e2d234e4d68663e8058919b31208dd5",
+            "screenshot": "verified/jsmolka-flash64-cleanroom-mgba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 600,
+            "notes": "Same as HLE/official."
+          },
+          "nanoboyadvance": {
+            "hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
+            "screenshot": "verified/jsmolka-flash64-cleanroom-nba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 600,
+            "notes": "Same as HLE/official."
+          },
+          "skyemu": {
+            "hash": "ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721",
+            "screenshot": "verified/jsmolka-flash64-cleanroom-skyemu.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 600,
+            "notes": "Same as HLE/official."
+          }
+        }
+      }
+    },
+    "jsmolka-sram": {
+      "hle": {
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-sram-hle-cable_club.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:38:34.908961+00:00",
+        "canonical_pass_notes": "All tests passed. cable_club + mgba both pass jsmolka-sram (2-way consensus). NBA and skyemu fail differently.",
+        "runners": {
+          "cable_club": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-sram-hle-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 600,
+            "notes": "Matches mgba pass hash."
+          },
+          "mgba": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-sram-hle-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 600,
+            "notes": "Matches cable_club pass hash."
+          },
+          "nanoboyadvance": {
+            "hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
+            "screenshot": "verified/jsmolka-sram-hle-nba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 600,
+            "notes": ""
+          },
+          "skyemu": {
+            "hash": "ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721",
+            "screenshot": "verified/jsmolka-sram-hle-skyemu.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 600,
+            "notes": ""
+          }
+        }
+      },
+      "official": {
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-sram-official-cable_club.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:45:50.940867+00:00",
+        "canonical_pass_notes": "Same as HLE. cable_club + mgba pass.",
+        "runners": {
+          "cable_club": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-sram-official-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 600,
+            "notes": "Same as HLE."
+          },
+          "mgba": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-sram-official-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 600,
+            "notes": "Same as HLE."
+          },
+          "nanoboyadvance": {
+            "hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
+            "screenshot": "verified/jsmolka-sram-official-nba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 600,
+            "notes": "Same as HLE."
+          },
+          "skyemu": {
+            "hash": "ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721",
+            "screenshot": "verified/jsmolka-sram-official-skyemu.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 600,
+            "notes": "Same as HLE."
+          }
+        }
+      },
+      "cleanroom": {
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-sram-cleanroom-mgba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:49:32.875917+00:00",
+        "canonical_pass_notes": "Lone passer is mgba (cable_club is broken under cleanroom; under HLE/official cable_club joins mgba).",
+        "runners": {
+          "cable_club": {
+            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "screenshot": "verified/jsmolka-sram-cleanroom-cable_club.bmp",
+            "status": "bug",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 600,
+            "notes": "Cable Club cleanroom mode is BROKEN \u2014 produces the Cult-of-GBA BIOS boot screen for every test (bit-identical hash 22de4108c65c9681... across all 13 jsmolka tests). The cart ROM is never executed. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+          },
+          "mgba": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-sram-cleanroom-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 600,
+            "notes": "Lone passer under cleanroom."
+          },
+          "nanoboyadvance": {
+            "hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
+            "screenshot": "verified/jsmolka-sram-cleanroom-nba.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 600,
+            "notes": "Same as HLE/official."
+          },
+          "skyemu": {
+            "hash": "ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721",
+            "screenshot": "verified/jsmolka-sram-cleanroom-skyemu.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 600,
+            "notes": "Same as HLE/official."
+          }
+        }
+      }
+    },
+    "jsmolka-save-none": {
+      "hle": {
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-save-none-hle-cable_club.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:38:34.908961+00:00",
+        "canonical_pass_notes": "All tests passed. 3-way consensus pass (cable_club, mgba, NBA). SkyEmu is the lone failure. Tests the no-save-chip code path.",
+        "runners": {
+          "cable_club": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-save-none-hle-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 600,
+            "notes": ""
+          },
+          "mgba": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-save-none-hle-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 600,
+            "notes": ""
+          },
+          "nanoboyadvance": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-save-none-hle-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 600,
+            "notes": ""
+          },
+          "skyemu": {
+            "hash": "ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721",
+            "screenshot": "verified/jsmolka-save-none-hle-skyemu.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 600,
+            "notes": "Lone failure among the four runners."
+          }
+        }
+      },
+      "official": {
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-save-none-official-cable_club.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:45:50.940867+00:00",
+        "canonical_pass_notes": "Same as HLE - 3-way pass.",
+        "runners": {
+          "cable_club": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-save-none-official-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 600,
+            "notes": "Same as HLE."
+          },
+          "mgba": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-save-none-official-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 600,
+            "notes": "Same as HLE."
+          },
+          "nanoboyadvance": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-save-none-official-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 600,
+            "notes": "Same as HLE."
+          },
+          "skyemu": {
+            "hash": "ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721",
+            "screenshot": "verified/jsmolka-save-none-official-skyemu.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 600,
+            "notes": "Same as HLE."
+          }
+        }
+      },
+      "cleanroom": {
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-save-none-cleanroom-mgba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:49:32.875917+00:00",
+        "canonical_pass_notes": "mgba+NBA pass; cable_club is broken; skyemu fails.",
+        "runners": {
+          "cable_club": {
+            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "screenshot": "verified/jsmolka-save-none-cleanroom-cable_club.bmp",
+            "status": "bug",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 600,
+            "notes": "Cable Club cleanroom mode is BROKEN \u2014 produces the Cult-of-GBA BIOS boot screen for every test (bit-identical hash 22de4108c65c9681... across all 13 jsmolka tests). The cart ROM is never executed. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+          },
+          "mgba": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-save-none-cleanroom-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 600,
+            "notes": "Matches canonical pass."
+          },
+          "nanoboyadvance": {
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+            "screenshot": "verified/jsmolka-save-none-cleanroom-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 600,
+            "notes": "Matches canonical pass."
+          },
+          "skyemu": {
+            "hash": "ffdadfeaaf44f6a4e576664ce5188d2f9c38d0281077912ab715b1f10690e721",
+            "screenshot": "verified/jsmolka-save-none-cleanroom-skyemu.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 600,
+            "notes": "Lone failure."
+          }
+        }
+      }
+    },
+    "jsmolka-ppu-hello": {
+      "hle": {
+        "canonical_pass_hash": "56cd131fb3915fe7e410be228a8c09e99132064799f148583636ca75745bedf7",
+        "canonical_pass_screenshot": "verified/jsmolka-ppu-hello-hle-cable_club.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:38:34.908961+00:00",
+        "canonical_pass_notes": "Black background with white 'Hello world!' text rendered as a tile pattern. Visually verified - text is legible and correct. 4-way pixel-identical agreement.",
+        "runners": {
+          "cable_club": {
+            "hash": "56cd131fb3915fe7e410be228a8c09e99132064799f148583636ca75745bedf7",
+            "screenshot": "verified/jsmolka-ppu-hello-hle-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 300,
+            "notes": "4-way consensus."
+          },
+          "mgba": {
+            "hash": "56cd131fb3915fe7e410be228a8c09e99132064799f148583636ca75745bedf7",
+            "screenshot": "verified/jsmolka-ppu-hello-hle-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 300,
+            "notes": "4-way consensus."
+          },
+          "nanoboyadvance": {
+            "hash": "56cd131fb3915fe7e410be228a8c09e99132064799f148583636ca75745bedf7",
+            "screenshot": "verified/jsmolka-ppu-hello-hle-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 300,
+            "notes": "4-way consensus."
+          },
+          "skyemu": {
+            "hash": "56cd131fb3915fe7e410be228a8c09e99132064799f148583636ca75745bedf7",
+            "screenshot": "verified/jsmolka-ppu-hello-hle-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 300,
+            "notes": "4-way consensus."
+          }
+        }
+      },
+      "official": {
+        "canonical_pass_hash": "56cd131fb3915fe7e410be228a8c09e99132064799f148583636ca75745bedf7",
+        "canonical_pass_screenshot": "verified/jsmolka-ppu-hello-official-nba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:45:50.940867+00:00",
+        "canonical_pass_notes": "Same as HLE. 4-way consensus.",
+        "runners": {
+          "cable_club": {
+            "hash": "56cd131fb3915fe7e410be228a8c09e99132064799f148583636ca75745bedf7",
+            "screenshot": "verified/jsmolka-ppu-hello-official-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 300,
+            "notes": "4-way consensus pass under official BIOS."
+          },
+          "mgba": {
+            "hash": "56cd131fb3915fe7e410be228a8c09e99132064799f148583636ca75745bedf7",
+            "screenshot": "verified/jsmolka-ppu-hello-official-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 300,
+            "notes": "4-way consensus pass under official BIOS."
+          },
+          "nanoboyadvance": {
+            "hash": "56cd131fb3915fe7e410be228a8c09e99132064799f148583636ca75745bedf7",
+            "screenshot": "verified/jsmolka-ppu-hello-official-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 300,
+            "notes": "4-way consensus pass under official BIOS."
+          },
+          "skyemu": {
+            "hash": "56cd131fb3915fe7e410be228a8c09e99132064799f148583636ca75745bedf7",
+            "screenshot": "verified/jsmolka-ppu-hello-official-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 300,
+            "notes": "4-way consensus pass under official BIOS."
+          }
+        }
+      },
+      "cleanroom": {
+        "canonical_pass_hash": "56cd131fb3915fe7e410be228a8c09e99132064799f148583636ca75745bedf7",
+        "canonical_pass_screenshot": "verified/jsmolka-ppu-hello-cleanroom-mgba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:49:32.875917+00:00",
+        "canonical_pass_notes": "Hello world! 3-way pixel-identical consensus.",
+        "runners": {
+          "cable_club": {
+            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "screenshot": "verified/jsmolka-ppu-hello-cleanroom-cable_club.bmp",
+            "status": "bug",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 300,
+            "notes": "Cable Club cleanroom mode is BROKEN \u2014 produces the Cult-of-GBA BIOS boot screen for every test (bit-identical hash 22de4108c65c9681... across all 13 jsmolka tests). The cart ROM is never executed. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+          },
+          "mgba": {
+            "hash": "56cd131fb3915fe7e410be228a8c09e99132064799f148583636ca75745bedf7",
+            "screenshot": "verified/jsmolka-ppu-hello-cleanroom-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 300,
+            "notes": "3-way pass with NBA and skyemu."
+          },
+          "nanoboyadvance": {
+            "hash": "56cd131fb3915fe7e410be228a8c09e99132064799f148583636ca75745bedf7",
+            "screenshot": "verified/jsmolka-ppu-hello-cleanroom-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 300,
+            "notes": "3-way pass with mgba and skyemu."
+          },
+          "skyemu": {
+            "hash": "56cd131fb3915fe7e410be228a8c09e99132064799f148583636ca75745bedf7",
+            "screenshot": "verified/jsmolka-ppu-hello-cleanroom-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 300,
+            "notes": "3-way pass with mgba and NBA."
+          }
+        }
+      }
+    },
+    "jsmolka-ppu-shades": {
+      "hle": {
+        "canonical_pass_hash": "da5336215e6c56d30146c42d81ad828a819214c307682903a5bcc87be8c0538e",
+        "canonical_pass_screenshot": "verified/jsmolka-ppu-shades-hle-cable_club.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:38:34.908961+00:00",
+        "canonical_pass_notes": "Dark-to-bright blue horizontal gradient with 16 discrete shade bands. Visually verified. 4-way pixel-identical agreement.",
+        "runners": {
+          "cable_club": {
+            "hash": "da5336215e6c56d30146c42d81ad828a819214c307682903a5bcc87be8c0538e",
+            "screenshot": "verified/jsmolka-ppu-shades-hle-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 300,
+            "notes": "4-way consensus."
+          },
+          "mgba": {
+            "hash": "da5336215e6c56d30146c42d81ad828a819214c307682903a5bcc87be8c0538e",
+            "screenshot": "verified/jsmolka-ppu-shades-hle-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 300,
+            "notes": "4-way consensus."
+          },
+          "nanoboyadvance": {
+            "hash": "da5336215e6c56d30146c42d81ad828a819214c307682903a5bcc87be8c0538e",
+            "screenshot": "verified/jsmolka-ppu-shades-hle-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 300,
+            "notes": "4-way consensus."
+          },
+          "skyemu": {
+            "hash": "da5336215e6c56d30146c42d81ad828a819214c307682903a5bcc87be8c0538e",
+            "screenshot": "verified/jsmolka-ppu-shades-hle-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 300,
+            "notes": "4-way consensus."
+          }
+        }
+      },
+      "official": {
+        "canonical_pass_hash": "da5336215e6c56d30146c42d81ad828a819214c307682903a5bcc87be8c0538e",
+        "canonical_pass_screenshot": "verified/jsmolka-ppu-shades-official-nba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:45:50.940867+00:00",
+        "canonical_pass_notes": "Same as HLE. 4-way consensus.",
+        "runners": {
+          "cable_club": {
+            "hash": "da5336215e6c56d30146c42d81ad828a819214c307682903a5bcc87be8c0538e",
+            "screenshot": "verified/jsmolka-ppu-shades-official-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 300,
+            "notes": "4-way consensus pass under official BIOS."
+          },
+          "mgba": {
+            "hash": "da5336215e6c56d30146c42d81ad828a819214c307682903a5bcc87be8c0538e",
+            "screenshot": "verified/jsmolka-ppu-shades-official-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 300,
+            "notes": "4-way consensus pass under official BIOS."
+          },
+          "nanoboyadvance": {
+            "hash": "da5336215e6c56d30146c42d81ad828a819214c307682903a5bcc87be8c0538e",
+            "screenshot": "verified/jsmolka-ppu-shades-official-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 300,
+            "notes": "4-way consensus pass under official BIOS."
+          },
+          "skyemu": {
+            "hash": "da5336215e6c56d30146c42d81ad828a819214c307682903a5bcc87be8c0538e",
+            "screenshot": "verified/jsmolka-ppu-shades-official-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 300,
+            "notes": "4-way consensus pass under official BIOS."
+          }
+        }
+      },
+      "cleanroom": {
+        "canonical_pass_hash": "da5336215e6c56d30146c42d81ad828a819214c307682903a5bcc87be8c0538e",
+        "canonical_pass_screenshot": "verified/jsmolka-ppu-shades-cleanroom-mgba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:49:32.875917+00:00",
+        "canonical_pass_notes": "Blue gradient. 3-way pixel-identical consensus.",
+        "runners": {
+          "cable_club": {
+            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "screenshot": "verified/jsmolka-ppu-shades-cleanroom-cable_club.bmp",
+            "status": "bug",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 300,
+            "notes": "Cable Club cleanroom mode is BROKEN \u2014 produces the Cult-of-GBA BIOS boot screen for every test (bit-identical hash 22de4108c65c9681... across all 13 jsmolka tests). The cart ROM is never executed. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+          },
+          "mgba": {
+            "hash": "da5336215e6c56d30146c42d81ad828a819214c307682903a5bcc87be8c0538e",
+            "screenshot": "verified/jsmolka-ppu-shades-cleanroom-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 300,
+            "notes": "3-way pass with NBA and skyemu."
+          },
+          "nanoboyadvance": {
+            "hash": "da5336215e6c56d30146c42d81ad828a819214c307682903a5bcc87be8c0538e",
+            "screenshot": "verified/jsmolka-ppu-shades-cleanroom-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 300,
+            "notes": "3-way pass with mgba and skyemu."
+          },
+          "skyemu": {
+            "hash": "da5336215e6c56d30146c42d81ad828a819214c307682903a5bcc87be8c0538e",
+            "screenshot": "verified/jsmolka-ppu-shades-cleanroom-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 300,
+            "notes": "3-way pass with mgba and NBA."
+          }
+        }
+      }
+    },
+    "jsmolka-ppu-stripes": {
+      "hle": {
+        "canonical_pass_hash": "4600c4f2749300b40f34dea969165d4d08d652543620076fb5cae249426f238d",
+        "canonical_pass_screenshot": "verified/jsmolka-ppu-stripes-hle-cable_club.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:38:34.908961+00:00",
+        "canonical_pass_notes": "Vertical alternating blue stripes. cable_club + mgba + NBA produce the bit-identical correct pattern (3-way consensus). SkyEmu produces a visually-similar pattern with a subtle pixel difference at the top edge - likely a one-line scroll offset or color quantization difference in SkyEmu output path. Recognizable but not bit-identical.",
+        "runners": {
+          "cable_club": {
+            "hash": "4600c4f2749300b40f34dea969165d4d08d652543620076fb5cae249426f238d",
+            "screenshot": "verified/jsmolka-ppu-stripes-hle-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 300,
+            "notes": "3-way consensus with mgba and NBA."
+          },
+          "mgba": {
+            "hash": "4600c4f2749300b40f34dea969165d4d08d652543620076fb5cae249426f238d",
+            "screenshot": "verified/jsmolka-ppu-stripes-hle-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 300,
+            "notes": "3-way consensus with cable_club and NBA."
+          },
+          "nanoboyadvance": {
+            "hash": "4600c4f2749300b40f34dea969165d4d08d652543620076fb5cae249426f238d",
+            "screenshot": "verified/jsmolka-ppu-stripes-hle-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 300,
+            "notes": "3-way consensus with cable_club and mgba."
+          },
+          "skyemu": {
+            "hash": "64efed2f20163e200eb0200d62d736be338320cef3767d53f3b1584cf20c6c4f",
+            "screenshot": "verified/jsmolka-ppu-stripes-hle-skyemu.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:38:34.908961+00:00",
+            "frames": 300,
+            "notes": "Visually similar (correct stripe pattern) but bit-different - one-line offset or color difference at the top edge."
+          }
+        }
+      },
+      "official": {
+        "canonical_pass_hash": "4600c4f2749300b40f34dea969165d4d08d652543620076fb5cae249426f238d",
+        "canonical_pass_screenshot": "verified/jsmolka-ppu-stripes-official-cable_club.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:45:50.940867+00:00",
+        "canonical_pass_notes": "Same as HLE - 3-way pass plus skyemu near-pass.",
+        "runners": {
+          "cable_club": {
+            "hash": "4600c4f2749300b40f34dea969165d4d08d652543620076fb5cae249426f238d",
+            "screenshot": "verified/jsmolka-ppu-stripes-official-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 300,
+            "notes": "Same as HLE."
+          },
+          "mgba": {
+            "hash": "4600c4f2749300b40f34dea969165d4d08d652543620076fb5cae249426f238d",
+            "screenshot": "verified/jsmolka-ppu-stripes-official-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 300,
+            "notes": "Same as HLE."
+          },
+          "nanoboyadvance": {
+            "hash": "4600c4f2749300b40f34dea969165d4d08d652543620076fb5cae249426f238d",
+            "screenshot": "verified/jsmolka-ppu-stripes-official-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 300,
+            "notes": "Same as HLE."
+          },
+          "skyemu": {
+            "hash": "64efed2f20163e200eb0200d62d736be338320cef3767d53f3b1584cf20c6c4f",
+            "screenshot": "verified/jsmolka-ppu-stripes-official-skyemu.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "frames": 300,
+            "notes": "Same as HLE."
+          }
+        }
+      },
+      "cleanroom": {
+        "canonical_pass_hash": "4600c4f2749300b40f34dea969165d4d08d652543620076fb5cae249426f238d",
+        "canonical_pass_screenshot": "verified/jsmolka-ppu-stripes-cleanroom-mgba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-06T23:49:32.875917+00:00",
+        "canonical_pass_notes": "Vertical stripe pattern. mgba+NBA bit-identical pass; skyemu near-pass; cable_club broken.",
+        "runners": {
+          "cable_club": {
+            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "screenshot": "verified/jsmolka-ppu-stripes-cleanroom-cable_club.bmp",
+            "status": "bug",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 300,
+            "notes": "Cable Club cleanroom mode is BROKEN \u2014 produces the Cult-of-GBA BIOS boot screen for every test (bit-identical hash 22de4108c65c9681... across all 13 jsmolka tests). The cart ROM is never executed. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+          },
+          "mgba": {
+            "hash": "4600c4f2749300b40f34dea969165d4d08d652543620076fb5cae249426f238d",
+            "screenshot": "verified/jsmolka-ppu-stripes-cleanroom-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 300,
+            "notes": "2-way pass with NBA."
+          },
+          "nanoboyadvance": {
+            "hash": "4600c4f2749300b40f34dea969165d4d08d652543620076fb5cae249426f238d",
+            "screenshot": "verified/jsmolka-ppu-stripes-cleanroom-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 300,
+            "notes": "2-way pass with mgba."
+          },
+          "skyemu": {
+            "hash": "64efed2f20163e200eb0200d62d736be338320cef3767d53f3b1584cf20c6c4f",
+            "screenshot": "verified/jsmolka-ppu-stripes-cleanroom-skyemu.bmp",
+            "status": "fail",
+            "verified_by": "chris",
+            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "frames": 300,
+            "notes": "Near-pass \u2014 pixel difference at top edge."
+          }
+        }
+      }
+    }
+  }
+}

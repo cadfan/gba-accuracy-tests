@@ -35,188 +35,313 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 SUITES_DIR = REPO_ROOT / "suites"
 DEFAULT_OUTPUT = REPO_ROOT / "docs" / "dashboard"
 
-# --- Pokemon Center Nostalgia palette (matches Cable Club's DESIGN.md) ---
-CSS = r"""@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+# --- Slate-blue dark dashboard, Datadog/Grafana-inspired ----------------
+# Synthesized from /design-shotgun feedback: dark theme (variants B/D)
+# with the layout discipline and clear text of the light variants
+# (A/C/E). Sans-serif body, monospace only for hashes/numbers, three
+# stacked matrix tables clearly laid out, generous reading sizes.
+CSS = r"""@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
-  --bg:        #1e1a20;
-  --surface:   #3a2a20;
-  --surface-2: #2a1f1a;
-  --red:       #cc3333;
-  --amber:     #ffb347;
-  --amber-2:   #ffd080;
-  --green:     #39ff14;
-  --gray:      #666;
-  --warm-gray: #8b7b6b;
-  --text:      #f0e6d3;
-  --purple:    #6b4fa0;
+  --bg:         #0e1525;
+  --bg-2:       #0a101e;
+  --surface:    #1a2238;
+  --surface-2:  #232b42;
+  --surface-3:  #2d3654;
+  --border:     #2d3654;
+  --border-2:   #3a4566;
+  --text:       #e6ecff;
+  --text-mute:  #8b95b5;
+  --text-dim:   #5b6585;
+  --cyan:       #00d4ff;
+  --purple:     #9d6eff;
+  --green:      #4ade80;
+  --amber:      #fbbf24;
+  --coral:      #f87171;
+  --slate:      #64748b;
 }
 
 * { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
 
 body {
-  margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 14px;
-  line-height: 1.5;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-a { color: var(--amber); text-decoration: none; }
-a:hover { color: var(--amber-2); text-decoration: underline; }
+a { color: var(--cyan); text-decoration: none; transition: color .15s; }
+a:hover { color: #5be8ff; text-decoration: underline; }
+code { font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 0.92em; color: var(--cyan); }
 
+/* ----- header ----- */
 header.site {
-  background: var(--surface);
-  border-top: 4px solid var(--red);
-  border-bottom: 1px solid var(--surface-2);
-  padding: 24px 32px 16px;
+  background: linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 28px 40px 24px;
+}
+header.site .row {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 header.site h1 {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 18px;
-  margin: 0 0 8px;
-  color: var(--amber);
-  letter-spacing: 1px;
-}
-header.site .subtitle { color: var(--warm-gray); margin: 0; }
-nav.crumbs {
-  margin: 12px 0 0;
-  font-size: 13px;
-  color: var(--warm-gray);
-}
-nav.crumbs a { color: var(--warm-gray); }
-nav.crumbs a:hover { color: var(--amber); }
-
-main { padding: 24px 32px 64px; max-width: 1280px; margin: 0 auto; }
-
-h2 {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 13px;
-  letter-spacing: 0.5px;
-  color: var(--amber);
-  margin: 32px 0 12px;
-}
-h3 { color: var(--text); font-size: 16px; margin: 24px 0 8px; }
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: var(--surface-2);
-  border: 1px solid var(--surface);
-  border-radius: 4px;
-  overflow: hidden;
-}
-th, td {
-  padding: 8px 12px;
-  text-align: left;
-  border-bottom: 1px solid var(--surface);
-  font-size: 13px;
-  vertical-align: top;
-}
-th {
-  background: var(--surface);
-  color: var(--amber);
-  font-family: 'Press Start 2P', monospace;
-  font-size: 10px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-tr:last-child td { border-bottom: none; }
-tr:hover td { background: rgba(255, 179, 71, 0.04); }
-
-.hash {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  color: var(--warm-gray);
-}
-.hash.match { color: var(--green); }
-.hash.miss { color: var(--red); }
-
-.badge {
-  display: inline-block;
-  padding: 2px 8px;
-  border-radius: 3px;
-  font-size: 11px;
+  font-family: 'Inter', sans-serif;
+  font-size: 26px;
   font-weight: 700;
-  font-family: 'JetBrains Mono', monospace;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: var(--text);
 }
-.badge.gold        { background: var(--amber); color: #1e1a20; }
-.badge.secondary   { background: var(--purple); color: var(--text); }
-.badge.candidate   { background: var(--gray); color: var(--text); }
-.badge.contested   { background: var(--red); color: #fff; }
-.badge.unverified  { background: #555; color: var(--text); }
-.badge.agreed      { background: var(--green); color: #1e1a20; }
+header.site h1 .accent { color: var(--cyan); }
+header.site .subtitle {
+  color: var(--text-mute);
+  margin: 4px 0 0;
+  font-size: 15px;
+}
+nav.crumbs {
+  margin: 14px 0 0;
+  font-size: 14px;
+  color: var(--text-mute);
+}
+nav.crumbs a { color: var(--text-mute); }
+nav.crumbs a:hover { color: var(--cyan); }
 
+main {
+  padding: 32px 40px 80px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* ----- section headings ----- */
+h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 40px 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+h2::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 18px;
+  background: var(--cyan);
+  border-radius: 2px;
+}
+h2 + p, h2 + .muted {
+  margin-top: 0;
+  margin-bottom: 24px;
+  color: var(--text-mute);
+  font-size: 15px;
+  max-width: 90ch;
+}
+h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-mute);
+  margin: 28px 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+h3 code {
+  text-transform: none;
+  letter-spacing: 0;
+  background: var(--surface);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+.muted { color: var(--text-mute); }
+
+/* ----- stat tiles ----- */
 .stat-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 16px;
-  margin: 16px 0 24px;
+  margin: 24px 0 8px;
 }
 .stat {
   background: var(--surface);
-  border-left: 3px solid var(--amber);
-  padding: 12px 16px;
-  border-radius: 4px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 20px 16px;
+  position: relative;
+  overflow: hidden;
 }
+.stat::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--cyan);
+}
+.stat:nth-child(2)::before { background: var(--purple); }
+.stat:nth-child(3)::before { background: var(--green); }
+.stat:nth-child(4)::before { background: var(--amber); }
+.stat:nth-child(5)::before { background: var(--cyan); }
+.stat:nth-child(6)::before { background: var(--coral); }
+.stat:nth-child(7)::before { background: var(--slate); }
 .stat .num {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 22px;
-  color: var(--amber);
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text);
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 .stat .label {
-  font-size: 11px;
-  color: var(--warm-gray);
+  font-size: 12px;
+  color: var(--text-mute);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+.stat .label a { color: var(--text-mute); }
+.stat .label a:hover { color: var(--cyan); }
+
+/* ----- tables ----- */
+.table-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 14px 18px;
+  text-align: left;
+  font-size: 15px;
+  vertical-align: middle;
+}
+thead th {
+  background: var(--surface-2);
+  color: var(--text-mute);
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid var(--border-2);
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background .1s;
+}
+tbody tr:nth-child(even) { background: var(--surface-2); }
+tbody tr:last-child { border-bottom: none; }
+tbody tr:hover td { background: rgba(0, 212, 255, 0.06); }
+tbody td { color: var(--text); }
+tbody td.id, tbody td.muted-cell {
+  color: var(--text-mute);
 }
 
-.matrix th.runner { text-align: center; }
+/* ----- agreement matrix ----- */
+.matrix th.runner {
+  text-align: center;
+}
+.matrix th.runner .dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+  background: var(--text-mute);
+}
+.matrix th.runner.r-cable_club .dot     { background: var(--cyan); }
+.matrix th.runner.r-mgba .dot           { background: var(--purple); }
+.matrix th.runner.r-nanoboyadvance .dot { background: var(--green); }
+.matrix th.runner.r-skyemu .dot         { background: var(--amber); }
 .matrix td.cell {
   text-align: center;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+.matrix td.cell .frac { font-weight: 600; }
+.matrix td.cell .pct {
+  display: block;
+  margin-top: 3px;
   font-size: 12px;
+  color: var(--text-dim);
+  font-weight: 400;
 }
-.matrix .frac { color: var(--text); }
-.matrix .pct  { color: var(--warm-gray); font-size: 10px; display: block; }
-.matrix .all-pass .frac { color: var(--green); }
-.matrix .none-pass .frac { color: var(--red); }
+.matrix td.cell.all-pass { background: rgba(74, 222, 128, 0.08); }
+.matrix td.cell.all-pass .frac { color: var(--green); }
+.matrix td.cell.none-pass { background: rgba(248, 113, 113, 0.06); }
+.matrix td.cell.none-pass .frac { color: var(--coral); }
+.matrix td.cell.partial .frac { color: var(--amber); }
 
-.test-row td.id { font-family: 'JetBrains Mono', monospace; font-size: 12px; }
-
-.bios-tabs {
-  display: flex;
-  gap: 8px;
-  margin: 16px 0;
+/* ----- hash columns ----- */
+.hash {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 13px;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
 }
-.bios-tabs span {
-  padding: 4px 12px;
-  background: var(--surface);
-  border-radius: 3px;
+.hash.match { color: var(--green); }
+.hash.miss  { color: var(--coral); }
+
+/* ----- status badges ----- */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
   font-size: 11px;
-  font-family: 'JetBrains Mono', monospace;
-  color: var(--warm-gray);
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 1px solid transparent;
+}
+.badge.gold        { background: rgba(74, 222, 128, 0.12); color: var(--green);  border-color: rgba(74, 222, 128, 0.3); }
+.badge.secondary   { background: rgba(157, 110, 255, 0.12); color: var(--purple); border-color: rgba(157, 110, 255, 0.3); }
+.badge.candidate   { background: rgba(100, 116, 139, 0.18); color: var(--text-mute); border-color: rgba(100, 116, 139, 0.4); }
+.badge.contested   { background: rgba(248, 113, 113, 0.14); color: var(--coral);  border-color: rgba(248, 113, 113, 0.35); }
+.badge.unverified  { background: rgba(251, 191, 36, 0.12); color: var(--amber);   border-color: rgba(251, 191, 36, 0.3); }
+
+/* ----- test-row table (per-suite detail page) ----- */
+.test-row td.id {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 13px;
+  color: var(--text);
+  white-space: nowrap;
 }
 
+/* ----- footer ----- */
 footer {
-  margin-top: 64px;
-  padding: 24px 32px;
-  border-top: 1px solid var(--surface);
-  font-size: 12px;
-  color: var(--warm-gray);
+  margin-top: 80px;
+  padding: 28px 40px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--text-dim);
   text-align: center;
 }
-footer .cable {
-  display: inline-block;
-  color: var(--purple);
-  letter-spacing: 4px;
-}
-footer .led { color: var(--green); }
+footer a { color: var(--text-mute); }
+footer a:hover { color: var(--cyan); }
 """
 
 DEFAULT_RUNNERS = ["cable_club", "mgba", "nanoboyadvance", "skyemu"]
@@ -347,16 +472,19 @@ def page_html(title: str, body: str, breadcrumbs: list[tuple[str, str]] | None =
 </head>
 <body>
 <header class="site">
-  <h1>GBA ACCURACY TESTS</h1>
-  <p class="subtitle">{html.escape(title)}</p>
+  <div class="row">
+    <div>
+      <h1>GBA Accuracy Tests <span class="accent">·</span></h1>
+      <p class="subtitle">{html.escape(title)}</p>
+    </div>
+  </div>
   {crumbs}
 </header>
 <main>
 {body}
 </main>
 <footer>
-  <span class="cable">━<span class="led">●</span>━━━━━━━━━━━━━━━━━━━━<span class="led">●</span>━</span><br>
-  Generated by build_dashboard.py · Cable Club gba-accuracy-tests
+  Generated by <code>build_dashboard.py</code> · Cable Club <code>gba-accuracy-tests</code>
 </footer>
 </body>
 </html>
@@ -389,34 +517,42 @@ def build_index(suites: list[dict], runners: list[str]) -> str:
         '</div>',
     ]
 
-    body.append('<h2>Agreement Matrix</h2>')
-    body.append('<p class="muted">Each cell shows passing / total under the cell\'s BIOS mode. '
-                'Passing = runner\'s hash matches the cross-runner consensus (≥ 2 agree). '
-                'Click a suite to drill into per-test details.</p>')
+    body.append('<h2>Cross-runner agreement matrix</h2>')
+    body.append('<p class="muted">Each cell shows <strong>X/Y agree</strong>: how many of the runner\'s '
+                'captures match the cross-runner consensus hash for that test under that BIOS mode. '
+                '"Consensus" means ≥ 2 runners produced the same hash. This is a stricter metric than '
+                '<code>cable_club</code>\'s own <code>accuracy_sweep</code> regression check, which counts '
+                'a test as passing if its hash matches <em>any</em> previously-recorded hash for the test '
+                '(including the runner\'s own historical capture). Click a suite for per-test detail.</p>')
     for mode in DEFAULT_MODES:
-        body.append(f'<h3>BIOS mode: <code>{mode}</code></h3>')
-        body.append('<table class="matrix"><thead><tr><th>Suite</th>')
+        body.append(f'<h3>BIOS mode <code>{mode}</code></h3>')
+        body.append('<div class="table-wrap"><table class="matrix"><thead><tr><th>Suite</th>')
         for r in runners:
-            body.append(f'<th class="runner">{html.escape(r)}</th>')
+            slug = r.replace(" ", "_")
+            body.append(f'<th class="runner r-{slug}"><span class="dot"></span>{html.escape(r)}</th>')
         body.append('</tr></thead><tbody>')
         for s in suites:
             body.append(f'<tr><td><a href="suite-{html.escape(s["name"])}.html">{html.escape(s["name"])}</a></td>')
             for r in runners:
                 p, t = matrix_cell(s, r, mode)
                 cls = ""
-                if t > 0 and p == t:
+                if t == 0:
+                    cls = ""
+                elif p == t:
                     cls = "all-pass"
-                elif t > 0 and p == 0:
+                elif p == 0:
                     cls = "none-pass"
+                else:
+                    cls = "partial"
                 pct = f"{(p / t * 100):.0f}%" if t > 0 else "—"
                 body.append(
                     f'<td class="cell {cls}"><span class="frac">{p}/{t}</span>'
                     f'<span class="pct">{pct}</span></td>'
                 )
             body.append('</tr>')
-        body.append('</tbody></table>')
+        body.append('</tbody></table></div>')
 
-    return page_html("Overview", "\n".join(body))
+    return page_html("Cross-emulator agreement matrix", "\n".join(body))
 
 
 def build_suite_page(suite: dict, runners: list[str]) -> str:
@@ -429,10 +565,11 @@ def build_suite_page(suite: dict, runners: list[str]) -> str:
         body.append(f'<p class="muted">Source: <a href="{html.escape(src)}">{html.escape(src)}</a></p>')
 
     for mode in DEFAULT_MODES:
-        body.append(f'<h3>BIOS mode: <code>{mode}</code></h3>')
-        body.append('<table><thead><tr><th>Test</th><th>Status</th>')
+        body.append(f'<h3>BIOS mode <code>{mode}</code></h3>')
+        body.append('<div class="table-wrap"><table><thead><tr><th>Test</th><th>Status</th>')
         for r in runners:
-            body.append(f'<th>{html.escape(r)}</th>')
+            slug = r.replace(" ", "_")
+            body.append(f'<th class="runner r-{slug}"><span class="dot"></span>{html.escape(r)}</th>')
         body.append('</tr></thead><tbody>')
 
         for test_id in sorted(suite["references"].keys()):
@@ -470,7 +607,7 @@ def build_suite_page(suite: dict, runners: list[str]) -> str:
                 short = (h[:12] + "…") if h else ""
                 body.append(f'<td><span class="hash {cls}" title="{h}">{short}</span></td>')
             body.append('</tr>')
-        body.append('</tbody></table>')
+        body.append('</tbody></table></div>')
 
     return page_html(
         suite["name"],
@@ -482,9 +619,10 @@ def build_suite_page(suite: dict, runners: list[str]) -> str:
 def build_filter_page(suites: list[dict], runners: list[str], status_kind: str, title: str) -> str:
     body = [f'<h2>{html.escape(title)} tests</h2>']
     body.append(f'<p class="muted">Tests where the cross-runner agreement check returned "{status_kind}".</p>')
-    body.append('<table><thead><tr><th>Suite</th><th>Test</th>')
+    body.append('<div class="table-wrap"><table><thead><tr><th>Suite</th><th>Test</th>')
     for r in runners:
-        body.append(f'<th>{html.escape(r)}</th>')
+        slug = r.replace(" ", "_")
+        body.append(f'<th class="runner r-{slug}"><span class="dot"></span>{html.escape(r)}</th>')
     body.append('</tr></thead><tbody>')
 
     for s in suites:
@@ -509,7 +647,7 @@ def build_filter_page(suites: list[dict], runners: list[str], status_kind: str, 
                 short = (h[:12] + "…") if h else ""
                 body.append(f'<td><span class="hash" title="{h}">{short}</span></td>')
             body.append('</tr>')
-    body.append('</tbody></table>')
+    body.append('</tbody></table></div>')
     return page_html(
         f"{title} tests",
         "\n".join(body),

@@ -77,6 +77,85 @@ def hash_bgr555(raw: bytes) -> str:
     return hashlib.sha256(raw).hexdigest()
 
 
+def bin_to_png(raw: bytes, output_path: Path) -> None:
+    """Convert raw BGR555 LE framebuffer (76800 bytes) to a 24-bit PNG.
+
+    This is the human-viewing path. PNG is used here, not in the hash
+    comparison path — see bin_to_bmp() for the canonical "matches
+    cable-club-desktop's screenshot output byte-for-byte" representation
+    when we need a binary-identical artifact. PNG is just for "open this
+    in any viewer or browser, no surprises".
+
+    Color expansion is identical to bin_to_bmp: 5-bit channel shifted left
+    by 3, no dither, no quantization. Top-down (origin top-left).
+    """
+    if len(raw) != FB_BYTE_COUNT:
+        raise ValueError(f"raw is {len(raw)} bytes, expected {FB_BYTE_COUNT}")
+    from PIL import Image
+    img = Image.new("RGB", (GBA_WIDTH, GBA_HEIGHT))
+    pixels = img.load()
+    for y in range(GBA_HEIGHT):
+        for x in range(GBA_WIDTH):
+            offset = (y * GBA_WIDTH + x) * 2
+            u16 = raw[offset] | (raw[offset + 1] << 8)
+            r = ((u16 & 0x1F) << 3) & 0xFF
+            g = (((u16 >> 5) & 0x1F) << 3) & 0xFF
+            b = (((u16 >> 10) & 0x1F) << 3) & 0xFF
+            if pixels is not None:
+                pixels[x, y] = (r, g, b)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    img.save(output_path, "PNG")
+
+
+def bin_to_bmp(raw: bytes, output_path: Path) -> None:
+    """Convert raw BGR555 LE framebuffer (76800 bytes) to a 24-bit BMP file
+    matching cable-club-desktop's screenshot format exactly:
+    14-byte BITMAPFILEHEADER + 40-byte BITMAPINFOHEADER, BGR pixel order,
+    top-down rows (negative height), no alpha, no compression.
+
+    See crates/cable-club-desktop/src/main.rs:234-270 for the canonical
+    implementation. Identical bytes produced here so a binary diff between
+    a runner's BMP and cable_club's BMP works as a verification step.
+    """
+    if len(raw) != FB_BYTE_COUNT:
+        raise ValueError(f"raw is {len(raw)} bytes, expected {FB_BYTE_COUNT}")
+    width = GBA_WIDTH
+    height = GBA_HEIGHT
+    row_size = (width * 3 + 3) & ~3  # 4-byte row alignment per BMP spec
+    pixel_size = row_size * height
+    file_size = 54 + pixel_size
+
+    bmp = bytearray()
+    # BITMAPFILEHEADER (14 bytes)
+    bmp += b"BM"
+    bmp += file_size.to_bytes(4, "little")
+    bmp += b"\x00\x00\x00\x00"   # reserved
+    bmp += (54).to_bytes(4, "little")  # pixel data offset
+    # BITMAPINFOHEADER (40 bytes)
+    bmp += (40).to_bytes(4, "little")
+    bmp += width.to_bytes(4, "little", signed=True)
+    bmp += (-height).to_bytes(4, "little", signed=True)  # negative = top-down
+    bmp += (1).to_bytes(2, "little")    # planes
+    bmp += (24).to_bytes(2, "little")   # bits per pixel
+    bmp += b"\x00" * 24                 # compression(0), size(0), ppm x/y(0), colors(0/0)
+
+    pad = b"\x00" * (row_size - width * 3)
+    for y in range(height):
+        for x in range(width):
+            offset = (y * width + x) * 2
+            u16 = raw[offset] | (raw[offset + 1] << 8)
+            r = ((u16 & 0x1F) << 3) & 0xFF
+            g = (((u16 >> 5) & 0x1F) << 3) & 0xFF
+            b = (((u16 >> 10) & 0x1F) << 3) & 0xFF
+            bmp.append(b)
+            bmp.append(g)
+            bmp.append(r)
+        bmp += pad
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_bytes(bytes(bmp))
+
+
 # --- Diff image generation ---
 
 def generate_triptych(expected_raw: bytes, actual_raw: bytes, output_path: Path) -> None:

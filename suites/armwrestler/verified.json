@@ -1,0 +1,827 @@
+{
+  "schema_version": 2,
+  "tests": {
+    "armwrestler-arm-alu": {
+      "hle": {
+        "canonical_pass_hash": "9e47b1706279d4c941e8a7d425d41c46438c022ee69c617744ab56ebef1b417a",
+        "canonical_pass_screenshot": "verified/armwrestler-arm-alu-hle-mgba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
+        "canonical_pass_notes": "ALU TESTS PART 1 - all 17 ARM ALU operations show green OK. 4-way pixel-identical agreement (cable_club, mgba, NBA, skyemu).",
+        "runners": {
+          "cable_club": {
+            "hash": "9e47b1706279d4c941e8a7d425d41c46438c022ee69c617744ab56ebef1b417a",
+            "screenshot": "verified/armwrestler-arm-alu-hle-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "mgba": {
+            "hash": "9e47b1706279d4c941e8a7d425d41c46438c022ee69c617744ab56ebef1b417a",
+            "screenshot": "verified/armwrestler-arm-alu-hle-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "nanoboyadvance": {
+            "hash": "9e47b1706279d4c941e8a7d425d41c46438c022ee69c617744ab56ebef1b417a",
+            "screenshot": "verified/armwrestler-arm-alu-hle-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "skyemu": {
+            "hash": "9e47b1706279d4c941e8a7d425d41c46438c022ee69c617744ab56ebef1b417a",
+            "screenshot": "verified/armwrestler-arm-alu-hle-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          }
+        }
+      },
+      "official": {
+        "canonical_pass_hash": "9e47b1706279d4c941e8a7d425d41c46438c022ee69c617744ab56ebef1b417a",
+        "canonical_pass_screenshot": "verified/armwrestler-arm-alu-official-mgba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
+        "canonical_pass_notes": "ALU TESTS PART 1 - all 17 ARM ALU operations show green OK. 4-way pixel-identical agreement (cable_club, mgba, NBA, skyemu).",
+        "runners": {
+          "cable_club": {
+            "hash": "9e47b1706279d4c941e8a7d425d41c46438c022ee69c617744ab56ebef1b417a",
+            "screenshot": "verified/armwrestler-arm-alu-official-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 710,
+            "notes": "Matches consensus pass."
+          },
+          "mgba": {
+            "hash": "9e47b1706279d4c941e8a7d425d41c46438c022ee69c617744ab56ebef1b417a",
+            "screenshot": "verified/armwrestler-arm-alu-official-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 710,
+            "notes": "Matches consensus pass."
+          },
+          "nanoboyadvance": {
+            "hash": "9e47b1706279d4c941e8a7d425d41c46438c022ee69c617744ab56ebef1b417a",
+            "screenshot": "verified/armwrestler-arm-alu-official-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 710,
+            "notes": "Matches consensus pass."
+          },
+          "skyemu": {
+            "hash": "9e47b1706279d4c941e8a7d425d41c46438c022ee69c617744ab56ebef1b417a",
+            "screenshot": "verified/armwrestler-arm-alu-official-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 710,
+            "notes": "Matches consensus pass."
+          }
+        }
+      },
+      "cleanroom": {
+        "canonical_pass_hash": "9e47b1706279d4c941e8a7d425d41c46438c022ee69c617744ab56ebef1b417a",
+        "canonical_pass_screenshot": "verified/armwrestler-arm-alu-cleanroom-mgba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
+        "canonical_pass_notes": "ALU TESTS PART 1 - all 17 ARM ALU operations show green OK. 3-way pixel-identical agreement (mgba, NBA, skyemu); cable_club hits the cleanroom handoff bug.",
+        "runners": {
+          "cable_club": {
+            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "screenshot": "verified/armwrestler-arm-alu-cleanroom-cable_club.bmp",
+            "status": "bug",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Cable Club cleanroom mode is BROKEN \u2014 bit-identical 22de4108... hash to every other test under cleanroom. Stuck on Cult-of-GBA boot screen, cart never executes. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+          },
+          "mgba": {
+            "hash": "9e47b1706279d4c941e8a7d425d41c46438c022ee69c617744ab56ebef1b417a",
+            "screenshot": "verified/armwrestler-arm-alu-cleanroom-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "nanoboyadvance": {
+            "hash": "9e47b1706279d4c941e8a7d425d41c46438c022ee69c617744ab56ebef1b417a",
+            "screenshot": "verified/armwrestler-arm-alu-cleanroom-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "skyemu": {
+            "hash": "9e47b1706279d4c941e8a7d425d41c46438c022ee69c617744ab56ebef1b417a",
+            "screenshot": "verified/armwrestler-arm-alu-cleanroom-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          }
+        }
+      }
+    },
+    "armwrestler-arm-ldr-str": {
+      "hle": {
+        "canonical_pass_hash": "23f7012c6143e919c483e66a49907ea2d6243d6c5399d586d46289be572d5fad",
+        "canonical_pass_screenshot": "verified/armwrestler-arm-ldr-str-hle-mgba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
+        "canonical_pass_notes": "ARM LDR/STR test page - all variants show OK. 4-way pixel-identical agreement (cable_club, mgba, NBA, skyemu).",
+        "runners": {
+          "cable_club": {
+            "hash": "23f7012c6143e919c483e66a49907ea2d6243d6c5399d586d46289be572d5fad",
+            "screenshot": "verified/armwrestler-arm-ldr-str-hle-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "mgba": {
+            "hash": "23f7012c6143e919c483e66a49907ea2d6243d6c5399d586d46289be572d5fad",
+            "screenshot": "verified/armwrestler-arm-ldr-str-hle-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "nanoboyadvance": {
+            "hash": "23f7012c6143e919c483e66a49907ea2d6243d6c5399d586d46289be572d5fad",
+            "screenshot": "verified/armwrestler-arm-ldr-str-hle-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "skyemu": {
+            "hash": "23f7012c6143e919c483e66a49907ea2d6243d6c5399d586d46289be572d5fad",
+            "screenshot": "verified/armwrestler-arm-ldr-str-hle-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          }
+        }
+      },
+      "official": {
+        "canonical_pass_hash": "23f7012c6143e919c483e66a49907ea2d6243d6c5399d586d46289be572d5fad",
+        "canonical_pass_screenshot": "verified/armwrestler-arm-ldr-str-official-mgba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
+        "canonical_pass_notes": "ARM LDR/STR test page - all variants show OK. 4-way pixel-identical agreement (cable_club, mgba, NBA, skyemu).",
+        "runners": {
+          "cable_club": {
+            "hash": "23f7012c6143e919c483e66a49907ea2d6243d6c5399d586d46289be572d5fad",
+            "screenshot": "verified/armwrestler-arm-ldr-str-official-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 710,
+            "notes": "Matches consensus pass."
+          },
+          "mgba": {
+            "hash": "23f7012c6143e919c483e66a49907ea2d6243d6c5399d586d46289be572d5fad",
+            "screenshot": "verified/armwrestler-arm-ldr-str-official-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 710,
+            "notes": "Matches consensus pass."
+          },
+          "nanoboyadvance": {
+            "hash": "23f7012c6143e919c483e66a49907ea2d6243d6c5399d586d46289be572d5fad",
+            "screenshot": "verified/armwrestler-arm-ldr-str-official-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 710,
+            "notes": "Matches consensus pass."
+          },
+          "skyemu": {
+            "hash": "23f7012c6143e919c483e66a49907ea2d6243d6c5399d586d46289be572d5fad",
+            "screenshot": "verified/armwrestler-arm-ldr-str-official-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 710,
+            "notes": "Matches consensus pass."
+          }
+        }
+      },
+      "cleanroom": {
+        "canonical_pass_hash": "23f7012c6143e919c483e66a49907ea2d6243d6c5399d586d46289be572d5fad",
+        "canonical_pass_screenshot": "verified/armwrestler-arm-ldr-str-cleanroom-mgba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
+        "canonical_pass_notes": "ARM LDR/STR test page - all variants show OK. 3-way pixel-identical agreement (mgba, NBA, skyemu); cable_club hits the cleanroom handoff bug.",
+        "runners": {
+          "cable_club": {
+            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "screenshot": "verified/armwrestler-arm-ldr-str-cleanroom-cable_club.bmp",
+            "status": "bug",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Cable Club cleanroom mode is BROKEN \u2014 bit-identical 22de4108... hash to every other test under cleanroom. Stuck on Cult-of-GBA boot screen, cart never executes. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+          },
+          "mgba": {
+            "hash": "23f7012c6143e919c483e66a49907ea2d6243d6c5399d586d46289be572d5fad",
+            "screenshot": "verified/armwrestler-arm-ldr-str-cleanroom-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "nanoboyadvance": {
+            "hash": "23f7012c6143e919c483e66a49907ea2d6243d6c5399d586d46289be572d5fad",
+            "screenshot": "verified/armwrestler-arm-ldr-str-cleanroom-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "skyemu": {
+            "hash": "23f7012c6143e919c483e66a49907ea2d6243d6c5399d586d46289be572d5fad",
+            "screenshot": "verified/armwrestler-arm-ldr-str-cleanroom-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          }
+        }
+      }
+    },
+    "armwrestler-arm-ldm-stm": {
+      "hle": {
+        "canonical_pass_hash": "d98cdf5668d3308ab1c992302e5a599451a276ed059e784de1fd763d95774c69",
+        "canonical_pass_screenshot": "verified/armwrestler-arm-ldm-stm-hle-mgba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
+        "canonical_pass_notes": "ARM LDM/STM test page - all variants show OK. 4-way pixel-identical agreement (cable_club, mgba, NBA, skyemu).",
+        "runners": {
+          "cable_club": {
+            "hash": "d98cdf5668d3308ab1c992302e5a599451a276ed059e784de1fd763d95774c69",
+            "screenshot": "verified/armwrestler-arm-ldm-stm-hle-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "mgba": {
+            "hash": "d98cdf5668d3308ab1c992302e5a599451a276ed059e784de1fd763d95774c69",
+            "screenshot": "verified/armwrestler-arm-ldm-stm-hle-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "nanoboyadvance": {
+            "hash": "d98cdf5668d3308ab1c992302e5a599451a276ed059e784de1fd763d95774c69",
+            "screenshot": "verified/armwrestler-arm-ldm-stm-hle-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "skyemu": {
+            "hash": "d98cdf5668d3308ab1c992302e5a599451a276ed059e784de1fd763d95774c69",
+            "screenshot": "verified/armwrestler-arm-ldm-stm-hle-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          }
+        }
+      },
+      "official": {
+        "canonical_pass_hash": "d98cdf5668d3308ab1c992302e5a599451a276ed059e784de1fd763d95774c69",
+        "canonical_pass_screenshot": "verified/armwrestler-arm-ldm-stm-official-mgba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
+        "canonical_pass_notes": "ARM LDM/STM test page - all variants show OK. 4-way pixel-identical agreement (cable_club, mgba, NBA, skyemu).",
+        "runners": {
+          "cable_club": {
+            "hash": "d98cdf5668d3308ab1c992302e5a599451a276ed059e784de1fd763d95774c69",
+            "screenshot": "verified/armwrestler-arm-ldm-stm-official-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 710,
+            "notes": "Matches consensus pass."
+          },
+          "mgba": {
+            "hash": "d98cdf5668d3308ab1c992302e5a599451a276ed059e784de1fd763d95774c69",
+            "screenshot": "verified/armwrestler-arm-ldm-stm-official-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 710,
+            "notes": "Matches consensus pass."
+          },
+          "nanoboyadvance": {
+            "hash": "d98cdf5668d3308ab1c992302e5a599451a276ed059e784de1fd763d95774c69",
+            "screenshot": "verified/armwrestler-arm-ldm-stm-official-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 710,
+            "notes": "Matches consensus pass."
+          },
+          "skyemu": {
+            "hash": "d98cdf5668d3308ab1c992302e5a599451a276ed059e784de1fd763d95774c69",
+            "screenshot": "verified/armwrestler-arm-ldm-stm-official-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 710,
+            "notes": "Matches consensus pass."
+          }
+        }
+      },
+      "cleanroom": {
+        "canonical_pass_hash": "d98cdf5668d3308ab1c992302e5a599451a276ed059e784de1fd763d95774c69",
+        "canonical_pass_screenshot": "verified/armwrestler-arm-ldm-stm-cleanroom-mgba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
+        "canonical_pass_notes": "ARM LDM/STM test page - all variants show OK. 3-way pixel-identical agreement (mgba, NBA, skyemu); cable_club hits the cleanroom handoff bug.",
+        "runners": {
+          "cable_club": {
+            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "screenshot": "verified/armwrestler-arm-ldm-stm-cleanroom-cable_club.bmp",
+            "status": "bug",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Cable Club cleanroom mode is BROKEN \u2014 bit-identical 22de4108... hash to every other test under cleanroom. Stuck on Cult-of-GBA boot screen, cart never executes. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+          },
+          "mgba": {
+            "hash": "d98cdf5668d3308ab1c992302e5a599451a276ed059e784de1fd763d95774c69",
+            "screenshot": "verified/armwrestler-arm-ldm-stm-cleanroom-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "nanoboyadvance": {
+            "hash": "d98cdf5668d3308ab1c992302e5a599451a276ed059e784de1fd763d95774c69",
+            "screenshot": "verified/armwrestler-arm-ldm-stm-cleanroom-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "skyemu": {
+            "hash": "d98cdf5668d3308ab1c992302e5a599451a276ed059e784de1fd763d95774c69",
+            "screenshot": "verified/armwrestler-arm-ldm-stm-cleanroom-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          }
+        }
+      }
+    },
+    "armwrestler-thumb-alu": {
+      "hle": {
+        "canonical_pass_hash": "2a0081186186d0525fe30780be9695ed4582965dc1406b0f70c256b18cb05721",
+        "canonical_pass_screenshot": "verified/armwrestler-thumb-alu-hle-mgba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
+        "canonical_pass_notes": "Thumb ALU test page - all operations show OK. 4-way pixel-identical agreement (cable_club, mgba, NBA, skyemu).",
+        "runners": {
+          "cable_club": {
+            "hash": "2a0081186186d0525fe30780be9695ed4582965dc1406b0f70c256b18cb05721",
+            "screenshot": "verified/armwrestler-thumb-alu-hle-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "mgba": {
+            "hash": "2a0081186186d0525fe30780be9695ed4582965dc1406b0f70c256b18cb05721",
+            "screenshot": "verified/armwrestler-thumb-alu-hle-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "nanoboyadvance": {
+            "hash": "2a0081186186d0525fe30780be9695ed4582965dc1406b0f70c256b18cb05721",
+            "screenshot": "verified/armwrestler-thumb-alu-hle-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "skyemu": {
+            "hash": "2a0081186186d0525fe30780be9695ed4582965dc1406b0f70c256b18cb05721",
+            "screenshot": "verified/armwrestler-thumb-alu-hle-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          }
+        }
+      },
+      "official": {
+        "canonical_pass_hash": "2a0081186186d0525fe30780be9695ed4582965dc1406b0f70c256b18cb05721",
+        "canonical_pass_screenshot": "verified/armwrestler-thumb-alu-official-mgba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
+        "canonical_pass_notes": "Thumb ALU test page - all operations show OK. 4-way pixel-identical agreement (cable_club, mgba, NBA, skyemu).",
+        "runners": {
+          "cable_club": {
+            "hash": "2a0081186186d0525fe30780be9695ed4582965dc1406b0f70c256b18cb05721",
+            "screenshot": "verified/armwrestler-thumb-alu-official-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 710,
+            "notes": "Matches consensus pass."
+          },
+          "mgba": {
+            "hash": "2a0081186186d0525fe30780be9695ed4582965dc1406b0f70c256b18cb05721",
+            "screenshot": "verified/armwrestler-thumb-alu-official-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 710,
+            "notes": "Matches consensus pass."
+          },
+          "nanoboyadvance": {
+            "hash": "2a0081186186d0525fe30780be9695ed4582965dc1406b0f70c256b18cb05721",
+            "screenshot": "verified/armwrestler-thumb-alu-official-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 710,
+            "notes": "Matches consensus pass."
+          },
+          "skyemu": {
+            "hash": "2a0081186186d0525fe30780be9695ed4582965dc1406b0f70c256b18cb05721",
+            "screenshot": "verified/armwrestler-thumb-alu-official-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 710,
+            "notes": "Matches consensus pass."
+          }
+        }
+      },
+      "cleanroom": {
+        "canonical_pass_hash": "2a0081186186d0525fe30780be9695ed4582965dc1406b0f70c256b18cb05721",
+        "canonical_pass_screenshot": "verified/armwrestler-thumb-alu-cleanroom-mgba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
+        "canonical_pass_notes": "Thumb ALU test page - all operations show OK. 3-way pixel-identical agreement (mgba, NBA, skyemu); cable_club hits the cleanroom handoff bug.",
+        "runners": {
+          "cable_club": {
+            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "screenshot": "verified/armwrestler-thumb-alu-cleanroom-cable_club.bmp",
+            "status": "bug",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Cable Club cleanroom mode is BROKEN \u2014 bit-identical 22de4108... hash to every other test under cleanroom. Stuck on Cult-of-GBA boot screen, cart never executes. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+          },
+          "mgba": {
+            "hash": "2a0081186186d0525fe30780be9695ed4582965dc1406b0f70c256b18cb05721",
+            "screenshot": "verified/armwrestler-thumb-alu-cleanroom-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "nanoboyadvance": {
+            "hash": "2a0081186186d0525fe30780be9695ed4582965dc1406b0f70c256b18cb05721",
+            "screenshot": "verified/armwrestler-thumb-alu-cleanroom-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "skyemu": {
+            "hash": "2a0081186186d0525fe30780be9695ed4582965dc1406b0f70c256b18cb05721",
+            "screenshot": "verified/armwrestler-thumb-alu-cleanroom-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          }
+        }
+      }
+    },
+    "armwrestler-thumb-ldr-str": {
+      "hle": {
+        "canonical_pass_hash": "288d3554f23d40ae69d720ea0def7e5a4982e21076686a5e8a09435e1ca9bead",
+        "canonical_pass_screenshot": "verified/armwrestler-thumb-ldr-str-hle-mgba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
+        "canonical_pass_notes": "Thumb LDR/STR test page - all variants show OK. 4-way pixel-identical agreement (cable_club, mgba, NBA, skyemu).",
+        "runners": {
+          "cable_club": {
+            "hash": "288d3554f23d40ae69d720ea0def7e5a4982e21076686a5e8a09435e1ca9bead",
+            "screenshot": "verified/armwrestler-thumb-ldr-str-hle-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "mgba": {
+            "hash": "288d3554f23d40ae69d720ea0def7e5a4982e21076686a5e8a09435e1ca9bead",
+            "screenshot": "verified/armwrestler-thumb-ldr-str-hle-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "nanoboyadvance": {
+            "hash": "288d3554f23d40ae69d720ea0def7e5a4982e21076686a5e8a09435e1ca9bead",
+            "screenshot": "verified/armwrestler-thumb-ldr-str-hle-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "skyemu": {
+            "hash": "288d3554f23d40ae69d720ea0def7e5a4982e21076686a5e8a09435e1ca9bead",
+            "screenshot": "verified/armwrestler-thumb-ldr-str-hle-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          }
+        }
+      },
+      "official": {
+        "canonical_pass_hash": "288d3554f23d40ae69d720ea0def7e5a4982e21076686a5e8a09435e1ca9bead",
+        "canonical_pass_screenshot": "verified/armwrestler-thumb-ldr-str-official-mgba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
+        "canonical_pass_notes": "Thumb LDR/STR test page - all variants show OK. 4-way pixel-identical agreement (cable_club, mgba, NBA, skyemu).",
+        "runners": {
+          "cable_club": {
+            "hash": "288d3554f23d40ae69d720ea0def7e5a4982e21076686a5e8a09435e1ca9bead",
+            "screenshot": "verified/armwrestler-thumb-ldr-str-official-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 710,
+            "notes": "Matches consensus pass."
+          },
+          "mgba": {
+            "hash": "288d3554f23d40ae69d720ea0def7e5a4982e21076686a5e8a09435e1ca9bead",
+            "screenshot": "verified/armwrestler-thumb-ldr-str-official-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 710,
+            "notes": "Matches consensus pass."
+          },
+          "nanoboyadvance": {
+            "hash": "288d3554f23d40ae69d720ea0def7e5a4982e21076686a5e8a09435e1ca9bead",
+            "screenshot": "verified/armwrestler-thumb-ldr-str-official-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 710,
+            "notes": "Matches consensus pass."
+          },
+          "skyemu": {
+            "hash": "288d3554f23d40ae69d720ea0def7e5a4982e21076686a5e8a09435e1ca9bead",
+            "screenshot": "verified/armwrestler-thumb-ldr-str-official-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 710,
+            "notes": "Matches consensus pass."
+          }
+        }
+      },
+      "cleanroom": {
+        "canonical_pass_hash": "288d3554f23d40ae69d720ea0def7e5a4982e21076686a5e8a09435e1ca9bead",
+        "canonical_pass_screenshot": "verified/armwrestler-thumb-ldr-str-cleanroom-mgba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
+        "canonical_pass_notes": "Thumb LDR/STR test page - all variants show OK. 3-way pixel-identical agreement (mgba, NBA, skyemu); cable_club hits the cleanroom handoff bug.",
+        "runners": {
+          "cable_club": {
+            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "screenshot": "verified/armwrestler-thumb-ldr-str-cleanroom-cable_club.bmp",
+            "status": "bug",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Cable Club cleanroom mode is BROKEN \u2014 bit-identical 22de4108... hash to every other test under cleanroom. Stuck on Cult-of-GBA boot screen, cart never executes. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+          },
+          "mgba": {
+            "hash": "288d3554f23d40ae69d720ea0def7e5a4982e21076686a5e8a09435e1ca9bead",
+            "screenshot": "verified/armwrestler-thumb-ldr-str-cleanroom-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "nanoboyadvance": {
+            "hash": "288d3554f23d40ae69d720ea0def7e5a4982e21076686a5e8a09435e1ca9bead",
+            "screenshot": "verified/armwrestler-thumb-ldr-str-cleanroom-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "skyemu": {
+            "hash": "288d3554f23d40ae69d720ea0def7e5a4982e21076686a5e8a09435e1ca9bead",
+            "screenshot": "verified/armwrestler-thumb-ldr-str-cleanroom-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          }
+        }
+      }
+    },
+    "armwrestler-thumb-ldm-stm": {
+      "hle": {
+        "canonical_pass_hash": "9c039fc3488e8e0dba7b32084022e3750444f79be99d2009c9f2119ed408efe6",
+        "canonical_pass_screenshot": "verified/armwrestler-thumb-ldm-stm-hle-mgba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
+        "canonical_pass_notes": "LDM/STM TEST page - LDMIA OK, STMIA OK. 4-way pixel-identical agreement (cable_club, mgba, NBA, skyemu).",
+        "runners": {
+          "cable_club": {
+            "hash": "9c039fc3488e8e0dba7b32084022e3750444f79be99d2009c9f2119ed408efe6",
+            "screenshot": "verified/armwrestler-thumb-ldm-stm-hle-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "mgba": {
+            "hash": "9c039fc3488e8e0dba7b32084022e3750444f79be99d2009c9f2119ed408efe6",
+            "screenshot": "verified/armwrestler-thumb-ldm-stm-hle-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "nanoboyadvance": {
+            "hash": "9c039fc3488e8e0dba7b32084022e3750444f79be99d2009c9f2119ed408efe6",
+            "screenshot": "verified/armwrestler-thumb-ldm-stm-hle-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "skyemu": {
+            "hash": "9c039fc3488e8e0dba7b32084022e3750444f79be99d2009c9f2119ed408efe6",
+            "screenshot": "verified/armwrestler-thumb-ldm-stm-hle-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          }
+        }
+      },
+      "official": {
+        "canonical_pass_hash": "9c039fc3488e8e0dba7b32084022e3750444f79be99d2009c9f2119ed408efe6",
+        "canonical_pass_screenshot": "verified/armwrestler-thumb-ldm-stm-official-mgba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
+        "canonical_pass_notes": "LDM/STM TEST page - LDMIA OK, STMIA OK. 4-way pixel-identical agreement (cable_club, mgba, NBA, skyemu).",
+        "runners": {
+          "cable_club": {
+            "hash": "9c039fc3488e8e0dba7b32084022e3750444f79be99d2009c9f2119ed408efe6",
+            "screenshot": "verified/armwrestler-thumb-ldm-stm-official-cable_club.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 710,
+            "notes": "Matches consensus pass."
+          },
+          "mgba": {
+            "hash": "9c039fc3488e8e0dba7b32084022e3750444f79be99d2009c9f2119ed408efe6",
+            "screenshot": "verified/armwrestler-thumb-ldm-stm-official-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 710,
+            "notes": "Matches consensus pass."
+          },
+          "nanoboyadvance": {
+            "hash": "9c039fc3488e8e0dba7b32084022e3750444f79be99d2009c9f2119ed408efe6",
+            "screenshot": "verified/armwrestler-thumb-ldm-stm-official-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 710,
+            "notes": "Matches consensus pass."
+          },
+          "skyemu": {
+            "hash": "9c039fc3488e8e0dba7b32084022e3750444f79be99d2009c9f2119ed408efe6",
+            "screenshot": "verified/armwrestler-thumb-ldm-stm-official-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 710,
+            "notes": "Matches consensus pass."
+          }
+        }
+      },
+      "cleanroom": {
+        "canonical_pass_hash": "9c039fc3488e8e0dba7b32084022e3750444f79be99d2009c9f2119ed408efe6",
+        "canonical_pass_screenshot": "verified/armwrestler-thumb-ldm-stm-cleanroom-mgba.bmp",
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
+        "canonical_pass_notes": "LDM/STM TEST page - LDMIA OK, STMIA OK. 3-way pixel-identical agreement (mgba, NBA, skyemu); cable_club hits the cleanroom handoff bug.",
+        "runners": {
+          "cable_club": {
+            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "screenshot": "verified/armwrestler-thumb-ldm-stm-cleanroom-cable_club.bmp",
+            "status": "bug",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Cable Club cleanroom mode is BROKEN \u2014 bit-identical 22de4108... hash to every other test under cleanroom. Stuck on Cult-of-GBA boot screen, cart never executes. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+          },
+          "mgba": {
+            "hash": "9c039fc3488e8e0dba7b32084022e3750444f79be99d2009c9f2119ed408efe6",
+            "screenshot": "verified/armwrestler-thumb-ldm-stm-cleanroom-mgba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "nanoboyadvance": {
+            "hash": "9c039fc3488e8e0dba7b32084022e3750444f79be99d2009c9f2119ed408efe6",
+            "screenshot": "verified/armwrestler-thumb-ldm-stm-cleanroom-nba.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          },
+          "skyemu": {
+            "hash": "9c039fc3488e8e0dba7b32084022e3750444f79be99d2009c9f2119ed408efe6",
+            "screenshot": "verified/armwrestler-thumb-ldm-stm-cleanroom-skyemu.bmp",
+            "status": "pass",
+            "verified_by": "chris",
+            "verified_at": "2026-04-07T00:50:57.121386+00:00",
+            "frames": 500,
+            "notes": "Matches consensus pass."
+          }
+        }
+      }
+    }
+  }
+}

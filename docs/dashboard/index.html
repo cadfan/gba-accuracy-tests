@@ -3,13 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Overview — gba-accuracy-tests</title>
+<title>Cross-emulator agreement matrix — gba-accuracy-tests</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="site">
-  <h1>GBA ACCURACY TESTS</h1>
-  <p class="subtitle">Overview</p>
+  <div class="row">
+    <div>
+      <h1>GBA Accuracy Tests <span class="accent">·</span></h1>
+      <p class="subtitle">Cross-emulator agreement matrix</p>
+    </div>
+  </div>
   
 </header>
 <main>
@@ -23,14 +27,14 @@
 <div class="stat"><span class="num">0</span><span class="label"><a href="contested.html">contested</a></span></div>
 <div class="stat"><span class="num">5</span><span class="label"><a href="unverified.html">unverified</a></span></div>
 </div>
-<h2>Agreement Matrix</h2>
-<p class="muted">Each cell shows passing / total under the cell's BIOS mode. Passing = runner's hash matches the cross-runner consensus (≥ 2 agree). Click a suite to drill into per-test details.</p>
-<h3>BIOS mode: <code>official</code></h3>
-<table class="matrix"><thead><tr><th>Suite</th>
-<th class="runner">cable_club</th>
-<th class="runner">mgba</th>
-<th class="runner">nanoboyadvance</th>
-<th class="runner">skyemu</th>
+<h2>Cross-runner agreement matrix</h2>
+<p class="muted">Each cell shows <strong>X/Y agree</strong>: how many of the runner's captures match the cross-runner consensus hash for that test under that BIOS mode. "Consensus" means ≥ 2 runners produced the same hash. This is a stricter metric than <code>cable_club</code>'s own <code>accuracy_sweep</code> regression check, which counts a test as passing if its hash matches <em>any</em> previously-recorded hash for the test (including the runner's own historical capture). Click a suite for per-test detail.</p>
+<h3>BIOS mode <code>official</code></h3>
+<div class="table-wrap"><table class="matrix"><thead><tr><th>Suite</th>
+<th class="runner r-cable_club"><span class="dot"></span>cable_club</th>
+<th class="runner r-mgba"><span class="dot"></span>mgba</th>
+<th class="runner r-nanoboyadvance"><span class="dot"></span>nanoboyadvance</th>
+<th class="runner r-skyemu"><span class="dot"></span>skyemu</th>
 </tr></thead><tbody>
 <tr><td><a href="suite-ags-aging.html">ags-aging</a></td>
 <td class="cell none-pass"><span class="frac">0/1</span><span class="pct">0%</span></td>
@@ -51,24 +55,24 @@
 <td class="cell all-pass"><span class="frac">3/3</span><span class="pct">100%</span></td>
 </tr>
 <tr><td><a href="suite-jsmolka.html">jsmolka</a></td>
-<td class="cell "><span class="frac">6/13</span><span class="pct">46%</span></td>
+<td class="cell partial"><span class="frac">6/13</span><span class="pct">46%</span></td>
 <td class="cell none-pass"><span class="frac">0/13</span><span class="pct">0%</span></td>
-<td class="cell "><span class="frac">6/13</span><span class="pct">46%</span></td>
-<td class="cell "><span class="frac">2/13</span><span class="pct">15%</span></td>
+<td class="cell partial"><span class="frac">6/13</span><span class="pct">46%</span></td>
+<td class="cell partial"><span class="frac">2/13</span><span class="pct">15%</span></td>
 </tr>
 <tr><td><a href="suite-mgba-suite.html">mgba-suite</a></td>
 <td class="cell none-pass"><span class="frac">0/14</span><span class="pct">0%</span></td>
-<td class="cell "><span class="frac">5/14</span><span class="pct">36%</span></td>
-<td class="cell "><span class="frac">8/14</span><span class="pct">57%</span></td>
-<td class="cell "><span class="frac">8/14</span><span class="pct">57%</span></td>
+<td class="cell partial"><span class="frac">5/14</span><span class="pct">36%</span></td>
+<td class="cell partial"><span class="frac">8/14</span><span class="pct">57%</span></td>
+<td class="cell partial"><span class="frac">8/14</span><span class="pct">57%</span></td>
 </tr>
-</tbody></table>
-<h3>BIOS mode: <code>hle</code></h3>
-<table class="matrix"><thead><tr><th>Suite</th>
-<th class="runner">cable_club</th>
-<th class="runner">mgba</th>
-<th class="runner">nanoboyadvance</th>
-<th class="runner">skyemu</th>
+</tbody></table></div>
+<h3>BIOS mode <code>hle</code></h3>
+<div class="table-wrap"><table class="matrix"><thead><tr><th>Suite</th>
+<th class="runner r-cable_club"><span class="dot"></span>cable_club</th>
+<th class="runner r-mgba"><span class="dot"></span>mgba</th>
+<th class="runner r-nanoboyadvance"><span class="dot"></span>nanoboyadvance</th>
+<th class="runner r-skyemu"><span class="dot"></span>skyemu</th>
 </tr></thead><tbody>
 <tr><td><a href="suite-ags-aging.html">ags-aging</a></td>
 <td class="cell none-pass"><span class="frac">0/1</span><span class="pct">0%</span></td>
@@ -89,24 +93,24 @@
 <td class="cell all-pass"><span class="frac">3/3</span><span class="pct">100%</span></td>
 </tr>
 <tr><td><a href="suite-jsmolka.html">jsmolka</a></td>
-<td class="cell "><span class="frac">10/13</span><span class="pct">77%</span></td>
-<td class="cell "><span class="frac">11/13</span><span class="pct">85%</span></td>
-<td class="cell "><span class="frac">7/13</span><span class="pct">54%</span></td>
-<td class="cell "><span class="frac">2/13</span><span class="pct">15%</span></td>
+<td class="cell partial"><span class="frac">10/13</span><span class="pct">77%</span></td>
+<td class="cell partial"><span class="frac">11/13</span><span class="pct">85%</span></td>
+<td class="cell partial"><span class="frac">7/13</span><span class="pct">54%</span></td>
+<td class="cell partial"><span class="frac">2/13</span><span class="pct">15%</span></td>
 </tr>
 <tr><td><a href="suite-mgba-suite.html">mgba-suite</a></td>
 <td class="cell none-pass"><span class="frac">0/14</span><span class="pct">0%</span></td>
-<td class="cell "><span class="frac">6/14</span><span class="pct">43%</span></td>
-<td class="cell "><span class="frac">7/14</span><span class="pct">50%</span></td>
-<td class="cell "><span class="frac">6/14</span><span class="pct">43%</span></td>
+<td class="cell partial"><span class="frac">6/14</span><span class="pct">43%</span></td>
+<td class="cell partial"><span class="frac">7/14</span><span class="pct">50%</span></td>
+<td class="cell partial"><span class="frac">6/14</span><span class="pct">43%</span></td>
 </tr>
-</tbody></table>
-<h3>BIOS mode: <code>cleanroom</code></h3>
-<table class="matrix"><thead><tr><th>Suite</th>
-<th class="runner">cable_club</th>
-<th class="runner">mgba</th>
-<th class="runner">nanoboyadvance</th>
-<th class="runner">skyemu</th>
+</tbody></table></div>
+<h3>BIOS mode <code>cleanroom</code></h3>
+<div class="table-wrap"><table class="matrix"><thead><tr><th>Suite</th>
+<th class="runner r-cable_club"><span class="dot"></span>cable_club</th>
+<th class="runner r-mgba"><span class="dot"></span>mgba</th>
+<th class="runner r-nanoboyadvance"><span class="dot"></span>nanoboyadvance</th>
+<th class="runner r-skyemu"><span class="dot"></span>skyemu</th>
 </tr></thead><tbody>
 <tr><td><a href="suite-ags-aging.html">ags-aging</a></td>
 <td class="cell none-pass"><span class="frac">0/1</span><span class="pct">0%</span></td>
@@ -128,21 +132,20 @@
 </tr>
 <tr><td><a href="suite-jsmolka.html">jsmolka</a></td>
 <td class="cell none-pass"><span class="frac">0/13</span><span class="pct">0%</span></td>
-<td class="cell "><span class="frac">7/13</span><span class="pct">54%</span></td>
-<td class="cell "><span class="frac">7/13</span><span class="pct">54%</span></td>
-<td class="cell "><span class="frac">2/13</span><span class="pct">15%</span></td>
+<td class="cell partial"><span class="frac">7/13</span><span class="pct">54%</span></td>
+<td class="cell partial"><span class="frac">7/13</span><span class="pct">54%</span></td>
+<td class="cell partial"><span class="frac">2/13</span><span class="pct">15%</span></td>
 </tr>
 <tr><td><a href="suite-mgba-suite.html">mgba-suite</a></td>
 <td class="cell none-pass"><span class="frac">0/14</span><span class="pct">0%</span></td>
-<td class="cell "><span class="frac">7/14</span><span class="pct">50%</span></td>
-<td class="cell "><span class="frac">8/14</span><span class="pct">57%</span></td>
-<td class="cell "><span class="frac">9/14</span><span class="pct">64%</span></td>
+<td class="cell partial"><span class="frac">7/14</span><span class="pct">50%</span></td>
+<td class="cell partial"><span class="frac">8/14</span><span class="pct">57%</span></td>
+<td class="cell partial"><span class="frac">9/14</span><span class="pct">64%</span></td>
 </tr>
-</tbody></table>
+</tbody></table></div>
 </main>
 <footer>
-  <span class="cable">━<span class="led">●</span>━━━━━━━━━━━━━━━━━━━━<span class="led">●</span>━</span><br>
-  Generated by build_dashboard.py · Cable Club gba-accuracy-tests
+  Generated by <code>build_dashboard.py</code> · Cable Club <code>gba-accuracy-tests</code>
 </footer>
 </body>
 </html>
