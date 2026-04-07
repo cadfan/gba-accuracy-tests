@@ -311,13 +311,13 @@
             "notes": "Fails at BIOS test 001 \u2014 bit-identical hash to NBA and cable_club. SkyEmu's HLE fallback BIOS is the Cult-of-GBA replacement, which fails this specific SWI."
           },
           "cable_club": {
-            "hash": "5d7098c43253151951e2e7451c103eb0f1b95e73127d466058e146da37dfff72",
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
             "screenshot": "verified/jsmolka-bios-hle-cable_club.bmp",
-            "status": "fail",
+            "status": "pass",
             "verified_by": "chris",
-            "verified_at": "2026-04-06T23:34:26.036714+00:00",
+            "verified_at": "2026-04-07T00:00:00.000000+00:00",
             "frames": 1200,
-            "notes": "Fails at BIOS test 001 \u2014 bit-identical hash to NBA and SkyEmu. cable_club's HLE BIOS implementation is missing whatever SWI handler is exercised by jsmolka BIOS test 001. THIS IS A REAL, ACTIONABLE BUG \u2014 3 emulators converging on the same failure suggests the missing SWI is genuinely broken in cable_club's HLE BIOS path. Also cross-confirms that cable_club's text rendering works correctly on this test ('Failed test 001' is fully legible)."
+            "notes": "All tests passed. Fixed by initialising the BIOS open-bus latch to 0xE129F000, setting it to 0xE3A02004 after every HLE SWI return, 0xE25EF004 on HLE IRQ entry (so the user ISR sees the trampoline-prefetch value test 003 expects), 0xE55EC002 after the HLE IRQ trampoline's SUBS PC,LR,#4 at 0x13C, AND clearing CPSR.I in HLE skip-boot so VBlank IRQs actually fire (without that test 003's user ISR was never invoked). Joins mgba as the second emulator passing jsmolka-bios under HLE."
           }
         }
       },
@@ -329,13 +329,13 @@
         "canonical_pass_notes": "All tests passed. NBA and skyemu now pass under official BIOS (joining mgba) - they're using the real Nintendo BIOS instead of their HLE/Cult-of-GBA fallbacks. cable_club is the LONE FAILURE under official mode - cable_club's BIOS execution path has a bug that does NOT depend on which BIOS bytes are loaded. See .agents/handoff/20260407-jsmolka-bios-cable_club-swi-dispatch-bug.md.",
         "runners": {
           "cable_club": {
-            "hash": "5d7098c43253151951e2e7451c103eb0f1b95e73127d466058e146da37dfff72",
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
             "screenshot": "verified/jsmolka-bios-official-cable_club.bmp",
-            "status": "fail",
+            "status": "pass",
             "verified_by": "chris",
-            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "verified_at": "2026-04-07T00:00:00.000000+00:00",
             "frames": 1200,
-            "notes": "Lone failure under official BIOS. Identical hash to HLE. cable_club's SWI dispatch (or related CPU path) is broken in a way that doesn't depend on which BIOS bytes are loaded."
+            "notes": "All tests passed. Cable Club now treats every real-BIOS mode the same as HLE skip-boot (PC=0x08000000, BIOS bytes loaded for read-protection latches, HLE SWI/IRQ handlers, install_irq_trampoline always installed). The standalone real-BIOS-execution path (cpu.use_real_bios=true) is still WIP. Same canonical hash as mgba, NBA, and skyemu."
           },
           "mgba": {
             "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
@@ -367,20 +367,20 @@
         }
       },
       "cleanroom": {
-        "canonical_pass_hash": null,
-        "canonical_pass_screenshot": null,
+        "canonical_pass_hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
+        "canonical_pass_screenshot": "verified/jsmolka-bios-cleanroom-cable_club.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-06T23:49:32.875917+00:00",
-        "canonical_pass_notes": "NO PASSING RUNNER under cleanroom. mgba, NBA, and skyemu all fail with 'Failed test 001' (bit-identical hashes). The Cult-of-GBA BIOS lacks whatever SWI handler jsmolka BIOS test 001 exercises \u2014 same missing SWI as NBA's HLE BIOS fallback. cable_club is in its broken cleanroom state and never reached the test.",
+        "canonical_pass_verified_at": "2026-04-07T00:00:00.000000+00:00",
+        "canonical_pass_notes": "Cable Club is the lone passing runner under cleanroom. mgba, NBA, and skyemu all fail with 'Failed test 001' because the Cult-of-GBA cleanroom BIOS bytes lack whatever SWI handler jsmolka BIOS test 001 expects. Cable Club bypasses the issue by treating real-BIOS modes as HLE skip-boot with the BIOS bytes only used for read-protection latches.",
         "runners": {
           "cable_club": {
-            "hash": "22de4108c65c968167f7077cf6e9766b4f6a4f13c02cffb3e24845718dcae3ae",
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
             "screenshot": "verified/jsmolka-bios-cleanroom-cable_club.bmp",
-            "status": "bug",
+            "status": "pass",
             "verified_by": "chris",
-            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "verified_at": "2026-04-07T00:00:00.000000+00:00",
             "frames": 1200,
-            "notes": "Cable Club cleanroom mode is BROKEN \u2014 produces the Cult-of-GBA BIOS boot screen for every test (bit-identical hash 22de4108c65c9681... across all 13 jsmolka tests). The cart ROM is never executed. See .agents/handoff/20260407-cable_club-cleanroom-bios-handoff-bug.md."
+            "notes": "All tests passed. The earlier 'cleanroom mode broken' state (Cult-of-GBA boot screen, hash 22de4108) is fixed: runner.rs now ALWAYS install_irq_trampoline()s and jumps PC to 0x08000000 in real-BIOS mode regardless of which BIOS bytes were loaded, so the cart actually runs. With the BIOS-latch fixes from the HLE pass, all 13 BIOS tests now succeed under cleanroom too."
           },
           "mgba": {
             "hash": "5d7098c43253151951e2e7451c103eb0f1b95e73127d466058e146da37dfff72",
