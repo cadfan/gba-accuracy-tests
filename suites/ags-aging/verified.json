@@ -10,13 +10,13 @@
         "canonical_pass_notes": "Re-promoted from 2-runner consensus; previous canonical was 28f46991896a85c8.",
         "runners": {
           "cable_club": {
-            "hash": "4769bc8ad8a6d462e800fe7331e894b8ea5e2319a1f5a61389c0e6bab16029b1",
+            "hash": "ba847b3c2db08b5b3047bf1049ca9655d6081ca73f5d9677cda2237b93f02ff3",
             "screenshot": "verified/ags-aging-full-hle-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:08:32.591391+00:00",
             "frames": 3000,
-            "notes": "2026-04-07 post-fix recapture"
+            "notes": "2026-04-07 post commits c93d87c + edff1f3"
           },
           "mgba": {
             "hash": "cac70be3cfa28ebac5515a72319f34a8ce61aba6ae825d65d8c8de85bc5e3673",
@@ -55,13 +55,13 @@
         "canonical_pass_notes": "Re-promoted from 2-runner consensus; previous canonical was 5912c0bd89f9b06e.",
         "runners": {
           "cable_club": {
-            "hash": "4769bc8ad8a6d462e800fe7331e894b8ea5e2319a1f5a61389c0e6bab16029b1",
+            "hash": "ba847b3c2db08b5b3047bf1049ca9655d6081ca73f5d9677cda2237b93f02ff3",
             "screenshot": "verified/ags-aging-full-official-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:08:32.591391+00:00",
             "frames": 3000,
-            "notes": "2026-04-07 post-fix recapture"
+            "notes": "2026-04-07 post commits c93d87c + edff1f3"
           },
           "mgba": {
             "hash": "cac70be3cfa28ebac5515a72319f34a8ce61aba6ae825d65d8c8de85bc5e3673",
@@ -100,13 +100,13 @@
         "canonical_pass_notes": "Re-promoted from 2-runner consensus; previous canonical was 28f46991896a85c8.",
         "runners": {
           "cable_club": {
-            "hash": "4769bc8ad8a6d462e800fe7331e894b8ea5e2319a1f5a61389c0e6bab16029b1",
+            "hash": "ba847b3c2db08b5b3047bf1049ca9655d6081ca73f5d9677cda2237b93f02ff3",
             "screenshot": "verified/ags-aging-full-cleanroom-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:08:32.591391+00:00",
             "frames": 3000,
-            "notes": "2026-04-07 post-fix recapture"
+            "notes": "2026-04-07 post commits c93d87c + edff1f3"
           },
           "mgba": {
             "hash": "cac70be3cfa28ebac5515a72319f34a8ce61aba6ae825d65d8c8de85bc5e3673",

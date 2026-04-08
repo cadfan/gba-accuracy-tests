@@ -284,13 +284,13 @@
         "canonical_pass_notes": "Instruction timing tests sub-suite captured under hle BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "26f1247d710b441c03f71f95852d4e068ba5b36dba3ce5dcb1b1b096b2b3471b",
+            "hash": "ed125fc7e994126f97394f87274e71243c8e71c4ddee012300a880f413ca1e72",
             "screenshot": "verified/mgba-suite-timing-hle-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
+            "notes": "2026-04-07 post commits c93d87c + edff1f3"
           },
           "mgba": {
             "hash": "e6842009ec4cb53f3e431f4fb0f9b867b9b6b104b3df35dd76e87015b5866e8a",
@@ -329,13 +329,13 @@
         "canonical_pass_notes": "Instruction timing tests sub-suite captured under official BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "26f1247d710b441c03f71f95852d4e068ba5b36dba3ce5dcb1b1b096b2b3471b",
+            "hash": "ed125fc7e994126f97394f87274e71243c8e71c4ddee012300a880f413ca1e72",
             "screenshot": "verified/mgba-suite-timing-official-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2610,
-            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
+            "notes": "2026-04-07 post commits c93d87c + edff1f3"
           },
           "mgba": {
             "hash": "6cb5c96c1ba9bcd156cb2a440785141527d2b9faefd0ac2fe9cf861d0d45d76d",
@@ -374,13 +374,13 @@
         "canonical_pass_notes": "Instruction timing tests sub-suite captured under cleanroom BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "26f1247d710b441c03f71f95852d4e068ba5b36dba3ce5dcb1b1b096b2b3471b",
+            "hash": "ed125fc7e994126f97394f87274e71243c8e71c4ddee012300a880f413ca1e72",
             "screenshot": "verified/mgba-suite-timing-cleanroom-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
+            "notes": "2026-04-07 post commits c93d87c + edff1f3"
           },
           "mgba": {
             "hash": "db7ad6643e9e09131416fdfbe29c707c1e71aabee10689f1cb8e719f0d22553f",
@@ -421,13 +421,13 @@
         "canonical_pass_notes": "Timer count-up tests sub-suite captured under hle BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "9c9036f78d14611853e8495cfb353888f3eaeee0e3a8eb56bf3387da187ea390",
+            "hash": "2639841f0e8a77809fa0a5d194f9cb561acc206997869361bde76bddf2093273",
             "screenshot": "verified/mgba-suite-timers-hle-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
+            "notes": "2026-04-07 post commits c93d87c + edff1f3"
           },
           "mgba": {
             "hash": "937610b89d602a7465b8345ad189c6abb6b2b8592b5b630ee60e4dc1d6de893d",
@@ -466,13 +466,13 @@
         "canonical_pass_notes": "Timer count-up tests sub-suite captured under official BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "9c9036f78d14611853e8495cfb353888f3eaeee0e3a8eb56bf3387da187ea390",
+            "hash": "2639841f0e8a77809fa0a5d194f9cb561acc206997869361bde76bddf2093273",
             "screenshot": "verified/mgba-suite-timers-official-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2610,
-            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
+            "notes": "2026-04-07 post commits c93d87c + edff1f3"
           },
           "mgba": {
             "hash": "042267e10d15a68bc4945fd9b7360c3b85eb8f49cc0fae71b20efd40da2e3942",
@@ -511,13 +511,13 @@
         "canonical_pass_notes": "Timer count-up tests sub-suite captured under cleanroom BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "9c9036f78d14611853e8495cfb353888f3eaeee0e3a8eb56bf3387da187ea390",
+            "hash": "2639841f0e8a77809fa0a5d194f9cb561acc206997869361bde76bddf2093273",
             "screenshot": "verified/mgba-suite-timers-cleanroom-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
+            "notes": "2026-04-07 post commits c93d87c + edff1f3"
           },
           "mgba": {
             "hash": "de7e42494003225f62f2a1822dcce3311d37ad18b6483b03ed583854be8344c8",
@@ -558,13 +558,13 @@
         "canonical_pass_notes": "Timer IRQ tests sub-suite captured under hle BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "cf2de92c2a338f12ea7296b3563f53c04db11c9843aa29998196eb164b74487e",
+            "hash": "100eaacab41dd63ea4731ef07d7d89c15dac509dea9a68d2a4eb47777f5befac",
             "screenshot": "verified/mgba-suite-timer-irq-hle-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
+            "notes": "2026-04-07 post commits c93d87c + edff1f3"
           },
           "mgba": {
             "hash": "33a6f56c1678943f21a501c163902c1c4ec84477b2b557710e28ee07ac80fc98",
@@ -603,13 +603,13 @@
         "canonical_pass_notes": "Timer IRQ tests sub-suite captured under official BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "cf2de92c2a338f12ea7296b3563f53c04db11c9843aa29998196eb164b74487e",
+            "hash": "100eaacab41dd63ea4731ef07d7d89c15dac509dea9a68d2a4eb47777f5befac",
             "screenshot": "verified/mgba-suite-timer-irq-official-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2610,
-            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
+            "notes": "2026-04-07 post commits c93d87c + edff1f3"
           },
           "mgba": {
             "hash": "33a6f56c1678943f21a501c163902c1c4ec84477b2b557710e28ee07ac80fc98",
@@ -648,13 +648,13 @@
         "canonical_pass_notes": "Timer IRQ tests sub-suite captured under cleanroom BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "cf2de92c2a338f12ea7296b3563f53c04db11c9843aa29998196eb164b74487e",
+            "hash": "100eaacab41dd63ea4731ef07d7d89c15dac509dea9a68d2a4eb47777f5befac",
             "screenshot": "verified/mgba-suite-timer-irq-cleanroom-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
-            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
+            "notes": "2026-04-07 post commits c93d87c + edff1f3"
           },
           "mgba": {
             "hash": "33a6f56c1678943f21a501c163902c1c4ec84477b2b557710e28ee07ac80fc98",
@@ -1243,13 +1243,13 @@
         "canonical_pass_notes": "DMA tests sub-suite captured under hle BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "c487bd99017e380812a9e3c97f31244923f7107621fc62ef90a0eee73127a7fb",
+            "hash": "affd69bb73d10727c49d7bebf3e7409495daa0a8d1a8ec8cda5ef0218387322f",
             "screenshot": "verified/mgba-suite-dma-hle-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 3600,
-            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
+            "notes": "2026-04-07 post commits c93d87c + edff1f3"
           },
           "mgba": {
             "hash": "42dfdfc4a2d6fd1c33c88cd19071af6b15ffd837dba2f3ff623e56d5a976b196",
@@ -1288,13 +1288,13 @@
         "canonical_pass_notes": "DMA tests sub-suite captured under official BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "c487bd99017e380812a9e3c97f31244923f7107621fc62ef90a0eee73127a7fb",
+            "hash": "affd69bb73d10727c49d7bebf3e7409495daa0a8d1a8ec8cda5ef0218387322f",
             "screenshot": "verified/mgba-suite-dma-official-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 3810,
-            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
+            "notes": "2026-04-07 post commits c93d87c + edff1f3"
           },
           "mgba": {
             "hash": "b5ecfe603f354223eac5c749adbcaa14dadb12cd1c01e9246a35a8ba332926bf",
@@ -1333,13 +1333,13 @@
         "canonical_pass_notes": "DMA tests sub-suite captured under cleanroom BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "c487bd99017e380812a9e3c97f31244923f7107621fc62ef90a0eee73127a7fb",
+            "hash": "affd69bb73d10727c49d7bebf3e7409495daa0a8d1a8ec8cda5ef0218387322f",
             "screenshot": "verified/mgba-suite-dma-cleanroom-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 3600,
-            "notes": "Updated 2026-04-07 post commits 83d29e4 + 74eba82 + cfc0cac."
+            "notes": "2026-04-07 post commits c93d87c + edff1f3"
           },
           "mgba": {
             "hash": "42dfdfc4a2d6fd1c33c88cd19071af6b15ffd837dba2f3ff623e56d5a976b196",
@@ -1380,7 +1380,7 @@
         "canonical_pass_notes": "SIO read tests sub-suite captured under hle BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "09b8554d63bb14556c6445522203915e5651a2e118db6908f6d33e3ae2e8e819",
+            "hash": "db0a3c1192c2bfb54520f9e4429bca64314cad669c00c08345b004067027660c",
             "screenshot": "verified/mgba-suite-sio-read-hle-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
@@ -1425,7 +1425,7 @@
         "canonical_pass_notes": "SIO read tests sub-suite captured under official BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "09b8554d63bb14556c6445522203915e5651a2e118db6908f6d33e3ae2e8e819",
+            "hash": "db0a3c1192c2bfb54520f9e4429bca64314cad669c00c08345b004067027660c",
             "screenshot": "verified/mgba-suite-sio-read-official-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
@@ -1470,7 +1470,7 @@
         "canonical_pass_notes": "SIO read tests sub-suite captured under cleanroom BIOS mode. Runners diverge on this test - each produces a different hash. No automatic consensus. Visual verification of each per-runner screenshot is required to determine which runner reached the test ROM's canonical pass state and which produced different counts or failed earlier. The 'captured' status means the hash is recorded but the pass/fail decision is deferred to a future human-verification pass.",
         "runners": {
           "cable_club": {
-            "hash": "09b8554d63bb14556c6445522203915e5651a2e118db6908f6d33e3ae2e8e819",
+            "hash": "db0a3c1192c2bfb54520f9e4429bca64314cad669c00c08345b004067027660c",
             "screenshot": "verified/mgba-suite-sio-read-cleanroom-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
@@ -1517,9 +1517,9 @@
         "canonical_pass_notes": "Re-promoted from 3-runner consensus; previous canonical was 26fe36011a6d9b21.",
         "runners": {
           "cable_club": {
-            "hash": "1db61b560136d778fbf6f658bdcb2051678d84befb87ff731a5e7f407762428e",
+            "hash": "3c26ed2875ccb4a19b2f1f3dbed85a8c5383f7c233407d0771b2f3e5d3f909fc",
             "screenshot": "verified/mgba-suite-sio-timing-hle-cable_club.bmp",
-            "status": "pass",
+            "status": "captured",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
@@ -1562,9 +1562,9 @@
         "canonical_pass_notes": "Re-promoted from 3-runner consensus; previous canonical was 26fe36011a6d9b21.",
         "runners": {
           "cable_club": {
-            "hash": "1db61b560136d778fbf6f658bdcb2051678d84befb87ff731a5e7f407762428e",
+            "hash": "3c26ed2875ccb4a19b2f1f3dbed85a8c5383f7c233407d0771b2f3e5d3f909fc",
             "screenshot": "verified/mgba-suite-sio-timing-official-cable_club.bmp",
-            "status": "pass",
+            "status": "captured",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2610,
@@ -1607,9 +1607,9 @@
         "canonical_pass_notes": "Re-promoted from 3-runner consensus; previous canonical was 26fe36011a6d9b21.",
         "runners": {
           "cable_club": {
-            "hash": "1db61b560136d778fbf6f658bdcb2051678d84befb87ff731a5e7f407762428e",
+            "hash": "3c26ed2875ccb4a19b2f1f3dbed85a8c5383f7c233407d0771b2f3e5d3f909fc",
             "screenshot": "verified/mgba-suite-sio-timing-cleanroom-cable_club.bmp",
-            "status": "pass",
+            "status": "captured",
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:17:42.848633+00:00",
             "frames": 2400,
