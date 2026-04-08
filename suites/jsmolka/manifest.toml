@@ -121,7 +121,11 @@ caveat = "May fail on real development flash boards"
 [tests.completion]
 type = "stable_frames"
 window = 10
-min_frames = 30
+# min_frames bumped from 30 -> 150: the post-boot white screen is stable
+# for ~100 frames before the flash test actually runs. min_frames=30 was
+# catching that boot-white stability and mis-reporting the pre-test state
+# as the final framebuffer.
+min_frames = 150
 
 [[tests]]
 id = "jsmolka-flash64"
@@ -139,7 +143,9 @@ caveat = "May fail on real development flash boards"
 [tests.completion]
 type = "stable_frames"
 window = 10
-min_frames = 30
+# min_frames bumped from 30 -> 150: same pre-test white-screen issue as
+# flash128 — the boot white was being captured as "final stable state".
+min_frames = 150
 
 [[tests]]
 id = "jsmolka-sram"
