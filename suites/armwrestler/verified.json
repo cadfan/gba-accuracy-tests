@@ -6,8 +6,8 @@
         "canonical_pass_hash": "9e47b1706279d4c941e8a7d425d41c46438c022ee69c617744ab56ebef1b417a",
         "canonical_pass_screenshot": "verified/armwrestler-arm-alu-hle-mgba.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
-        "canonical_pass_notes": "ALU TESTS PART 1 - all 17 ARM ALU operations show green OK. 4-way pixel-identical agreement (cable_club, mgba, NBA, skyemu).",
+        "canonical_pass_verified_at": "2026-04-07T23:55:00+00:00",
+        "canonical_pass_notes": "User-confirmed 2026-04-07: menu navigation + ARM ALU tests \u2014 all ops marked OK.",
         "runners": {
           "cable_club": {
             "hash": "9e47b1706279d4c941e8a7d425d41c46438c022ee69c617744ab56ebef1b417a",
@@ -16,7 +16,7 @@
             "verified_by": "chris",
             "verified_at": "2026-04-07T00:50:57.121386+00:00",
             "frames": 500,
-            "notes": "Matches consensus pass."
+            "notes": "2026-04-07 user-verified pass state."
           },
           "mgba": {
             "hash": "9e47b1706279d4c941e8a7d425d41c46438c022ee69c617744ab56ebef1b417a",
@@ -51,8 +51,8 @@
         "canonical_pass_hash": "9e47b1706279d4c941e8a7d425d41c46438c022ee69c617744ab56ebef1b417a",
         "canonical_pass_screenshot": "verified/armwrestler-arm-alu-official-mgba.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
-        "canonical_pass_notes": "ALU TESTS PART 1 - all 17 ARM ALU operations show green OK. 4-way pixel-identical agreement (cable_club, mgba, NBA, skyemu).",
+        "canonical_pass_verified_at": "2026-04-07T23:55:00+00:00",
+        "canonical_pass_notes": "User-confirmed 2026-04-07: menu navigation + ARM ALU tests \u2014 all ops marked OK.",
         "runners": {
           "cable_club": {
             "hash": "9e47b1706279d4c941e8a7d425d41c46438c022ee69c617744ab56ebef1b417a",
@@ -61,7 +61,7 @@
             "verified_by": "chris",
             "verified_at": "2026-04-07T00:50:57.121386+00:00",
             "frames": 710,
-            "notes": "Matches consensus pass."
+            "notes": "2026-04-07 user-verified pass state."
           },
           "mgba": {
             "hash": "9e47b1706279d4c941e8a7d425d41c46438c022ee69c617744ab56ebef1b417a",
@@ -96,8 +96,8 @@
         "canonical_pass_hash": "9e47b1706279d4c941e8a7d425d41c46438c022ee69c617744ab56ebef1b417a",
         "canonical_pass_screenshot": "verified/armwrestler-arm-alu-cleanroom-mgba.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
-        "canonical_pass_notes": "ALU TESTS PART 1 - all 17 ARM ALU operations show green OK. 3-way pixel-identical agreement (mgba, NBA, skyemu); cable_club hits the cleanroom handoff bug.",
+        "canonical_pass_verified_at": "2026-04-07T23:55:00+00:00",
+        "canonical_pass_notes": "User-confirmed 2026-04-07: menu navigation + ARM ALU tests \u2014 all ops marked OK.",
         "runners": {
           "cable_club": {
             "hash": "9e47b1706279d4c941e8a7d425d41c46438c022ee69c617744ab56ebef1b417a",
@@ -106,7 +106,7 @@
             "verified_by": "chris",
             "verified_at": "2026-04-07T00:50:57.121386+00:00",
             "frames": 500,
-            "notes": "2026-04-07 post-fix recapture"
+            "notes": "2026-04-07 user-verified pass state."
           },
           "mgba": {
             "hash": "9e47b1706279d4c941e8a7d425d41c46438c022ee69c617744ab56ebef1b417a",
@@ -143,8 +143,8 @@
         "canonical_pass_hash": "23f7012c6143e919c483e66a49907ea2d6243d6c5399d586d46289be572d5fad",
         "canonical_pass_screenshot": "verified/armwrestler-arm-ldr-str-hle-mgba.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
-        "canonical_pass_notes": "ARM LDR/STR test page - all variants show OK. 4-way pixel-identical agreement (cable_club, mgba, NBA, skyemu).",
+        "canonical_pass_verified_at": "2026-04-07T23:55:00+00:00",
+        "canonical_pass_notes": "User-confirmed 2026-04-07: menu navigation + ARM LDR/STR tests \u2014 all addressing modes OK.",
         "runners": {
           "cable_club": {
             "hash": "23f7012c6143e919c483e66a49907ea2d6243d6c5399d586d46289be572d5fad",
@@ -153,7 +153,7 @@
             "verified_by": "chris",
             "verified_at": "2026-04-07T00:50:57.121386+00:00",
             "frames": 500,
-            "notes": "Matches consensus pass."
+            "notes": "2026-04-07 user-verified pass state."
           },
           "mgba": {
             "hash": "23f7012c6143e919c483e66a49907ea2d6243d6c5399d586d46289be572d5fad",
@@ -188,8 +188,8 @@
         "canonical_pass_hash": "23f7012c6143e919c483e66a49907ea2d6243d6c5399d586d46289be572d5fad",
         "canonical_pass_screenshot": "verified/armwrestler-arm-ldr-str-official-mgba.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
-        "canonical_pass_notes": "ARM LDR/STR test page - all variants show OK. 4-way pixel-identical agreement (cable_club, mgba, NBA, skyemu).",
+        "canonical_pass_verified_at": "2026-04-07T23:55:00+00:00",
+        "canonical_pass_notes": "User-confirmed 2026-04-07: menu navigation + ARM LDR/STR tests \u2014 all addressing modes OK.",
         "runners": {
           "cable_club": {
             "hash": "23f7012c6143e919c483e66a49907ea2d6243d6c5399d586d46289be572d5fad",
@@ -198,7 +198,7 @@
             "verified_by": "chris",
             "verified_at": "2026-04-07T00:50:57.121386+00:00",
             "frames": 710,
-            "notes": "Matches consensus pass."
+            "notes": "2026-04-07 user-verified pass state."
           },
           "mgba": {
             "hash": "23f7012c6143e919c483e66a49907ea2d6243d6c5399d586d46289be572d5fad",
@@ -233,8 +233,8 @@
         "canonical_pass_hash": "23f7012c6143e919c483e66a49907ea2d6243d6c5399d586d46289be572d5fad",
         "canonical_pass_screenshot": "verified/armwrestler-arm-ldr-str-cleanroom-mgba.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
-        "canonical_pass_notes": "ARM LDR/STR test page - all variants show OK. 3-way pixel-identical agreement (mgba, NBA, skyemu); cable_club hits the cleanroom handoff bug.",
+        "canonical_pass_verified_at": "2026-04-07T23:55:00+00:00",
+        "canonical_pass_notes": "User-confirmed 2026-04-07: menu navigation + ARM LDR/STR tests \u2014 all addressing modes OK.",
         "runners": {
           "cable_club": {
             "hash": "23f7012c6143e919c483e66a49907ea2d6243d6c5399d586d46289be572d5fad",
@@ -243,7 +243,7 @@
             "verified_by": "chris",
             "verified_at": "2026-04-07T00:50:57.121386+00:00",
             "frames": 500,
-            "notes": "2026-04-07 post-fix recapture"
+            "notes": "2026-04-07 user-verified pass state."
           },
           "mgba": {
             "hash": "23f7012c6143e919c483e66a49907ea2d6243d6c5399d586d46289be572d5fad",
@@ -280,8 +280,8 @@
         "canonical_pass_hash": "d98cdf5668d3308ab1c992302e5a599451a276ed059e784de1fd763d95774c69",
         "canonical_pass_screenshot": "verified/armwrestler-arm-ldm-stm-hle-mgba.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
-        "canonical_pass_notes": "ARM LDM/STM test page - all variants show OK. 4-way pixel-identical agreement (cable_club, mgba, NBA, skyemu).",
+        "canonical_pass_verified_at": "2026-04-07T23:55:00+00:00",
+        "canonical_pass_notes": "User-confirmed 2026-04-07: menu navigation + ARM LDM/STM tests \u2014 all variants OK.",
         "runners": {
           "cable_club": {
             "hash": "d98cdf5668d3308ab1c992302e5a599451a276ed059e784de1fd763d95774c69",
@@ -290,7 +290,7 @@
             "verified_by": "chris",
             "verified_at": "2026-04-07T00:50:57.121386+00:00",
             "frames": 500,
-            "notes": "Matches consensus pass."
+            "notes": "2026-04-07 user-verified pass state."
           },
           "mgba": {
             "hash": "d98cdf5668d3308ab1c992302e5a599451a276ed059e784de1fd763d95774c69",
@@ -325,8 +325,8 @@
         "canonical_pass_hash": "d98cdf5668d3308ab1c992302e5a599451a276ed059e784de1fd763d95774c69",
         "canonical_pass_screenshot": "verified/armwrestler-arm-ldm-stm-official-mgba.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
-        "canonical_pass_notes": "ARM LDM/STM test page - all variants show OK. 4-way pixel-identical agreement (cable_club, mgba, NBA, skyemu).",
+        "canonical_pass_verified_at": "2026-04-07T23:55:00+00:00",
+        "canonical_pass_notes": "User-confirmed 2026-04-07: menu navigation + ARM LDM/STM tests \u2014 all variants OK.",
         "runners": {
           "cable_club": {
             "hash": "d98cdf5668d3308ab1c992302e5a599451a276ed059e784de1fd763d95774c69",
@@ -335,7 +335,7 @@
             "verified_by": "chris",
             "verified_at": "2026-04-07T00:50:57.121386+00:00",
             "frames": 710,
-            "notes": "Matches consensus pass."
+            "notes": "2026-04-07 user-verified pass state."
           },
           "mgba": {
             "hash": "d98cdf5668d3308ab1c992302e5a599451a276ed059e784de1fd763d95774c69",
@@ -370,8 +370,8 @@
         "canonical_pass_hash": "d98cdf5668d3308ab1c992302e5a599451a276ed059e784de1fd763d95774c69",
         "canonical_pass_screenshot": "verified/armwrestler-arm-ldm-stm-cleanroom-mgba.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
-        "canonical_pass_notes": "ARM LDM/STM test page - all variants show OK. 3-way pixel-identical agreement (mgba, NBA, skyemu); cable_club hits the cleanroom handoff bug.",
+        "canonical_pass_verified_at": "2026-04-07T23:55:00+00:00",
+        "canonical_pass_notes": "User-confirmed 2026-04-07: menu navigation + ARM LDM/STM tests \u2014 all variants OK.",
         "runners": {
           "cable_club": {
             "hash": "d98cdf5668d3308ab1c992302e5a599451a276ed059e784de1fd763d95774c69",
@@ -380,7 +380,7 @@
             "verified_by": "chris",
             "verified_at": "2026-04-07T00:50:57.121386+00:00",
             "frames": 500,
-            "notes": "2026-04-07 post-fix recapture"
+            "notes": "2026-04-07 user-verified pass state."
           },
           "mgba": {
             "hash": "d98cdf5668d3308ab1c992302e5a599451a276ed059e784de1fd763d95774c69",
@@ -417,8 +417,8 @@
         "canonical_pass_hash": "2a0081186186d0525fe30780be9695ed4582965dc1406b0f70c256b18cb05721",
         "canonical_pass_screenshot": "verified/armwrestler-thumb-alu-hle-mgba.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
-        "canonical_pass_notes": "Thumb ALU test page - all operations show OK. 4-way pixel-identical agreement (cable_club, mgba, NBA, skyemu).",
+        "canonical_pass_verified_at": "2026-04-07T23:55:00+00:00",
+        "canonical_pass_notes": "User-confirmed 2026-04-07: menu navigation + Thumb ALU tests \u2014 all ops OK.",
         "runners": {
           "cable_club": {
             "hash": "2a0081186186d0525fe30780be9695ed4582965dc1406b0f70c256b18cb05721",
@@ -427,7 +427,7 @@
             "verified_by": "chris",
             "verified_at": "2026-04-07T00:50:57.121386+00:00",
             "frames": 500,
-            "notes": "Matches consensus pass."
+            "notes": "2026-04-07 user-verified pass state."
           },
           "mgba": {
             "hash": "2a0081186186d0525fe30780be9695ed4582965dc1406b0f70c256b18cb05721",
@@ -462,8 +462,8 @@
         "canonical_pass_hash": "2a0081186186d0525fe30780be9695ed4582965dc1406b0f70c256b18cb05721",
         "canonical_pass_screenshot": "verified/armwrestler-thumb-alu-official-mgba.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
-        "canonical_pass_notes": "Thumb ALU test page - all operations show OK. 4-way pixel-identical agreement (cable_club, mgba, NBA, skyemu).",
+        "canonical_pass_verified_at": "2026-04-07T23:55:00+00:00",
+        "canonical_pass_notes": "User-confirmed 2026-04-07: menu navigation + Thumb ALU tests \u2014 all ops OK.",
         "runners": {
           "cable_club": {
             "hash": "2a0081186186d0525fe30780be9695ed4582965dc1406b0f70c256b18cb05721",
@@ -472,7 +472,7 @@
             "verified_by": "chris",
             "verified_at": "2026-04-07T00:50:57.121386+00:00",
             "frames": 710,
-            "notes": "Matches consensus pass."
+            "notes": "2026-04-07 user-verified pass state."
           },
           "mgba": {
             "hash": "2a0081186186d0525fe30780be9695ed4582965dc1406b0f70c256b18cb05721",
@@ -507,8 +507,8 @@
         "canonical_pass_hash": "2a0081186186d0525fe30780be9695ed4582965dc1406b0f70c256b18cb05721",
         "canonical_pass_screenshot": "verified/armwrestler-thumb-alu-cleanroom-mgba.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
-        "canonical_pass_notes": "Thumb ALU test page - all operations show OK. 3-way pixel-identical agreement (mgba, NBA, skyemu); cable_club hits the cleanroom handoff bug.",
+        "canonical_pass_verified_at": "2026-04-07T23:55:00+00:00",
+        "canonical_pass_notes": "User-confirmed 2026-04-07: menu navigation + Thumb ALU tests \u2014 all ops OK.",
         "runners": {
           "cable_club": {
             "hash": "2a0081186186d0525fe30780be9695ed4582965dc1406b0f70c256b18cb05721",
@@ -517,7 +517,7 @@
             "verified_by": "chris",
             "verified_at": "2026-04-07T00:50:57.121386+00:00",
             "frames": 500,
-            "notes": "2026-04-07 post-fix recapture"
+            "notes": "2026-04-07 user-verified pass state."
           },
           "mgba": {
             "hash": "2a0081186186d0525fe30780be9695ed4582965dc1406b0f70c256b18cb05721",
@@ -554,8 +554,8 @@
         "canonical_pass_hash": "288d3554f23d40ae69d720ea0def7e5a4982e21076686a5e8a09435e1ca9bead",
         "canonical_pass_screenshot": "verified/armwrestler-thumb-ldr-str-hle-mgba.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
-        "canonical_pass_notes": "Thumb LDR/STR test page - all variants show OK. 4-way pixel-identical agreement (cable_club, mgba, NBA, skyemu).",
+        "canonical_pass_verified_at": "2026-04-07T23:55:00+00:00",
+        "canonical_pass_notes": "User-confirmed 2026-04-07: menu navigation + Thumb LDR/STR tests \u2014 all variants OK.",
         "runners": {
           "cable_club": {
             "hash": "288d3554f23d40ae69d720ea0def7e5a4982e21076686a5e8a09435e1ca9bead",
@@ -564,7 +564,7 @@
             "verified_by": "chris",
             "verified_at": "2026-04-07T00:50:57.121386+00:00",
             "frames": 500,
-            "notes": "Matches consensus pass."
+            "notes": "2026-04-07 user-verified pass state."
           },
           "mgba": {
             "hash": "288d3554f23d40ae69d720ea0def7e5a4982e21076686a5e8a09435e1ca9bead",
@@ -599,8 +599,8 @@
         "canonical_pass_hash": "288d3554f23d40ae69d720ea0def7e5a4982e21076686a5e8a09435e1ca9bead",
         "canonical_pass_screenshot": "verified/armwrestler-thumb-ldr-str-official-mgba.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
-        "canonical_pass_notes": "Thumb LDR/STR test page - all variants show OK. 4-way pixel-identical agreement (cable_club, mgba, NBA, skyemu).",
+        "canonical_pass_verified_at": "2026-04-07T23:55:00+00:00",
+        "canonical_pass_notes": "User-confirmed 2026-04-07: menu navigation + Thumb LDR/STR tests \u2014 all variants OK.",
         "runners": {
           "cable_club": {
             "hash": "288d3554f23d40ae69d720ea0def7e5a4982e21076686a5e8a09435e1ca9bead",
@@ -609,7 +609,7 @@
             "verified_by": "chris",
             "verified_at": "2026-04-07T00:50:57.121386+00:00",
             "frames": 710,
-            "notes": "Matches consensus pass."
+            "notes": "2026-04-07 user-verified pass state."
           },
           "mgba": {
             "hash": "288d3554f23d40ae69d720ea0def7e5a4982e21076686a5e8a09435e1ca9bead",
@@ -644,8 +644,8 @@
         "canonical_pass_hash": "288d3554f23d40ae69d720ea0def7e5a4982e21076686a5e8a09435e1ca9bead",
         "canonical_pass_screenshot": "verified/armwrestler-thumb-ldr-str-cleanroom-mgba.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
-        "canonical_pass_notes": "Thumb LDR/STR test page - all variants show OK. 3-way pixel-identical agreement (mgba, NBA, skyemu); cable_club hits the cleanroom handoff bug.",
+        "canonical_pass_verified_at": "2026-04-07T23:55:00+00:00",
+        "canonical_pass_notes": "User-confirmed 2026-04-07: menu navigation + Thumb LDR/STR tests \u2014 all variants OK.",
         "runners": {
           "cable_club": {
             "hash": "288d3554f23d40ae69d720ea0def7e5a4982e21076686a5e8a09435e1ca9bead",
@@ -654,7 +654,7 @@
             "verified_by": "chris",
             "verified_at": "2026-04-07T00:50:57.121386+00:00",
             "frames": 500,
-            "notes": "2026-04-07 post-fix recapture"
+            "notes": "2026-04-07 user-verified pass state."
           },
           "mgba": {
             "hash": "288d3554f23d40ae69d720ea0def7e5a4982e21076686a5e8a09435e1ca9bead",
@@ -691,8 +691,8 @@
         "canonical_pass_hash": "9c039fc3488e8e0dba7b32084022e3750444f79be99d2009c9f2119ed408efe6",
         "canonical_pass_screenshot": "verified/armwrestler-thumb-ldm-stm-hle-mgba.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
-        "canonical_pass_notes": "LDM/STM TEST page - LDMIA OK, STMIA OK. 4-way pixel-identical agreement (cable_club, mgba, NBA, skyemu).",
+        "canonical_pass_verified_at": "2026-04-07T23:55:00+00:00",
+        "canonical_pass_notes": "User-confirmed 2026-04-07: menu navigation + Thumb LDM/STM tests \u2014 LDMIA and STMIA OK.",
         "runners": {
           "cable_club": {
             "hash": "9c039fc3488e8e0dba7b32084022e3750444f79be99d2009c9f2119ed408efe6",
@@ -701,7 +701,7 @@
             "verified_by": "chris",
             "verified_at": "2026-04-07T00:50:57.121386+00:00",
             "frames": 500,
-            "notes": "Matches consensus pass."
+            "notes": "2026-04-07 user-verified pass state."
           },
           "mgba": {
             "hash": "9c039fc3488e8e0dba7b32084022e3750444f79be99d2009c9f2119ed408efe6",
@@ -736,8 +736,8 @@
         "canonical_pass_hash": "9c039fc3488e8e0dba7b32084022e3750444f79be99d2009c9f2119ed408efe6",
         "canonical_pass_screenshot": "verified/armwrestler-thumb-ldm-stm-official-mgba.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
-        "canonical_pass_notes": "LDM/STM TEST page - LDMIA OK, STMIA OK. 4-way pixel-identical agreement (cable_club, mgba, NBA, skyemu).",
+        "canonical_pass_verified_at": "2026-04-07T23:55:00+00:00",
+        "canonical_pass_notes": "User-confirmed 2026-04-07: menu navigation + Thumb LDM/STM tests \u2014 LDMIA and STMIA OK.",
         "runners": {
           "cable_club": {
             "hash": "9c039fc3488e8e0dba7b32084022e3750444f79be99d2009c9f2119ed408efe6",
@@ -746,7 +746,7 @@
             "verified_by": "chris",
             "verified_at": "2026-04-07T00:50:57.121386+00:00",
             "frames": 710,
-            "notes": "Matches consensus pass."
+            "notes": "2026-04-07 user-verified pass state."
           },
           "mgba": {
             "hash": "9c039fc3488e8e0dba7b32084022e3750444f79be99d2009c9f2119ed408efe6",
@@ -781,8 +781,8 @@
         "canonical_pass_hash": "9c039fc3488e8e0dba7b32084022e3750444f79be99d2009c9f2119ed408efe6",
         "canonical_pass_screenshot": "verified/armwrestler-thumb-ldm-stm-cleanroom-mgba.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-07T00:50:57.121386+00:00",
-        "canonical_pass_notes": "LDM/STM TEST page - LDMIA OK, STMIA OK. 3-way pixel-identical agreement (mgba, NBA, skyemu); cable_club hits the cleanroom handoff bug.",
+        "canonical_pass_verified_at": "2026-04-07T23:55:00+00:00",
+        "canonical_pass_notes": "User-confirmed 2026-04-07: menu navigation + Thumb LDM/STM tests \u2014 LDMIA and STMIA OK.",
         "runners": {
           "cable_club": {
             "hash": "9c039fc3488e8e0dba7b32084022e3750444f79be99d2009c9f2119ed408efe6",
@@ -791,7 +791,7 @@
             "verified_by": "chris",
             "verified_at": "2026-04-07T00:50:57.121386+00:00",
             "frames": 500,
-            "notes": "2026-04-07 post-fix recapture"
+            "notes": "2026-04-07 user-verified pass state."
           },
           "mgba": {
             "hash": "9c039fc3488e8e0dba7b32084022e3750444f79be99d2009c9f2119ed408efe6",
