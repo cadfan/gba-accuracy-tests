@@ -6,8 +6,8 @@
         "canonical_pass_hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
         "canonical_pass_screenshot": "verified/fuzzarm-arm-hle-mgba.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-07T01:04:45.746810+00:00",
-        "canonical_pass_notes": "'End of testing' screen captured. CAVEAT: this confirms the test LOOP completed without the runner crashing or hanging, but does NOT tell us the actual pass/fail counts of the 10,000 randomized instruction tests. FuzzARM writes test results to the mGBA debug log channel (address 0x04FFF780), not the framebuffer. Wiring up debug log capture to the runner adapters is a follow-up workstream. For now, 4-way agreement on this hash means 'all four runners can execute 30000 frames of fuzzarm without crashing'.",
+        "canonical_pass_verified_at": "2026-04-08T00:05:00+00:00",
+        "canonical_pass_notes": "User-confirmed 2026-04-08: \"End of testing\" with no \"Failed test\" text = all ~10,000 randomized tests passed. FuzzARM stalls in input-wait on any failure; reaching the clean \"End of testing\" screen means the test loop ran to completion.",
         "runners": {
           "cable_club": {
             "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
@@ -16,7 +16,7 @@
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:04:45.746810+00:00",
             "frames": 30000,
-            "notes": "Reached 'End of testing' screen. See canonical_pass_notes for caveat."
+            "notes": "2026-04-08 user-verified pass state."
           },
           "mgba": {
             "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
@@ -51,8 +51,8 @@
         "canonical_pass_hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
         "canonical_pass_screenshot": "verified/fuzzarm-arm-official-mgba.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-07T01:04:45.746810+00:00",
-        "canonical_pass_notes": "'End of testing' screen captured. CAVEAT: this confirms the test LOOP completed without the runner crashing or hanging, but does NOT tell us the actual pass/fail counts of the 10,000 randomized instruction tests. FuzzARM writes test results to the mGBA debug log channel (address 0x04FFF780), not the framebuffer. Wiring up debug log capture to the runner adapters is a follow-up workstream. For now, 4-way agreement on this hash means 'all four runners can execute 30000 frames of fuzzarm without crashing'.",
+        "canonical_pass_verified_at": "2026-04-08T00:05:00+00:00",
+        "canonical_pass_notes": "User-confirmed 2026-04-08: \"End of testing\" with no \"Failed test\" text = all ~10,000 randomized tests passed. FuzzARM stalls in input-wait on any failure; reaching the clean \"End of testing\" screen means the test loop ran to completion.",
         "runners": {
           "cable_club": {
             "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
@@ -61,7 +61,7 @@
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:04:45.746810+00:00",
             "frames": 30000,
-            "notes": "Reached 'End of testing' screen. See canonical_pass_notes for caveat."
+            "notes": "2026-04-08 user-verified pass state."
           },
           "mgba": {
             "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
@@ -96,8 +96,8 @@
         "canonical_pass_hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
         "canonical_pass_screenshot": "verified/fuzzarm-arm-cleanroom-mgba.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-07T01:04:45.746810+00:00",
-        "canonical_pass_notes": "'End of testing' screen captured. CAVEAT: this confirms the test LOOP completed without the runner crashing or hanging, but does NOT tell us the actual pass/fail counts of the 10,000 randomized instruction tests. FuzzARM writes test results to the mGBA debug log channel (address 0x04FFF780), not the framebuffer. Wiring up debug log capture to the runner adapters is a follow-up workstream. For now, 4-way agreement on this hash means 'all four runners can execute 30000 frames of fuzzarm without crashing'.",
+        "canonical_pass_verified_at": "2026-04-08T00:05:00+00:00",
+        "canonical_pass_notes": "User-confirmed 2026-04-08: \"End of testing\" with no \"Failed test\" text = all ~10,000 randomized tests passed. FuzzARM stalls in input-wait on any failure; reaching the clean \"End of testing\" screen means the test loop ran to completion.",
         "runners": {
           "cable_club": {
             "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
@@ -106,7 +106,7 @@
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:04:45.746810+00:00",
             "frames": 30000,
-            "notes": "2026-04-07 post-fix recapture"
+            "notes": "2026-04-08 user-verified pass state."
           },
           "mgba": {
             "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
@@ -143,8 +143,8 @@
         "canonical_pass_hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
         "canonical_pass_screenshot": "verified/fuzzarm-thumb-hle-mgba.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-07T01:04:45.746810+00:00",
-        "canonical_pass_notes": "'End of testing' screen captured. CAVEAT: this confirms the test LOOP completed without the runner crashing or hanging, but does NOT tell us the actual pass/fail counts of the 10,000 randomized instruction tests. FuzzARM writes test results to the mGBA debug log channel (address 0x04FFF780), not the framebuffer. Wiring up debug log capture to the runner adapters is a follow-up workstream. For now, 4-way agreement on this hash means 'all four runners can execute 30000 frames of fuzzarm without crashing'.",
+        "canonical_pass_verified_at": "2026-04-08T00:05:00+00:00",
+        "canonical_pass_notes": "User-confirmed 2026-04-08: \"End of testing\" with no \"Failed test\" text = all ~10,000 randomized tests passed. FuzzARM stalls in input-wait on any failure; reaching the clean \"End of testing\" screen means the test loop ran to completion.",
         "runners": {
           "cable_club": {
             "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
@@ -153,7 +153,7 @@
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:04:45.746810+00:00",
             "frames": 30000,
-            "notes": "Reached 'End of testing' screen. See canonical_pass_notes for caveat."
+            "notes": "2026-04-08 user-verified pass state."
           },
           "mgba": {
             "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
@@ -188,8 +188,8 @@
         "canonical_pass_hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
         "canonical_pass_screenshot": "verified/fuzzarm-thumb-official-mgba.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-07T01:04:45.746810+00:00",
-        "canonical_pass_notes": "'End of testing' screen captured. CAVEAT: this confirms the test LOOP completed without the runner crashing or hanging, but does NOT tell us the actual pass/fail counts of the 10,000 randomized instruction tests. FuzzARM writes test results to the mGBA debug log channel (address 0x04FFF780), not the framebuffer. Wiring up debug log capture to the runner adapters is a follow-up workstream. For now, 4-way agreement on this hash means 'all four runners can execute 30000 frames of fuzzarm without crashing'.",
+        "canonical_pass_verified_at": "2026-04-08T00:05:00+00:00",
+        "canonical_pass_notes": "User-confirmed 2026-04-08: \"End of testing\" with no \"Failed test\" text = all ~10,000 randomized tests passed. FuzzARM stalls in input-wait on any failure; reaching the clean \"End of testing\" screen means the test loop ran to completion.",
         "runners": {
           "cable_club": {
             "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
@@ -198,7 +198,7 @@
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:04:45.746810+00:00",
             "frames": 30000,
-            "notes": "Reached 'End of testing' screen. See canonical_pass_notes for caveat."
+            "notes": "2026-04-08 user-verified pass state."
           },
           "mgba": {
             "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
@@ -233,8 +233,8 @@
         "canonical_pass_hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
         "canonical_pass_screenshot": "verified/fuzzarm-thumb-cleanroom-mgba.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-07T01:04:45.746810+00:00",
-        "canonical_pass_notes": "'End of testing' screen captured. CAVEAT: this confirms the test LOOP completed without the runner crashing or hanging, but does NOT tell us the actual pass/fail counts of the 10,000 randomized instruction tests. FuzzARM writes test results to the mGBA debug log channel (address 0x04FFF780), not the framebuffer. Wiring up debug log capture to the runner adapters is a follow-up workstream. For now, 4-way agreement on this hash means 'all four runners can execute 30000 frames of fuzzarm without crashing'.",
+        "canonical_pass_verified_at": "2026-04-08T00:05:00+00:00",
+        "canonical_pass_notes": "User-confirmed 2026-04-08: \"End of testing\" with no \"Failed test\" text = all ~10,000 randomized tests passed. FuzzARM stalls in input-wait on any failure; reaching the clean \"End of testing\" screen means the test loop ran to completion.",
         "runners": {
           "cable_club": {
             "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
@@ -243,7 +243,7 @@
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:04:45.746810+00:00",
             "frames": 30000,
-            "notes": "2026-04-07 post-fix recapture"
+            "notes": "2026-04-08 user-verified pass state."
           },
           "mgba": {
             "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
@@ -280,8 +280,8 @@
         "canonical_pass_hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
         "canonical_pass_screenshot": "verified/fuzzarm-mixed-hle-mgba.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-07T01:04:45.746810+00:00",
-        "canonical_pass_notes": "'End of testing' screen captured. CAVEAT: this confirms the test LOOP completed without the runner crashing or hanging, but does NOT tell us the actual pass/fail counts of the 10,000 randomized instruction tests. FuzzARM writes test results to the mGBA debug log channel (address 0x04FFF780), not the framebuffer. Wiring up debug log capture to the runner adapters is a follow-up workstream. For now, 4-way agreement on this hash means 'all four runners can execute 30000 frames of fuzzarm without crashing'.",
+        "canonical_pass_verified_at": "2026-04-08T00:05:00+00:00",
+        "canonical_pass_notes": "User-confirmed 2026-04-08: \"End of testing\" with no \"Failed test\" text = all ~10,000 randomized tests passed. FuzzARM stalls in input-wait on any failure; reaching the clean \"End of testing\" screen means the test loop ran to completion.",
         "runners": {
           "cable_club": {
             "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
@@ -290,7 +290,7 @@
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:04:45.746810+00:00",
             "frames": 30000,
-            "notes": "Reached 'End of testing' screen. See canonical_pass_notes for caveat."
+            "notes": "2026-04-08 user-verified pass state."
           },
           "mgba": {
             "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
@@ -325,8 +325,8 @@
         "canonical_pass_hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
         "canonical_pass_screenshot": "verified/fuzzarm-mixed-official-mgba.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-07T01:04:45.746810+00:00",
-        "canonical_pass_notes": "'End of testing' screen captured. CAVEAT: this confirms the test LOOP completed without the runner crashing or hanging, but does NOT tell us the actual pass/fail counts of the 10,000 randomized instruction tests. FuzzARM writes test results to the mGBA debug log channel (address 0x04FFF780), not the framebuffer. Wiring up debug log capture to the runner adapters is a follow-up workstream. For now, 4-way agreement on this hash means 'all four runners can execute 30000 frames of fuzzarm without crashing'.",
+        "canonical_pass_verified_at": "2026-04-08T00:05:00+00:00",
+        "canonical_pass_notes": "User-confirmed 2026-04-08: \"End of testing\" with no \"Failed test\" text = all ~10,000 randomized tests passed. FuzzARM stalls in input-wait on any failure; reaching the clean \"End of testing\" screen means the test loop ran to completion.",
         "runners": {
           "cable_club": {
             "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
@@ -335,7 +335,7 @@
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:04:45.746810+00:00",
             "frames": 30000,
-            "notes": "Reached 'End of testing' screen. See canonical_pass_notes for caveat."
+            "notes": "2026-04-08 user-verified pass state."
           },
           "mgba": {
             "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
@@ -370,8 +370,8 @@
         "canonical_pass_hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
         "canonical_pass_screenshot": "verified/fuzzarm-mixed-cleanroom-mgba.bmp",
         "canonical_pass_verified_by": "chris",
-        "canonical_pass_verified_at": "2026-04-07T01:04:45.746810+00:00",
-        "canonical_pass_notes": "'End of testing' screen captured. CAVEAT: this confirms the test LOOP completed without the runner crashing or hanging, but does NOT tell us the actual pass/fail counts of the 10,000 randomized instruction tests. FuzzARM writes test results to the mGBA debug log channel (address 0x04FFF780), not the framebuffer. Wiring up debug log capture to the runner adapters is a follow-up workstream. For now, 4-way agreement on this hash means 'all four runners can execute 30000 frames of fuzzarm without crashing'.",
+        "canonical_pass_verified_at": "2026-04-08T00:05:00+00:00",
+        "canonical_pass_notes": "User-confirmed 2026-04-08: \"End of testing\" with no \"Failed test\" text = all ~10,000 randomized tests passed. FuzzARM stalls in input-wait on any failure; reaching the clean \"End of testing\" screen means the test loop ran to completion.",
         "runners": {
           "cable_club": {
             "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
@@ -380,7 +380,7 @@
             "verified_by": "chris",
             "verified_at": "2026-04-07T01:04:45.746810+00:00",
             "frames": 30000,
-            "notes": "2026-04-07 post-fix recapture"
+            "notes": "2026-04-08 user-verified pass state."
           },
           "mgba": {
             "hash": "f4c0fe5cebba30e254f1d86abc3329915b47305cf9a5a80cb10e9d42d6ab8194",
