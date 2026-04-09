@@ -3,20 +3,20 @@
   "tests": {
     "ags-aging-full": {
       "hle": {
-        "canonical_pass_hash": "cac70be3cfa28ebac5515a72319f34a8ce61aba6ae825d65d8c8de85bc5e3673",
-        "canonical_pass_screenshot": "verified/ags-aging-full-hle-nba.bmp",
-        "canonical_pass_verified_by": "auto-consensus-2 2026-04-07",
-        "canonical_pass_verified_at": "2026-04-07T01:08:32.591391+00:00",
-        "canonical_pass_notes": "Re-promoted from 2-runner consensus; previous canonical was 28f46991896a85c8.",
+        "canonical_pass_hash": null,
+        "canonical_pass_screenshot": null,
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-08T20:13:50.968185+00:00",
+        "canonical_pass_notes": "Partial pass (LCD 7/7, KEY 1/1 green; MEMORY 8/9 fail, TIMER 1/3 fail, DMA 2/9 fail, INTERRUPT 2/7 fail). Canonical left null \u2014 cable_club has not reached full-pass on AGS Aging. Prior auto-promoted canonical (cac70be3...) was cleared 2026-04-08 per verification-standard memory to avoid locking in a broken state as ground truth. See .agents/handoff/20260408-ags-aging-{memory,lcd,timer,dma,interrupt}.md",
         "runners": {
           "cable_club": {
-            "hash": "ba847b3c2db08b5b3047bf1049ca9655d6081ca73f5d9677cda2237b93f02ff3",
+            "hash": "4355c9749499e37819dcd3a6bd04607b7c0c39d13a443f914dc4117ae52798b2",
             "screenshot": "verified/ags-aging-full-hle-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
-            "verified_at": "2026-04-07T01:08:32.591391+00:00",
-            "frames": 3000,
-            "notes": "2026-04-07 post commits c93d87c + edff1f3"
+            "verified_at": "2026-04-08T20:13:50.968185+00:00",
+            "frames": 2000,
+            "notes": "Re-verified 2026-04-08 post-powercut recovery. User confirmed visual state matches the captured frame. Sections: MEMORY FAIL (8/9), LCD PASS (7/7), TIMER FAIL (1/3), DMA FAIL (2/9), COM N/A, KEY PASS (1/1), INTERRUPT FAIL (2/7). AGS does not use mgba debug log protocol \u2014 verification is visual only."
           },
           "mgba": {
             "hash": "cac70be3cfa28ebac5515a72319f34a8ce61aba6ae825d65d8c8de85bc5e3673",
@@ -48,20 +48,20 @@
         }
       },
       "official": {
-        "canonical_pass_hash": "cac70be3cfa28ebac5515a72319f34a8ce61aba6ae825d65d8c8de85bc5e3673",
-        "canonical_pass_screenshot": "verified/ags-aging-full-official-nba.bmp",
-        "canonical_pass_verified_by": "auto-consensus-2 2026-04-07",
-        "canonical_pass_verified_at": "2026-04-07T01:08:32.591391+00:00",
-        "canonical_pass_notes": "Re-promoted from 2-runner consensus; previous canonical was 5912c0bd89f9b06e.",
+        "canonical_pass_hash": null,
+        "canonical_pass_screenshot": null,
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-08T20:13:50.968185+00:00",
+        "canonical_pass_notes": "Partial pass (LCD 7/7, KEY 1/1 green; MEMORY 8/9 fail, TIMER 1/3 fail, DMA 2/9 fail, INTERRUPT 2/7 fail). Canonical left null \u2014 cable_club has not reached full-pass on AGS Aging. Prior auto-promoted canonical (cac70be3...) was cleared 2026-04-08 per verification-standard memory to avoid locking in a broken state as ground truth. See .agents/handoff/20260408-ags-aging-{memory,lcd,timer,dma,interrupt}.md",
         "runners": {
           "cable_club": {
-            "hash": "ba847b3c2db08b5b3047bf1049ca9655d6081ca73f5d9677cda2237b93f02ff3",
+            "hash": "4355c9749499e37819dcd3a6bd04607b7c0c39d13a443f914dc4117ae52798b2",
             "screenshot": "verified/ags-aging-full-official-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
-            "verified_at": "2026-04-07T01:08:32.591391+00:00",
-            "frames": 3000,
-            "notes": "2026-04-07 post commits c93d87c + edff1f3"
+            "verified_at": "2026-04-08T20:13:50.968185+00:00",
+            "frames": 2210,
+            "notes": "Re-verified 2026-04-08 post-powercut recovery. User confirmed visual state matches the captured frame. Sections: MEMORY FAIL (8/9), LCD PASS (7/7), TIMER FAIL (1/3), DMA FAIL (2/9), COM N/A, KEY PASS (1/1), INTERRUPT FAIL (2/7). AGS does not use mgba debug log protocol \u2014 verification is visual only."
           },
           "mgba": {
             "hash": "cac70be3cfa28ebac5515a72319f34a8ce61aba6ae825d65d8c8de85bc5e3673",
@@ -93,20 +93,20 @@
         }
       },
       "cleanroom": {
-        "canonical_pass_hash": "cac70be3cfa28ebac5515a72319f34a8ce61aba6ae825d65d8c8de85bc5e3673",
-        "canonical_pass_screenshot": "verified/ags-aging-full-cleanroom-nba.bmp",
-        "canonical_pass_verified_by": "auto-consensus-2 2026-04-07",
-        "canonical_pass_verified_at": "2026-04-07T01:08:32.591391+00:00",
-        "canonical_pass_notes": "Re-promoted from 2-runner consensus; previous canonical was 28f46991896a85c8.",
+        "canonical_pass_hash": null,
+        "canonical_pass_screenshot": null,
+        "canonical_pass_verified_by": "chris",
+        "canonical_pass_verified_at": "2026-04-08T20:13:50.968185+00:00",
+        "canonical_pass_notes": "Partial pass (LCD 7/7, KEY 1/1 green; MEMORY 8/9 fail, TIMER 1/3 fail, DMA 2/9 fail, INTERRUPT 2/7 fail). Canonical left null \u2014 cable_club has not reached full-pass on AGS Aging. Prior auto-promoted canonical (cac70be3...) was cleared 2026-04-08 per verification-standard memory to avoid locking in a broken state as ground truth. See .agents/handoff/20260408-ags-aging-{memory,lcd,timer,dma,interrupt}.md",
         "runners": {
           "cable_club": {
-            "hash": "ba847b3c2db08b5b3047bf1049ca9655d6081ca73f5d9677cda2237b93f02ff3",
+            "hash": "4355c9749499e37819dcd3a6bd04607b7c0c39d13a443f914dc4117ae52798b2",
             "screenshot": "verified/ags-aging-full-cleanroom-cable_club.bmp",
             "status": "bug",
             "verified_by": "chris",
-            "verified_at": "2026-04-07T01:08:32.591391+00:00",
-            "frames": 3000,
-            "notes": "2026-04-07 post commits c93d87c + edff1f3"
+            "verified_at": "2026-04-08T20:13:50.968185+00:00",
+            "frames": 2000,
+            "notes": "Re-verified 2026-04-08 post-powercut recovery. User confirmed visual state matches the captured frame. Sections: MEMORY FAIL (8/9), LCD PASS (7/7), TIMER FAIL (1/3), DMA FAIL (2/9), COM N/A, KEY PASS (1/1), INTERRUPT FAIL (2/7). AGS does not use mgba debug log protocol \u2014 verification is visual only."
           },
           "mgba": {
             "hash": "cac70be3cfa28ebac5515a72319f34a8ce61aba6ae825d65d8c8de85bc5e3673",
