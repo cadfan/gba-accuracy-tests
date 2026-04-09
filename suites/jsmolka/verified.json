@@ -704,13 +704,13 @@
             "notes": "Lone passer. SkyEmu's UB handling matches jsmolka's expected output."
           },
           "cable_club": {
-            "hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
             "screenshot": "verified/jsmolka-unsafe-hle-cable_club.bmp",
-            "status": "fail",
+            "status": "pass",
             "verified_by": "chris",
-            "verified_at": "2026-04-06T23:35:55.739372+00:00",
+            "verified_at": "2026-04-08T20:30:21.236265+00:00",
             "frames": 1200,
-            "notes": "2026-04-07: Cable Club renders \"Failed test 002\" \u2014 bug in undefined-behavior handling. Hash is stable across all 3 BIOS modes."
+            "notes": "PASS 2026-04-08: fixed ROM out-of-bounds open-bus reads. rom_read8/16/32 now return the GBATEK-specified (addr >> 1) pattern instead of 0. jsmolka-unsafe t002 (unused ROM reads) now matches expected byte pattern; hash matches canonical."
           },
           "mgba": {
             "hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
@@ -740,13 +740,13 @@
         "canonical_pass_notes": "User-confirmed 2026-04-07: canonical is \"All tests passed\". Cable Club currently fails at test 002 (undefined-behavior instruction) \u2014 real bug to investigate.",
         "runners": {
           "cable_club": {
-            "hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
             "screenshot": "verified/jsmolka-unsafe-official-cable_club.bmp",
-            "status": "fail",
+            "status": "pass",
             "verified_by": "chris",
-            "verified_at": "2026-04-06T23:45:50.940867+00:00",
+            "verified_at": "2026-04-08T20:30:21.236265+00:00",
             "frames": 1200,
-            "notes": "2026-04-07: Cable Club renders \"Failed test 002\" \u2014 bug in undefined-behavior handling. Hash is stable across all 3 BIOS modes."
+            "notes": "PASS 2026-04-08: fixed ROM out-of-bounds open-bus reads. rom_read8/16/32 now return the GBATEK-specified (addr >> 1) pattern instead of 0. jsmolka-unsafe t002 (unused ROM reads) now matches expected byte pattern; hash matches canonical."
           },
           "mgba": {
             "hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
@@ -785,13 +785,13 @@
         "canonical_pass_notes": "User-confirmed 2026-04-07: canonical is \"All tests passed\". Cable Club currently fails at test 002 (undefined-behavior instruction) \u2014 real bug to investigate.",
         "runners": {
           "cable_club": {
-            "hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
+            "hash": "59ce42abae9825c2d2579c5cd838e47d88be917e37ea36ff162d46fc5d0991e3",
             "screenshot": "verified/jsmolka-unsafe-cleanroom-cable_club.bmp",
-            "status": "fail",
+            "status": "pass",
             "verified_by": "chris",
-            "verified_at": "2026-04-06T23:49:32.875917+00:00",
+            "verified_at": "2026-04-08T20:30:21.236265+00:00",
             "frames": 1200,
-            "notes": "2026-04-07: Cable Club renders \"Failed test 002\" \u2014 bug in undefined-behavior handling. Hash is stable across all 3 BIOS modes."
+            "notes": "PASS 2026-04-08: fixed ROM out-of-bounds open-bus reads. rom_read8/16/32 now return the GBATEK-specified (addr >> 1) pattern instead of 0. jsmolka-unsafe t002 (unused ROM reads) now matches expected byte pattern; hash matches canonical."
           },
           "mgba": {
             "hash": "0d05936a83881705b1bd18d0ddc11e7bffee3b508110d566fb8cae9c60098cff",
