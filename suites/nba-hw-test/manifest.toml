@@ -1,0 +1,280 @@
+schema_version = 1
+
+[suite]
+name = "nba-hw-test"
+description = "NanoBoyAdvance hardware tests: PPU, timer, DMA, IRQ, bus, and halt edge cases"
+source = "https://github.com/nba-emu/hw-test"
+license = "BSD-3-Clause"
+commit = "main"
+
+# These tests use two styles:
+# 1. Visual pattern tests (small ROMs): render a specific framebuffer, compare hash
+# 2. Console text tests (larger ROMs with test.h framework): print pass/fail summary
+# All use stable_frames completion since output is static once rendered.
+
+# ─── PPU tests ───────────────────────────────────────────────
+
+[[tests]]
+id = "nba-ppu-bgpd"
+rom = "bgpd.gba"
+rom_sha256 = "beafeec621abd2dc9dd4cb8e0bf310c2b8c69ee0295945506dc74b19767016c3"
+subsystem = "ppu"
+max_frames = 600
+timing_sensitive = true
+requires_bios = false
+hint = "BG2PD double-buffering via HBlank DMA. Visual: gradient stripes should be evenly spaced."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 30
+
+[[tests]]
+id = "nba-ppu-bgx"
+rom = "bgx.gba"
+rom_sha256 = "4c27a5091974980b73128bbe5ba86c99ab6779b649352e5973363e0b17dcf304"
+subsystem = "ppu"
+max_frames = 600
+timing_sensitive = true
+requires_bios = false
+hint = "BG reference point internal register behavior. Visual pattern test."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 30
+
+[[tests]]
+id = "nba-ppu-dispcnt-latch"
+rom = "dispcnt-latch.gba"
+rom_sha256 = "77672a9940828a6d0a4facbf8af6caef80dae3298c72d4a9ff088bddbaa05618"
+subsystem = "ppu"
+max_frames = 600
+timing_sensitive = true
+requires_bios = false
+hint = "DISPCNT mid-scanline latch behavior. Console output with pass/fail."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 60
+
+[[tests]]
+id = "nba-ppu-greenswap"
+rom = "greenswap.gba"
+rom_sha256 = "17c5701b342525515c0278f504d812fc6fa028ae542c1a25cb79c0d794e44880"
+subsystem = "ppu"
+max_frames = 600
+timing_sensitive = false
+requires_bios = false
+hint = "Green channel swap (GREENSWAP register at 0x04000002). Visual: checkerboard pattern."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 30
+
+[[tests]]
+id = "nba-ppu-ram-access-timing"
+rom = "ram-access-timing.gba"
+rom_sha256 = "b7a7b370721c771c6ccf9e1a338b475e1881890f37d5c9a672bc67e92b89de12"
+subsystem = "ppu"
+max_frames = 600
+timing_sensitive = true
+requires_bios = false
+hint = "VRAM/OAM/Palette access timing windows during HDraw vs HBlank. Console output."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 60
+
+[[tests]]
+id = "nba-ppu-sprite-hmosaic"
+rom = "sprite-hmosaic.gba"
+rom_sha256 = "792fe1398ffa6f94c9096559d9f5babad2d5a3fdb48babc42ffd634966d6d28f"
+subsystem = "ppu"
+max_frames = 600
+timing_sensitive = false
+requires_bios = false
+hint = "Horizontal sprite mosaic rendering accuracy. Visual pattern test."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 30
+
+[[tests]]
+id = "nba-ppu-status-irq-dma"
+rom = "status-irq-dma.gba"
+rom_sha256 = "c441a13a5ffe5eabcfa9b392a53e5ead1e1c7d731c4f0b3a3334ee3650f59ed4"
+subsystem = "ppu"
+max_frames = 600
+timing_sensitive = true
+requires_bios = false
+hint = "DISPSTAT IRQ and DMA interaction timing. Console output with pass/fail."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 60
+
+[[tests]]
+id = "nba-ppu-vram-mirror"
+rom = "vram-mirror.gba"
+rom_sha256 = "f8eedd949da40ed544ceeb5d9f3ab0812d45c2f4fe4e9a3613ca6e4356d9642b"
+subsystem = "ppu"
+max_frames = 600
+timing_sensitive = false
+requires_bios = false
+hint = "VRAM mirror behavior across video modes. Console output with pass/fail."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 60
+
+# ─── Timer tests ─────────────────────────────────────────────
+
+[[tests]]
+id = "nba-timer-reload"
+rom = "reload.gba"
+rom_sha256 = "ce1c32a560aa46e3070e7a9745102c0168380d3d1c100032fd5ff4ebe9fd6947"
+subsystem = "timing"
+max_frames = 600
+timing_sensitive = true
+requires_bios = false
+hint = "Timer reload edge cases. Console output with pass/fail."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 60
+
+[[tests]]
+id = "nba-timer-start-stop"
+rom = "start-stop.gba"
+rom_sha256 = "c25f0a63e7b9a350163dc8d683dd081934b65295f06a9079109ab709b9b785a7"
+subsystem = "timing"
+max_frames = 600
+timing_sensitive = true
+requires_bios = false
+hint = "Timer enable/disable timing accuracy. Console output with pass/fail."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 60
+
+# ─── DMA tests ───────────────────────────────────────────────
+
+[[tests]]
+id = "nba-dma-burst-into-tears"
+rom = "burst-into-tears.gba"
+rom_sha256 = "803ce6e7d444ad4a1397fb12bee1e2144aa5e95731ff31e9c2d68077e45958ce"
+subsystem = "dma"
+max_frames = 600
+timing_sensitive = true
+requires_bios = false
+hint = "DMA burst transfer edge cases (boundary crossing, latch behavior). Console output."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 60
+
+[[tests]]
+id = "nba-dma-force-nseq-access"
+rom = "force-nseq-access.gba"
+rom_sha256 = "e623d15dc8962731f38e5a467689f88cf49a270d367cbbb970203d11f186eb8b"
+subsystem = "dma"
+max_frames = 600
+timing_sensitive = true
+requires_bios = false
+hint = "DMA non-sequential access forcing behavior. Console output."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 60
+
+[[tests]]
+id = "nba-dma-latch"
+rom = "latch.gba"
+rom_sha256 = "9830af8bafca4064792d749948d0d4f9e1ae4e42ae10b622fab15d0759815340"
+subsystem = "dma"
+max_frames = 600
+timing_sensitive = true
+requires_bios = false
+hint = "DMA address latch behavior on transfer completion. Console output."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 60
+
+[[tests]]
+id = "nba-dma-start-delay"
+rom = "start-delay.gba"
+rom_sha256 = "dfd922caac35579b1ea2ef60aa2c12b92f7025ae9f17c75fee053f2c870ed9c8"
+subsystem = "dma"
+max_frames = 600
+timing_sensitive = true
+requires_bios = false
+hint = "DMA start delay cycle measurement. Console output."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 60
+
+# ─── IRQ tests ───────────────────────────────────────────────
+
+[[tests]]
+id = "nba-irq-delay"
+rom = "irq-delay.gba"
+rom_sha256 = "70d36ec5765f21a6a1690a14fe046d377f51283901a6d15958ca0b5a6147b125"
+subsystem = "timing"
+max_frames = 600
+timing_sensitive = true
+requires_bios = false
+hint = "IRQ dispatch delay measurement. Console output with cycle counts."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 60
+
+# ─── Bus tests ───────────────────────────────────────────────
+
+[[tests]]
+id = "nba-bus-128kb-boundary"
+rom = "128kb-boundary.gba"
+rom_sha256 = "e4397b9d87fd8f3f9e77ef02f8bd3ba326897849fd6e832f7e805c1e1b64b8b1"
+subsystem = "memory"
+max_frames = 600
+timing_sensitive = true
+requires_bios = false
+hint = "128KB ROM boundary crossing behavior. Console output."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 60
+
+# ─── Halt tests ──────────────────────────────────────────────
+
+[[tests]]
+id = "nba-haltcnt"
+rom = "haltcnt.gba"
+rom_sha256 = "819b7968c4dc781b868eb2b97c12c17773d7cadd2e54fdd2a934112b1f191374"
+subsystem = "misc"
+max_frames = 600
+timing_sensitive = true
+requires_bios = false
+hint = "HALTCNT register behavior and halt/stop mode. Console output."
+
+[tests.completion]
+type = "stable_frames"
+window = 10
+min_frames = 60
