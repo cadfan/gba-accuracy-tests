@@ -77,7 +77,7 @@ ROM_MANIFEST: dict[str, dict] = {
             (
                 "suite.gba",
                 "https://raw.githubusercontent.com/Asphaltian/sgba/main/Assets/roms/suite.gba",
-                "2748b498310e77a4ec7f0c89459fa9d61986284977fa801d18f0564c83b7ebb6",
+                "073ac37db89b791a589ec93853074043b31d0c931f43f4a69afa7319248ec8bb",
             ),
         ],
     },
